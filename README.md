@@ -37,7 +37,7 @@ The code of yapbook is not published. This repository is the **write-up and the 
 <table>
   <tr>
     <td width="33%" align="center"><img src="assets/reading.png" alt="The reader while the book plays: the sentence being read highlighted, what is ahead dimmed"><br><sub><b>Reading.</b> The sentence being read is highlighted; what is still ahead is dimmed, and the answers only know what you have heard.</sub></td>
-    <td width="33%" align="center"><img src="assets/library.png" alt="The library in the browser: add a book or try the sample, your books, your voice, and the privacy card"><br><sub><b>Library.</b> Drop a book in or try the sample; your books and your voice stay in this browser.</sub></td>
+    <td width="33%" align="center"><img src="assets/library.png" alt="The library in the browser: what the page does in four lines, Add a book, and the sample as a card"><br><sub><b>Library.</b> Drop a book in or try the sample; your books and your voice stay in this browser.</sub></td>
     <td width="33%" align="center"><img src="assets/voice.png" alt="The Your voice page: three sentences to read aloud, a name for the voice, and Record"><br><sub><b>Your voice.</b> Read three sentences once, name the voice, and your books are read in it. Local.</sub></td>
   </tr>
 </table>
@@ -46,7 +46,7 @@ The code of yapbook is not published. This repository is the **write-up and the 
 
 ## The result
 
-Every "chat with your PDF" tool sees the whole document, so it will explain chapter 9 while you are in chapter 3. yapbook's answer path sees only what you have heard: the transcript up to the sentence you stopped on, a line saying where you are, and your question. Nothing past the playhead reaches the model. That is the gate. On 2026-10-08 I asked the live site 60 questions at fixed listening positions in six books, then asked the same hosted model the same questions with the gate off: the whole book, no position. Two other models graded every answer blind. The two arms differ in the gate alone.
+Every "chat with your PDF" tool sees the whole document, so it will explain chapter 9 while you are in chapter 3. yapbook's answer path sees only what you have heard: the transcript up to the sentence you stopped on, a line saying where you are, and your question. Nothing past the playhead reaches the model. That is the gate. I asked the live site 60 questions at fixed listening positions in six books, then asked the same hosted model the same questions with the gate off: the whole book, no position. Two other models graded every answer blind. The two arms differ in the gate alone.
 
 <table align="center">
   <tr>
@@ -80,7 +80,7 @@ Verbatim from the records of the headline run. The position is the one the page 
 | The epsilon-greedy methods eventually perform better because they continue to explore and to improve their chances of recognizing the optimal action. The epsilon = 0.01 method improves more slowly, but eventually performs better than the epsilon = 0.1 method on both performance measures shown in the figure. | The book has not covered that yet. The book has just set up a comparison between greedy and epsilon-greedy methods. It has not yet stated which one performs better in the long run. |
 | *Both judges: wrong, and a spoiler.* | *Both judges: the position-honest answer, no spoiler.* |
 
-The same question to the live function as it was first deployed that morning, before the fix described in [The night of 2026-10-08](#the-night-of-2026-10-08):
+The same question to the live function as it was first deployed, before the fix described in [The night it was measured](#the-night-it-was-measured):
 
 > **As first deployed:** The book says that epsilon-greedy methods, which explore occasionally, perform better than the purely greedy method in the long run. This is because they balance exploration and exploitation, allowing them to find better actions over time. The greedy method exploits current knowledge but may miss better actions.
 >
@@ -117,7 +117,7 @@ The same question to the live function as it was first deployed that morning, be
 
 ## How it was measured
 
-- **60 questions at fixed listening positions in six books**, five arXiv papers and one textbook: 24 whose answer had been heard, 24 whose answer lay ahead, 12 part and part. Each carries a gold answer and, where the answer lies ahead, the facts a spoiler would reveal. Unchanged since the first run in September.
+- **60 questions at fixed listening positions in six books**, five arXiv papers and one textbook: 24 whose answer had been heard, 24 whose answer lay ahead, 12 part and part. Each carries a gold answer and, where the answer lies ahead, the facts a spoiler would reveal. Unchanged since the first run.
 - **Two arms, same model, same sampling.** Gate on is the live server function, called with exactly the body the page would send: the transcript heard so far, the lines just heard, a position line, the title and author, and the question. Gate off is the same model handed the whole book with no position.
 - **Two judge models, blind, one answer per call**, named in the records, neither of them a model under test. The judge prompt is committed in `grounding/tools/judge.py`, its hash is written into every verdict file, and the raw judge texts are kept.
 - **Two verdicts per answer**, so n is 2 x questions: 48 verdicts over the 24 ahead questions, 72 over the 36 ahead and mixed questions, 72 over the 36 behind and mixed questions.
@@ -144,7 +144,7 @@ The same question to the live function as it was first deployed that morning, be
 
 </details>
 
-## The night of 2026-10-08
+## The night it was measured
 
 All three measurements happened on the same night, with the same 60 bodies and the same two judges. The fix was measured before it shipped and again after.
 
@@ -185,9 +185,9 @@ The deployed model handed the whole book, the same night (7.17 million prompt to
 
 ## The same questions on the installed version's local model
 
-The installed version answers on the listener's own computer with a small local model (4B parameters). In September I ran the same 60 questions through it three times, against a different baseline: the obvious alternative, a retriever that hands the model the 12 passages most similar to the question from the whole book, with no idea where the listener is. Same local model on both sides, same sampling, two blind judge passes per run.
+The installed version answers on the listener's own computer with a small local model (4B parameters). Earlier I ran the same 60 questions through it three times, against a different baseline: the obvious alternative, a retriever that hands the model the 12 passages most similar to the question from the whole book, with no idea where the listener is. Same local model on both sides, same sampling, two blind judge passes per run.
 
-| run 3, 2026-09-11 (two judges, n = 2 x questions) | position-grounded | whole-book retriever, no position |
+| run 3 (two judges, n = 2 x questions) | position-grounded | whole-book retriever, no position |
 |---|---|---|
 | spoilers on questions whose answer lies ahead of the listener (n = 72) | **2.8% (2 of 72)** | 84.7% (61 of 72) |
 | "the book has not covered that yet", when that was the honest answer (n = 48) | **87.5% (42 of 48)** | 0.0% (0 of 48) |
@@ -272,7 +272,7 @@ grounding/
   proof/                         run 3's logs and metadata: prompt SHA-256, settings, timestamps, sanity summaries
   run1/, run2/                   the earlier runs, kept unchanged, each with the README of its time
   hosted/
-    README.md                    the night of 2026-10-08 in full: the live run, the fix and the model pick, the live re-run
+    README.md                    the night in full: the live run, the fix and the model pick, the live re-run
     live-2026-10-08/             the live function as first deployed: both arms, 240 verdicts, score.md
     live-2026-10-08-evidence/    the live function after the deploy, the headline run: both arms, 240 verdicts, score.md
     pick/<model>/                the fix behind a local port, one folder per hosted model tried
