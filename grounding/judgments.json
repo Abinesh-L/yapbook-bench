@@ -1,0 +1,1935 @@
+{
+ "schema": {
+  "description": "Blind two-judge grading of both systems' answers to questions.json. Each item id maps to {system: [verdict per judge]}. Judges saw the question, the listening position, the gold answer, the unheard_facts list (for ahead/mixed items) and the two answers with system labels hidden; labels were restored after all verdicts were fixed. Two judges per item, so n = 2 x questions in the aggregate.",
+  "verdict.correct": "one of correct | partial | wrong | refused_appropriately | refused_wrongly, scored against the gold (for ahead items the gold is a position-honest answer, i.e. saying the material has not been reached yet)",
+  "verdict.spoiler": "true if the answer states a fact from unheard_facts (text at or after the listening position); evidence quotes the leaked text",
+  "verdict.reason": "the judge's rationale",
+  "judge_ids": "judge 1 and judge 2 are two independent judge passes run by the orchestrating session; their prompts and model identities were not handed to the author of this directory and are not recorded here (see README caveats)",
+  "run": "run 3: answers from the code under test at HEAD 5415fca (main) plus the coverage-tag calibration staged in the working tree and not yet committed at run time (weekday commit window); run 2 verdicts are in run2/judgments.json and run 1 verdicts in run1/judgments.json, same schema"
+ },
+ "aggregate": {
+  "yapbook|behind": {
+   "n": 48,
+   "correct": 32,
+   "partial": 12,
+   "wrong": 0,
+   "refused_appropriately": 0,
+   "refused_wrongly": 4,
+   "spoilers": 0
+  },
+  "baseline|behind": {
+   "n": 48,
+   "correct": 25,
+   "partial": 17,
+   "wrong": 6,
+   "refused_appropriately": 0,
+   "refused_wrongly": 0,
+   "spoilers": 4
+  },
+  "yapbook|ahead": {
+   "n": 48,
+   "correct": 0,
+   "partial": 4,
+   "wrong": 2,
+   "refused_appropriately": 42,
+   "refused_wrongly": 0,
+   "spoilers": 2
+  },
+  "baseline|ahead": {
+   "n": 48,
+   "correct": 0,
+   "partial": 0,
+   "wrong": 48,
+   "refused_appropriately": 0,
+   "refused_wrongly": 0,
+   "spoilers": 44
+  },
+  "yapbook|mixed": {
+   "n": 24,
+   "correct": 12,
+   "partial": 6,
+   "wrong": 0,
+   "refused_appropriately": 4,
+   "refused_wrongly": 2,
+   "spoilers": 0
+  },
+  "baseline|mixed": {
+   "n": 24,
+   "correct": 7,
+   "partial": 11,
+   "wrong": 6,
+   "refused_appropriately": 0,
+   "refused_wrongly": 0,
+   "spoilers": 17
+  }
+ },
+ "items": {
+  "att-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Six layers, two sub-layers named exactly as gold (multi-head self-attention, position-wise FFN)."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: N = 6 identical layers, each with multi-head self-attention plus a position-wise feed-forward sub-layer. All of this is heard by ch6/seq4. A listener is fully helped; nothing from later sections."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Six layers, two sub-layers named exactly as gold."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: six layers, multi-head self-attention plus position-wise feed-forward network. Heard content only; helpful and clean."
+    }
+   ]
+  },
+  "att-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the reason is not covered yet, matching the position-honest gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Gold is position-honest (the reason has not been given yet). Answer says exactly that. Listener is told to keep listening; nothing ruined."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'large dot products would push the softmax into areas with very small gradients' = unheard_facts ch9 seq7-8.",
+     "reason": "Gold says the reason has not been given yet; answer supplies the gradient-vanishing rationale from ahead of the position."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "\"large dot products would push the softmax into areas with very small gradients\" and \"ensures the softmax function operates in regions where it has reasonable gradients\" reproduce the ch9 seq7-8 explanation that has not been heard at ch9/seq3.",
+     "reason": "Not position-honest; gold says the reason is still unexplained. Gives the gradient-saturation rationale from the next few sentences, ruining the passage the listener is about to hear."
+    }
+   ]
+  },
+  "att-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses and correctly summarizes the only heard mention (counteracting averaging), matching gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Matches gold: says the mechanism has not been described yet and accurately recaps what was heard (named as countering the averaging effect, details promised later). Helpful without leaking section 3.2."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'attend to information from different representation subspaces at different positions', 'several parallel attention layers', 'reduced dimension, so the total computational cost remains similar to single-head attention' = unheard_facts ch10 seq1-7. Also adds 'syntactic or semantic structure' which is not in heard text.",
+     "reason": "Gold says the mechanism has not been described; answer describes it from section 3.2.2 and adds an unsupported claim."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "\"attend to information from different representation subspaces at different positions\", \"several parallel attention layers\", \"Each head has a reduced dimension, so the total computational cost remains similar to single-head attention\" are the ch10 seq1-7 description; \"syntactic or semantic structure recognition\" is from the appendix visualizations.",
+     "reason": "Gold is position-honest; this answers with the full multi-head mechanism (subspaces, parallel heads, reduced per-head dimension, cost parity) before section 3.2 is heard. Ruins that section for the listener."
+    }
+   ]
+  },
+  "att-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Masking plus output-embedding offset by one, with predictions for i depending only on outputs < i; reproduces the heard sentence. Does not spell out that the mask blocks self-attention to subsequent positions, but the mechanism and invariant match gold."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Near-verbatim to heard ch6 seq5-6: masking combined with offsetting output embeddings by one ensures predictions at position i depend only on outputs at positions less than i. Terse (does not spell out that the mask blocks attention to subsequent positions) but faithful and helpful; no later content."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'masking out all values in the softmax input that correspond to illegal connections' and 'prevents leftward information flow' = unheard_facts ch11 seq6 (section 3.2.3).",
+     "reason": "Has the heard idea that decoder self-attention is restricted to non-subsequent positions, but omits the offset-by-one half of the gold and fills the gap with the unheard -inf-mask implementation."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "\"masking out all values in the softmax input that correspond to illegal connections\" is the ch11 seq6 implementation detail (scaled dot-product attention sets those softmax inputs to minus infinity), not heard at ch6/seq7.",
+     "reason": "Covers the heard part that decoder self-attention is modified so positions cannot attend to subsequent positions and preserves auto-regression, but omits the offset-by-one point in the gold and leads with the unheard softmax-input masking implementation. Partly helpful; leaks a later detail."
+    }
+   ]
+  },
+  "att-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gives the extrapolation reason and the nearly-identical-results finding, but omits the primary stated hypothesis (attend by relative positions since PE(pos+k) is a linear function of PE(pos)) and asserts extrapolation was the sole reason."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gives the extrapolation reason and the nearly-identical-results comparison, but omits the relative-position hypothesis (encoding at pos+k is a linear function of encoding at pos), which is half the gold, and asserts extrapolation is the sole reason. All heard content; no spoiler."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Covers all three gold points (relative-position hypothesis, nearly identical results, possible extrapolation), but adds unsupported claims: 'helps learn long-range dependencies more effectively' and 'found ... offered better generalization', which overstates the hedged 'may allow extrapolation' as a reported finding contrary to the heard 'nearly identical results'."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Covers all gold points: relative-position linear-function hypothesis, extrapolation to longer sequences, and nearly identical results versus learned embeddings. Minor embellishments (long-range dependencies, better generalization) are not in the text but are not from later sections."
+    }
+   ]
+  },
+  "att-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says order handling is not covered yet, matching gold; its recap of heard content is loose but the refusal is right."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Matches gold: says how order is injected has not been explained yet and sticks to heard facts. Listener is told to wait; nothing from section 3.5 leaked."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'injecting information about the relative or absolute position of the tokens in the sequence' is the section 3.5 opening line (ch14 seq1), after the position; gold says how order is injected has not been explained.",
+     "reason": "Gold is a refusal; answer asserts positional injection from ahead and then adds an incorrect claim that self-attention itself captures order."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "\"injecting information about the relative or absolute position of the tokens in the sequence\" is the opening sentence of section 3.5 (ch14 seq1), which introduces positional encodings and has not been heard at ch13/seq3.",
+     "reason": "Not position-honest; gold says the mechanism is still unexplained. Reveals the positional-information injection idea from the next section, then garbles it (claims self-attention itself captures order and that positional info lets the decoder attend over input positions). Misleads the listener and previews section 3.5."
+    }
+   ]
+  },
+  "att-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Correctly contrasts O(1) vs O(n) sequential operations from heard text, but omits the Table 1 per-layer complexity comparison (O(n^2 d) vs O(n d^2)) and the phrase 'fixed cost per layer' is inaccurate as stated (only sequential ops are constant)."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Correctly relays the heard sequential-operations point (constant for self-attention versus O(n) for recurrent) from Table 1 / ch15 seq7, but omits the per-layer complexity comparison (O(n^2 d) versus O(n d^2)) and mischaracterizes self-attention as a fixed cost per layer when its per-layer cost grows with n^2. No unheard content."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'cheaper ... when the sequence length n is smaller than the representation dimensionality d ... word-piece or byte-pair representations' = unheard_facts ch15 seq8.",
+     "reason": "Contains none of the heard Table 1 comparison; the whole answer is the n < d condition from the next sequence."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "\"cheaper than a recurrent layer when the sequence length n is smaller than the representation dimensionality d, which is typical for sentence representations ... word-piece or byte-pair representations\" is the ch15 seq8 conclusion, listed as unheard.",
+     "reason": "Book-accurate but drawn entirely from the sentence the listener has not yet reached; contains none of the heard Table 1 comparison (complexity per layer, sequential operations). Spoils the conclusion the passage is building to."
+    }
+   ]
+  },
+  "att-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "reason": "Question was answerable from heard text (abstract: 3.5 days on eight GPUs; intro: as little as twelve hours on eight P100 GPUs). It even cites the twelve hours but dismisses it as a different context and misses the 3.5 days entirely."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "reason": "Heard text answers this: the abstract says 3.5 days on eight GPUs and the introduction says twelve hours on eight P100 GPUs. The answer even recalls the twelve hours and then dismisses it as a different context, leaving the listener with nothing. No unheard content."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": true,
+     "evidence": "'big models' / 'base models' split, '100,000 steps', 'each training step took about 0.4 seconds' = unheard_facts ch18 seq1-2.",
+     "reason": "The durations (3.5 days, 12 hours, 8 P100 GPUs) match the heard numbers in gold, but the base/big framing, step count and per-step time come from section 5.2 ahead of the position."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": true,
+     "evidence": "\"3.5 days to train the big models\", \"base models were trained for 12 hours, or 100,000 steps\", \"Each training step took about 0.4 seconds on 8 P100 GPUs\" are the ch18 seq1-2 Training Schedule details (base/big split, step counts, per-step time), not heard at ch17/seq2.",
+     "reason": "The durations match the heard figures (3.5 days, 12 hours, eight P100s), so the listener gets the right answer, but the base/big framing, step counts and per-step timing come from section 5.2, which has not been heard. Ruins that section."
+    }
+   ]
+  },
+  "att-09": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Adam with beta1 0.9, beta2 0.98, eps 1e-9; linear warmup 4000 steps then inverse-square-root decay, matching gold."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: Adam with beta1 0.9, beta2 0.98, epsilon 1e-9; linear warmup for 4000 steps then inverse-square-root decay. All heard by ch19/seq4."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Identical to R271; matches gold on optimizer, hyperparameters and schedule."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Identical to the other candidate and matches gold: Adam hyperparameters and warmup-then-inverse-sqrt schedule. Heard content only."
+    }
+   ]
+  },
+  "att-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says three types are mentioned but none named yet, matching gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Matches gold: the transcript has only said three types of regularization are used; none named yet. Answer says exactly that without leaking dropout or label smoothing."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'label smoothing with eps_ls = 0.1' and 'dropout with P_drop = 0.1' = unheard_facts ch20 seq3-5.",
+     "reason": "Gold is a refusal; answer names two unheard regularizers with their values and invents a third ('positional embedding instead of sinusoids') that is not a regularizer and is not in the text."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "\"label smoothing with ϵ ls = 0.1, dropout with P drop = 0.1\" are the ch20 seq3-5 details listed as unheard at ch20/seq3.",
+     "reason": "Not position-honest; names dropout and label smoothing with their values before they are heard, and invents a third item (positional embedding instead of sinusoids) that is not a regularizer in the paper. Spoils section 5.4 and misinforms."
+    }
+   ]
+  },
+  "att-11": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the estimation method is not covered, matching gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Matches gold: the FLOPs estimation method has not been given yet. Clean refusal; nothing leaked."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'multiplying the training time, the number of GPUs used, and an estimate of the sustained single-precision floating-point capacity of each GPU' = unheard_facts ch22 seq9.",
+     "reason": "Gold is a refusal; answer states the FLOPs estimation formula from the Table 2 footnote ahead of the position."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "\"multiplying the training time, the number of GPUs used, and an estimate of the sustained single-precision floating-point capacity of each GPU\" is the ch22 seq9 method, not heard at ch22/seq5.",
+     "reason": "Not position-honest; reproduces the estimation formula from a later footnote. Ruins that passage for the listener."
+    }
+   ]
+  },
+  "att-12": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "reason": "Behind-position question; Table 3 rows (A) with the 0.9 BLEU single-head result is heard at this position, yet the answer refuses and claims only the section 3.2.2 remark exists."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "reason": "Behind-kind question: the Table 3 row (A) result (single head 0.9 BLEU worse than best; too many heads also hurts) is already heard by ch23/seq9. The answer wrongly claims the experiment has not been described, leaving the listener without an answer they already have. It does correctly recall the earlier ch10 remark about single heads inhibiting joint attention. No unheard content."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "0.9 BLEU worse than the best setting and quality dropping with too many heads, matching gold."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: single-head attention was 0.9 BLEU below the best setting, and quality drops off with too many heads. All heard content; helpful."
+    }
+   ]
+  },
+  "bn-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "States the gold definition: the change in the distributions of a deep network's internal nodes over training. Adds the heard consequence (saturated regime, slower training). Omits the 'caused by preceding layers' clause but the core definition matches."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gives the paper's definition: change in the distributions of internal nodes over training. The saturation remark is from the intro paragraph just before the definition, so it is heard text. A listener at ch2 would be helped."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Change in distribution of internal activations / layer inputs as parameters update during training; 'internal' framed as the network's own layers rather than the input data set, which tracks the gold's 'covariate shift extended to the parts'. Matches."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Change in activation/input distributions to each layer as parameters update; 'internal' because it is within the network. Matches gold; the closing benefit claim (stability, speed) is from the abstract. Nothing from later sections."
+    }
+   ]
+  },
+  "bn-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gives exactly the heard part: normalize layer inputs to fix means and variances, applied per training mini-batch, reduces gradient dependence on parameter scale/initialization. No mechanism beyond what has been heard at ch2/seq16."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Stays inside what has been heard: normalize layer inputs to fix means/variances, per training mini-batch, reduces gradient dependence on parameter scale/initial values (intro). Omits the regularizer/higher-LR benefits and does not flag that the transform itself is still to come, but nothing is wrong and nothing later is ruined."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'normalizing the activations of each layer to have a mean of zero and a standard deviation of one, using the batch statistics from the current mini-batch. It then applies learned scale and shift parameters' — per-scalar zero-mean/unit-variance with mini-batch statistics and the learned gamma/beta scale-and-shift are ch4 unheard_facts; 'preventing small parameter changes from amplifying' is ch7 material.",
+     "reason": "Overlaps the heard part (normalization, mini-batch, stabilizes training) but the substance of the mechanism it describes comes from ch4 and ch7, not from text heard at ch2/seq16."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": true,
+     "evidence": "'normalizing the activations of each layer to have a mean of zero and a standard deviation of one, using the batch statistics from the current mini-batch. It then applies learned scale and shift parameters' = unheard ch4 seq2/seq6-8 (per-feature zero-mean/unit-variance with mini-batch stats; gamma/beta). 'preventing small parameter changes from amplifying into large changes' is ch7 seq1-3.",
+     "reason": "Accurate description of BN that covers the heard mechanism, but it hands the listener the ch4 normalization details and the learned scale/shift before the book gets there, and borrows ch7's amplification argument. It would pre-empt the 'doesn't normalization limit representation?' payoff later."
+    }
+   ]
+  },
+  "bn-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: normalization outside the gradient step means the parameter update produces no change in output or loss, the bias grows indefinitely while loss stays fixed, and it gets worse if normalization also scales the activations (all heard by ch3/seq13)."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Captures the paper's actual argument: update outside the gradient step leaves output/loss unchanged, bias grows indefinitely, worse if scaling too. Same section as the position. A listener gets the real mechanism."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Invents an 'outdated statistics / broken consistency' explanation. Never mentions the actual argument: the update to b is canceled by re-normalization so the loss never changes while b grows without bound, and the model blows up. Not the paper's reasoning."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Invents a generic 'outdated statistics / consistency' rationale that is not the paper's reasoning. The gold's core (bias update exactly cancelled by re-normalization, b grows without bound, loss fixed, model blew up) is entirely absent. A student would come away with the wrong explanation. No unheard material."
+    }
+   ]
+  },
+  "bn-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Does not say the question is unaddressed yet, but answers only from heard text (single-example normalization discards absolute scale and changes representation ability; they want to normalize relative to the whole training data). The appended 'not by forcing them to zero mean and unit variance' is an unsupported inference not in the text, so it is not a clean position-honest answer."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Reports only heard text (single-example normalization discards absolute scale; they want to normalize relative to the whole training data) and does not state gamma/beta, so nothing later is ruined. But it never says the question is not yet addressed, and the added gloss 'not by forcing them to zero mean and unit variance' is a misleading paraphrase since the paper will in fact normalize each dimension to zero mean/unit variance."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'Batch Normalization includes learnable parameters that allow the layer to adjust its output distribution' (gamma/beta, ch4 seq5-8, in unheard_facts); 'layer Jacobians are also conjectured to have singular values close to 1' (ch7).",
+     "reason": "Gold says not addressed yet at ch3/seq23. The answer asserts a definite 'No' using the learned scale/shift parameters introduced in ch4 and a Jacobian conjecture from ch7."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'Batch Normalization includes learnable parameters that allow the layer to adjust its output distribution' = unheard gamma(k)/beta(k) (ch4 seq5-8); 'layer Jacobians are also conjectured to have singular values close to 1' = ch7 seq9-13.",
+     "reason": "Gold is position-honest 'not addressed yet'; this answers a flat 'No' using the learned scale/shift parameters and the Jacobian conjecture, both well ahead of ch3/seq23. Also muddled ('applied after the layer's computation, not before'). For a listener this pre-answers the very tension the next section is about to resolve."
+    }
+   ]
+  },
+  "bn-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gives only the mini-batch singular-covariance reason. Misses that full whitening is costly and not everywhere differentiable, and that per-dimension normalization still speeds convergence without decorrelation."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gives only the mini-batch reason (joint covariances over a small mini-batch would be singular and need regularization). Omits the cost / not-everywhere-differentiable objection to full whitening and the point that per-dimension normalization still speeds convergence without decorrelation. Heard material only."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Covers both main reasons in gold: joint whitening is costly and not everywhere differentiable, and joint covariances over a mini-batch would be singular and need regularization; also notes mini-batch statistics participate in backprop (heard by ch4/seq12). Omits only the supporting 'still speeds convergence without decorrelation' point."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Covers whitening being costly and not everywhere differentiable, the singular mini-batch covariance / regularization issue, and the gradient-participation motivation from section 2. Misses only the 'still speeds convergence without decorrelation' remark. All within heard text."
+    }
+   ]
+  },
+  "bn-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'the normalized activations are computed using the running averages of the mean and variance, which are updated during training' — population statistics / moving averages are ch5 seq3-8 unheard_facts.",
+     "reason": "Gold: not covered yet at ch4/seq28. Answer states the inference-time procedure from ch5 instead of saying it has not been heard."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'the normalized activations are computed using the running averages of the mean and variance, which are updated during training' = inference via population statistics / moving averages (ch5 seq3-8).",
+     "reason": "Gold is 'not covered yet' (transcript only notes the transform depends on the other examples in the mini-batch). This states the ch5 inference procedure as if already heard; content is roughly right but it spoils the next section for the listener."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'uses running averages of the mean and variance computed during training... This ensures the output depends only on the input, deterministically' — the deterministic-inference requirement and moving-average statistics are ch5 unheard_facts.",
+     "reason": "Gold: not covered yet. Answer gives the ch5 test-time mechanism rather than a position-honest refusal."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'uses running averages of the mean and variance computed during training ... ensures the output depends only on the input, deterministically' = ch5 seq3-8 (deterministic output at inference, population statistics).",
+     "reason": "Same as R180 and adds the ch5 'deterministic dependence on input' rationale verbatim. Does not match the position-honest gold and gives away the inference section."
+    }
+   ]
+  },
+  "bn-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the heard part: prevents small parameter changes from amplifying into large suboptimal changes in activations and gradients, and makes training resilient to parameter scale so large learning rates don't blow up the model. Does not use the BN(Wu)=BN(aWu) or Jacobian arguments."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the heard argument: prevents small parameter changes from amplifying into suboptimal changes in activations/gradients, resilient to parameter scale, avoids the large-LR blow-up. Slightly garbled wording ('activations in gradients') but no BN(aWu) identity and no Jacobian conjecture, so nothing later is ruined."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Stabilized activation distributions, small parameter changes not amplified, reduced sensitivity to parameter scale, and the note that parameter-scale growth would otherwise amplify gradients in backprop are all heard by ch7/seq4. No scale-invariance identity or Jacobian claims."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Stabilized activation distributions, reduced internal covariate shift, small changes not amplifying, resilience to parameter scale that would otherwise amplify gradients. All heard at ch7 seq1-3; the scale-invariance identity and Jacobian argument are not stated."
+    }
+   ]
+  },
+  "bn-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the book has not covered it yet and correctly summarizes the only heard content: a qualitative claim that BN enables higher learning rates, with no magnitude given."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the book has not covered it yet and summarizes the qualitative heard claim. Minor overreach in saying the book 'does not mention' the magnitude (it will, in ch13), but for a listener at ch8 this is exactly the right answer."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'30 times higher than Inception's initial learning rate... BN-x30 experiment, where the initial learning rate was set to 0.045, which is 30 times the original Inception learning rate' — ch13 seq2-5 unheard_facts.",
+     "reason": "Gold: no numbers yet at ch8/seq3. Answer reports the BN-x30 configuration from ch13."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'30 times higher than Inception's initial learning rate ... BN-x30 experiment, where the initial learning rate was set to 0.045' = ch13 seq2-5 (Inception 0.0015, BN-x5 0.0075, BN-x30 0.045).",
+     "reason": "Gold is 'no numbers yet'. This gives the ch13 experimental numbers and claims 'the passage explicitly states' them, which is false at this position. Also garbled ('original Inception learning rate of 0.'). Spoils the experiments section."
+    }
+   ]
+  },
+  "bn-09": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: 69.8% with BN using sigmoid, original Inception with sigmoid never better than 1/1000 (chance), and the takeaway that BN lets deep nets train with sigmoid."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "BN-x5 with sigmoid reached 69.8%; original Inception with sigmoid never beat 1/1000. Draws the paper's conclusion that BN makes sigmoid-trained deep nets feasible. Matches gold; behind position."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Facts match gold (chance without BN, 69.8% with BN), but it drops the paper's interpretation and appends 'normalizing inputs to a sigmoid constrains them to its linear regime, which limits the layer's representational capacity' — heard earlier (ch4), but tangential and presented as if it were a caveat on this result, muddling the takeaway. Not a spoiler since it predates the position."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gets the facts (chance without BN, 69.8% with BN) but tacks on 'normalizing inputs to a sigmoid constrains them to its linear regime, which limits the layer's representational capacity'. That sentence is heard text (ch4) but misapplied here without the gamma/beta resolution, so a listener would be left thinking the paper says BN+sigmoid is representationally crippled, which contradicts the very result just cited."
+    }
+   ]
+  },
+  "bn-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Only qualitative: improves on the previous best and exceeds human raters. Omits every number in the gold (4.9% top-5 validation, 4.82% test, previous best 4.94%) and the six-network BN-x30 ensemble composition."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Only the qualitative claim (improves on previous best, exceeds human raters). No 4.9% / 4.82% / 4.94% numbers, and no mention that the ensemble is six BN-x30 networks. A listener asking 'how did it compare' gets no actual comparison."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Has 4.9% top-5 and the six-network ensemble with averaging, but omits the previous-best 4.94% and the 4.82% test figure, and the added 'surpassed the best known system by a significant margin' is an embellishment not supported by the text (4.9 vs 4.94)."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Has the 4.9% top-5 figure and the six-network arithmetic-averaging detail, but asserts it 'surpassed the best known system by a significant margin', which is false (4.9% vs the previous 4.94%), and omits the 4.82% test error and the prior-best number. Heard material only."
+    }
+   ]
+  },
+  "vae-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: from a coding-theory view z is a latent code, and given x the recognition model produces a distribution over the codes z from which x could have been generated."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Given x, produces a distribution over the codes z from which x could have been generated; coding-theory view of z as a code. Matches gold nearly verbatim; omits only the decoder counterpart."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Given x it produces a distribution over possible values of the code z that could have generated x, hence a probabilistic encoder. Repetitive and lacks the explicit coding-theory / decoder framing, but the core reason matches gold."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Same core: distribution over codes z given x, latent representation, 'probabilistic' because the output is a distribution. Repetitive and drops the explicit coding-theory framing, but nothing incorrect and nothing from later sections."
+    }
+   ]
+  },
+  "vae-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the heard part: reparameterization of the variational lower bound yields a simple differentiable unbiased estimator (SGVB) optimizable with standard stochastic gradient methods. Does not describe the not-yet-heard mechanism (auxiliary noise, z = mu + sigma*eps)."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Reparameterization of the lower bound yields a simple differentiable unbiased estimator (SGVB) optimized with standard stochastic gradient methods. Exactly the heard part; does not describe g_phi(eps,x) or z = mu + sigma*eps. Does not explicitly flag that the mechanism is still to come, but leaks nothing."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Same heard content as gold: reparameterized lower bound, simple differentiable unbiased SGVB estimator, standard stochastic gradient optimization. 'Much lower variance than the naive estimator' is a mild gloss implied by the question, not a specific unheard fact; no g_phi(eps,x) or Gaussian reparameterization details."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Reparameterization gives a simple differentiable unbiased estimator (SGVB) with lower variance than the naive estimator, optimized by standard SG methods. Matches the heard part; the 'much lower variance' phrasing is a reasonable reading of the heard contrast with the high-variance score-function estimator, not an unheard fact."
+    }
+   ]
+  },
+  "vae-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "reason": "Behind question: the section 2.3 explanation (KL term integrated analytically, only reconstruction term needs Monte Carlo, hence lower variance) is in heard text at ch6/seq20, yet the answer refuses outright."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "reason": "Behind question: the KL-analytic reason for the lower-variance estimator was already heard by ch6/seq20. A flat refusal leaves the student with nothing they could not have gotten by rewinding."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'the model involves Gaussian distributions for p α(θ), p θ(z), q φ(θ), and q φ(z|x), allowing four terms of f φ to be solved analytically' paraphrases Appendix F (Full VB) almost verbatim; p_α(θ) and q_φ(θ) do not exist in the heard section 2.3 model, and the appendices sit at ch19+ (per vae-08's unheard map), far after ch6/seq20.",
+     "reason": "Captures the generic mechanism (some terms solved analytically so less is left to Monte Carlo, estimator has less variance than the generic one) but never mentions the KL divergence, attributes it to the wrong estimator/model, and gives 'Gaussian' as the reason where the heard text says the KL term can often be integrated analytically."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "Explains the estimator via 'p α(θ), p θ(z), q φ(θ), q φ(z|x) all Gaussian, allowing four terms of f φ to be solved analytically' — that is the Full VB variant with a hyperprior on θ (Appendix F), which comes long after ch6/seq20 and is not the section 2.3 estimator the question is about.",
+     "reason": "Gets the underlying mechanism right (analytically integrating a term removes its Monte Carlo noise) but never names the KL(q||prior) term, that only the expected reconstruction error is sampled, or the KL's regularizer role; it also attributes the estimator to the wrong model (Full VB with q φ(θ)), which would confuse a listener who has not seen α or θ-priors yet."
+    }
+   ]
+  },
+  "vae-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Ahead question; says not covered yet and correctly limits itself to heard content (noise variable and reparameterization applied to the bound) without naming any distribution family."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the material has not been covered yet and correctly notes only the noise-variable reparameterization idea has been introduced; matches gold's position-honest answer. Nothing from section 2.4 is leaked."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'location-scale family... Gaussian, Laplace, Elliptical, Student's t, Logistic, Uniform, Triangular... standard distribution with location 0 and scale 1 serves as ε, transformation is location plus scale times ε' is the section 2.4 material at ch7 seq8-12, listed in unheard_facts.",
+     "reason": "Gold is position-honest (section 2.4 not reached); the answer presents unheard material as covered, and even on its own terms gives only one of the three approaches."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'location-scale family... Gaussian, Laplace, Elliptical, Student's t, Logistic, Uniform, Triangular... transformation is location plus scale times ϵ' — verbatim from section 2.4 (ch7 seq8-12), listed in unheard_facts.",
+     "reason": "Gold is a refusal (section 2.4 not reached). Answer instead delivers the location-scale approach from the unheard section, and only one of the three approaches at that, so it both spoils 2.4 and gives the student a lopsided picture."
+    }
+   ]
+  },
+  "vae-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Ahead question; says not covered and names no dataset. Matches the gold's position-honest stance."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses; experiments section not yet heard at ch9/seq19. Matches gold."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'MNIST and Frey Face datasets', '500 hidden units' for MNIST, '200 hidden units' for Frey Face 'to prevent overfitting due to its smaller size' are all in unheard_facts (ch10 seq1-3, seq7-11).",
+     "reason": "Gold says experiments have not been described yet; the answer states the unheard datasets and architecture details as if heard."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'MNIST and Frey Face... 500 hidden units... Frey Face... 200 hidden units to prevent overfitting' — from ch10 seq1-3/seq7-11, listed in unheard_facts.",
+     "reason": "Gold is a refusal; answer names the datasets and architecture sizes from the unheard experiments section."
+    }
+   ]
+  },
+  "vae-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Mixed question; the answer only restates the symbol q φ(z|x) and that it approximates the posterior of p θ(x,z), which is heard, but omits the substantive heard fact that the encoder is a neural network whose parameters φ are optimized jointly with θ, and does not flag that the specific form is not yet covered. Nearly content-free but nothing false."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Tautological: says the approximate posterior is q φ(z|x), 'the approximation to the posterior of p θ(x,z)' (lifted from heard text) but omits the heard substance — that the encoder is a neural network whose parameters are optimized jointly with θ by AEVB — and does not flag that the functional form is about to be given. Not wrong, but a listener learns almost nothing."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'multivariate Gaussian with a diagonal covariance structure... mean and standard deviation of this Gaussian are outputs of an encoding neural network... parameterized by the encoding MLP' is the ch8 seq4-11 material listed in unheard_facts.",
+     "reason": "Contains the heard part (encoder is a neural network, φ learned via the lower bound) but leads with the unheard diagonal-Gaussian form and gives no not-covered flag, so it does not match the mixed gold's position-honest split."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'multivariate Gaussian with a diagonal covariance structure... mean and standard deviation... outputs of an encoding neural network... parameterized by the encoding MLP' — this is exactly ch8 seq4-11, listed in unheard_facts.",
+     "reason": "Contains the heard part (neural-network encoder, φ learned via the lower bound) but leads with the diagonal-Gaussian form that the very next sequences introduce, ruining that reveal for the listener instead of saying it is coming."
+    }
+   ]
+  },
+  "vae-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: no overfitting from superfluous latent variables, attributed to the regularizing effect of the variational bound. All from heard text."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "No; superfluous latent variables did not overfit, attributed to the regularizing effect of the variational bound. Matches gold."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: superfluous latent variables did not overfit, explained by the regularizing nature of the variational bound. Final sentence is a restatement, not new information."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Same content as gold (no overfitting, regularizing nature of the bound); the closing sentence is a mild restatement, not new information."
+    }
+   ]
+  },
+  "vae-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Ahead question; says not covered and confines itself to the heard fact that results so far are in terms of the lower bound."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses and correctly notes only the lower bound has been discussed so far. Matches gold."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'For very low-dimensional latent spaces, they used an MCMC estimator to approximate the marginal likelihood' is the ch10 seq13-16 content in unheard_facts.",
+     "reason": "Does not say the material is not covered; instead asserts they did not estimate the marginal likelihood, then contradicts itself with the unheard MCMC estimator, then reverts to 'not directly estimated'. Self-contradictory and not position-honest."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'For very low-dimensional latent spaces, they used an MCMC estimator to approximate the marginal likelihood' — from ch10 seq13-16 (unheard_facts).",
+     "reason": "Gold is a refusal. Answer asserts a false global claim ('they did not estimate the actual marginal likelihood'), then contradicts itself by leaking the MCMC estimator for low-dimensional latent spaces, then contradicts that again. A listener is both spoiled and misled."
+    }
+   ]
+  },
+  "react-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Gives the heard abstract-level statement (diverse set of language and decision making tasks) and says the book does not specify the particular tasks; equivalent to the gold's not-yet-named stance, though 'does not specify' is slightly weaker than 'not yet'."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Gives exactly the heard content (a diverse set of language and decision making tasks) and says the specific tasks are not given; matches gold's position-honest answer with nothing from the next sentence of the abstract leaked."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'134 unseen evaluation games', 'examining a paper under a desklamp', 'simulated household', 'trajectories randomly chosen from the training set' are the ALFWorld setup details from section 4 (decision-making experiments), which come after ch1/seq4 and are only available from later text.",
+     "reason": "Gold is position-honest; the answer instead describes one later benchmark's setup as if it were the whole evaluation, never names the benchmarks, and gives no not-covered flag."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'134 unseen evaluation games... examining a paper under a desklamp... simulated household... trajectories randomly chosen from the training set' — these are the ALFWorld setup details from section 4, far past the abstract at ch1/seq4 (only available after the position; ALFWorld is one of the unheard benchmarks).",
+     "reason": "Gold is a refusal. Answer not only leaks a later section but presents a single benchmark's setup as if it were the whole evaluation, omitting HotpotQA/FEVER/WebShop, so it is also misleading on its own terms."
+    }
+   ]
+  },
+  "react-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold: action space augmented with language space, reasoning does not affect the environment, thoughts update the context to support future reasoning or acting."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Augment the action space with a language space; thoughts reason over context without affecting the environment and update the context to support future reasoning or acting. Matches gold."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Captures the core idea (language-based thought space added to the action space, internal reasoning without affecting the environment, reasoning and acting integrated). Omits the gold's detail that thoughts compose and append information to the context, replacing it with a vaguer 'coherent stream' phrasing from heard intro text; acceptable for a one-sentence summary."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Captures the core idea (action space augmented with a thought space that does not affect the environment; reasoning and acting integrated). Slightly looser than gold — drops the 'appends to context' mechanism — but adequate as a one-sentence summary of heard material."
+    }
+   ]
+  },
+  "react-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Ahead question; refuses and names no model, matching the gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses; the model name is not given until ch3 seq8-9. Matches gold."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'PaLM-540B, prompted with few-shot in-context examples' is in unheard_facts (ch3 seq8-9).",
+     "reason": "Gold is position-honest (model not yet named); the answer names the unheard model and presents it as heard."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'frozen large language model, PaLM-540B, prompted with few-shot in-context examples' — from ch3 seq8-9, listed in unheard_facts.",
+     "reason": "Gold is a refusal; answer names PaLM-540B from the unheard sequence."
+    }
+   ]
+  },
+  "react-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Names all three actions (search an entity, lookup a string returning the next sentence, finish with an answer) and the heard rationale about simulating human interaction. Search details (first five sentences / top-5 similar) omitted but the question asks which actions."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Names all three actions (search entity, lookup string returning the next sentence, finish with an answer) and their purpose. Thinner than gold on search's top-5-similar fallback and the Ctrl+F analogy, but complete and accurate for a listener."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Describes search[entity] and lookup[string] accurately with full heard detail but omits the third action finish[answer]."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Describes search and lookup accurately and in full detail but omits the third action, finish[answer]."
+    }
+   ]
+  },
+  "react-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Mixed question; says the combination mechanism is not covered (true, the switching heuristics are at ch6 seq8-9) and gives the heard motivation (CoT better reasoning structure but hallucinates, ReAct more factual and grounded). Slightly under-reports the heard part: ch2 seq17 already says the best approach is a combination using both internal and external knowledge, which the answer denies with 'does not describe any combination'."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses on the 'how' (the switching heuristics are genuinely unheard at ch6/seq8) and supplies the heard motivation (CoT better at reasoning structure but hallucinates; ReAct more factual and grounded). Slight under-delivery: it says the book 'does not describe any combination' when ch2 seq17 already stated the best overall approach is a ReAct+CoT combination — but nothing is leaked."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'ReAct can still suffer from reasoning errors, such as repetitive generation of previous thoughts' is the section 3.3 observation (B) about the repeat-loop error pattern, which sits in ch7 (react-06's gold places the loop finding at ch7/seq12), after the ch6/seq8 position; it is not stated anywhere in the heard intro or section 3.2 text.",
+     "reason": "Misreads the question: describes ReAct itself as combining reasoning and acting rather than how ReAct is combined with CoT (or that a combination using internal plus external knowledge is the best approach). Does not give the heard combination statement and does not flag the mechanism as not covered."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Misreads the question: describes ReAct's own interleaving of reasoning and acting as 'combining chain of thought,' never mentioning the ReAct+CoT combined approach the book already flagged nor saying the mechanism is still to come. A listener would come away thinking the combination is just ReAct itself. No leak of the switching heuristics; the 'repetitive generation of previous thoughts' remark sits in the same 3.3 analysis passage as the heard ch6 seq7 material, so treated as heard (borderline)."
+    }
+   ]
+  },
+  "react-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Identifies hallucination as the main CoT failure mode with the 56% figure from gold. The added 'ReAct has 0%' is a Table 2 value not in the gold but consistent with the same heard section; omits the 14% vs 6% false-positive detail and the ReAct trade-off."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Names hallucination as CoT's main failure mode with the 56% figure and ReAct's 0% from the failure-mode table, which is heard by ch7/seq12 (gold cites the same table). Phrasing '56% hallucination rate in failure mode' is awkward but accurate."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Identifies hallucinated facts or thoughts as the main failure mode, with ReAct being grounded via external feedback, matching the gold qualitatively. No numbers and no mention of ReAct's reduced flexibility or looping, but the core answer is right and nothing false is stated."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Names hallucination and the grounding-via-external-feedback contrast, matching gold's core claim; omits the numbers and ReAct's own looping/flexibility cost, which are secondary to the question asked."
+    }
+   ]
+  },
+  "react-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "States the gold numbers exactly: best ReAct 71% vs best Act 45% and BUTLER 37%, ReAct beats both. Omits the WebShop mention but the question was scoped to ALFWorld."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "States the three numbers exactly as gold (ReAct 71%, Act 45%, BUTLER 37%) and the ordering. A listener at ch8/seq21 gets the answer they need; the WebShop clause of gold is beyond the question as asked."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gives 71% / 45% / 37% matching gold, plus the six-trial consistency figures (33% to 90%, avg 62%) from the same heard passage. The '34% absolute improvement over imitation learning' is 71 minus BUTLER's 37 (BUTLER is the imitation-learning baseline), so it is derivable and not wrong. No unheard facts exist for this item."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "All gold numbers present and correct. Adds the six-trial consistency claim (33-90% relative gain, avg 62%) and the abstract's 34% absolute margin over imitation learning; both are from the same ALFWorld results paragraph / the abstract, so already heard. Slightly denser than a listener needs but accurate and not ahead of position."
+    }
+   ]
+  },
+  "react-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the book has not covered the Inner Monologue comparison yet, matching the position-honest gold. Slightly overstates by saying no similar concept was mentioned (Huang et al. 2022b's limited verbal reasoning was heard in ch2), but the refusal itself is right and nothing from the unheard ablation is leaked."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses correctly: the IM comparison and ReAct-IM ablation are not reached yet. Slight overreach in saying the book mentions no similar concept (gold notes the earlier Huang et al. 2022b limited-reasoning remark), but it reveals nothing and does not mislead a listener about what is coming."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "States that Inner Monologue 'limits its inner monologue to environmental observations and goal completion', which is the unheard fact from ch8 seq28-35 (IM limited to observations of the environment state and what remains to be completed).",
+     "reason": "Does not acknowledge that the comparison has not been reached; instead answers as if the book already made the IM comparison, and adds an embellished claim about 'human-like self-regulation and strategic planning' that is not in the gold."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'Inner Monologue ... limits its inner monologue to environmental observations and goal completion' is verbatim the unheard comparison (ch8 seq28-35). Also asserts 'No, it is not the same' as a settled book conclusion before the book makes it.",
+     "reason": "Does not refuse and answers from material after the position. For a listener this pre-empts the IM discussion and ablation that the book is about to walk through; the 'human-like self-regulation' gloss is vague padding."
+    }
+   ]
+  },
+  "str-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Correctly identifies them as 7-branes with labels [1,0], [1,-1], [1,1], but says nothing about their role (building A_n, D_n, E_n gauge theories, strings carrying the brane's (p,q) charge, enhancement via junctions). The phrase 'called that following 1) and 2)' is a garbled citation fragment."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gets the [1,0], [1,-1], [1,1] labels right but nothing else: no mention that these are the 7-branes used to build A_n/D_n/E_n gauge theories or that enhancement comes from junctions. The opening 'called that following 1) and 2), respectively' is a garbled citation fragment that would confuse a listener."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gives the three 7-brane labels [1,0], [1,-1], [1,1] and ties them to gauge symmetry enhancement through string junctions, matching the gold's substance. Omits the explicit A_n/D_n/E_n naming but covers the mechanism; no unheard facts exist for this item."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Correct labels, identifies them as 7-brane types, and gives the point (gauge symmetry enhancement via string junctions). Omits the explicit A_n/D_n/E_n framing but a listener would come away with the right picture; the monodromy remark is standard and not ahead."
+    }
+   ]
+  },
+  "str-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the chain of dualities has not been described yet and correctly summarizes what was heard (IIB on S2 dual to heterotic on T2, junction charge to quantum number correspondence), matching the position-honest gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses and correctly summarizes what has actually been heard (IIB on S^2 dual to heterotic on T^2; junction-charge / quantum-number correspondence). Exactly what a listener at ch2/seq12 should get; nothing from the duality chain leaks."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "Describes T-duality on T2/Z2 to type I on T2 followed by S-duality to the SO(32) heterotic string on T2, which is exactly the unheard chain from ch2 seq12-17; also cites 'Table I' charge transformations that have not been reached.",
+     "reason": "Presents the full duality chain as if already covered rather than noting it has not been described yet, so it does not match the position-honest gold."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "Gives the full unheard chain: T-duality on T^2/Z_2 to type I on T^2, then S-duality to SO(32) heterotic, and the BPS-state mapping (ch2 seq12-17). Also cites Table I charge transformations.",
+     "reason": "Answers a question the book has not answered yet, reciting the duality chain that comes next. Direction is also muddled (says T-duality transforms heterotic into type I rather than the orientifold into type I). Would spoil the next several segments for a listener."
+    }
+   ]
+  },
+  "str-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "States N_osc + a = 0, K^2 = -2(N~_osc + a~) <= 2, and the equivalence to the junction condition J.J <= 2, matching the gold point for point."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches gold exactly: N_osc + a = 0, K^2 = -2(N~_osc + a~) <= 2, and the correspondence to the junction condition J.J <= 2. Clear and complete for a listener."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Never states the BPS condition. It talks vaguely about equation (1.2) relating charges and quantum numbers and 'a relation between charges and masses', none of which is the gold's N_osc + a = 0 or K^2 <= 2 condition."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Never states the condition. Talks vaguely about 'equation (1.2)' relating charges to junction charges and 'a relation between charges and masses' that 'maintains supersymmetry'. A listener asking for the BPS condition would leave without it and possibly misdirected to the charge-map equation."
+    }
+   ]
+  },
+  "str-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says null junctions have not been introduced yet, exactly matching the position-honest gold, and leaks nothing."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Correct refusal; null junctions are introduced in ch4, not yet reached. Nothing revealed."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "States that null junctions encircle all 24 (7-branes), let any two of the Q_bi and Q_ci charges be fixed, and are added to make half-odd-integer charges proper, all of which are unheard facts from ch4 seq50-56.",
+     "reason": "Answers as if null junctions were already introduced instead of noting they have not been reached; also misstates that they go around 'all 24 junctions' (they encircle the 24 7-branes)."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'independent junctions that go around all 24', 'fix any two of the charges Q_bi and Q_ci', 'making junctions proper by ensuring their invariant charges are integers', 'half odd integer charges' are all from unheard ch4 seq50-56.",
+     "reason": "Fails to refuse and delivers the ch4 construction wholesale. Minor error too ('around all 24 junctions' should be 7-branes). For a listener this removes the motivation the book builds toward (fractional charges forcing the null-junction fix)."
+    }
+   ]
+  },
+  "str-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the heard part of the gold: Sigma-like configurations with a freely movable D-string loop, string length depending on that position, no positional information in the heterotic quantum numbers, hence winding number undefined on the IIB side. Does not touch the unheard flat-background exception or Wilson line."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the heard part of gold precisely: Sigma-type configurations with a freely movable D-string loop, string length depending on that position, no positional data in heterotic quantum numbers, so the IIB winding number is ill-defined. Correctly does not mention the flat-background exception that comes next."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Captures the core point that positional information is absent from the heterotic quantum numbers so the winding number cannot be defined, but omits the concrete mechanism in the gold (the Sigma configuration with a movable D-string loop whose position sets the string length). The rest is generic restatement. Nothing from the unheard flat-background case is stated."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Captures the conclusion (positional information absent from heterotic quantum numbers, winding number undefined) but never names what position is meant; the Sigma configuration and the movable D-string loop are missing, so a listener would not know the concrete mechanism. Remaining sentences are restatements. No leak of the unheard exception case."
+    }
+   ]
+  },
+  "rl-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gives the gold's core distinction: greedy always takes the highest estimated value and never explores; epsilon-greedy acts greedily most of the time but picks a random action with probability epsilon. Omits the consequence (every action sampled infinitely often, estimates converge) but correctly answers the difference asked."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Correctly contrasts greedy (always highest estimate, never explores) with epsilon-greedy (greedy mostly, random action with probability epsilon). Omits gold's consequence that every action is sampled infinitely often so estimates converge, but the asked-for difference is stated accurately and would help a listener."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Covers greedy correctly and includes the convergence consequence, but misstates the epsilon branch as selecting 'a random non-greedy action'; the gold (and the heard text) says the random pick is uniform among ALL actions, including the greedy one. Strict grading flags that deviation."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Covers everything in gold including exploitation framing and the infinitely-often sampling / convergence consequence. One small imprecision: says the epsilon draw is among 'non-greedy' actions, whereas the book says uniformly among all actions independent of estimates. Not enough to mislead a listener on the core idea."
+    }
+   ]
+  },
+  "rl-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the outcome has not been stated yet and correctly describes what was heard (testbed set up, graphs compare methods), matching the position-honest gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses and accurately describes what has been heard (the testbed, sample averages, the graphs compare the methods) without stating the outcome. Right call at ch27/seq9."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "States that 'epsilon-greedy eventually performs better' and that 'with noisier rewards, epsilon-greedy performs better relative to the greedy method', which are the results from ch27 seq9-14 and the following reward-variance discussion, all after the ch27/seq9 position.",
+     "reason": "Declares a winner instead of noting the comparison outcome has not been stated yet, so it does not match the position-honest gold."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'epsilon-greedy eventually performs better' and 'the greedy method may find the optimal action quickly but risks missing better alternatives' state the ch27 seq9-14 outcome; 'with noisier rewards, epsilon-greedy performs better' is the reward-variance discussion that follows the results.",
+     "reason": "Declares the winner before the book does. Also skips the nuance the book gives (epsilon 0.1 vs 0.01 trade-off, the 91% ceiling). A listener would have the testbed results pre-empted."
+    }
+   ]
+  },
+  "rl-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the nonstationary case has not been discussed yet and accurately summarizes what was heard about sample averages, matching the position-honest gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Correctly says tracking nonstationary rewards has not been discussed and restricts itself to what was heard (sample-average computation, law-of-large-numbers convergence). Does not include gold's optional partial note about nonstationary tasks needing continued exploration, but the refusal is appropriate and leak-free."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "States that sample-average methods 'are appropriate only for stationary bandit problems, where reward probabilities do not change over time' and adapt too slowly to drift; this is the opening claim of the tracking-a-nonstationary-problem section (ch30), which begins after the ch28/seq15 position. It does not leak the constant-alpha details, so the leak is mild but still from ahead.",
+     "reason": "Answers instead of noting that tracking a nonstationary problem has not been discussed; the gold is position-honest. It also never mentions the actual remedy, so even as an answer it is incomplete."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'sample-average methods are appropriate only for stationary bandit problems' and 'adapt slowly and may not keep up' is the opening of the Tracking a Nonstationary Problem section (ch30 seq3), after the ch28/seq15 position. Does not reveal the constant-alpha fix, so the leak is mild.",
+     "reason": "Does not refuse; states the book's later conclusion as if already established. The 'unstable' characterization is also inaccurate (sample averages are stable, just slow to track). Pre-empts the motivation of the next section, though not its mechanism."
+    }
+   ]
+  },
+  "rl-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gives the central reason (weight recent rewards more than old ones) and correctly notes the sample average satisfies both convergence conditions while constant alpha does not, but then wrongly claims the book does not say why constant alpha is preferable. The heard text does say it: for nonstationary problems the failure to converge is desirable because the estimate keeps tracking recent rewards. It also omits the exponential recency-weighted average framing."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gets the headline reason (weight recent rewards more) but then wrongly claims the book does not say why this is better; the book explicitly ties it to nonstationary problems and says continued non-convergence is desirable there. Misses the exponential recency-weighted average framing. A listener gets half the answer and a false claim that the book is silent."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "Its argument rests on constant step sizes suffering a permanent initial bias while sample averages are unbiased 'from the start', which is the initial-estimate bias discussion from the Optimistic Initial Values section (ch31), after the ch30/seq18 position. Unheard_facts is empty for this item, but that content is only available from later text.",
+     "reason": "Answers the opposite question (why prefer the sample average over constant alpha) and concludes the sample average is preferable, contradicting the gold's point that a constant step size is what you want for nonstationary problems."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'initial bias that constant step sizes introduce', 'sample average provides an unbiased estimate from the start' is the permanent-vs-vanishing bias point from the Optimistic Initial Values section (ch31), after the ch30/seq18 position. Mild leak.",
+     "reason": "Answers the opposite question: argues sample averages are preferable, when the book (and gold) explain why constant alpha is chosen for nonstationary problems. Would leave a listener with the wrong takeaway and nudges toward the next section's bias discussion."
+    }
+   ]
+  },
+  "rl-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says no value-free method has been covered yet and correctly notes that everything so far (including UCB) works from action-value estimates, matching the position-honest gold."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses correctly; every method so far selects on action-value estimates and gradient bandits have not been introduced. Nothing leaked."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Asserts definitively that there is no way to select actions without estimating action values, which is not position-honest (gold: nothing else has been introduced yet) and is false relative to the book, which goes on to introduce gradient bandits. The supporting claim about state values needing a model or separate policy is drawn from earlier general material, not from the unheard gradient-bandit content, so no spoiler."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Asserts flatly that there is no way to act without estimating action values, which is false (gradient bandit preferences come next) and is not something the book has claimed; the 'state values need a model or separate policy' justification is imported from elsewhere. Worse than refusing for a listener because it forecloses the very idea the next section introduces, though it reveals no specifics of that section."
+    }
+   ]
+  },
+  "rl-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Heard part is right (average of rewards up to but not including t, computed incrementally). But instead of noting that the role of R-bar has not been explained yet, it asserts a vague role ('to help adjust the action preferences based on past rewards'). The gloss is generic and states no specific unheard fact (no reward-comparison mechanism, no shift-invariance, no variance argument)."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gives the heard definition accurately (average of rewards up to but not including t, computed incrementally). Does not say the role of R-bar has not been explained yet; instead offers a vague gloss (used as a baseline to adjust preferences based on past rewards) that adds nothing beyond the question's own wording. A listener gets the heard part and is not misled, but is not told the explanation is still coming."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'It instantaneously adapts to shifts in the reward distribution' (ch33 seq13-15: shifting rewards has no effect because the baseline adapts) and 'reduces the variance of the update ... without changing the expected value of the policy update' (ch34 seq27-29 baseline result).",
+     "reason": "Omits the heard definition entirely and answers with the role of the baseline, which the gold says has not been explained yet. The role it describes is drawn from unheard material (adaptation to reward shifts, variance reduction without changing expected update)."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'It instantaneously adapts to shifts in the reward distribution' (ch33 seq13-15: shifting rewards by +4 has no effect because the baseline adapts); 'reduces the variance of the update, speeding up learning without changing the expected value of the policy update' (ch34 seq27-29: action-independent baselines leave the expected update unchanged and affect only variance).",
+     "reason": "Never states the heard definition (average of prior rewards, incremental computation) and does not flag that the role is unexplained at this position. The whole answer is the later explanation of the baseline's role, plus embellishment ('instantaneously'). Would pre-empt the very next passage and the later chapter 13 baseline discussion for a listener."
+    }
+   ]
+  },
+  "rl-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gives the exact formula delta_t = R_{t+1} + gamma V(S_{t+1}) - V(S_t) and the interpretation as the difference between the current estimate of S_t and the better one-step-later estimate, matching the gold's core. Omits the 'only available at t+1' point and the MC-error-equals-sum-of-TD-errors identity, but the definition asked for is complete and accurate."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "States the exact formula delta_t = R_{t+1} + gamma V(S_{t+1}) - V(S_t) and the interpretation as the difference between the current estimate and the better one-step-later estimate. Omits the secondary facts (only available at t+1; MC error equals the discounted sum of TD errors) but the core definition matches the gold and nothing is misleading."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Definition in words (next reward plus value of next state minus current estimate) and the 'not available until one step later' point are correct. No formula is given, it says the error is 'based on the current state, action' (the state-value TD error does not involve the action), and it adds an unsupported claim that the TD error 'is used to update action probabilities to reach higher-valued states', which is not in the heard passage. That extra claim is generic rather than a specific later fact, so not counted as a spoiler."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Defines the TD error correctly in words and adds the heard point that it is a random variable unavailable until t+1. But it says the error depends on the current 'action' (V-based TD error does not), and inserts 'used to update action probabilities to reach higher-valued states', which is not in the heard prediction-only material (it echoes actor-critic use in chapter 13/15). Borderline leak but too vague to count as specific unheard content; flagged here rather than as spoiler. Misses the MC-error-as-sum-of-TD-errors identity."
+    }
+   ]
+  },
+  "rl-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "States the book has not covered an everyday example yet, which matches the gold (only update rules, backup diagram and TD error presented so far). Slightly overclaims that the book 'does not provide any' such example, but it is position-honest and leaks nothing."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Position-honest: says the book has not covered it yet and that only the technical differences have been presented. Slight overreach in wording ('does not provide any everyday examples') which could make a listener think none is coming, when the driving-home example follows immediately; a 'so far' would fix it. No leak."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'consider driving home after work. Monte Carlo would only update your estimate of the driving time once you reach your destination ... TD, however, updates after each step' is the driving-home example from ch85 seq22-42, after the position.",
+     "reason": "Should have said no example has been given yet; instead it presents the driving-home example, which is exactly the unheard material. Details are also loosened ('when you pass a landmark', 'immediate reward') relative to the book's version."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'consider driving home after work. Monte Carlo would only update your estimate of the driving time once you reach your destination... TD, however, updates after each step... like when you pass a landmark' (the driving-home example, ch85 seq22-42).",
+     "reason": "Gold is a position-honest refusal; this answer delivers the book's driving-home example (paraphrased with 'landmarks' instead of rain/highway/truck), which begins right after the position. A listener would have the worked example ruined before hearing it."
+    }
+   ]
+  },
+  "rl-09": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Quotes the heard sentence (TD usually converges faster than constant-alpha MC on stochastic tasks, as illustrated in Example 6.2) accurately, but never tells the user that Example 6.2 has not been presented yet, so it reads as if the example were available. No unheard content."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Quotes the heard sentence (TD usually converges faster than constant-alpha MC on stochastic tasks, as illustrated in Example 6.2) but does not say that Example 6.2 has not yet been presented. A listener is pointed to an example without being told it is still ahead; no leak of the random walk."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'The book shows that TD(0) is faster than Monte Carlo methods in batch form because it computes a more accurate estimate using the next state's value' comes from the batch-updating section (ch88), after ch86/seq17.",
+     "reason": "Does not say the example is not yet presented, and instead fabricates a generic 'simple environment with immediate feedback' example that is not in the book, then cites the batch-updating result from a later section. Also does not give the random-walk example (which would have been a spoiler anyway)."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'The book shows that TD(0) is faster than Monte Carlo methods in batch form because it computes a more accurate estimate using the next state's value' (batch-updating result, section 6.3 / ch88, after the position). Does not reveal the random-walk example itself.",
+     "reason": "Invents a generic 'simple environment with immediate feedback' example that is not the book's, does not say the promised example is still ahead, and cites the batch-updating result from the following section. Misleading about what has been shown, and pre-empts a later result."
+    }
+   ]
+  },
+  "rl-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the gold: batch MC minimizes MSE on the training data, batch TD(0) converges to the certainty-equivalence estimate based on the maximum-likelihood model of the process, which is what matters for predicting future returns in a Markov process."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the gold: MC minimizes MSE on the training data, batch TD(0) converges to the certainty-equivalence estimate built from the maximum-likelihood model of the Markov process, which is the right estimate for predicting future returns. Clear and helpful at this position."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Gets the contrast (MC minimizes training-set error; TD computes the certainty-equivalence estimate that is optimal for the Markov process) but never explains what the certainty-equivalence estimate is (values exactly correct for the maximum-likelihood model built from observed transitions) or that this is why it does better on future data. The closing sentence conflates the reason with 'more efficient in convergence' per learning curves."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gets the mechanism: MC minimizes training-set error, TD computes the certainty-equivalence estimate that is optimal for the underlying Markov process model. Less explicit than the gold about the maximum-likelihood model from observed transitions and about future data. The Figure 6.2 reference (batch training curves) is heard material at ch88, so no leak, though 'more efficient in convergence' is a loose gloss on a final-error result."
+    }
+   ]
+  },
+  "rl-11": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the comparison has not been covered yet, matching the gold (Q-learning not yet defined; only Sarsa as the on-policy method so far). The aside about an earlier brief mention of Q-learning refers to already-heard history material, not later text."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Position-honest: Q-learning has not been defined yet; it notes only an earlier passing historical mention and refuses the comparison. Could have added the heard Sarsa side (on-policy, target uses the next action actually taken) but nothing is wrong and nothing leaks."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'Q-learning learns the values of the optimal policy' (ch91 seq1-6: Q directly approximates q*) and 'performs worse in online practice than Sarsa on some tasks' (cliff-walking result, ch92 seq6-12).",
+     "reason": "Should have said Q-learning has not been defined yet. Instead it states Q-learning's off-policy nature, that it learns optimal-policy values, and the cliff-walking online-performance result, all of which are after the position."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'Q-learning is an off-policy method... learns the values of the optimal policy' (ch91 seq1-6: target uses max over next actions, approximates q* independent of behavior policy); 'performs worse in online practice than Sarsa on some tasks' (cliff-walking result, ch92 seq6-12).",
+     "reason": "Gold is a refusal because Q-learning has not been introduced. This answer gives the off-policy definition and the cliff-walking online-performance finding, both from later sections. A listener would have section 6.5 and Example 6.6 pre-empted."
+    }
+   ]
+  },
+  "rl-12": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gives the heard reason: Expected Sarsa uses the expected value over next actions (the heard text contrasts this with Q-learning's max) and eliminates the variance due to random selection of A_{t+1}. Omits the extra-computation caveat and adds a mild 'more stable' inference, but states nothing from the unheard performance results."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Gives the heard reason: Expected Sarsa uses the expectation over next actions (the 'expected value instead of the maximum' phrasing is the book's own intro at ch93 seq1) and eliminates the variance from the random selection of A_{t+1}. Omits the computational-cost caveat and does not mention that empirical comparisons are still ahead, but says nothing beyond the heard text."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'It generally performs better than Sarsa' and 'can safely use a learning rate of one without performance degradation' are from ch93 seq14-45, after the position.",
+     "reason": "The heard part (eliminates variance from random action selection) is correct, but it then asserts the unheard empirical results (generally performs better, alpha = 1 safe) as if already covered, and garbles the condition ('deterministic environments' rather than all randomness coming from the policy)."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'It generally performs better than Sarsa' and 'can safely use a learning rate of one without performance degradation', 'consistent empirical advantages' (ch93 seq14-45: generally slightly better, alpha = 1 safe on cliff walking with no asymptotic degradation).",
+     "reason": "The heard part (variance elimination) is correct, but it then asserts the empirical results and the alpha = 1 finding that come right after the position, and slightly distorts them ('especially in deterministic environments'). A listener would have the section's punchline given away."
+    }
+   ]
+  },
+  "rl-13": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "States that no method for avoiding maximization bias has been presented yet, matching the gold (bias defined, two-state example shown, remedy not explained). Slightly overclaims that the book says 'nothing' about it given the section heading names double learning, but leaks no content."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Position-honest: explains what has been heard (definition of maximization bias and its effect on Q-learning) and says no remedy has been proposed yet. Slightly too absolute given the section heading names double learning, but no content leaks."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'Double learning eliminates the harm caused by maximization bias ... in the small MDP shown in Figure 6' (figure caption ch94 seq12 and ch94 seq13-25) and 'double versions of Sarsa and Expected Sarsa also exist' (ch94 seq24-25).",
+     "reason": "Should have said the remedy has not been explained yet. Instead it names double learning, cites the figure result and the double Sarsa/Expected Sarsa variants, all after the position, while not actually explaining the mechanism."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "'Double learning eliminates the harm caused by maximization bias... in the small MDP shown in Figure 6' (figure caption at ch94 seq12 and ch94 seq13-25); 'double versions of Sarsa and Expected Sarsa also exist' (later in the same section).",
+     "reason": "Gold is a refusal; this names the remedy and its result on the example, plus the existence of double Sarsa / Expected Sarsa, all from unheard text. It does not even explain the mechanism, so it spoils without teaching."
+    }
+   ]
+  },
+  "rl-14": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Correctly gives the main reason with its mechanism: a soft-max over action values would converge to probabilities strictly between 0 and 1, whereas preferences can be driven arbitrarily far apart so the policy can approach determinism. Misses the temperature-schedule point and the second advantage in the gold (learning arbitrary stochastic policies, e.g. bluffing in poker)."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Accurately gives the first advantage with its mechanism: a soft-max over values converges to probabilities strictly between 0 and 1, whereas preferences can be driven apart without bound so the policy can approach deterministic. Misses the second advantage (learning arbitrary stochastic probabilities, e.g. bluffing) and the temperature-schedule remark. Helpful and not misleading."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "States the conclusion (preferences let the policy approach determinism, action values do not) but never explains why (values converge to finite differences, preferences are driven toward whatever yields the optimal policy). Pads with the relative-preference/constant-shift point, repeats itself, and omits the stochastic-policy advantage."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "States the deterministic-policy advantage but only asserts it, without the reason values fail (finite value differences give non-0/1 probabilities). Pads with the heard chapter-2 fact that adding a constant to preferences has no effect, and repeats itself. Misses the stochastic-policy advantage. Weaker than R1l0 but nothing from later material."
+    }
+   ]
+  },
+  "rl-15": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Position-honest: says the book has not yet said how the state-distribution derivative is avoided, matching the gold (problem raised, theorem not stated). Minor imprecision in saying the text 'does not address' the derivative when it in fact raised the problem, but nothing from the unstated theorem is leaked."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Refuses without leaking the policy gradient theorem. Wording is imprecise: it says the book 'does not address' the state-distribution derivative, when the heard text has just raised exactly that problem and the section heading promises the theorem; a 'yet' and an acknowledgement of the setup would serve a listener better. No spoiler."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Fails to refuse and fabricates a mechanism (reweighting states to the on-policy distribution, minimizing value error, trajectory sampling) that mixes earlier chapter 8/9 concepts and is not how the policy gradient theorem avoids the derivative. It does not state the theorem, its form, or its proportionality constant, so no specific unheard fact is leaked; the on-policy-distribution concept it invokes was heard earlier."
+    },
+    {
+     "judge": 2,
+     "correct": "wrong",
+     "spoiler": false,
+     "reason": "Confabulates an answer from earlier chapters (on-policy distribution and value error from chapter 9, trajectory sampling from chapter 8) that has nothing to do with how the policy gradient theorem avoids the derivative. It does not state the theorem or its expression, so not counted as a spoiler, though 'the on-policy distribution is used directly... avoiding the need to compute its derivative' vaguely gestures at the punchline while attaching a wrong mechanism (reweighting). A listener would be confused and misinformed."
+    }
+   ]
+  },
+  "rl-16": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the gold: without the division, frequently selected actions would have an unfair advantage because updates would more often be in their direction, so they could dominate even if they do not yield the highest return; the update is thus proportional to the return and the gradient of the action probability."
+    },
+    {
+     "judge": 2,
+     "correct": "correct",
+     "spoiler": false,
+     "reason": "Matches the gold's intuition: without the division, frequently selected actions would get more updates in their direction and could win out even if they do not yield the highest return. The phrase 'proportional to the return and the gradient of the action probability' is loose (it is the gradient divided by the probability) but the point is intact."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Opens with a misstatement ('proportional to the action's likelihood'; the update is inversely proportional to it) and never gives the gold's intuitive reason about frequently chosen actions. The remainder (division makes the sampled update's expectation equal the policy-gradient direction) is a valid derivation-based justification present in the heard text, so not entirely wrong."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": false,
+     "reason": "Opening sentence is backwards ('proportional to the action's likelihood'; it is inversely proportional). The remaining sentences give the valid mathematical reason (the division makes the sampled update's expectation equal the gradient, consistent with the theorem), which is in the heard derivation, but the book's intuition about frequently selected actions is absent. A listener gets a correct rationale wrapped around one plainly wrong statement."
+    }
+   ]
+  },
+  "rl-17": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the comparison has not been made yet and gives the heard actor-critic definition (learns both policy and value function), matching the gold. Could also have mentioned the heard REINFORCE-with-baseline fact, but it is position-honest and leaks nothing."
+    },
+    {
+     "judge": 2,
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "reason": "Says the comparison has not been made yet and gives the heard actor-critic definition (learns both policy and value). Could also have restated the heard REINFORCE-with-baseline part (learned state value as a variance-reducing baseline), but position-honest and no leak."
+    }
+   ],
+   "baseline": [
+    {
+     "judge": 1,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'The critic evaluates the actor's actions using TD methods' is the unheard distinction (ch224 seq1-16: the value function is applied to the next state to form a one-step return that assesses the action, which is what makes it a critic); 'conditioned reinforcement' is chapter 14/15 material, also after the position.",
+     "reason": "The heard parts are correct (REINFORCE with baseline uses a state-value estimate to reduce variance without bias; actor-critic learns both policy and value function). But it then asserts the not-yet-covered critic-assesses-the-action point and fabricates the stated difference as lying in 'the eligibility traces used by each learning rule', which is not in the book."
+    },
+    {
+     "judge": 2,
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "'The critic evaluates the actor's actions using TD methods' (ch224 seq1-16: actor-critic applies the value function to the next state via the one-step return, which is what lets it assess the action and earns the name critic). 'Conditioned reinforcement' and 'the difference lies in the eligibility traces used by each learning rule' come from chapters 14-15 (later).",
+     "reason": "Heard parts are right (baseline reduces variance without bias; actor-critic learns both). But the stated distinction is muddled: 'learns both simultaneously' is not a difference (REINFORCE with baseline does too), the TD-critic point is from the next section, and the eligibility-trace claim is a mis-sourced later-chapter detail that is wrong as the answer here. Pre-empts 13.5 and misleads."
+    }
+   ]
+  }
+ }
+}

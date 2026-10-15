@@ -1,0 +1,22 @@
+{
+  "system": "baseline",
+  "started": "2026-09-10T22:14:24-04:00",
+  "data_dir": "<scratch>\\data",
+  "brain_model": "qwen3:4b-instruct",
+  "brain_provider": "ollama",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "num_predict": 256,
+  "max_sentences": 4,
+  "questions_total": 60,
+  "questions_this_run": 59,
+  "retry_errors": false,
+  "redo": false,
+  "note": "seconds = wall-clock per question on a machine shared with another benchmark; NOT a latency measurement",
+  "finished": "2026-09-10T22:19:09-04:00",
+  "ok": 59,
+  "errors": 0
+}

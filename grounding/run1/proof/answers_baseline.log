@@ -1,0 +1,304 @@
+2026-09-10 22:14:07,620 INFO run_baseline: run start: {"system": "baseline", "started": "2026-09-10T22:14:07-04:00", "data_dir": "<scratch>\\data", "brain_model": "qwen3:4b-instruct", "brain_provider": "ollama", "embed_model": "nomic-embed-text", "num_ctx": 16384, "temperature": 0.3, "k": 12, "neighbors": 0, "num_predict": 256, "max_sentences": 4, "questions_total": 60, "questions_this_run": 1, "retry_errors": false, "redo": false, "note": "seconds = wall-clock per question on a machine shared with another benchmark; NOT a latency measurement"}
+2026-09-10 22:14:09,713 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:11,104 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:11,108 INFO baseline_ask: baseline context: ~1048 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:14:14,584 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:14:14,773 INFO run_baseline: att-01 ok in 7.1s, 12 passages, sha 3d6fd59a25fb
+2026-09-10 22:14:14,773 INFO run_baseline: run end: ok=1 errors=0
+2026-09-10 22:14:24,362 INFO run_baseline: run start: {"system": "baseline", "started": "2026-09-10T22:14:24-04:00", "data_dir": "<scratch>\\data", "brain_model": "qwen3:4b-instruct", "brain_provider": "ollama", "embed_model": "nomic-embed-text", "num_ctx": 16384, "temperature": 0.3, "k": 12, "neighbors": 0, "num_predict": 256, "max_sentences": 4, "questions_total": 60, "questions_this_run": 59, "retry_errors": false, "redo": false, "note": "seconds = wall-clock per question on a machine shared with another benchmark; NOT a latency measurement"}
+2026-09-10 22:14:26,469 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:26,505 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:26,506 INFO baseline_ask: baseline context: ~887 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:14:28,662 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:14:29,071 INFO run_baseline: att-02 ok in 4.7s, 12 passages, sha b117ad4ad4ed
+2026-09-10 22:14:31,133 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:31,166 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:31,168 INFO baseline_ask: baseline context: ~821 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:14:33,325 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:14:33,719 INFO run_baseline: att-03 ok in 4.6s, 12 passages, sha 15c4fcf5efe4
+2026-09-10 22:14:35,782 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:35,873 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:35,877 INFO baseline_ask: baseline context: ~1007 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:14:38,033 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:14:38,513 INFO run_baseline: att-04 ok in 4.8s, 12 passages, sha fa435f123758
+2026-09-10 22:14:40,578 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:40,594 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:40,595 INFO baseline_ask: baseline context: ~847 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:14:42,742 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:14:43,402 INFO run_baseline: att-05 ok in 4.9s, 12 passages, sha 2b26052926a9
+2026-09-10 22:14:45,484 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:45,508 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:45,515 INFO baseline_ask: baseline context: ~1078 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:14:47,691 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:14:48,130 INFO run_baseline: att-06 ok in 4.7s, 12 passages, sha f0511cbc8e34
+2026-09-10 22:14:50,181 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:50,197 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:50,199 INFO baseline_ask: baseline context: ~1006 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:14:52,374 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:14:52,927 INFO run_baseline: att-07 ok in 4.8s, 12 passages, sha cbb5fd29b70e
+2026-09-10 22:14:54,977 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:55,007 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:55,009 INFO baseline_ask: baseline context: ~765 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:14:57,169 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:14:57,654 INFO run_baseline: att-08 ok in 4.7s, 12 passages, sha 2102bffad81f
+2026-09-10 22:14:59,720 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:14:59,735 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:14:59,737 INFO baseline_ask: baseline context: ~762 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:01,900 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:02,339 INFO run_baseline: att-09 ok in 4.7s, 12 passages, sha 6359c44cbf58
+2026-09-10 22:15:04,414 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:04,456 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:04,470 INFO baseline_ask: baseline context: ~3929 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:06,806 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:07,167 INFO run_baseline: att-10 ok in 4.8s, 12 passages, sha cc92e922af38
+2026-09-10 22:15:09,227 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:09,243 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:09,245 INFO baseline_ask: baseline context: ~820 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:11,462 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:11,926 INFO run_baseline: att-11 ok in 4.8s, 12 passages, sha d2534c0fb33e
+2026-09-10 22:15:13,996 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:14,016 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:14,019 INFO baseline_ask: baseline context: ~806 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:16,162 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:16,559 INFO run_baseline: att-12 ok in 4.6s, 12 passages, sha 3cd43690512d
+2026-09-10 22:15:18,597 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:18,616 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:18,618 INFO baseline_ask: baseline context: ~851 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:20,752 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:21,199 INFO run_baseline: bn-01 ok in 4.6s, 12 passages, sha db8d4f53b2ca
+2026-09-10 22:15:23,276 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:23,297 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:23,300 INFO baseline_ask: baseline context: ~976 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:25,447 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:25,982 INFO run_baseline: bn-02 ok in 4.8s, 12 passages, sha 5728ce1d1094
+2026-09-10 22:15:28,046 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:28,063 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:28,066 INFO baseline_ask: baseline context: ~1134 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:30,223 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:30,794 INFO run_baseline: bn-03 ok in 4.8s, 12 passages, sha cb60c93df124
+2026-09-10 22:15:32,870 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:32,891 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:32,892 INFO baseline_ask: baseline context: ~972 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:35,048 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:35,650 INFO run_baseline: bn-04 ok in 4.9s, 12 passages, sha 241cb1d74182
+2026-09-10 22:15:37,709 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:37,727 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:37,729 INFO baseline_ask: baseline context: ~1106 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:39,890 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:40,375 INFO run_baseline: bn-05 ok in 4.7s, 12 passages, sha fcf52c769d9f
+2026-09-10 22:15:42,416 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:42,430 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:42,433 INFO baseline_ask: baseline context: ~923 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:44,562 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:44,978 INFO run_baseline: bn-06 ok in 4.6s, 12 passages, sha b54feb4dc8bb
+2026-09-10 22:15:47,024 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:47,045 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:47,050 INFO baseline_ask: baseline context: ~1164 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:49,194 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:49,670 INFO run_baseline: bn-07 ok in 4.7s, 12 passages, sha 5a4e18c57e92
+2026-09-10 22:15:51,718 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:51,734 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:51,735 INFO baseline_ask: baseline context: ~843 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:53,892 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:54,432 INFO run_baseline: bn-08 ok in 4.8s, 12 passages, sha 841f8b3a0124
+2026-09-10 22:15:56,499 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:15:56,511 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:15:56,515 INFO baseline_ask: baseline context: ~870 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:15:58,652 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:15:59,015 INFO run_baseline: bn-09 ok in 4.6s, 12 passages, sha 91f74c01b446
+2026-09-10 22:16:01,107 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:01,125 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:01,128 INFO baseline_ask: baseline context: ~1226 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:03,315 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:03,735 INFO run_baseline: bn-10 ok in 4.7s, 12 passages, sha 4a9943af830c
+2026-09-10 22:16:05,805 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:05,826 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:05,828 INFO baseline_ask: baseline context: ~972 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:07,997 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:08,628 INFO run_baseline: vae-01 ok in 4.9s, 12 passages, sha 520965e6ff81
+2026-09-10 22:16:10,705 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:10,721 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:10,723 INFO baseline_ask: baseline context: ~1066 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:12,885 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:13,277 INFO run_baseline: vae-02 ok in 4.6s, 12 passages, sha 7866d628eaa1
+2026-09-10 22:16:15,324 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:15,345 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:15,349 INFO baseline_ask: baseline context: ~1077 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:17,534 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:18,166 INFO run_baseline: vae-03 ok in 4.9s, 12 passages, sha aef825f6d804
+2026-09-10 22:16:20,214 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:20,233 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:20,237 INFO baseline_ask: baseline context: ~1010 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:22,384 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:22,800 INFO run_baseline: vae-04 ok in 4.6s, 12 passages, sha 594cb896e9fc
+2026-09-10 22:16:24,870 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:24,887 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:24,888 INFO baseline_ask: baseline context: ~912 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:27,034 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:27,398 INFO run_baseline: vae-05 ok in 4.6s, 12 passages, sha 954f11cbf79b
+2026-09-10 22:16:29,468 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:29,488 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:29,490 INFO baseline_ask: baseline context: ~984 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:31,656 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:32,111 INFO run_baseline: vae-06 ok in 4.7s, 12 passages, sha 0cf8bc7278d5
+2026-09-10 22:16:34,171 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:34,185 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:34,187 INFO baseline_ask: baseline context: ~1098 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:36,354 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:36,832 INFO run_baseline: vae-07 ok in 4.7s, 12 passages, sha 910f3aa1256a
+2026-09-10 22:16:38,887 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:38,908 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:38,910 INFO baseline_ask: baseline context: ~972 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:41,089 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:41,574 INFO run_baseline: vae-08 ok in 4.7s, 12 passages, sha 8428fd956f84
+2026-09-10 22:16:43,602 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:43,637 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:43,642 INFO baseline_ask: baseline context: ~823 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:45,796 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:46,205 INFO run_baseline: react-01 ok in 4.6s, 12 passages, sha 5390e31098a8
+2026-09-10 22:16:48,248 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:48,269 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:48,271 INFO baseline_ask: baseline context: ~870 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:50,409 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:50,707 INFO run_baseline: react-02 ok in 4.5s, 12 passages, sha 9bc9d29e15ae
+2026-09-10 22:16:52,768 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:52,794 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:52,796 INFO baseline_ask: baseline context: ~939 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:54,973 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:16:55,486 INFO run_baseline: react-03 ok in 4.8s, 12 passages, sha 8ccc21469988
+2026-09-10 22:16:57,538 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:16:57,568 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:16:57,571 INFO baseline_ask: baseline context: ~1180 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:16:59,741 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:00,174 INFO run_baseline: react-04 ok in 4.7s, 12 passages, sha 3460fc4dfd49
+2026-09-10 22:17:02,260 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:02,275 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:02,278 INFO baseline_ask: baseline context: ~940 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:04,430 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:05,142 INFO run_baseline: react-05 ok in 5.0s, 12 passages, sha 47e9b9705cf2
+2026-09-10 22:17:07,224 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:07,242 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:07,244 INFO baseline_ask: baseline context: ~1166 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:09,457 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:09,964 INFO run_baseline: react-06 ok in 4.8s, 12 passages, sha a0004aa6ebcd
+2026-09-10 22:17:12,025 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:12,042 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:12,044 INFO baseline_ask: baseline context: ~1005 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:14,265 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:15,033 INFO run_baseline: react-07 ok in 5.1s, 12 passages, sha f903b81ed6fc
+2026-09-10 22:17:17,086 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:17,104 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:17,107 INFO baseline_ask: baseline context: ~1032 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:19,322 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:20,125 INFO run_baseline: react-08 ok in 5.1s, 12 passages, sha 4e265cfde216
+2026-09-10 22:17:22,190 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:22,207 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:22,210 INFO baseline_ask: baseline context: ~910 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:25,063 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:25,656 INFO run_baseline: str-01 ok in 5.5s, 12 passages, sha 430459ddf236
+2026-09-10 22:17:27,705 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:27,726 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:27,727 INFO baseline_ask: baseline context: ~977 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:29,948 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:31,006 INFO run_baseline: str-02 ok in 5.3s, 12 passages, sha b8c08d18c278
+2026-09-10 22:17:33,059 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:33,084 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:33,087 INFO baseline_ask: baseline context: ~766 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:35,307 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:35,897 INFO run_baseline: str-03 ok in 4.9s, 12 passages, sha 1c536a7c65e1
+2026-09-10 22:17:37,942 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:37,973 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:37,985 INFO baseline_ask: baseline context: ~772 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:40,221 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:40,971 INFO run_baseline: str-04 ok in 5.1s, 12 passages, sha d5360e637859
+2026-09-10 22:17:43,013 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:43,032 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:43,034 INFO baseline_ask: baseline context: ~910 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:45,228 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:45,849 INFO run_baseline: str-05 ok in 4.9s, 12 passages, sha bb11c9aec33d
+2026-09-10 22:17:47,906 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:47,955 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:47,960 INFO baseline_ask: baseline context: ~949 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:50,222 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:50,870 INFO run_baseline: rl-01 ok in 5.0s, 12 passages, sha a938db22be4b
+2026-09-10 22:17:52,927 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:52,986 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:52,993 INFO baseline_ask: baseline context: ~756 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:17:55,135 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:17:55,821 INFO run_baseline: rl-02 ok in 4.9s, 12 passages, sha b3aad6ba031e
+2026-09-10 22:17:57,871 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:17:57,923 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:17:57,928 INFO baseline_ask: baseline context: ~937 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:00,124 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:00,618 INFO run_baseline: rl-03 ok in 4.8s, 12 passages, sha e97762b80116
+2026-09-10 22:18:02,675 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:02,722 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:02,726 INFO baseline_ask: baseline context: ~890 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:04,915 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:05,441 INFO run_baseline: rl-04 ok in 4.8s, 12 passages, sha 75d8e2af9fc4
+2026-09-10 22:18:07,507 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:07,558 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:07,563 INFO baseline_ask: baseline context: ~911 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:09,725 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:10,404 INFO run_baseline: rl-05 ok in 5.0s, 12 passages, sha bf71bbdc8766
+2026-09-10 22:18:12,459 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:12,518 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:12,521 INFO baseline_ask: baseline context: ~1004 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:14,718 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:15,385 INFO run_baseline: rl-06 ok in 5.0s, 12 passages, sha 0b533e8c5b64
+2026-09-10 22:18:17,437 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:17,522 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:17,533 INFO baseline_ask: baseline context: ~538 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:19,681 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:20,202 INFO run_baseline: rl-07 ok in 4.8s, 12 passages, sha a657a288348a
+2026-09-10 22:18:22,246 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:22,294 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:22,299 INFO baseline_ask: baseline context: ~846 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:24,493 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:25,131 INFO run_baseline: rl-08 ok in 4.9s, 12 passages, sha 02efb7aa4229
+2026-09-10 22:18:27,170 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:27,242 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:27,246 INFO baseline_ask: baseline context: ~859 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:29,443 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:30,272 INFO run_baseline: rl-09 ok in 5.1s, 12 passages, sha d407769f6153
+2026-09-10 22:18:32,306 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:32,354 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:32,358 INFO baseline_ask: baseline context: ~1141 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:34,624 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:35,293 INFO run_baseline: rl-10 ok in 5.0s, 12 passages, sha 5e22d6d9e023
+2026-09-10 22:18:37,349 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:37,452 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:37,455 INFO baseline_ask: baseline context: ~892 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:39,616 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:40,100 INFO run_baseline: rl-11 ok in 4.8s, 12 passages, sha bd9b90b59afa
+2026-09-10 22:18:42,158 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:42,206 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:42,217 INFO baseline_ask: baseline context: ~693 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:44,399 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:44,844 INFO run_baseline: rl-12 ok in 4.7s, 12 passages, sha a3877654c625
+2026-09-10 22:18:46,906 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:46,957 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:46,960 INFO baseline_ask: baseline context: ~791 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:49,156 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:49,651 INFO run_baseline: rl-13 ok in 4.8s, 12 passages, sha f0b4b312195f
+2026-09-10 22:18:51,727 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:51,787 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:51,792 INFO baseline_ask: baseline context: ~933 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:53,947 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:54,534 INFO run_baseline: rl-14 ok in 4.9s, 12 passages, sha efdf44c3eb79
+2026-09-10 22:18:56,575 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:18:56,640 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:18:56,645 INFO baseline_ask: baseline context: ~1142 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:18:58,830 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:18:59,468 INFO run_baseline: rl-15 ok in 4.9s, 12 passages, sha 2b8ced85d727
+2026-09-10 22:19:01,528 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:19:01,599 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:19:01,604 INFO baseline_ask: baseline context: ~916 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:19:03,786 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:19:04,329 INFO run_baseline: rl-16 ok in 4.8s, 12 passages, sha 7469ac5ae9f1
+2026-09-10 22:19:06,376 INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2026-09-10 22:19:06,427 INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+2026-09-10 22:19:06,433 INFO baseline_ask: baseline context: ~1110 tokens (+512 reserve) vs num_ctx=16384 -> fits
+2026-09-10 22:19:08,609 INFO httpx: HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-09-10 22:19:09,166 INFO run_baseline: rl-17 ok in 4.8s, 12 passages, sha e8f79a9f2e32
+2026-09-10 22:19:09,167 INFO run_baseline: run end: ok=59 errors=0

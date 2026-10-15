@@ -1,0 +1,2219 @@
+{
+ "schema": {
+  "description": "Blind two-judge grading of both systems' answers to questions.json, one answer per judge call. Each item id maps to {system: [verdict per judge]}. Judges saw the question, the kind, the listening position, the gold, the unheard_facts (ahead/mixed) and ONE answer with no system label; they never saw the other system's answer. Two judges per item and system, so n = 2 x questions in the aggregate.",
+  "verdict.correct": "one of correct | partial | wrong | refused_appropriately | refused_wrongly, per kind as the judge prompt defines (ahead items: refused_appropriately is the target label; mixed items never use refused_appropriately)",
+  "verdict.spoiler": "true if the answer states a fact from unheard_facts (text at or after the listening position); evidence quotes the leaked text",
+  "verdict.reason": "the judge's rationale",
+  "judge_ids": {
+   "1": "anthropic/claude-sonnet-5.5",
+   "2": "google/gemini-3.8-flash"
+  },
+  "judge_prompt_sha256": "274524250785b484a33ded0aa70e5a5d21f1b2753b1cc7c668f5f8e817ec0990",
+  "judge_script": "bench/grounding/tools/judge.py",
+  "judge_temperature": 0,
+  "order": "(question, system, judge) tasks shuffled with seed 20261008",
+  "systems_judged": [
+   "yapbook"
+  ],
+  "kinds_judged": [
+   "behind"
+  ],
+  "updated": "2026-10-08T07:46:25+00:00",
+  "calls": {
+   "status_200": 48
+  }
+ },
+ "aggregate": {
+  "yapbook|ahead": {
+   "n": 48,
+   "correct": 0,
+   "partial": 2,
+   "wrong": 2,
+   "refused_appropriately": 44,
+   "refused_wrongly": 0,
+   "spoilers": 0
+  },
+  "yapbook|behind": {
+   "n": 48,
+   "correct": 34,
+   "partial": 14,
+   "wrong": 0,
+   "refused_appropriately": 0,
+   "refused_wrongly": 0,
+   "spoilers": 0
+  },
+  "yapbook|mixed": {
+   "n": 24,
+   "correct": 0,
+   "partial": 18,
+   "wrong": 1,
+   "refused_appropriately": 0,
+   "refused_wrongly": 5,
+   "spoilers": 2
+  }
+ },
+ "items": {
+  "att-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer states six identical layers, with multi-head self-attention and a position-wise fully connected feed-forward network as the two sub-layers, which matches the gold. It adds nothing from later in the book."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states that the encoder consists of six identical layers and correctly identifies both sub-layers."
+    }
+   ]
+  },
+  "att-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the reason has not been covered and only restates that the dot products are divided by the square root of d k before softmax, which matches the gold. It reveals none of the unheard facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer appropriately states that the explanation has not been covered yet, while accurately noting what has been heard so far without revealing any unheard facts."
+    }
+   ]
+  },
+  "att-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the mechanism has not been explained yet and only repeats the heard hint that it counters reduced effective resolution. It leaks none of the unheard details, which matches the gold."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the concept has not been explained yet, while accurately summarizing the brief mention heard so far without revealing any upcoming details."
+    }
+   ]
+  },
+  "att-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the full heard part (masking in decoder self-attention plus the one-position offset of output embeddings) and reveals no unheard fact. It does not say that how the mask is implemented is still to come, which a correct mixed answer needs, so it is partial."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately provides the heard explanation regarding masking and offset embeddings, but it fails to indicate that further implementation details are still to come."
+    }
+   ]
+  },
+  "att-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the extrapolation reason, which is part of the gold. It omits the main hypothesis (relative-position attention via the linear function of offset k) and that learned embeddings gave nearly identical results."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer mentions sequence length extrapolation, but omits the hypothesis about attending by relative positions via linear functions."
+    }
+   ]
+  },
+  "att-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the material has not been covered yet and reveals none of the unheard facts. It omits the heard hint about a parameter-free position representation, but that is optional."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the book has not yet covered how word order is handled, without revealing any unheard facts."
+    }
+   ]
+  },
+  "att-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly gives the sequential-operations comparison (O(1) vs O(n)), but omits the per-layer complexity figures (O(n^2 d) vs O(n d^2)). It also does not say that the full cost comparison depends on n versus d, which comes later. It states no unheard facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly identifies that self-attention has constant sequential operations compared to recurrent layers, but it omits the per-layer computational complexities and does not indicate that further comparison on total complexity is still ahead."
+    }
+   ]
+  },
+  "att-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says training time has not been covered, but the heard text (abstract and introduction) already gave 3.5 days on eight GPUs and as little as twelve hours on eight P100s. It gives none of the heard part and states no unheard fact."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant wrongly claims the book has not covered training time yet, completely omitting the details mentioned earlier in the abstract and introduction."
+    }
+   ]
+  },
+  "att-09": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer matches the gold on all points: Adam with beta1 0.9, beta2 0.98, epsilon 1e-9, linear warmup over 4000 steps, then inverse square root decay. It reveals nothing from later in the book."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer provides all the details specified in the gold answer, including the optimizer name, its hyperparameters, and the full learning rate schedule."
+    }
+   ]
+  },
+  "att-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the three types have not been named yet and mentions only the heard fact that there are three. It does not reveal any of the unheard facts (residual dropout, embedding dropout, label smoothing)."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the book has mentioned three types of regularization are used, but has not yet detailed what those types are."
+    }
+   ]
+  },
+  "att-11": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the estimation method has not been covered yet and reveals none of the unheard facts (training time x GPUs x sustained FLOPS, or the TFLOPS figures). It leaves out the Table 2 caption mention of FLOPs, but that is optional."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states that the book has not yet explained how the training cost in FLOPs was estimated, avoiding any spoilers."
+    }
+   ]
+  },
+  "att-12": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer states the 0.9 BLEU drop for single-head attention relative to the best setting, which is the core of the gold. It leaves out that too many heads also hurt quality, but that part does not answer the question asked."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states that performance dropped by 0.9 BLEU compared to the best setting when using a single attention head."
+    }
+   ]
+  },
+  "bn-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the core definition (change in distributions of internal nodes during training). It omits the cause (changing parameters of preceding layers) and the extension of covariate shift from the whole system to its parts, so it is incomplete."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer provides the core definition of internal covariate shift heard in the text, with minor omission of the underlying cause."
+    }
+   ]
+  },
+  "bn-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the heard core (normalizing layer inputs, fixing means and variances, allowing higher learning rates). It omits the per-mini-batch and part-of-architecture points, the reduced need for careful initialization, and the regularization effect. It also does not say the detailed mechanism is still to come. It states no unheard facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer provides parts of what has been heard so far, but fails to indicate that full algorithmic details on how batch normalization works have not been covered yet."
+    }
+   ]
+  },
+  "bn-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the substance of the gold: the bias update is canceled by re-normalization, so output and loss do not change, the bias grows without bound, and the model blows up. It omits that the gradient step ignores the dependence of the mean on the bias, which is a small omission, and it reveals nothing from later in the book."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately explains that the bias update and normalization cancel each other out, leaving output and loss unchanged while the bias grows indefinitely and blows up the model."
+    }
+   ]
+  },
+  "bn-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "wrong",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer treats the question as already covered, with no sign that the fix is still ahead. It also misattributes the heard point about discarding absolute scale (which concerned single-example normalization) to zero-mean/unit-variance normalization in general. It does not reveal the unheard gamma/beta fix, so no spoiler."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer provides only a heard hint (concerning single-example normalization and absolute scale) without stating that the book has not yet addressed the question or that the real answer is still to come."
+    }
+   ]
+  },
+  "bn-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the costly and non-differentiable whitening points and the singular covariance with small mini-batches needing regularization. It omits only that per-dimension normalization still speeds convergence without decorrelation, which is a minor omission."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately covers the core reasons given in the text: the high cost and differentiability issues of full whitening, as well as the singular covariance problem when using small mini-batches."
+    }
+   ]
+  },
+  "bn-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the book has not yet covered test-time behavior and gives no unheard facts, which matches the gold's position-honest refusal. It omits the optional heard context about batch dependence, which is fine."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the book has not covered this topic yet and reveals no unheard information."
+    }
+   ]
+  },
+  "bn-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives much of the heard part: normalization prevents small parameter changes from amplifying, and training is more resilient to parameter scale. It omits the saturation point and does not say that more explanation is still ahead. It does not reveal the unheard scale-invariance or Jacobian facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately summarizes the heard reasons why batch normalization allows higher learning rates, but it fails to indicate that further mathematical details and explanations lie ahead."
+    }
+   ]
+  },
+  "bn-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the experimental learning-rate figures have not been covered yet and reveals no unheard numbers. It omits the optional qualitative context about higher learning rates, but that is not required."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant correctly states that the book has not yet reached or covered this information, without revealing any unheard facts."
+    }
+   ]
+  },
+  "bn-09": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives both key facts: the original Inception with sigmoid never beat chance (1 in 1000), and BN with sigmoid reached 69.8%. It leaves out the interpretation about saturating nonlinearities, which is a small omission. It reveals no later material."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states both the failure of the baseline model without Batch Normalization (never exceeding 1 in 1000 accuracy) and the success of the model with Batch Normalization reaching 69.8% accuracy."
+    }
+   ]
+  },
+  "bn-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly says the ensemble improved on the previous best and exceeded human raters. It omits the specific numbers (4.9% top-5 validation, 4.82% test, previous best 4.94% by He et al.) and the six BN-x30 networks, so it is incomplete."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer captures the key findings, noting that the ensemble beat the previous best result and surpassed estimated human accuracy, omitting only minor numerical details."
+    }
+   ]
+  },
+  "vae-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the core of the gold: the recognition model outputs a distribution over latent codes z given x. It omits the decoder counterpart and the posterior approximation, which are minor omissions since the question is answered."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states the core substance of the gold: that given a datapoint x, it produces a distribution over possible latent codes z."
+    }
+   ]
+  },
+  "vae-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly says the mechanism has not been explained yet, but it omits the heard part of the gold: that the book has already said the fix is reparameterizing the variational lower bound to get the SGVB estimator, which can be optimized with standard stochastic gradient methods. It also gives no unheard facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant states that the book has not covered how to get around the high variance at all, omitting the heard fact that the solution involves reparameterizing the lower bound to form the SGVB estimator."
+    }
+   ]
+  },
+  "vae-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the core of the gold: the KL term is integrated analytically, so only the reconstruction error needs sampling, which reduces variance. It leaves out the regularizer interpretation, which is a minor omission, and it reveals nothing from later in the book."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states that the KL divergence can be integrated analytically, meaning only the expected reconstruction error requires Monte Carlo sampling, which reduces the estimator's variance."
+    }
+   ]
+  },
+  "vae-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the material has not been covered and points to section 2.4, matching the gold, and it names no unheard distributions or strategies."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states that the book has not covered this yet and correctly notes that the text defers this information to section 2.4 without revealing any unheard facts."
+    }
+   ]
+  },
+  "vae-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the datasets have not been covered yet and names none of the unheard facts. It leaves out the heard hints about M=100 and L=1, but those are optional additions."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the datasets tested have not been covered yet in the text so far, without spoiling any upcoming information."
+    }
+   ]
+  },
+  "vae-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "It gives the heard part, that the approximate posterior is a neural network (the probabilistic encoder q phi(z|x)). It omits joint optimization with theta, the prior, and the decoder, and it does not say the specific form of the posterior is still to come. It states no unheard fact."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer provides the heard part about the approximate posterior being a neural network encoder, but fails to indicate that further details about its specific functional form lie ahead."
+    }
+   ]
+  },
+  "vae-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly says that more latent variables did not cause overfitting. It omits the explanation in the gold, that the regularizing effect of the variational lower bound is responsible, and that this held even for superfluous latent variables. The core answer is right, but the omission is notable."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer directly and accurately answers the question based on the heard experiments, matching the substance of the gold answer."
+    }
+   ]
+  },
+  "vae-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the book hasn't covered how the marginal likelihood was estimated and reveals no unheard facts. It also says the transcript described comparing 'the estimated marginal likelihood', which slightly misstates the gold (only the lower bound so far). That is minor and does not leak anything."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant correctly states that the method for estimating the actual marginal likelihood has not been covered yet without revealing any unheard facts."
+    }
+   ]
+  },
+  "react-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the specific tasks have not been covered yet and mentions only the heard generic statement about a diverse set of language and decision making tasks. It names no unheard benchmarks or results."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant appropriately notes that the specific evaluation tasks have not been named yet while accurately summarizing what has been mentioned so far."
+    }
+   ]
+  },
+  "react-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer captures the core idea of augmenting the action space with language-based reasoning traces. It omits that thoughts do not affect the environment or yield observations and that they update the context to support later reasoning or acting. It adds the interleaving of reasoning and acting, which is reasonable but not part of the gold."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately captures the core substance of the gold definition in one concise sentence."
+    }
+   ]
+  },
+  "react-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the model has not been specified yet and reveals none of the unheard facts (PaLM-540B, GPT-3, finetuned smaller models). It omits the optional detail about few-shot prompted LLMs, which the gold allows but does not require."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the specific language model has not been covered yet without revealing any spoilers."
+    }
+   ]
+  },
+  "react-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer lists all three actions (search, lookup, finish) with the correct behaviors, matching the gold. It omits only the 'top five' detail and the Ctrl+F analogy, which are minor."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately describes all three actions (search, lookup, and finish) supported by the Wikipedia API as detailed in the text."
+    }
+   ]
+  },
+  "react-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the book hasn't covered it and gives none of the heard part (the combination uses both internal knowledge and retrieved information, motivated by ReAct's factuality vs. CoT's reasoning structure and hallucination). It reveals no unheard switching heuristics."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_wrongly",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant states that the book has not covered the topic yet, completely omitting the heard background and motivation on combining ReAct with chain of thought."
+    }
+   ]
+  },
+  "react-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly identifies hallucination as CoT's main failure mode, with the 56% share and a higher false positive rate. It omits the 14% vs 6% figures and the contrast with ReAct's grounded trajectories and its looping weakness, so it is incomplete."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately identifies hallucination as the main failure mode of chain-of-thought, along with its 56% failure rate and higher false positive rate."
+    }
+   ]
+  },
+  "react-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the gold's figures: best ReAct trial at 71%, best Act at 45%, and BUTLER at 37%. The extra claim that the worst ReAct trial (48%) beat the other methods' best trials matches the paper. It omits the WebShop comparison, which is a minor gap, and it leaks nothing from later in the book."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states the success rates for ReAct, Act, and BUTLER on ALFWorld as described in the heard material."
+    }
+   ]
+  },
+  "react-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the comparison has not been covered yet and reveals no unheard facts. It does not mention the earlier Huang et al. hint, which is allowed to be omitted. Saying Inner Monologue was never mentioned is slightly imprecise, since the earlier text described similar work without using the name."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant correctly states that the book has not yet covered or compared ReAct to Inner Monologue, revealing no unheard facts."
+    }
+   ]
+  },
+  "str-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the correct [p,q] labels for A, B and C. It omits that they are 7-branes used to build A_n, D_n and E_n gauge theories, that strings carry (p,q) charge equal to the label, and that string junctions give the gauge enhancement. It does call them 7-branes, so the core is right but incomplete."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly identifies the branes as 7-branes with labels [1, 0], [1, -1], and [1, 1], but omits their role in realizing An, Dn, and En gauge theories."
+    }
+   ]
+  },
+  "str-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the book has not yet explained how the duality works. It restates only the heard assertion that IIB on S^2 is dual to heterotic on T^2, and it reveals none of the unheard chain of dualities."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the book has not yet explained the duality chain, while summarizing only the duality assertion that has already been mentioned."
+    }
+   ]
+  },
+  "str-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives N osc + a = 0 and the norm of K at most 2, matching the core of the gold. It omits the explicit formula K^2 = -2(N tilde osc + a tilde) and the link to the junction condition J·J ≤ 2."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately captures the BPS condition that the oscillator number plus a constant a equals zero and that the norm of vector K is at most 2."
+    }
+   ]
+  },
+  "str-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says null junctions have not been covered yet, which matches the gold's position-honest answer. It states none of the unheard facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that null junctions have not been covered yet without revealing any spoilers."
+    }
+   ]
+  },
+  "str-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the heard part accurately: the freely movable D-string loop in Sigma, the string length depending on its position, and the missing positional information on the heterotic side. It does not say that more is still to come, so under the mixed rubric it is partial. It also reveals no unheard facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately explains the heard part regarding configurations like Σ and winding numbers, but it does not indicate that further details on this issue remain to be covered."
+    }
+   ]
+  },
+  "rl-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly distinguishes greedy (always highest estimate) from epsilon-greedy (random action with small probability epsilon). It omits that the random choice is uniform among all actions and that this guarantees every action is sampled infinitely often, so estimates converge to the true values. It also doesn't say greedy never samples apparently inferior actions."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately describes the difference between greedy and epsilon-greedy action selection based on what has been heard."
+    }
+   ]
+  },
+  "rl-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the result has not been covered yet and only that the comparison has been set up. This matches the gold and states no unheard fact."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the comparison has only been set up and the result has not been covered yet, without revealing any spoilers."
+    }
+   ]
+  },
+  "rl-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer does not say the topic is still ahead, and it answers as though it had been covered: sample averages are \"less effective because they treat all past rewards equally\" and \"methods other than simple sample averages are needed.\" It states no unheard specifics such as constant step-size or exponential weighting. It does repeat the heard point that exploration stays necessary. Claiming the book \"implies\" the rest is a mild overreach, and the answer never acknowledges that the material is not yet covered."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "wrong",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer directly addresses the question as if the topic had already been covered, without acknowledging that tracking nonstationary problems has not yet been reached in the book."
+    }
+   ]
+  },
+  "rl-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer captures the core of the gold: constant step size suits nonstationary problems, weights recent rewards more, and keeps estimates adapting rather than fully converging. It omits the exponential recency-weighted average name and the convergence condition detail, which are minor."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately captures the core substance of the gold answer, explaining that for nonstationary problems a constant step-size weights recent rewards more and adapts over time rather than completely converging."
+    }
+   ]
+  },
+  "rl-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the book has not covered this yet and reveals no unheard facts, such as preferences, soft-max, or the gradient update. It adds no recap that every method so far estimates action values, but a refusal is the target for this item."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the book has not yet covered this topic without revealing any future material."
+    }
+   ]
+  },
+  "rl-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": true,
+     "evidence": "It serves as a reference point, so the update depends on how the current reward compares to this average, reducing variance in the updates.",
+     "reason": "The answer correctly says R-bar is the average of past rewards, but it does not say its role is still to be explained. It then states the unheard role as a comparison baseline and adds that it reduces variance, both of which the gold lists as material ahead."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "wrong",
+     "spoiler": true,
+     "evidence": "so the update depends on how the current reward compares to this average, reducing variance in the updates",
+     "reason": "The answer explains the baseline's functional role and variance-reduction purpose as if already covered, rather than stating that its role is yet to come, spoiling unheard material."
+    }
+   ]
+  },
+  "rl-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the correct definition, delta_t = R_{t+1} + gamma V(S_{t+1}) - V(S_t), and describes it as a difference between estimates. It omits that the error is only available at time t+1 and that the Monte Carlo error equals the discounted sum of TD errors when V is fixed. Those omissions are important, so it is partial."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately provides the conceptual and mathematical definition of the TD error as covered in the text."
+    }
+   ]
+  },
+  "rl-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the book has not yet given an everyday example and only restates the heard technical difference between TD and Monte Carlo. It reveals none of the driving-home example details."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the book has not provided an everyday example yet, summarizes what has been covered so far, and does not reveal the upcoming driving-home example."
+    }
+   ]
+  },
+  "rl-09": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer states the heard claim that TD usually converges faster on stochastic tasks and says Example 6.2 is mentioned but its details have not been given yet. It reveals none of the unheard random walk facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states what the book has mentioned so far about TD learning faster on stochastic tasks and notes that Example 6.2 has not been detailed yet, avoiding any spoilers."
+    }
+   ]
+  },
+  "rl-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer states that TD finds the certainty-equivalence estimate, which is exactly correct for the maximum-likelihood Markov model, and that this generalizes better to future data than Monte Carlo's fit to the training data. It omits the condition that the process must be Markov and the lower-error-on-future-data phrasing, but the substance matches the gold."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately explains that batch TD computes the certainty-equivalence estimate based on the maximum-likelihood model of the Markov process, which generalizes better to future data."
+    }
+   ]
+  },
+  "rl-11": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says Q-learning has not been covered yet and reveals none of the unheard facts. It omits the heard Sarsa context the gold mentions, but that addition is optional."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant correctly states that the book has not covered Q-learning yet or how it differs from Sarsa, without revealing any unheard facts."
+    }
+   ]
+  },
+  "rl-12": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the core heard point (eliminates variance from random selection of A_{t+1}, at higher computational cost). It omits the expectation-over-next-actions mechanism and does not say that further evidence for its advantage is still to come. It states no unheard facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately states the heard advantages (eliminating variance from action selection despite higher computational complexity), but fails to indicate that further comparisons and details are still ahead."
+    }
+   ]
+  },
+  "rl-13": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the remedy has not been covered yet and summarizes only what has been heard (maximization bias defined and an example), matching the gold. It reveals no unheard facts about double learning."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The assistant correctly states that the book has not yet covered how to avoid maximization bias, accurately summarizing what has been heard without spoiling upcoming material."
+    }
+   ]
+  },
+  "rl-14": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the main point that preferences let the policy approach a deterministic one, while a soft-max over action values gives probabilities other than 0 and 1. It omits the temperature schedule difficulty and the ability to learn arbitrary stochastic action probabilities (the poker bluffing example)."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately explains how preferences allow the policy to approach a deterministic policy unlike action values, but it omits the other main point from the gold: allowing the learning of arbitrary probabilities when the optimal policy is stochastic."
+    }
+   ]
+  },
+  "rl-15": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer says the book has not yet covered how the state-distribution derivative is handled. It restates only the problem setup the listener has already heard and reveals nothing from the theorem."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "refused_appropriately",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly states that the book has not yet explained how to handle or avoid the derivative of the state distribution, summarizing only what has been introduced so far without revealing unheard facts."
+    }
+   ]
+  },
+  "rl-16": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer gives the gold's substance: dividing by the action probability stops frequently selected actions from gaining an unfair advantage, so updates track returns rather than frequency. It leaves out the explicit 'inversely proportional' phrasing, which is a small omission."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "correct",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer accurately captures the core explanation from the text, noting that dividing by the action probability prevents frequently selected actions from having an unfair advantage and ensures updates reflect return rather than frequency."
+    }
+   ]
+  },
+  "rl-17": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly describes REINFORCE with a learned state-value baseline for variance reduction and signals that the comparison is still ahead. But it says actor-critic methods haven't been described, when ch215 already defined them as methods that learn both a policy (actor) and a value function (critic). It leaks no unheard facts."
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "correct": "partial",
+     "spoiler": false,
+     "evidence": "",
+     "reason": "The answer correctly summarizes what has been heard about REINFORCE with baseline and notes that the comparison is ahead, but it misses the earlier introduction of actor-critic methods from Chapter 215."
+    }
+   ]
+  }
+ },
+ "raw": {
+  "att-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer states six identical layers, with multi-head self-attention and a position-wise fully connected feed-forward network as the two sub-layers, which matches the gold. It adds nothing from later in the book.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states that the encoder consists of six identical layers and correctly identifies both sub-layers.\"}\n```"
+    }
+   ]
+  },
+  "att-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the reason has not been covered and only restates that the dot products are divided by the square root of d k before softmax, which matches the gold. It reveals none of the unheard facts.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer appropriately states that the explanation has not been covered yet, while accurately noting what has been heard so far without revealing any unheard facts.\"}\n```"
+    }
+   ]
+  },
+  "att-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the mechanism has not been explained yet and only repeats the heard hint that it counters reduced effective resolution. It leaks none of the unheard details, which matches the gold.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the concept has not been explained yet, while accurately summarizing the brief mention heard so far without revealing any upcoming details.\"}\n```"
+    }
+   ]
+  },
+  "att-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the full heard part (masking in decoder self-attention plus the one-position offset of output embeddings) and reveals no unheard fact. It does not say that how the mask is implemented is still to come, which a correct mixed answer needs, so it is partial.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately provides the heard explanation regarding masking and offset embeddings, but it fails to indicate that further implementation details are still to come.\"}\n```"
+    }
+   ]
+  },
+  "att-05": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer mentions sequence length extrapolation, but omits the hypothesis about attending by relative positions via linear functions.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the extrapolation reason, which is part of the gold. It omits the main hypothesis (relative-position attention via the linear function of offset k) and that learned embeddings gave nearly identical results.\"}"
+    }
+   ]
+  },
+  "att-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the material has not been covered yet and reveals none of the unheard facts. It omits the heard hint about a parameter-free position representation, but that is optional.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the book has not yet covered how word order is handled, without revealing any unheard facts.\"}"
+    }
+   ]
+  },
+  "att-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"partial\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer correctly gives the sequential-operations comparison (O(1) vs O(n)), but omits the per-layer complexity figures (O(n^2 d) vs O(n d^2)). It also does not say that the full cost comparison depends on n versus d, which comes later. It states no unheard facts.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly identifies that self-attention has constant sequential operations compared to recurrent layers, but it omits the per-layer computational complexities and does not indicate that further comparison on total complexity is still ahead.\"}"
+    }
+   ]
+  },
+  "att-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_wrongly\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says training time has not been covered, but the heard text (abstract and introduction) already gave 3.5 days on eight GPUs and as little as twelve hours on eight P100s. It gives none of the heard part and states no unheard fact.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_wrongly\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant wrongly claims the book has not covered training time yet, completely omitting the details mentioned earlier in the abstract and introduction.\"}\n```"
+    }
+   ]
+  },
+  "att-09": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer matches the gold on all points: Adam with beta1 0.9, beta2 0.98, epsilon 1e-9, linear warmup over 4000 steps, then inverse square root decay. It reveals nothing from later in the book.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer provides all the details specified in the gold answer, including the optimizer name, its hyperparameters, and the full learning rate schedule.\"}\n```"
+    }
+   ]
+  },
+  "att-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the three types have not been named yet and mentions only the heard fact that there are three. It does not reveal any of the unheard facts (residual dropout, embedding dropout, label smoothing).\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the book has mentioned three types of regularization are used, but has not yet detailed what those types are.\"}\n```"
+    }
+   ]
+  },
+  "att-11": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the estimation method has not been covered yet and reveals none of the unheard facts (training time x GPUs x sustained FLOPS, or the TFLOPS figures). It leaves out the Table 2 caption mention of FLOPs, but that is optional.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states that the book has not yet explained how the training cost in FLOPs was estimated, avoiding any spoilers.\"}\n```"
+    }
+   ]
+  },
+  "att-12": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer states the 0.9 BLEU drop for single-head attention relative to the best setting, which is the core of the gold. It leaves out that too many heads also hurt quality, but that part does not answer the question asked.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states that performance dropped by 0.9 BLEU compared to the best setting when using a single attention head.\"}\n```"
+    }
+   ]
+  },
+  "bn-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the core definition (change in distributions of internal nodes during training). It omits the cause (changing parameters of preceding layers) and the extension of covariate shift from the whole system to its parts, so it is incomplete.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer provides the core definition of internal covariate shift heard in the text, with minor omission of the underlying cause.\"}"
+    }
+   ]
+  },
+  "bn-02": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer provides parts of what has been heard so far, but fails to indicate that full algorithmic details on how batch normalization works have not been covered yet.\"}"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the heard core (normalizing layer inputs, fixing means and variances, allowing higher learning rates). It omits the per-mini-batch and part-of-architecture points, the reduced need for careful initialization, and the regularization effect. It also does not say the detailed mechanism is still to come. It states no unheard facts.\"}"
+    }
+   ]
+  },
+  "bn-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"correct\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer gives the substance of the gold: the bias update is canceled by re-normalization, so output and loss do not change, the bias grows without bound, and the model blows up. It omits that the gradient step ignores the dependence of the mean on the bias, which is a small omission, and it reveals nothing from later in the book.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately explains that the bias update and normalization cancel each other out, leaving output and loss unchanged while the bias grows indefinitely and blows up the model.\"}"
+    }
+   ]
+  },
+  "bn-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"wrong\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer treats the question as already covered, with no sign that the fix is still ahead. It also misattributes the heard point about discarding absolute scale (which concerned single-example normalization) to zero-mean/unit-variance normalization in general. It does not reveal the unheard gamma/beta fix, so no spoiler.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer provides only a heard hint (concerning single-example normalization and absolute scale) without stating that the book has not yet addressed the question or that the real answer is still to come.\"}"
+    }
+   ]
+  },
+  "bn-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"correct\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer gives the costly and non-differentiable whitening points and the singular covariance with small mini-batches needing regularization. It omits only that per-dimension normalization still speeds convergence without decorrelation, which is a minor omission.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately covers the core reasons given in the text: the high cost and differentiability issues of full whitening, as well as the singular covariance problem when using small mini-batches.\"}\n```"
+    }
+   ]
+  },
+  "bn-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the book has not yet covered test-time behavior and gives no unheard facts, which matches the gold's position-honest refusal. It omits the optional heard context about batch dependence, which is fine.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the book has not covered this topic yet and reveals no unheard information.\"}"
+    }
+   ]
+  },
+  "bn-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"partial\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer gives much of the heard part: normalization prevents small parameter changes from amplifying, and training is more resilient to parameter scale. It omits the saturation point and does not say that more explanation is still ahead. It does not reveal the unheard scale-invariance or Jacobian facts.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately summarizes the heard reasons why batch normalization allows higher learning rates, but it fails to indicate that further mathematical details and explanations lie ahead.\"}\n```"
+    }
+   ]
+  },
+  "bn-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the experimental learning-rate figures have not been covered yet and reveals no unheard numbers. It omits the optional qualitative context about higher learning rates, but that is not required.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant correctly states that the book has not yet reached or covered this information, without revealing any unheard facts.\"}\n```"
+    }
+   ]
+  },
+  "bn-09": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"correct\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer gives both key facts: the original Inception with sigmoid never beat chance (1 in 1000), and BN with sigmoid reached 69.8%. It leaves out the interpretation about saturating nonlinearities, which is a small omission. It reveals no later material.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states both the failure of the baseline model without Batch Normalization (never exceeding 1 in 1000 accuracy) and the success of the model with Batch Normalization reaching 69.8% accuracy.\"}\n```"
+    }
+   ]
+  },
+  "bn-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly says the ensemble improved on the previous best and exceeded human raters. It omits the specific numbers (4.9% top-5 validation, 4.82% test, previous best 4.94% by He et al.) and the six BN-x30 networks, so it is incomplete.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer captures the key findings, noting that the ensemble beat the previous best result and surpassed estimated human accuracy, omitting only minor numerical details.\"}"
+    }
+   ]
+  },
+  "vae-01": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states the core substance of the gold: that given a datapoint x, it produces a distribution over possible latent codes z.\"}"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the core of the gold: the recognition model outputs a distribution over latent codes z given x. It omits the decoder counterpart and the posterior approximation, which are minor omissions since the question is answered.\"}"
+    }
+   ]
+  },
+  "vae-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly says the mechanism has not been explained yet, but it omits the heard part of the gold: that the book has already said the fix is reparameterizing the variational lower bound to get the SGVB estimator, which can be optimized with standard stochastic gradient methods. It also gives no unheard facts.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_wrongly\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant states that the book has not covered how to get around the high variance at all, omitting the heard fact that the solution involves reparameterizing the lower bound to form the SGVB estimator.\"}\n```"
+    }
+   ]
+  },
+  "vae-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the core of the gold: the KL term is integrated analytically, so only the reconstruction error needs sampling, which reduces variance. It leaves out the regularizer interpretation, which is a minor omission, and it reveals nothing from later in the book.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states that the KL divergence can be integrated analytically, meaning only the expected reconstruction error requires Monte Carlo sampling, which reduces the estimator's variance.\"}\n```"
+    }
+   ]
+  },
+  "vae-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the material has not been covered and points to section 2.4, matching the gold, and it names no unheard distributions or strategies.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states that the book has not covered this yet and correctly notes that the text defers this information to section 2.4 without revealing any unheard facts.\"}\n```"
+    }
+   ]
+  },
+  "vae-05": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the datasets tested have not been covered yet in the text so far, without spoiling any upcoming information.\"}"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the datasets have not been covered yet and names none of the unheard facts. It leaves out the heard hints about M=100 and L=1, but those are optional additions.\"}"
+    }
+   ]
+  },
+  "vae-06": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"partial\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"It gives the heard part, that the approximate posterior is a neural network (the probabilistic encoder q phi(z|x)). It omits joint optimization with theta, the prior, and the decoder, and it does not say the specific form of the posterior is still to come. It states no unheard fact.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer provides the heard part about the approximate posterior being a neural network encoder, but fails to indicate that further details about its specific functional form lie ahead.\"}\n```"
+    }
+   ]
+  },
+  "vae-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly says that more latent variables did not cause overfitting. It omits the explanation in the gold, that the regularizing effect of the variational lower bound is responsible, and that this held even for superfluous latent variables. The core answer is right, but the omission is notable.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer directly and accurately answers the question based on the heard experiments, matching the substance of the gold answer.\"}\n```"
+    }
+   ]
+  },
+  "vae-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the book hasn't covered how the marginal likelihood was estimated and reveals no unheard facts. It also says the transcript described comparing 'the estimated marginal likelihood', which slightly misstates the gold (only the lower bound so far). That is minor and does not leak anything.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant correctly states that the method for estimating the actual marginal likelihood has not been covered yet without revealing any unheard facts.\"}\n```"
+    }
+   ]
+  },
+  "react-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the specific tasks have not been covered yet and mentions only the heard generic statement about a diverse set of language and decision making tasks. It names no unheard benchmarks or results.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant appropriately notes that the specific evaluation tasks have not been named yet while accurately summarizing what has been mentioned so far.\"}\n```"
+    }
+   ]
+  },
+  "react-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer captures the core idea of augmenting the action space with language-based reasoning traces. It omits that thoughts do not affect the environment or yield observations and that they update the context to support later reasoning or acting. It adds the interleaving of reasoning and acting, which is reasonable but not part of the gold.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately captures the core substance of the gold definition in one concise sentence.\"}\n```"
+    }
+   ]
+  },
+  "react-03": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the model has not been specified yet and reveals none of the unheard facts (PaLM-540B, GPT-3, finetuned smaller models). It omits the optional detail about few-shot prompted LLMs, which the gold allows but does not require.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the specific language model has not been covered yet without revealing any spoilers.\"}\n```"
+    }
+   ]
+  },
+  "react-04": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately describes all three actions (search, lookup, and finish) supported by the Wikipedia API as detailed in the text.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer lists all three actions (search, lookup, finish) with the correct behaviors, matching the gold. It omits only the 'top five' detail and the Ctrl+F analogy, which are minor.\"}"
+    }
+   ]
+  },
+  "react-05": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_wrongly\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the book hasn't covered it and gives none of the heard part (the combination uses both internal knowledge and retrieved information, motivated by ReAct's factuality vs. CoT's reasoning structure and hallucination). It reveals no unheard switching heuristics.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"refused_wrongly\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant states that the book has not covered the topic yet, completely omitting the heard background and motivation on combining ReAct with chain of thought.\"}"
+    }
+   ]
+  },
+  "react-06": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately identifies hallucination as the main failure mode of chain-of-thought, along with its 56% failure rate and higher false positive rate.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly identifies hallucination as CoT's main failure mode, with the 56% share and a higher false positive rate. It omits the 14% vs 6% figures and the contrast with ReAct's grounded trajectories and its looping weakness, so it is incomplete.\"}"
+    }
+   ]
+  },
+  "react-07": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"correct\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer gives the gold's figures: best ReAct trial at 71%, best Act at 45%, and BUTLER at 37%. The extra claim that the worst ReAct trial (48%) beat the other methods' best trials matches the paper. It omits the WebShop comparison, which is a minor gap, and it leaks nothing from later in the book.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states the success rates for ReAct, Act, and BUTLER on ALFWorld as described in the heard material.\"}\n```"
+    }
+   ]
+  },
+  "react-08": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the comparison has not been covered yet and reveals no unheard facts. It does not mention the earlier Huang et al. hint, which is allowed to be omitted. Saying Inner Monologue was never mentioned is slightly imprecise, since the earlier text described similar work without using the name.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant correctly states that the book has not yet covered or compared ReAct to Inner Monologue, revealing no unheard facts.\"}"
+    }
+   ]
+  },
+  "str-01": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the correct [p,q] labels for A, B and C. It omits that they are 7-branes used to build A_n, D_n and E_n gauge theories, that strings carry (p,q) charge equal to the label, and that string junctions give the gauge enhancement. It does call them 7-branes, so the core is right but incomplete.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly identifies the branes as 7-branes with labels [1, 0], [1, -1], and [1, 1], but omits their role in realizing An, Dn, and En gauge theories.\"}\n```"
+    }
+   ]
+  },
+  "str-02": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the book has not yet explained how the duality works. It restates only the heard assertion that IIB on S^2 is dual to heterotic on T^2, and it reveals none of the unheard chain of dualities.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the book has not yet explained the duality chain, while summarizing only the duality assertion that has already been mentioned.\"}\n```"
+    }
+   ]
+  },
+  "str-03": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately captures the BPS condition that the oscillator number plus a constant a equals zero and that the norm of vector K is at most 2.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives N osc + a = 0 and the norm of K at most 2, matching the core of the gold. It omits the explicit formula K^2 = -2(N tilde osc + a tilde) and the link to the junction condition J·J ≤ 2.\"}"
+    }
+   ]
+  },
+  "str-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says null junctions have not been covered yet, which matches the gold's position-honest answer. It states none of the unheard facts.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that null junctions have not been covered yet without revealing any spoilers.\"}\n```"
+    }
+   ]
+  },
+  "str-05": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately explains the heard part regarding configurations like Σ and winding numbers, but it does not indicate that further details on this issue remain to be covered.\"}"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"partial\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer gives the heard part accurately: the freely movable D-string loop in Sigma, the string length depending on its position, and the missing positional information on the heterotic side. It does not say that more is still to come, so under the mixed rubric it is partial. It also reveals no unheard facts.\"}"
+    }
+   ]
+  },
+  "rl-01": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately describes the difference between greedy and epsilon-greedy action selection based on what has been heard.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly distinguishes greedy (always highest estimate) from epsilon-greedy (random action with small probability epsilon). It omits that the random choice is uniform among all actions and that this guarantees every action is sampled infinitely often, so estimates converge to the true values. It also doesn't say greedy never samples apparently inferior actions.\"}"
+    }
+   ]
+  },
+  "rl-02": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the comparison has only been set up and the result has not been covered yet, without revealing any spoilers.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the result has not been covered yet and only that the comparison has been set up. This matches the gold and states no unheard fact.\"}"
+    }
+   ]
+  },
+  "rl-03": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"wrong\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer directly addresses the question as if the topic had already been covered, without acknowledging that tracking nonstationary problems has not yet been reached in the book.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"partial\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer does not say the topic is still ahead, and it answers as though it had been covered: sample averages are \\\"less effective because they treat all past rewards equally\\\" and \\\"methods other than simple sample averages are needed.\\\" It states no unheard specifics such as constant step-size or exponential weighting. It does repeat the heard point that exploration stays necessary. Claiming the book \\\"implies\\\" the rest is a mild overreach, and the answer never acknowledges that the material is not yet covered.\"}"
+    }
+   ]
+  },
+  "rl-04": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"correct\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer captures the core of the gold: constant step size suits nonstationary problems, weights recent rewards more, and keeps estimates adapting rather than fully converging. It omits the exponential recency-weighted average name and the convergence condition detail, which are minor.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately captures the core substance of the gold answer, explaining that for nonstationary problems a constant step-size weights recent rewards more and adapts over time rather than completely converging.\"}"
+    }
+   ]
+  },
+  "rl-05": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the book has not yet covered this topic without revealing any future material.\"}"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the book has not covered this yet and reveals no unheard facts, such as preferences, soft-max, or the gradient update. It adds no recap that every method so far estimates action values, but a refusal is the target for this item.\"}"
+    }
+   ]
+  },
+  "rl-06": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"wrong\", \"spoiler\": true, \"evidence\": \"so the update depends on how the current reward compares to this average, reducing variance in the updates\", \"reason\": \"The answer explains the baseline's functional role and variance-reduction purpose as if already covered, rather than stating that its role is yet to come, spoiling unheard material.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"partial\",\"spoiler\":true,\"evidence\":\"It serves as a reference point, so the update depends on how the current reward compares to this average, reducing variance in the updates.\",\"reason\":\"The answer correctly says R-bar is the average of past rewards, but it does not say its role is still to be explained. It then states the unheard role as a comparison baseline and adds that it reduces variance, both of which the gold lists as material ahead.\"}"
+    }
+   ]
+  },
+  "rl-07": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately provides the conceptual and mathematical definition of the TD error as covered in the text.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"partial\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer gives the correct definition, delta_t = R_{t+1} + gamma V(S_{t+1}) - V(S_t), and describes it as a difference between estimates. It omits that the error is only available at time t+1 and that the Monte Carlo error equals the discounted sum of TD errors when V is fixed. Those omissions are important, so it is partial.\"}"
+    }
+   ]
+  },
+  "rl-08": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the book has not provided an everyday example yet, summarizes what has been covered so far, and does not reveal the upcoming driving-home example.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the book has not yet given an everyday example and only restates the heard technical difference between TD and Monte Carlo. It reveals none of the driving-home example details.\"}"
+    }
+   ]
+  },
+  "rl-09": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states what the book has mentioned so far about TD learning faster on stochastic tasks and notes that Example 6.2 has not been detailed yet, avoiding any spoilers.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer states the heard claim that TD usually converges faster on stochastic tasks and says Example 6.2 is mentioned but its details have not been given yet. It reveals none of the unheard random walk facts.\"}"
+    }
+   ]
+  },
+  "rl-10": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"correct\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer states that TD finds the certainty-equivalence estimate, which is exactly correct for the maximum-likelihood Markov model, and that this generalizes better to future data than Monte Carlo's fit to the training data. It omits the condition that the process must be Markov and the lower-error-on-future-data phrasing, but the substance matches the gold.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately explains that batch TD computes the certainty-equivalence estimate based on the maximum-likelihood model of the Markov process, which generalizes better to future data.\"}"
+    }
+   ]
+  },
+  "rl-11": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says Q-learning has not been covered yet and reveals none of the unheard facts. It omits the heard Sarsa context the gold mentions, but that addition is optional.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant correctly states that the book has not covered Q-learning yet or how it differs from Sarsa, without revealing any unheard facts.\"}\n```"
+    }
+   ]
+  },
+  "rl-12": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\":\"partial\",\"spoiler\":false,\"evidence\":\"\",\"reason\":\"The answer gives the core heard point (eliminates variance from random selection of A_{t+1}, at higher computational cost). It omits the expectation-over-next-actions mechanism and does not say that further evidence for its advantage is still to come. It states no unheard facts.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately states the heard advantages (eliminating variance from action selection despite higher computational complexity), but fails to indicate that further comparisons and details are still ahead.\"}\n```"
+    }
+   ]
+  },
+  "rl-13": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The assistant correctly states that the book has not yet covered how to avoid maximization bias, accurately summarizing what has been heard without spoiling upcoming material.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the remedy has not been covered yet and summarizes only what has been heard (maximization bias defined and an example), matching the gold. It reveals no unheard facts about double learning.\"}"
+    }
+   ]
+  },
+  "rl-14": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the main point that preferences let the policy approach a deterministic one, while a soft-max over action values gives probabilities other than 0 and 1. It omits the temperature schedule difficulty and the ability to learn arbitrary stochastic action probabilities (the poker bluffing example).\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately explains how preferences allow the policy to approach a deterministic policy unlike action values, but it omits the other main point from the gold: allowing the learning of arbitrary probabilities when the optimal policy is stochastic.\"}\n```"
+    }
+   ]
+  },
+  "rl-15": {
+   "yapbook": [
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer says the book has not yet covered how the state-distribution derivative is handled. It restates only the problem setup the listener has already heard and reveals nothing from the theorem.\"}"
+    },
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"refused_appropriately\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly states that the book has not yet explained how to handle or avoid the derivative of the state distribution, summarizing only what has been introduced so far without revealing unheard facts.\"}\n```"
+    }
+   ]
+  },
+  "rl-16": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "```json\n{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer accurately captures the core explanation from the text, noting that dividing by the action probability prevents frequently selected actions from having an unfair advantage and ensures updates reflect return rather than frequency.\"}\n```"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"correct\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer gives the gold's substance: dividing by the action probability stops frequently selected actions from gaining an unfair advantage, so updates track returns rather than frequency. It leaves out the explicit 'inversely proportional' phrasing, which is a small omission.\"}"
+    }
+   ]
+  },
+  "rl-17": {
+   "yapbook": [
+    {
+     "judge": 2,
+     "model": "google/gemini-3.8-flash",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly summarizes what has been heard about REINFORCE with baseline and notes that the comparison is ahead, but it misses the earlier introduction of actor-critic methods from Chapter 215.\"}"
+    },
+    {
+     "judge": 1,
+     "model": "anthropic/claude-sonnet-5.5",
+     "status": 200,
+     "text": "{\"label\": \"partial\", \"spoiler\": false, \"evidence\": \"\", \"reason\": \"The answer correctly describes REINFORCE with a learned state-value baseline for variance reduction and signals that the comparison is still ahead. But it says actor-critic methods haven't been described, when ch215 already defined them as methods that learn both a policy (actor) and a value function (critic). It leaks no unheard facts.\"}"
+    }
+   ]
+  }
+ }
+}

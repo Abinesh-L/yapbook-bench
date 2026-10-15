@@ -1,0 +1,34 @@
+{
+  "system": "yapbook",
+  "run": 2,
+  "started": "2026-09-11T04:37:18-04:00",
+  "data_dir": "(a temporary folder)\\groundbench\\data",
+  "code_under_test": {
+    "commit": "05ac302",
+    "branch": "main",
+    "dirty": false
+  },
+  "repo": "(the checkout)",
+  "brain_model": "qwen3:4b-instruct",
+  "brain_provider": "ollama",
+  "embed_model": "nomic-embed-text",
+  "retrieval_enabled": true,
+  "retrieval_min_score": 0.6,
+  "top_k": 4,
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "num_predict": 256,
+  "max_sentences": 4,
+  "questions_total": 60,
+  "questions_this_run": 60,
+  "resume": false,
+  "note": "seconds = wall-clock per ask_book_text call on a machine shared with another benchmark; NOT a latency measurement",
+  "generate_kwargs_first": {
+    "num_ctx": 16384,
+    "num_predict": 256,
+    "temperature": 0.3
+  },
+  "finished": "2026-09-11T04:42:01-04:00",
+  "ok": 60,
+  "errors": 0
+}

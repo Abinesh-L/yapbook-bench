@@ -1,0 +1,5402 @@
+[
+ {
+  "id": "att-01",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 6,
+  "seq": 4,
+  "kind": "behind",
+  "question": "How many layers does the encoder have, and what are the two sub-layers in each one?",
+  "answer": "The encoder has six layers. Each layer contains two sub-layers: a multi-head self-attention mechanism and a simple, positionwise fully connected feed-forward network.",
+  "error": null,
+  "seconds": 5.0,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:08-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 6,
+    "seq": 1,
+    "score": 0.8428
+   },
+   {
+    "chapter": 6,
+    "seq": 4,
+    "score": 0.8274
+   },
+   {
+    "chapter": 6,
+    "seq": 5,
+    "score": 0.7474
+   },
+   {
+    "chapter": 12,
+    "seq": 1,
+    "score": 0.7452
+   },
+   {
+    "chapter": 11,
+    "seq": 4,
+    "score": 0.7347
+   },
+   {
+    "chapter": 6,
+    "seq": 0,
+    "score": 0.7117
+   },
+   {
+    "chapter": 5,
+    "seq": 4,
+    "score": 0.7092
+   },
+   {
+    "chapter": 11,
+    "seq": 2,
+    "score": 0.7006
+   },
+   {
+    "chapter": 15,
+    "seq": 2,
+    "score": 0.6539
+   },
+   {
+    "chapter": 15,
+    "seq": 1,
+    "score": 0.6509
+   },
+   {
+    "chapter": 6,
+    "seq": 2,
+    "score": 0.6435
+   },
+   {
+    "chapter": 14,
+    "seq": 2,
+    "score": 0.6429
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3667,
+  "prompt_tokens_est": 1048,
+  "prompt_sha256": "3d6fd59a25fbdb5ed44c2723c7fec1a95b2f6a1e9d14642c2efb78d45f8baf66"
+ },
+ {
+  "id": "att-02",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 9,
+  "seq": 3,
+  "kind": "ahead",
+  "question": "Why do they divide by the square root of d k?",
+  "answer": "They divide by the square root of d k to scale the dot products, preventing them from becoming too large. This scaling ensures the softmax function operates in regions where it has reasonable gradients. Without this, large dot products would push the softmax into areas with very small gradients, reducing the effectiveness of the attention mechanism. The division by √ d k is a key part of the scaled dot-product attention mechanism.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:13-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 10,
+    "seq": 8,
+    "score": 0.5985
+   },
+   {
+    "chapter": 9,
+    "seq": 4,
+    "score": 0.5841
+   },
+   {
+    "chapter": 9,
+    "seq": 8,
+    "score": 0.5456
+   },
+   {
+    "chapter": 14,
+    "seq": 4,
+    "score": 0.5313
+   },
+   {
+    "chapter": 9,
+    "seq": 1,
+    "score": 0.5234
+   },
+   {
+    "chapter": 19,
+    "seq": 2,
+    "score": 0.5185
+   },
+   {
+    "chapter": 9,
+    "seq": 2,
+    "score": 0.5167
+   },
+   {
+    "chapter": 10,
+    "seq": 4,
+    "score": 0.5154
+   },
+   {
+    "chapter": 14,
+    "seq": 3,
+    "score": 0.5141
+   },
+   {
+    "chapter": 9,
+    "seq": 5,
+    "score": 0.5048
+   },
+   {
+    "chapter": 3,
+    "seq": 5,
+    "score": 0.5013
+   },
+   {
+    "chapter": 3,
+    "seq": 3,
+    "score": 0.5011
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3103,
+  "prompt_tokens_est": 887,
+  "prompt_sha256": "b117ad4ad4ed1583cdd2040e1b057c3e15e9aec586b98eead1145c22d5306f6f"
+ },
+ {
+  "id": "att-03",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 4,
+  "seq": 4,
+  "kind": "ahead",
+  "question": "They just mentioned multi-head attention. What is that, actually?",
+  "answer": "Multi-head attention allows the model to simultaneously attend to information from different representation subspaces at different positions. It consists of several parallel attention layers, each learning to perform different tasks, such as syntactic or semantic structure recognition. Each head has a reduced dimension, so the total computational cost remains similar to single-head attention. The model uses multiple heads to jointly capture diverse aspects of the input sequence.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:17-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 10,
+    "seq": 0,
+    "score": 0.8474
+   },
+   {
+    "chapter": 10,
+    "seq": 3,
+    "score": 0.7914
+   },
+   {
+    "chapter": 8,
+    "seq": 2,
+    "score": 0.7646
+   },
+   {
+    "chapter": 11,
+    "seq": 1,
+    "score": 0.7347
+   },
+   {
+    "chapter": 15,
+    "seq": 14,
+    "score": 0.723
+   },
+   {
+    "chapter": 10,
+    "seq": 7,
+    "score": 0.7214
+   },
+   {
+    "chapter": 27,
+    "seq": 5,
+    "score": 0.6968
+   },
+   {
+    "chapter": 10,
+    "seq": 6,
+    "score": 0.6957
+   },
+   {
+    "chapter": 27,
+    "seq": 3,
+    "score": 0.6931
+   },
+   {
+    "chapter": 9,
+    "seq": 5,
+    "score": 0.6911
+   },
+   {
+    "chapter": 23,
+    "seq": 4,
+    "score": 0.6891
+   },
+   {
+    "chapter": 4,
+    "seq": 4,
+    "score": 0.6866
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2873,
+  "prompt_tokens_est": 821,
+  "prompt_sha256": "15c4fcf5efe48600b7f44b0b2bcbc59091e648c812a1caa569e8b9348d7e4fc4"
+ },
+ {
+  "id": "att-04",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 6,
+  "seq": 7,
+  "kind": "mixed",
+  "question": "How does the decoder keep from peeking at future output words?",
+  "answer": "The decoder prevents leftward information flow by masking out all values in the softmax input that correspond to illegal connections. This masking ensures that each position in the decoder cannot attend to subsequent positions. The self-attention mechanism in the decoder is modified to only allow attention over positions up to and including the current one. This maintains the auto-regressive property by preventing the model from seeing future output words.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:22-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 6,
+    "seq": 4,
+    "score": 0.68
+   },
+   {
+    "chapter": 11,
+    "seq": 5,
+    "score": 0.6795
+   },
+   {
+    "chapter": 11,
+    "seq": 3,
+    "score": 0.6707
+   },
+   {
+    "chapter": 11,
+    "seq": 2,
+    "score": 0.6642
+   },
+   {
+    "chapter": 11,
+    "seq": 6,
+    "score": 0.6633
+   },
+   {
+    "chapter": 5,
+    "seq": 2,
+    "score": 0.6309
+   },
+   {
+    "chapter": 6,
+    "seq": 5,
+    "score": 0.6137
+   },
+   {
+    "chapter": 13,
+    "seq": 2,
+    "score": 0.6125
+   },
+   {
+    "chapter": 11,
+    "seq": 4,
+    "score": 0.6114
+   },
+   {
+    "chapter": 12,
+    "seq": 1,
+    "score": 0.5998
+   },
+   {
+    "chapter": 6,
+    "seq": 1,
+    "score": 0.5985
+   },
+   {
+    "chapter": 2,
+    "seq": 2,
+    "score": 0.595
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3522,
+  "prompt_tokens_est": 1007,
+  "prompt_sha256": "fa435f1237588f07e5aadab2d9f9bf0058e908fbc698b58b4966a5259b25ac4f"
+ },
+ {
+  "id": "att-05",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 14,
+  "seq": 9,
+  "kind": "behind",
+  "question": "Why did they go with sinusoids instead of learned position embeddings?",
+  "answer": "They went with sinusoids because the sinusoidal positional encoding allows the model to easily learn to attend by relative positions, as any fixed offset k in the sinusoidal function can be represented as a linear function of the position. This property helps the model learn long-range dependencies more effectively. The authors chose the sinusoidal version because it may allow the model to extrapolate to sequence lengths longer than those encountered during training. They found that the two versions produced nearly identical results, but the sinusoidal version offered better generalization.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:27-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 23,
+    "seq": 7,
+    "score": 0.802
+   },
+   {
+    "chapter": 14,
+    "seq": 5,
+    "score": 0.7497
+   },
+   {
+    "chapter": 14,
+    "seq": 7,
+    "score": 0.7243
+   },
+   {
+    "chapter": 14,
+    "seq": 8,
+    "score": 0.7213
+   },
+   {
+    "chapter": 14,
+    "seq": 2,
+    "score": 0.6875
+   },
+   {
+    "chapter": 15,
+    "seq": 4,
+    "score": 0.6154
+   },
+   {
+    "chapter": 14,
+    "seq": 0,
+    "score": 0.6128
+   },
+   {
+    "chapter": 4,
+    "seq": 3,
+    "score": 0.6062
+   },
+   {
+    "chapter": 15,
+    "seq": 5,
+    "score": 0.6047
+   },
+   {
+    "chapter": 4,
+    "seq": 2,
+    "score": 0.5965
+   },
+   {
+    "chapter": 12,
+    "seq": 3,
+    "score": 0.5886
+   },
+   {
+    "chapter": 14,
+    "seq": 6,
+    "score": 0.5873
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2964,
+  "prompt_tokens_est": 847,
+  "prompt_sha256": "2b26052926a987047ed55bf5baa1cbdbb001f9997876f7cfa80dc68f6e388f5b"
+ },
+ {
+  "id": "att-06",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 13,
+  "seq": 3,
+  "kind": "ahead",
+  "question": "With no recurrence, how does the model know what order the words are in?",
+  "answer": "With no recurrence, the model knows what order the words are in by injecting information about the relative or absolute position of the tokens in the sequence. This positional information allows each position in the decoder to attend over all positions in the input sequence. The model uses self-attention to capture the order of tokens without relying on recurrence.",
+  "error": null,
+  "seconds": 4.6,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:32-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 14,
+    "seq": 1,
+    "score": 0.8107
+   },
+   {
+    "chapter": 3,
+    "seq": 3,
+    "score": 0.7193
+   },
+   {
+    "chapter": 5,
+    "seq": 2,
+    "score": 0.6799
+   },
+   {
+    "chapter": 4,
+    "seq": 6,
+    "score": 0.6705
+   },
+   {
+    "chapter": 11,
+    "seq": 3,
+    "score": 0.6518
+   },
+   {
+    "chapter": 3,
+    "seq": 1,
+    "score": 0.6331
+   },
+   {
+    "chapter": 3,
+    "seq": 6,
+    "score": 0.6323
+   },
+   {
+    "chapter": 24,
+    "seq": 2,
+    "score": 0.6209
+   },
+   {
+    "chapter": 15,
+    "seq": 8,
+    "score": 0.6203
+   },
+   {
+    "chapter": 5,
+    "seq": 1,
+    "score": 0.6053
+   },
+   {
+    "chapter": 24,
+    "seq": 9,
+    "score": 0.6045
+   },
+   {
+    "chapter": 15,
+    "seq": 7,
+    "score": 0.604
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3771,
+  "prompt_tokens_est": 1078,
+  "prompt_sha256": "f0511cbc8e34f9c31c4e0c119a064dcddaffa581054f7ed6e3244952f3eee209"
+ },
+ {
+  "id": "att-07",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 15,
+  "seq": 8,
+  "kind": "mixed",
+  "question": "So is self-attention actually cheaper than a recurrent layer?",
+  "answer": "Yes, self-attention is actually cheaper than a recurrent layer when the sequence length n is smaller than the representation dimensionality d, which is typical for sentence representations. The passage states that self-attention layers are faster than recurrent layers under this condition. In most practical cases, such as machine translation with word-piece or byte-pair representations, this condition holds. Therefore, self-attention is computationally more efficient in these scenarios.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:36-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 15,
+    "seq": 7,
+    "score": 0.7677
+   },
+   {
+    "chapter": 15,
+    "seq": 1,
+    "score": 0.7133
+   },
+   {
+    "chapter": 15,
+    "seq": 0,
+    "score": 0.712
+   },
+   {
+    "chapter": 15,
+    "seq": 8,
+    "score": 0.6897
+   },
+   {
+    "chapter": 15,
+    "seq": 13,
+    "score": 0.6762
+   },
+   {
+    "chapter": 11,
+    "seq": 5,
+    "score": 0.6752
+   },
+   {
+    "chapter": 4,
+    "seq": 4,
+    "score": 0.6655
+   },
+   {
+    "chapter": 15,
+    "seq": 11,
+    "score": 0.6617
+   },
+   {
+    "chapter": 4,
+    "seq": 5,
+    "score": 0.6588
+   },
+   {
+    "chapter": 27,
+    "seq": 1,
+    "score": 0.6404
+   },
+   {
+    "chapter": 11,
+    "seq": 4,
+    "score": 0.6398
+   },
+   {
+    "chapter": 10,
+    "seq": 7,
+    "score": 0.6333
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3520,
+  "prompt_tokens_est": 1006,
+  "prompt_sha256": "cbb5fd29b70e806e04f736a76c78d3f61eb3af69efe77a925449fa07bb305558"
+ },
+ {
+  "id": "att-08",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 17,
+  "seq": 2,
+  "kind": "mixed",
+  "question": "How long did it take to train this thing?",
+  "answer": "It took 3.5 days to train the big models. The base models were trained for 12 hours, or 100,000 steps. Each training step took about 0. 4 seconds on 8 P100 GPUs.",
+  "error": null,
+  "seconds": 4.6,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:41-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 22,
+    "seq": 3,
+    "score": 0.7141
+   },
+   {
+    "chapter": 18,
+    "seq": 2,
+    "score": 0.7115
+   },
+   {
+    "chapter": 18,
+    "seq": 1,
+    "score": 0.6781
+   },
+   {
+    "chapter": 16,
+    "seq": 0,
+    "score": 0.6117
+   },
+   {
+    "chapter": 24,
+    "seq": 3,
+    "score": 0.6111
+   },
+   {
+    "chapter": 22,
+    "seq": 9,
+    "score": 0.6005
+   },
+   {
+    "chapter": 19,
+    "seq": 3,
+    "score": 0.5975
+   },
+   {
+    "chapter": 16,
+    "seq": 1,
+    "score": 0.5931
+   },
+   {
+    "chapter": 25,
+    "seq": 2,
+    "score": 0.5777
+   },
+   {
+    "chapter": 17,
+    "seq": 3,
+    "score": 0.5751
+   },
+   {
+    "chapter": 24,
+    "seq": 4,
+    "score": 0.5686
+   },
+   {
+    "chapter": 2,
+    "seq": 3,
+    "score": 0.565
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2675,
+  "prompt_tokens_est": 765,
+  "prompt_sha256": "2102bffad81f175b9a76d0623babbd1454eac76cfde8c19cc035986ae8651149"
+ },
+ {
+  "id": "att-09",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 19,
+  "seq": 4,
+  "kind": "behind",
+  "question": "What optimizer and learning rate schedule did they use?",
+  "answer": "They used the Adam optimizer with β₁ = 0. 9, β₂ = 0.98, and ϵ = 10⁻⁹. The learning rate schedule increased linearly for the first 4000 training steps and then decreased proportionally to the inverse square root of the step number.",
+  "error": null,
+  "seconds": 4.6,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:46-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 19,
+    "seq": 1,
+    "score": 0.7163
+   },
+   {
+    "chapter": 22,
+    "seq": 3,
+    "score": 0.6599
+   },
+   {
+    "chapter": 18,
+    "seq": 1,
+    "score": 0.6382
+   },
+   {
+    "chapter": 19,
+    "seq": 0,
+    "score": 0.6321
+   },
+   {
+    "chapter": 26,
+    "seq": 17,
+    "score": 0.6298
+   },
+   {
+    "chapter": 19,
+    "seq": 3,
+    "score": 0.6276
+   },
+   {
+    "chapter": 26,
+    "seq": 20,
+    "score": 0.6213
+   },
+   {
+    "chapter": 16,
+    "seq": 1,
+    "score": 0.6117
+   },
+   {
+    "chapter": 18,
+    "seq": 2,
+    "score": 0.6062
+   },
+   {
+    "chapter": 20,
+    "seq": 5,
+    "score": 0.605
+   },
+   {
+    "chapter": 22,
+    "seq": 7,
+    "score": 0.6013
+   },
+   {
+    "chapter": 22,
+    "seq": 9,
+    "score": 0.5979
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2667,
+  "prompt_tokens_est": 762,
+  "prompt_sha256": "6359c44cbf58bc8e58af3c8da69ac9b424631132eb5e48b310889ad07b40228b"
+ },
+ {
+  "id": "att-10",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 20,
+  "seq": 3,
+  "kind": "ahead",
+  "question": "What are the three kinds of regularization they use?",
+  "answer": "The three kinds of regularization they use are label smoothing with ϵ ls = 0. 1, dropout with P drop = 0. 1, and positional embedding instead of sinusoids. These are explicitly mentioned in the section on regularization.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:50-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 20,
+    "seq": 1,
+    "score": 0.8356
+   },
+   {
+    "chapter": 20,
+    "seq": 0,
+    "score": 0.7254
+   },
+   {
+    "chapter": 23,
+    "seq": 3,
+    "score": 0.6207
+   },
+   {
+    "chapter": 20,
+    "seq": 5,
+    "score": 0.6155
+   },
+   {
+    "chapter": 26,
+    "seq": 1,
+    "score": 0.6025
+   },
+   {
+    "chapter": 12,
+    "seq": 3,
+    "score": 0.5863
+   },
+   {
+    "chapter": 24,
+    "seq": 8,
+    "score": 0.5843
+   },
+   {
+    "chapter": 3,
+    "seq": 1,
+    "score": 0.5813
+   },
+   {
+    "chapter": 26,
+    "seq": 11,
+    "score": 0.5743
+   },
+   {
+    "chapter": 6,
+    "seq": 2,
+    "score": 0.5703
+   },
+   {
+    "chapter": 15,
+    "seq": 3,
+    "score": 0.5687
+   },
+   {
+    "chapter": 6,
+    "seq": 4,
+    "score": 0.5588
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 13750,
+  "prompt_tokens_est": 3929,
+  "prompt_sha256": "cc92e922af38db0e5ab4ca9c3dbedfb6a603b3572d57955137e03bf6aca65545"
+ },
+ {
+  "id": "att-11",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 22,
+  "seq": 5,
+  "kind": "ahead",
+  "question": "How did they estimate the training cost in floating point operations?",
+  "answer": "They estimated the training cost in floating point operations by multiplying the training time, the number of GPUs used, and an estimate of the sustained single-precision floating-point capacity of each GPU. The training time and number of GPUs are given in the text, and the floating-point capacity is implied as a known parameter for each GPU. This calculation provides a direct estimate of the total floating point operations used.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:52:55-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 22,
+    "seq": 9,
+    "score": 0.8138
+   },
+   {
+    "chapter": 22,
+    "seq": 3,
+    "score": 0.6913
+   },
+   {
+    "chapter": 18,
+    "seq": 1,
+    "score": 0.6419
+   },
+   {
+    "chapter": 19,
+    "seq": 3,
+    "score": 0.6403
+   },
+   {
+    "chapter": 18,
+    "seq": 2,
+    "score": 0.6288
+   },
+   {
+    "chapter": 22,
+    "seq": 8,
+    "score": 0.6199
+   },
+   {
+    "chapter": 17,
+    "seq": 3,
+    "score": 0.6
+   },
+   {
+    "chapter": 24,
+    "seq": 3,
+    "score": 0.5995
+   },
+   {
+    "chapter": 20,
+    "seq": 5,
+    "score": 0.5987
+   },
+   {
+    "chapter": 2,
+    "seq": 5,
+    "score": 0.598
+   },
+   {
+    "chapter": 20,
+    "seq": 1,
+    "score": 0.5936
+   },
+   {
+    "chapter": 16,
+    "seq": 1,
+    "score": 0.5907
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2867,
+  "prompt_tokens_est": 820,
+  "prompt_sha256": "d2534c0fb33e11107468170454f0e16b1a78b6144d766d5dc064406d5bfd87ed"
+ },
+ {
+  "id": "att-12",
+  "system": "baseline",
+  "slug": "attention-is-all-you-need",
+  "chapter": 23,
+  "seq": 9,
+  "kind": "behind",
+  "question": "What happened when they tried a single attention head?",
+  "answer": "When they tried a single attention head, the model achieved 0. 9 BLEU less than the best setting with multiple heads. The quality dropped off as the number of heads increased beyond the optimal point. Single-head attention had reduced performance compared to multi-head attention.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:00-04:00",
+  "book_title": "Attention Is All You Need",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 217,
+  "hits": [
+   {
+    "chapter": 10,
+    "seq": 3,
+    "score": 0.7016
+   },
+   {
+    "chapter": 10,
+    "seq": 0,
+    "score": 0.6902
+   },
+   {
+    "chapter": 10,
+    "seq": 7,
+    "score": 0.6842
+   },
+   {
+    "chapter": 15,
+    "seq": 14,
+    "score": 0.6804
+   },
+   {
+    "chapter": 23,
+    "seq": 4,
+    "score": 0.6725
+   },
+   {
+    "chapter": 27,
+    "seq": 5,
+    "score": 0.6639
+   },
+   {
+    "chapter": 10,
+    "seq": 6,
+    "score": 0.6443
+   },
+   {
+    "chapter": 27,
+    "seq": 3,
+    "score": 0.6424
+   },
+   {
+    "chapter": 8,
+    "seq": 2,
+    "score": 0.6398
+   },
+   {
+    "chapter": 11,
+    "seq": 1,
+    "score": 0.6202
+   },
+   {
+    "chapter": 4,
+    "seq": 4,
+    "score": 0.6195
+   },
+   {
+    "chapter": 15,
+    "seq": 13,
+    "score": 0.6162
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2819,
+  "prompt_tokens_est": 806,
+  "prompt_sha256": "3cd43690512d214c7952194831f750a5f323fd32cf85038faf2eadeeb27aad41"
+ },
+ {
+  "id": "bn-01",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 2,
+  "seq": 13,
+  "kind": "behind",
+  "question": "What exactly do they mean by internal covariate shift?",
+  "answer": "Internal covariate shift refers to the change in the distribution of network activations as the network parameters update during training. This change occurs in the internal nodes of a deep network and affects the input distributions to each layer. The phenomenon is called internal covariate shift because it happens within the network's layers, not just across different data sets. Reducing this shift improves training stability and speed.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:05-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 3,
+    "seq": 0,
+    "score": 0.8539
+   },
+   {
+    "chapter": 3,
+    "seq": 1,
+    "score": 0.8513
+   },
+   {
+    "chapter": 2,
+    "seq": 12,
+    "score": 0.8329
+   },
+   {
+    "chapter": 1,
+    "seq": 3,
+    "score": 0.7846
+   },
+   {
+    "chapter": 0,
+    "seq": 9,
+    "score": 0.7243
+   },
+   {
+    "chapter": 3,
+    "seq": 5,
+    "score": 0.7233
+   },
+   {
+    "chapter": 0,
+    "seq": 8,
+    "score": 0.7181
+   },
+   {
+    "chapter": 3,
+    "seq": 2,
+    "score": 0.7161
+   },
+   {
+    "chapter": 10,
+    "seq": 1,
+    "score": 0.6683
+   },
+   {
+    "chapter": 13,
+    "seq": 12,
+    "score": 0.6464
+   },
+   {
+    "chapter": 16,
+    "seq": 18,
+    "score": 0.6144
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.6061
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2976,
+  "prompt_tokens_est": 851,
+  "prompt_sha256": "db8d4f53b2ca8e8fc3430fcb1afc6e2cad62f6bb35353008ced2d3135db297de"
+ },
+ {
+  "id": "bn-02",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 2,
+  "seq": 16,
+  "kind": "mixed",
+  "question": "So what's their fix, how does batch normalization actually work?",
+  "answer": "Batch normalization works by normalizing the activations of each layer to have a mean of zero and a standard deviation of one, using the batch statistics from the current mini-batch. It then applies learned scale and shift parameters to allow the network to adjust the normalized values. This normalization stabilizes the distribution of activations throughout training, preventing small parameter changes from amplifying into large changes. By doing so, it helps avoid saturated nonlinearities and allows for faster, more stable training.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:10-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 15,
+    "seq": 5,
+    "score": 0.8116
+   },
+   {
+    "chapter": 1,
+    "seq": 4,
+    "score": 0.811
+   },
+   {
+    "chapter": 7,
+    "seq": 2,
+    "score": 0.8079
+   },
+   {
+    "chapter": 12,
+    "seq": 1,
+    "score": 0.7941
+   },
+   {
+    "chapter": 1,
+    "seq": 5,
+    "score": 0.7902
+   },
+   {
+    "chapter": 2,
+    "seq": 16,
+    "score": 0.7897
+   },
+   {
+    "chapter": 15,
+    "seq": 15,
+    "score": 0.7878
+   },
+   {
+    "chapter": 12,
+    "seq": 6,
+    "score": 0.7876
+   },
+   {
+    "chapter": 8,
+    "seq": 0,
+    "score": 0.7868
+   },
+   {
+    "chapter": 11,
+    "seq": 7,
+    "score": 0.785
+   },
+   {
+    "chapter": 15,
+    "seq": 12,
+    "score": 0.7798
+   },
+   {
+    "chapter": 7,
+    "seq": 4,
+    "score": 0.7784
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3416,
+  "prompt_tokens_est": 976,
+  "prompt_sha256": "5728ce1d109434d11d66c09af945867971cb2c45281e096dd738746f995d11f7"
+ },
+ {
+  "id": "bn-03",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 3,
+  "seq": 13,
+  "kind": "behind",
+  "question": "Why can't you just normalize the activations outside the gradient step?",
+  "answer": "You can't normalize the activations outside the gradient step because doing so would require the normalization to be updated after each parameter update, which means the gradient step would be based on outdated statistics. This breaks the consistency between parameter updates and the normalization process. As a result, the gradient descent step may attempt to update parameters in a way that requires the normalization to be updated, reducing the effectiveness of the gradient step. The normalization must occur within the training step to maintain stable gradient flow and proper parameter updates.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:14-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 7,
+    "seq": 2,
+    "score": 0.807
+   },
+   {
+    "chapter": 3,
+    "seq": 13,
+    "score": 0.7789
+   },
+   {
+    "chapter": 4,
+    "seq": 9,
+    "score": 0.7583
+   },
+   {
+    "chapter": 3,
+    "seq": 7,
+    "score": 0.7517
+   },
+   {
+    "chapter": 7,
+    "seq": 13,
+    "score": 0.744
+   },
+   {
+    "chapter": 2,
+    "seq": 14,
+    "score": 0.742
+   },
+   {
+    "chapter": 5,
+    "seq": 3,
+    "score": 0.7396
+   },
+   {
+    "chapter": 15,
+    "seq": 5,
+    "score": 0.7353
+   },
+   {
+    "chapter": 15,
+    "seq": 12,
+    "score": 0.7303
+   },
+   {
+    "chapter": 3,
+    "seq": 22,
+    "score": 0.7297
+   },
+   {
+    "chapter": 4,
+    "seq": 5,
+    "score": 0.7226
+   },
+   {
+    "chapter": 15,
+    "seq": 16,
+    "score": 0.7209
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3969,
+  "prompt_tokens_est": 1134,
+  "prompt_sha256": "cb60c93df124a52827a77bd1bb350ff9a43bda276d79f41ac0bed61d9a4684de"
+ },
+ {
+  "id": "bn-04",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 3,
+  "seq": 23,
+  "kind": "ahead",
+  "question": "Doesn't forcing every input to zero mean and unit variance limit what a layer can represent?",
+  "answer": "No, forcing every input to zero mean and unit variance does not limit what a layer can represent because Batch Normalization includes learnable parameters that allow the layer to adjust its output distribution. The layer can still represent a wide range of functions through these parameters, and the normalization step is applied after the layer's computation, not before. This setup preserves the layer's representational capacity while stabilizing training. The layer Jacobians are also conjectured to have singular values close to 1, which supports effective learning.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:19-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 4,
+    "seq": 2,
+    "score": 0.7281
+   },
+   {
+    "chapter": 4,
+    "seq": 5,
+    "score": 0.7258
+   },
+   {
+    "chapter": 2,
+    "seq": 14,
+    "score": 0.7074
+   },
+   {
+    "chapter": 7,
+    "seq": 8,
+    "score": 0.683
+   },
+   {
+    "chapter": 7,
+    "seq": 4,
+    "score": 0.6708
+   },
+   {
+    "chapter": 3,
+    "seq": 5,
+    "score": 0.6489
+   },
+   {
+    "chapter": 0,
+    "seq": 7,
+    "score": 0.647
+   },
+   {
+    "chapter": 4,
+    "seq": 1,
+    "score": 0.6429
+   },
+   {
+    "chapter": 5,
+    "seq": 2,
+    "score": 0.6422
+   },
+   {
+    "chapter": 7,
+    "seq": 9,
+    "score": 0.6414
+   },
+   {
+    "chapter": 3,
+    "seq": 8,
+    "score": 0.6402
+   },
+   {
+    "chapter": 3,
+    "seq": 16,
+    "score": 0.6377
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3399,
+  "prompt_tokens_est": 972,
+  "prompt_sha256": "241cb1d74182bb70d7a618bdb2f33e0388ac4755a9215b00d03e929418b9ad34"
+ },
+ {
+  "id": "bn-05",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 4,
+  "seq": 12,
+  "kind": "behind",
+  "question": "Why normalize each dimension separately instead of whitening them jointly?",
+  "answer": "Because jointly whitening the features is costly and not everywhere differentiable, and normalizing each dimension independently makes the normalization computationally feasible and allows the statistics to participate in gradient backpropagation. This per-dimension normalization avoids the need to compute joint covariances, which would require regularization and could result in singular matrices. It also enables efficient training with minibatches and supports the gradient propagation needed for deep network learning.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:24-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 4,
+    "seq": 2,
+    "score": 0.7998
+   },
+   {
+    "chapter": 4,
+    "seq": 1,
+    "score": 0.7137
+   },
+   {
+    "chapter": 4,
+    "seq": 5,
+    "score": 0.6834
+   },
+   {
+    "chapter": 6,
+    "seq": 9,
+    "score": 0.6729
+   },
+   {
+    "chapter": 4,
+    "seq": 11,
+    "score": 0.6641
+   },
+   {
+    "chapter": 3,
+    "seq": 4,
+    "score": 0.6599
+   },
+   {
+    "chapter": 3,
+    "seq": 5,
+    "score": 0.6576
+   },
+   {
+    "chapter": 6,
+    "seq": 8,
+    "score": 0.6553
+   },
+   {
+    "chapter": 15,
+    "seq": 16,
+    "score": 0.6457
+   },
+   {
+    "chapter": 12,
+    "seq": 6,
+    "score": 0.6372
+   },
+   {
+    "chapter": 3,
+    "seq": 19,
+    "score": 0.6331
+   },
+   {
+    "chapter": 1,
+    "seq": 3,
+    "score": 0.6328
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3868,
+  "prompt_tokens_est": 1106,
+  "prompt_sha256": "fcf52c769d9f7daec973f7413ff37f00a2f9ef60c2b403a48de2cf438b9e95b6"
+ },
+ {
+  "id": "bn-06",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 4,
+  "seq": 28,
+  "kind": "ahead",
+  "question": "What happens at test time when there's no mini-batch to normalize over?",
+  "answer": "At test time, when there is no mini-batch to normalize over, the network uses running averages of the mean and variance computed during training, rather than mini-batch statistics. This ensures the output depends only on the input, deterministically. The batch normalization transform then applies these precomputed values to produce consistent, stable outputs.",
+  "error": null,
+  "seconds": 4.6,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:29-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 8,
+    "seq": 1,
+    "score": 0.7233
+   },
+   {
+    "chapter": 4,
+    "seq": 18,
+    "score": 0.7074
+   },
+   {
+    "chapter": 4,
+    "seq": 0,
+    "score": 0.6989
+   },
+   {
+    "chapter": 4,
+    "seq": 12,
+    "score": 0.6955
+   },
+   {
+    "chapter": 4,
+    "seq": 16,
+    "score": 0.6743
+   },
+   {
+    "chapter": 15,
+    "seq": 15,
+    "score": 0.6739
+   },
+   {
+    "chapter": 8,
+    "seq": 0,
+    "score": 0.6707
+   },
+   {
+    "chapter": 15,
+    "seq": 5,
+    "score": 0.6623
+   },
+   {
+    "chapter": 7,
+    "seq": 2,
+    "score": 0.6619
+   },
+   {
+    "chapter": 12,
+    "seq": 6,
+    "score": 0.658
+   },
+   {
+    "chapter": 5,
+    "seq": 3,
+    "score": 0.6577
+   },
+   {
+    "chapter": 2,
+    "seq": 16,
+    "score": 0.6565
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3229,
+  "prompt_tokens_est": 923,
+  "prompt_sha256": "b54feb4dc8bbf5a6a164ebceebdab28dfd1973b5fa16c783157189ff7f3bb1d6"
+ },
+ {
+  "id": "bn-07",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 7,
+  "seq": 4,
+  "kind": "mixed",
+  "question": "Why does batch norm let you use a higher learning rate?",
+  "answer": "Batch normalization lets you use a higher learning rate because it stabilizes the distribution of activation values throughout training, reducing internal covariate shift. This stability prevents small parameter changes from amplifying into large, suboptimal changes in activations. As a result, the training process becomes less sensitive to the scale of parameters and can safely use larger learning rates without diverging. It also makes training more resilient to parameter scale changes that would otherwise amplify gradients during backpropagation.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:33-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 12,
+    "seq": 2,
+    "score": 0.8172
+   },
+   {
+    "chapter": 7,
+    "seq": 0,
+    "score": 0.796
+   },
+   {
+    "chapter": 2,
+    "seq": 15,
+    "score": 0.7912
+   },
+   {
+    "chapter": 1,
+    "seq": 4,
+    "score": 0.7845
+   },
+   {
+    "chapter": 7,
+    "seq": 3,
+    "score": 0.7683
+   },
+   {
+    "chapter": 15,
+    "seq": 15,
+    "score": 0.7379
+   },
+   {
+    "chapter": 13,
+    "seq": 4,
+    "score": 0.7366
+   },
+   {
+    "chapter": 7,
+    "seq": 2,
+    "score": 0.7312
+   },
+   {
+    "chapter": 10,
+    "seq": 2,
+    "score": 0.7251
+   },
+   {
+    "chapter": 0,
+    "seq": 15,
+    "score": 0.725
+   },
+   {
+    "chapter": 15,
+    "seq": 12,
+    "score": 0.7248
+   },
+   {
+    "chapter": 10,
+    "seq": 8,
+    "score": 0.724
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 4071,
+  "prompt_tokens_est": 1164,
+  "prompt_sha256": "5a4e18c57e925a47827697db2933c5376ed17c2e0c2717b268895ce9150d4ed3"
+ },
+ {
+  "id": "bn-08",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 8,
+  "seq": 3,
+  "kind": "ahead",
+  "question": "In the experiments, how much higher did they actually push the learning rate?",
+  "answer": "They actually pushed the learning rate to 30 times higher than Inception's initial learning rate. This is evidenced by the BN-x30 experiment, where the initial learning rate was set to 0. 045, which is 30 times the original Inception learning rate of 0. The passage explicitly states that BN-x30 uses a learning rate 30 times that of Inception.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:38-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 13,
+    "seq": 11,
+    "score": 0.7866
+   },
+   {
+    "chapter": 12,
+    "seq": 5,
+    "score": 0.7694
+   },
+   {
+    "chapter": 12,
+    "seq": 2,
+    "score": 0.7626
+   },
+   {
+    "chapter": 13,
+    "seq": 4,
+    "score": 0.6764
+   },
+   {
+    "chapter": 13,
+    "seq": 5,
+    "score": 0.6719
+   },
+   {
+    "chapter": 14,
+    "seq": 3,
+    "score": 0.6632
+   },
+   {
+    "chapter": 7,
+    "seq": 3,
+    "score": 0.6578
+   },
+   {
+    "chapter": 13,
+    "seq": 2,
+    "score": 0.6535
+   },
+   {
+    "chapter": 7,
+    "seq": 0,
+    "score": 0.6463
+   },
+   {
+    "chapter": 7,
+    "seq": 1,
+    "score": 0.6452
+   },
+   {
+    "chapter": 13,
+    "seq": 10,
+    "score": 0.6448
+   },
+   {
+    "chapter": 0,
+    "seq": 5,
+    "score": 0.6421
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2950,
+  "prompt_tokens_est": 843,
+  "prompt_sha256": "841f8b3a01249ba8a8f2282c3bae216ba19ec6d4af3f039a356b214bc6293737"
+ },
+ {
+  "id": "bn-09",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 13,
+  "seq": 15,
+  "kind": "behind",
+  "question": "What happened when they used sigmoid instead of ReLU?",
+  "answer": "When they used sigmoid instead of ReLU, the model remained at the accuracy equivalent to chance without batch normalization. With batch normalization, the network achieved 69. 8% accuracy using sigmoid. Normalizing inputs to a sigmoid constrains them to its linear regime, which limits the layer's representational capacity.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:43-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 13,
+    "seq": 6,
+    "score": 0.6525
+   },
+   {
+    "chapter": 11,
+    "seq": 3,
+    "score": 0.6203
+   },
+   {
+    "chapter": 13,
+    "seq": 13,
+    "score": 0.6172
+   },
+   {
+    "chapter": 4,
+    "seq": 5,
+    "score": 0.5703
+   },
+   {
+    "chapter": 6,
+    "seq": 3,
+    "score": 0.5632
+   },
+   {
+    "chapter": 10,
+    "seq": 8,
+    "score": 0.5594
+   },
+   {
+    "chapter": 15,
+    "seq": 11,
+    "score": 0.5468
+   },
+   {
+    "chapter": 13,
+    "seq": 12,
+    "score": 0.5465
+   },
+   {
+    "chapter": 16,
+    "seq": 24,
+    "score": 0.5423
+   },
+   {
+    "chapter": 12,
+    "seq": 6,
+    "score": 0.5401
+   },
+   {
+    "chapter": 16,
+    "seq": 12,
+    "score": 0.5375
+   },
+   {
+    "chapter": 16,
+    "seq": 6,
+    "score": 0.5256
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3042,
+  "prompt_tokens_est": 870,
+  "prompt_sha256": "91f74c01b446a78b4294de0e5856e5337a31b67514320a5a07e405e557904f4f"
+ },
+ {
+  "id": "bn-10",
+  "system": "baseline",
+  "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+  "chapter": 14,
+  "seq": 8,
+  "kind": "behind",
+  "question": "How did their ensemble compare to the previous best ImageNet result?",
+  "answer": "Their ensemble achieved a top-5 error rate of 4. 9%, which improved upon the previous best result on ImageNet classification. This accuracy exceeded that of human raters and surpassed the best known system by a significant margin. The ensemble used six networks trained with batch normalization and combined their predictions via arithmetic averaging.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:48-04:00",
+  "book_title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 255,
+  "hits": [
+   {
+    "chapter": 14,
+    "seq": 1,
+    "score": 0.7891
+   },
+   {
+    "chapter": 1,
+    "seq": 6,
+    "score": 0.774
+   },
+   {
+    "chapter": 14,
+    "seq": 6,
+    "score": 0.7276
+   },
+   {
+    "chapter": 2,
+    "seq": 18,
+    "score": 0.7246
+   },
+   {
+    "chapter": 15,
+    "seq": 7,
+    "score": 0.7027
+   },
+   {
+    "chapter": 14,
+    "seq": 4,
+    "score": 0.6955
+   },
+   {
+    "chapter": 2,
+    "seq": 17,
+    "score": 0.6932
+   },
+   {
+    "chapter": 14,
+    "seq": 0,
+    "score": 0.674
+   },
+   {
+    "chapter": 16,
+    "seq": 6,
+    "score": 0.6693
+   },
+   {
+    "chapter": 11,
+    "seq": 2,
+    "score": 0.666
+   },
+   {
+    "chapter": 14,
+    "seq": 7,
+    "score": 0.6613
+   },
+   {
+    "chapter": 15,
+    "seq": 10,
+    "score": 0.6601
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 4288,
+  "prompt_tokens_est": 1226,
+  "prompt_sha256": "4a9943af830c180b66e3f98a366822fff467704310b6597dddeda0fa86f0e9eb"
+ },
+ {
+  "id": "vae-01",
+  "system": "baseline",
+  "slug": "auto-encoding-variational-bayes",
+  "chapter": 4,
+  "seq": 20,
+  "kind": "behind",
+  "question": "Why do they call the recognition model a probabilistic encoder?",
+  "answer": "They call the recognition model a probabilistic encoder because given a datapoint x, it produces a distribution over the possible values of the code z, which represents how x could have been generated. This distribution is treated as an encoder since it maps input data to a latent space representation. The term \"probabilistic\" emphasizes that the output is a probability distribution rather than a single value. The model is called a probabilistic encoder because it encodes data into a latent variable distribution.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:52-04:00",
+  "book_title": "Auto-Encoding Variational Bayes",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 251,
+  "hits": [
+   {
+    "chapter": 4,
+    "seq": 18,
+    "score": 0.8607
+   },
+   {
+    "chapter": 16,
+    "seq": 1,
+    "score": 0.7249
+   },
+   {
+    "chapter": 2,
+    "seq": 6,
+    "score": 0.7041
+   },
+   {
+    "chapter": 9,
+    "seq": 7,
+    "score": 0.7011
+   },
+   {
+    "chapter": 8,
+    "seq": 1,
+    "score": 0.7005
+   },
+   {
+    "chapter": 4,
+    "seq": 19,
+    "score": 0.692
+   },
+   {
+    "chapter": 9,
+    "seq": 18,
+    "score": 0.6855
+   },
+   {
+    "chapter": 16,
+    "seq": 0,
+    "score": 0.6823
+   },
+   {
+    "chapter": 9,
+    "seq": 16,
+    "score": 0.6758
+   },
+   {
+    "chapter": 4,
+    "seq": 16,
+    "score": 0.6628
+   },
+   {
+    "chapter": 10,
+    "seq": 10,
+    "score": 0.6597
+   },
+   {
+    "chapter": 9,
+    "seq": 15,
+    "score": 0.6589
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3399,
+  "prompt_tokens_est": 972,
+  "prompt_sha256": "520965e6ff8138efad12a0d721722e1a08408f0268b2e602acd212c9a3f45d0e"
+ },
+ {
+  "id": "vae-02",
+  "system": "baseline",
+  "slug": "auto-encoding-variational-bayes",
+  "chapter": 5,
+  "seq": 9,
+  "kind": "mixed",
+  "question": "So how do they get around the high variance of that naive gradient estimator?",
+  "answer": "They get around the high variance by using a reparameterization of the variational lower bound, which yields a simple differentiable unbiased estimator. This stochastic gradient variational Bayes (SGVB) estimator has much lower variance than the naive gradient estimator. The resulting estimator can be straightforwardly optimized using standard stochastic gradient methods.",
+  "error": null,
+  "seconds": 4.6,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:53:57-04:00",
+  "book_title": "Auto-Encoding Variational Bayes",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 251,
+  "hits": [
+   {
+    "chapter": 5,
+    "seq": 8,
+    "score": 0.7693
+   },
+   {
+    "chapter": 9,
+    "seq": 4,
+    "score": 0.7085
+   },
+   {
+    "chapter": 11,
+    "seq": 2,
+    "score": 0.6932
+   },
+   {
+    "chapter": 9,
+    "seq": 5,
+    "score": 0.6892
+   },
+   {
+    "chapter": 2,
+    "seq": 3,
+    "score": 0.6809
+   },
+   {
+    "chapter": 21,
+    "seq": 25,
+    "score": 0.6772
+   },
+   {
+    "chapter": 1,
+    "seq": 3,
+    "score": 0.6731
+   },
+   {
+    "chapter": 10,
+    "seq": 5,
+    "score": 0.6689
+   },
+   {
+    "chapter": 6,
+    "seq": 25,
+    "score": 0.6532
+   },
+   {
+    "chapter": 10,
+    "seq": 6,
+    "score": 0.6508
+   },
+   {
+    "chapter": 9,
+    "seq": 6,
+    "score": 0.6502
+   },
+   {
+    "chapter": 1,
+    "seq": 2,
+    "score": 0.647
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3730,
+  "prompt_tokens_est": 1066,
+  "prompt_sha256": "7866d628eaa10442dc4437260cbceaed02b227732a1b601445ae91f56b4cfa15"
+ },
+ {
+  "id": "vae-03",
+  "system": "baseline",
+  "slug": "auto-encoding-variational-bayes",
+  "chapter": 6,
+  "seq": 20,
+  "kind": "behind",
+  "question": "Why does the second version of the estimator have lower variance?",
+  "answer": "The second version of the estimator has lower variance because the model involves Gaussian distributions for p α ( θ ), p θ ( z ), q φ ( θ ), and q φ ( z | x ), allowing four terms of f φ to be solved analytically. This analytical solution reduces the variance of the gradient estimator. The resulting estimator is specifically designed to have less variance than the generic Monte Carlo gradient estimator. This reduction in variance makes the estimator more stable and practical for optimization.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:02-04:00",
+  "book_title": "Auto-Encoding Variational Bayes",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 251,
+  "hits": [
+   {
+    "chapter": 6,
+    "seq": 19,
+    "score": 0.7181
+   },
+   {
+    "chapter": 22,
+    "seq": 12,
+    "score": 0.6771
+   },
+   {
+    "chapter": 9,
+    "seq": 4,
+    "score": 0.6631
+   },
+   {
+    "chapter": 10,
+    "seq": 12,
+    "score": 0.6483
+   },
+   {
+    "chapter": 9,
+    "seq": 5,
+    "score": 0.6432
+   },
+   {
+    "chapter": 1,
+    "seq": 3,
+    "score": 0.642
+   },
+   {
+    "chapter": 21,
+    "seq": 1,
+    "score": 0.6376
+   },
+   {
+    "chapter": 5,
+    "seq": 8,
+    "score": 0.6232
+   },
+   {
+    "chapter": 19,
+    "seq": 9,
+    "score": 0.6208
+   },
+   {
+    "chapter": 10,
+    "seq": 5,
+    "score": 0.6197
+   },
+   {
+    "chapter": 2,
+    "seq": 3,
+    "score": 0.6162
+   },
+   {
+    "chapter": 5,
+    "seq": 3,
+    "score": 0.6139
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3769,
+  "prompt_tokens_est": 1077,
+  "prompt_sha256": "aef825f6d804e99c93e802f85cb381ac3cf923ed2d77d4c3f8d18d2dc2e65190"
+ },
+ {
+  "id": "vae-04",
+  "system": "baseline",
+  "slug": "auto-encoding-variational-bayes",
+  "chapter": 6,
+  "seq": 8,
+  "kind": "ahead",
+  "question": "For which distributions can you actually do this reparameterization?",
+  "answer": "You can do this reparameterization for any 'location-scale' family of distributions. Examples include Gaussian, Laplace, Elliptical, Student's t, Logistic, Uniform, Triangular, and Gaussian distributions. The standard distribution with location 0 and scale 1 serves as the auxiliary variable ϵ, and the transformation is location plus scale times ϵ.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:07-04:00",
+  "book_title": "Auto-Encoding Variational Bayes",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 251,
+  "hits": [
+   {
+    "chapter": 7,
+    "seq": 3,
+    "score": 0.7469
+   },
+   {
+    "chapter": 6,
+    "seq": 2,
+    "score": 0.7437
+   },
+   {
+    "chapter": 21,
+    "seq": 12,
+    "score": 0.7319
+   },
+   {
+    "chapter": 7,
+    "seq": 0,
+    "score": 0.7306
+   },
+   {
+    "chapter": 9,
+    "seq": 6,
+    "score": 0.7098
+   },
+   {
+    "chapter": 7,
+    "seq": 6,
+    "score": 0.7076
+   },
+   {
+    "chapter": 1,
+    "seq": 3,
+    "score": 0.6729
+   },
+   {
+    "chapter": 7,
+    "seq": 10,
+    "score": 0.6723
+   },
+   {
+    "chapter": 9,
+    "seq": 18,
+    "score": 0.6604
+   },
+   {
+    "chapter": 6,
+    "seq": 4,
+    "score": 0.6488
+   },
+   {
+    "chapter": 4,
+    "seq": 9,
+    "score": 0.6405
+   },
+   {
+    "chapter": 2,
+    "seq": 3,
+    "score": 0.6325
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3534,
+  "prompt_tokens_est": 1010,
+  "prompt_sha256": "594cb896e9fcb4cdfd16d06f0b3d358069090b2bedc9817e09da208c3839553d"
+ },
+ {
+  "id": "vae-05",
+  "system": "baseline",
+  "slug": "auto-encoding-variational-bayes",
+  "chapter": 9,
+  "seq": 19,
+  "kind": "ahead",
+  "question": "What datasets did they test this on?",
+  "answer": "They tested this on the MNIST and Frey Face datasets. The MNIST dataset was used for training generative models with 500 hidden units. The Frey Face dataset was used with 200 hidden units to prevent overfitting due to its smaller size.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:11-04:00",
+  "book_title": "Auto-Encoding Variational Bayes",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 251,
+  "hits": [
+   {
+    "chapter": 6,
+    "seq": 24,
+    "score": 0.6552
+   },
+   {
+    "chapter": 3,
+    "seq": 4,
+    "score": 0.6479
+   },
+   {
+    "chapter": 6,
+    "seq": 23,
+    "score": 0.6295
+   },
+   {
+    "chapter": 10,
+    "seq": 10,
+    "score": 0.627
+   },
+   {
+    "chapter": 10,
+    "seq": 15,
+    "score": 0.615
+   },
+   {
+    "chapter": 6,
+    "seq": 11,
+    "score": 0.614
+   },
+   {
+    "chapter": 10,
+    "seq": 18,
+    "score": 0.6026
+   },
+   {
+    "chapter": 4,
+    "seq": 8,
+    "score": 0.6026
+   },
+   {
+    "chapter": 13,
+    "seq": 10,
+    "score": 0.6011
+   },
+   {
+    "chapter": 14,
+    "seq": 4,
+    "score": 0.5994
+   },
+   {
+    "chapter": 11,
+    "seq": 3,
+    "score": 0.5991
+   },
+   {
+    "chapter": 10,
+    "seq": 17,
+    "score": 0.5918
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3191,
+  "prompt_tokens_est": 912,
+  "prompt_sha256": "954f11cbf79b425a0615be0cefaa70b79c90ef6ad5fdd4f7aeda3eda9d5e87d2"
+ },
+ {
+  "id": "vae-06",
+  "system": "baseline",
+  "slug": "auto-encoding-variational-bayes",
+  "chapter": 8,
+  "seq": 4,
+  "kind": "mixed",
+  "question": "What do they use for the approximate posterior in the VAE example?",
+  "answer": "They use a multivariate Gaussian with a diagonal covariance structure for the approximate posterior in the VAE example. The mean and standard deviation of this Gaussian are outputs of an encoding neural network. The variational parameters φ are learned from the data through the lower bound estimator. The approximate posterior is parameterized by the encoding MLP, which takes the input datapoint and produces the mean and standard deviation.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:16-04:00",
+  "book_title": "Auto-Encoding Variational Bayes",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 251,
+  "hits": [
+   {
+    "chapter": 21,
+    "seq": 16,
+    "score": 0.7683
+   },
+   {
+    "chapter": 4,
+    "seq": 12,
+    "score": 0.7456
+   },
+   {
+    "chapter": 4,
+    "seq": 15,
+    "score": 0.732
+   },
+   {
+    "chapter": 2,
+    "seq": 2,
+    "score": 0.7234
+   },
+   {
+    "chapter": 22,
+    "seq": 8,
+    "score": 0.7227
+   },
+   {
+    "chapter": 6,
+    "seq": 1,
+    "score": 0.7135
+   },
+   {
+    "chapter": 22,
+    "seq": 2,
+    "score": 0.7131
+   },
+   {
+    "chapter": 2,
+    "seq": 6,
+    "score": 0.7075
+   },
+   {
+    "chapter": 1,
+    "seq": 4,
+    "score": 0.707
+   },
+   {
+    "chapter": 8,
+    "seq": 7,
+    "score": 0.7046
+   },
+   {
+    "chapter": 8,
+    "seq": 4,
+    "score": 0.6933
+   },
+   {
+    "chapter": 8,
+    "seq": 5,
+    "score": 0.691
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3441,
+  "prompt_tokens_est": 984,
+  "prompt_sha256": "0cf8bc7278d586be4ed49b4ccc8fa399dba625fe6ad7909f24adeb36ce4e3755"
+ },
+ {
+  "id": "vae-07",
+  "system": "baseline",
+  "slug": "auto-encoding-variational-bayes",
+  "chapter": 10,
+  "seq": 13,
+  "kind": "behind",
+  "question": "Did adding more latent variables make it overfit?",
+  "answer": "No, adding more latent variables did not make it overfit. The passages state that superfluous latent variables did not result in overfitting, which is explained by the regularizing nature of the variational bound. This regularizing effect prevents overfitting even as the number of latent variables increases.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:21-04:00",
+  "book_title": "Auto-Encoding Variational Bayes",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 251,
+  "hits": [
+   {
+    "chapter": 10,
+    "seq": 12,
+    "score": 0.7377
+   },
+   {
+    "chapter": 10,
+    "seq": 4,
+    "score": 0.6093
+   },
+   {
+    "chapter": 9,
+    "seq": 3,
+    "score": 0.5833
+   },
+   {
+    "chapter": 4,
+    "seq": 17,
+    "score": 0.5797
+   },
+   {
+    "chapter": 3,
+    "seq": 2,
+    "score": 0.579
+   },
+   {
+    "chapter": 4,
+    "seq": 12,
+    "score": 0.5775
+   },
+   {
+    "chapter": 8,
+    "seq": 2,
+    "score": 0.5662
+   },
+   {
+    "chapter": 21,
+    "seq": 1,
+    "score": 0.5612
+   },
+   {
+    "chapter": 14,
+    "seq": 4,
+    "score": 0.5577
+   },
+   {
+    "chapter": 22,
+    "seq": 1,
+    "score": 0.5546
+   },
+   {
+    "chapter": 14,
+    "seq": 2,
+    "score": 0.5545
+   },
+   {
+    "chapter": 10,
+    "seq": 14,
+    "score": 0.5532
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3841,
+  "prompt_tokens_est": 1098,
+  "prompt_sha256": "910f3aa1256a2daf269baf5029553c6a42bea6674b39592ecce88d1094f9d69e"
+ },
+ {
+  "id": "vae-08",
+  "system": "baseline",
+  "slug": "auto-encoding-variational-bayes",
+  "chapter": 10,
+  "seq": 13,
+  "kind": "ahead",
+  "question": "How did they estimate the actual marginal likelihood rather than just the bound?",
+  "answer": "They did not estimate the actual marginal likelihood; instead, they used a variational lower bound, which is an approximation. The marginal likelihood itself is intractable due to the integral over the latent space, so they relied on this lower bound. For very low-dimensional latent spaces, they used an MCMC estimator to approximate the marginal likelihood. However, the text indicates that the actual marginal likelihood is not directly estimated, only bounded.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:26-04:00",
+  "book_title": "Auto-Encoding Variational Bayes",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 251,
+  "hits": [
+   {
+    "chapter": 5,
+    "seq": 1,
+    "score": 0.7599
+   },
+   {
+    "chapter": 19,
+    "seq": 0,
+    "score": 0.7553
+   },
+   {
+    "chapter": 10,
+    "seq": 14,
+    "score": 0.7541
+   },
+   {
+    "chapter": 19,
+    "seq": 2,
+    "score": 0.7479
+   },
+   {
+    "chapter": 21,
+    "seq": 4,
+    "score": 0.7412
+   },
+   {
+    "chapter": 19,
+    "seq": 1,
+    "score": 0.7393
+   },
+   {
+    "chapter": 6,
+    "seq": 21,
+    "score": 0.7302
+   },
+   {
+    "chapter": 5,
+    "seq": 3,
+    "score": 0.7293
+   },
+   {
+    "chapter": 10,
+    "seq": 13,
+    "score": 0.7269
+   },
+   {
+    "chapter": 21,
+    "seq": 9,
+    "score": 0.7237
+   },
+   {
+    "chapter": 4,
+    "seq": 13,
+    "score": 0.7184
+   },
+   {
+    "chapter": 4,
+    "seq": 6,
+    "score": 0.7161
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3400,
+  "prompt_tokens_est": 972,
+  "prompt_sha256": "8428fd956f845eab8539f644946538e37b2fdcc18c9e7ac6eae54592a484d4e9"
+ },
+ {
+  "id": "react-01",
+  "system": "baseline",
+  "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+  "chapter": 1,
+  "seq": 4,
+  "kind": "ahead",
+  "question": "What tasks do they evaluate this on?",
+  "answer": "They evaluate this on 134 unseen evaluation games in a task-specific setup. These games involve high-level goals like examining a paper under a desklamp, achieved through text actions in a simulated household. The tasks require navigating and interacting with the environment to complete specific objectives. The evaluation is conducted using trajectories randomly chosen from the training set.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:30-04:00",
+  "book_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 550,
+  "hits": [
+   {
+    "chapter": 8,
+    "seq": 0,
+    "score": 0.6131
+   },
+   {
+    "chapter": 8,
+    "seq": 3,
+    "score": 0.6031
+   },
+   {
+    "chapter": 8,
+    "seq": 7,
+    "score": 0.5984
+   },
+   {
+    "chapter": 21,
+    "seq": 2,
+    "score": 0.5899
+   },
+   {
+    "chapter": 3,
+    "seq": 17,
+    "score": 0.5894
+   },
+   {
+    "chapter": 14,
+    "seq": 31,
+    "score": 0.5883
+   },
+   {
+    "chapter": 8,
+    "seq": 9,
+    "score": 0.5827
+   },
+   {
+    "chapter": 18,
+    "seq": 1,
+    "score": 0.5751
+   },
+   {
+    "chapter": 8,
+    "seq": 6,
+    "score": 0.5727
+   },
+   {
+    "chapter": 28,
+    "seq": 15,
+    "score": 0.5726
+   },
+   {
+    "chapter": 28,
+    "seq": 2,
+    "score": 0.5726
+   },
+   {
+    "chapter": 28,
+    "seq": 51,
+    "score": 0.5726
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2879,
+  "prompt_tokens_est": 823,
+  "prompt_sha256": "5390e31098a85e65c46618cdf0804a8d4ef67fe604a21b15387078d7a52361c6"
+ },
+ {
+  "id": "react-02",
+  "system": "baseline",
+  "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+  "chapter": 3,
+  "seq": 8,
+  "kind": "behind",
+  "question": "What's the core idea of ReAct in one sentence?",
+  "answer": "The core idea of ReAct is to augment the agent's action space with a language-based thought space, allowing the model to perform internal reasoning without affecting the environment, and to integrate reasoning and actions into a coherent stream for better decision making.",
+  "error": null,
+  "seconds": 4.6,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:35-04:00",
+  "book_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 550,
+  "hits": [
+   {
+    "chapter": 2,
+    "seq": 13,
+    "score": 0.7444
+   },
+   {
+    "chapter": 9,
+    "seq": 8,
+    "score": 0.7432
+   },
+   {
+    "chapter": 43,
+    "seq": 1,
+    "score": 0.741
+   },
+   {
+    "chapter": 26,
+    "seq": 0,
+    "score": 0.741
+   },
+   {
+    "chapter": 32,
+    "seq": 2,
+    "score": 0.741
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.7391
+   },
+   {
+    "chapter": 3,
+    "seq": 4,
+    "score": 0.7324
+   },
+   {
+    "chapter": 3,
+    "seq": 14,
+    "score": 0.7274
+   },
+   {
+    "chapter": 1,
+    "seq": 3,
+    "score": 0.7256
+   },
+   {
+    "chapter": 3,
+    "seq": 17,
+    "score": 0.7146
+   },
+   {
+    "chapter": 2,
+    "seq": 17,
+    "score": 0.7089
+   },
+   {
+    "chapter": 7,
+    "seq": 10,
+    "score": 0.7081
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3044,
+  "prompt_tokens_est": 870,
+  "prompt_sha256": "9bc9d29e15ae247028c6b3d818d1cf88e3628e060e81f234b55b50fef8c558e1"
+ },
+ {
+  "id": "react-03",
+  "system": "baseline",
+  "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+  "chapter": 3,
+  "seq": 8,
+  "kind": "ahead",
+  "question": "Which language model are they using for this?",
+  "answer": "They are using a frozen large language model, PaLM-540B, prompted with few-shot in-context examples to generate actions and thoughts for task solving. The passage specifies PaLM-540B as the model in the setup described. No other specific language model is named in the context of this setup.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:40-04:00",
+  "book_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 550,
+  "hits": [
+   {
+    "chapter": 9,
+    "seq": 9,
+    "score": 0.7273
+   },
+   {
+    "chapter": 14,
+    "seq": 5,
+    "score": 0.7151
+   },
+   {
+    "chapter": 14,
+    "seq": 22,
+    "score": 0.6997
+   },
+   {
+    "chapter": 2,
+    "seq": 10,
+    "score": 0.6937
+   },
+   {
+    "chapter": 14,
+    "seq": 14,
+    "score": 0.6865
+   },
+   {
+    "chapter": 14,
+    "seq": 15,
+    "score": 0.6836
+   },
+   {
+    "chapter": 14,
+    "seq": 28,
+    "score": 0.6828
+   },
+   {
+    "chapter": 3,
+    "seq": 8,
+    "score": 0.6818
+   },
+   {
+    "chapter": 9,
+    "seq": 1,
+    "score": 0.68
+   },
+   {
+    "chapter": 5,
+    "seq": 5,
+    "score": 0.6729
+   },
+   {
+    "chapter": 14,
+    "seq": 6,
+    "score": 0.6722
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.6651
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3286,
+  "prompt_tokens_est": 939,
+  "prompt_sha256": "8ccc21469988fa83095bfba3aedcfb2d6cd888417cf116f7f717242ad207b72f"
+ },
+ {
+  "id": "react-04",
+  "system": "baseline",
+  "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+  "chapter": 5,
+  "seq": 6,
+  "kind": "behind",
+  "question": "What actions can the model take with the Wikipedia API?",
+  "answer": "The model can search for an entity, which returns the first five sentences from the corresponding entity wiki page if it exists, or suggests top-5 similar entities otherwise. It can also lookup a string, returning the next sentence in the page that contains the string, simulating Ctrl+F functionality.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:44-04:00",
+  "book_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 550,
+  "hits": [
+   {
+    "chapter": 5,
+    "seq": 5,
+    "score": 0.7744
+   },
+   {
+    "chapter": 5,
+    "seq": 3,
+    "score": 0.7003
+   },
+   {
+    "chapter": 2,
+    "seq": 16,
+    "score": 0.6897
+   },
+   {
+    "chapter": 4,
+    "seq": 1,
+    "score": 0.6716
+   },
+   {
+    "chapter": 13,
+    "seq": 2,
+    "score": 0.6547
+   },
+   {
+    "chapter": 9,
+    "seq": 12,
+    "score": 0.6465
+   },
+   {
+    "chapter": 13,
+    "seq": 3,
+    "score": 0.6216
+   },
+   {
+    "chapter": 2,
+    "seq": 14,
+    "score": 0.6176
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.6172
+   },
+   {
+    "chapter": 1,
+    "seq": 4,
+    "score": 0.6084
+   },
+   {
+    "chapter": 2,
+    "seq": 9,
+    "score": 0.5999
+   },
+   {
+    "chapter": 6,
+    "seq": 11,
+    "score": 0.5936
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 4130,
+  "prompt_tokens_est": 1180,
+  "prompt_sha256": "3460fc4dfd49a464f7e1d26b7935ef3b3a2870f010d2273347cdd97c9424ab1c"
+ },
+ {
+  "id": "react-05",
+  "system": "baseline",
+  "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+  "chapter": 6,
+  "seq": 8,
+  "kind": "mixed",
+  "question": "How do they combine ReAct with chain of thought?",
+  "answer": "ReAct combines chain of thought by interleaving verbal reasoning traces with actions, allowing the model to dynamically update its reasoning as it acts and observes. While chain-of-thought reasoning is static and grounded only in internal representations, ReAct integrates external feedback from actions and observations to ground reasoning in the real world. This integration enables more accurate and reactive reasoning compared to isolated chain-of-thought methods. However, ReAct can still suffer from reasoning errors, such as repetitive generation of previous thoughts, which limits its effectiveness in some cases.",
+  "error": null,
+  "seconds": 5.0,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:49-04:00",
+  "book_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 550,
+  "hits": [
+   {
+    "chapter": 9,
+    "seq": 8,
+    "score": 0.7728
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.7503
+   },
+   {
+    "chapter": 2,
+    "seq": 13,
+    "score": 0.7464
+   },
+   {
+    "chapter": 32,
+    "seq": 2,
+    "score": 0.7377
+   },
+   {
+    "chapter": 26,
+    "seq": 0,
+    "score": 0.7377
+   },
+   {
+    "chapter": 43,
+    "seq": 1,
+    "score": 0.7377
+   },
+   {
+    "chapter": 2,
+    "seq": 14,
+    "score": 0.735
+   },
+   {
+    "chapter": 7,
+    "seq": 10,
+    "score": 0.7338
+   },
+   {
+    "chapter": 8,
+    "seq": 27,
+    "score": 0.7314
+   },
+   {
+    "chapter": 10,
+    "seq": 1,
+    "score": 0.7268
+   },
+   {
+    "chapter": 2,
+    "seq": 7,
+    "score": 0.7228
+   },
+   {
+    "chapter": 3,
+    "seq": 17,
+    "score": 0.721
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3287,
+  "prompt_tokens_est": 940,
+  "prompt_sha256": "47e9b9705cf20c8669289c8ab2d168e7191dc202ffb2ea11453990e37d5a5ddf"
+ },
+ {
+  "id": "react-06",
+  "system": "baseline",
+  "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+  "chapter": 7,
+  "seq": 12,
+  "kind": "behind",
+  "question": "What's the main failure mode of chain of thought compared to ReAct?",
+  "answer": "The main failure mode of chain of thought compared to ReAct is hallucinated facts or thoughts, making it less grounded and factual. While ReAct benefits from external feedback and real observations, CoT can easily generate false or invented information. This leads to reduced trustworthiness and factual correctness in CoT. ReAct's integration of actions and observations helps avoid such hallucinations.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:54-04:00",
+  "book_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 550,
+  "hits": [
+   {
+    "chapter": 7,
+    "seq": 10,
+    "score": 0.773
+   },
+   {
+    "chapter": 9,
+    "seq": 8,
+    "score": 0.7486
+   },
+   {
+    "chapter": 7,
+    "seq": 9,
+    "score": 0.73
+   },
+   {
+    "chapter": 6,
+    "seq": 7,
+    "score": 0.7267
+   },
+   {
+    "chapter": 8,
+    "seq": 31,
+    "score": 0.7248
+   },
+   {
+    "chapter": 8,
+    "seq": 27,
+    "score": 0.712
+   },
+   {
+    "chapter": 7,
+    "seq": 7,
+    "score": 0.7082
+   },
+   {
+    "chapter": 3,
+    "seq": 17,
+    "score": 0.707
+   },
+   {
+    "chapter": 9,
+    "seq": 18,
+    "score": 0.7066
+   },
+   {
+    "chapter": 8,
+    "seq": 33,
+    "score": 0.6985
+   },
+   {
+    "chapter": 18,
+    "seq": 6,
+    "score": 0.6956
+   },
+   {
+    "chapter": 3,
+    "seq": 14,
+    "score": 0.6946
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 4080,
+  "prompt_tokens_est": 1166,
+  "prompt_sha256": "a0004aa6ebcd8e161d4d0a7903822d8f31a66b2b3ab464c85e4c297a95cad9f2"
+ },
+ {
+  "id": "react-07",
+  "system": "baseline",
+  "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+  "chapter": 8,
+  "seq": 21,
+  "kind": "behind",
+  "question": "How did ReAct do on ALFWorld versus the baselines?",
+  "answer": "On ALFWorld, ReAct outperforms both Act and BUTLER, achieving an average success rate of 71% compared to 45% for the best Act trial and 37% for BUTLER. ReAct consistently outperforms these baselines across six controlled trials, with a relative performance gain ranging from 33% to 90% and averaging 62%. The advantage of ReAct over Act is consistent and significant, with an absolute success rate improvement of 34% compared to imitation learning methods.",
+  "error": null,
+  "seconds": 5.0,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:54:59-04:00",
+  "book_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 550,
+  "hits": [
+   {
+    "chapter": 8,
+    "seq": 20,
+    "score": 0.7926
+   },
+   {
+    "chapter": 2,
+    "seq": 15,
+    "score": 0.7116
+   },
+   {
+    "chapter": 7,
+    "seq": 5,
+    "score": 0.7111
+   },
+   {
+    "chapter": 1,
+    "seq": 5,
+    "score": 0.7094
+   },
+   {
+    "chapter": 33,
+    "seq": 1,
+    "score": 0.7084
+   },
+   {
+    "chapter": 3,
+    "seq": 15,
+    "score": 0.7069
+   },
+   {
+    "chapter": 8,
+    "seq": 21,
+    "score": 0.697
+   },
+   {
+    "chapter": 2,
+    "seq": 18,
+    "score": 0.6897
+   },
+   {
+    "chapter": 7,
+    "seq": 17,
+    "score": 0.6875
+   },
+   {
+    "chapter": 8,
+    "seq": 1,
+    "score": 0.6846
+   },
+   {
+    "chapter": 7,
+    "seq": 19,
+    "score": 0.6822
+   },
+   {
+    "chapter": 8,
+    "seq": 32,
+    "score": 0.6758
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3517,
+  "prompt_tokens_est": 1005,
+  "prompt_sha256": "f903b81ed6fcd794c22c0ed2f83625967132e77fcad9db551fe87326f5acafdc"
+ },
+ {
+  "id": "react-08",
+  "system": "baseline",
+  "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+  "chapter": 8,
+  "seq": 17,
+  "kind": "ahead",
+  "question": "Isn't this basically the same thing as Inner Monologue?",
+  "answer": "No, it is not the same as Inner Monologue. While both use language models to generate thoughts and actions, ReAct emphasizes internal reasoning that is grounded in external world feedback, unlike Inner Monologue, which limits its inner monologue to environmental observations and goal completion. ReAct distinguishes itself by incorporating a more dynamic and reactive form of internal reasoning, rather than simply reacting to external feedback. The book argues that ReAct's internal reasoning is more aligned with human-like self-regulation and strategic planning.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:04-04:00",
+  "book_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 550,
+  "hits": [
+   {
+    "chapter": 8,
+    "seq": 28,
+    "score": 0.8229
+   },
+   {
+    "chapter": 9,
+    "seq": 18,
+    "score": 0.8199
+   },
+   {
+    "chapter": 9,
+    "seq": 17,
+    "score": 0.7953
+   },
+   {
+    "chapter": 8,
+    "seq": 29,
+    "score": 0.7639
+   },
+   {
+    "chapter": 14,
+    "seq": 16,
+    "score": 0.6988
+   },
+   {
+    "chapter": 14,
+    "seq": 3,
+    "score": 0.652
+   },
+   {
+    "chapter": 8,
+    "seq": 31,
+    "score": 0.5969
+   },
+   {
+    "chapter": 9,
+    "seq": 15,
+    "score": 0.5952
+   },
+   {
+    "chapter": 2,
+    "seq": 1,
+    "score": 0.5836
+   },
+   {
+    "chapter": 2,
+    "seq": 7,
+    "score": 0.5749
+   },
+   {
+    "chapter": 6,
+    "seq": 2,
+    "score": 0.5691
+   },
+   {
+    "chapter": 3,
+    "seq": 11,
+    "score": 0.5651
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3610,
+  "prompt_tokens_est": 1032,
+  "prompt_sha256": "4e265cfde216fde032de307b81f891fdc1d4d0402f236cdc315c35c4eb7fbfb0"
+ },
+ {
+  "id": "str-01",
+  "system": "baseline",
+  "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+  "chapter": 2,
+  "seq": 8,
+  "kind": "behind",
+  "question": "What are the A, B and C branes?",
+  "answer": "The A-, B-, and C-branes are types of 7-branes labeled by specific charges. The A-branes have label [1, 0], the B-branes have label [1, -1], and the C-branes have label [1, 1]. These branes are associated with different SL(2, Z) monodromies and contribute to gauge symmetry enhancement through string junctions.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:09-04:00",
+  "book_title": "String Junctions and Their Duals in Heterotic String Theory",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 164,
+  "hits": [
+   {
+    "chapter": 2,
+    "seq": 7,
+    "score": 0.7632
+   },
+   {
+    "chapter": 2,
+    "seq": 12,
+    "score": 0.6898
+   },
+   {
+    "chapter": 2,
+    "seq": 14,
+    "score": 0.6852
+   },
+   {
+    "chapter": 2,
+    "seq": 6,
+    "score": 0.68
+   },
+   {
+    "chapter": 2,
+    "seq": 1,
+    "score": 0.6683
+   },
+   {
+    "chapter": 4,
+    "seq": 37,
+    "score": 0.6621
+   },
+   {
+    "chapter": 7,
+    "seq": 13,
+    "score": 0.6579
+   },
+   {
+    "chapter": 2,
+    "seq": 9,
+    "score": 0.656
+   },
+   {
+    "chapter": 4,
+    "seq": 35,
+    "score": 0.6524
+   },
+   {
+    "chapter": 4,
+    "seq": 31,
+    "score": 0.6365
+   },
+   {
+    "chapter": 2,
+    "seq": 5,
+    "score": 0.6312
+   },
+   {
+    "chapter": 7,
+    "seq": 4,
+    "score": 0.6276
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3183,
+  "prompt_tokens_est": 910,
+  "prompt_sha256": "430459ddf23684aea0451efa1931068823232256327af5220db6191f1ce49355"
+ },
+ {
+  "id": "str-02",
+  "system": "baseline",
+  "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+  "chapter": 2,
+  "seq": 12,
+  "kind": "ahead",
+  "question": "How exactly are the two theories dual to each other?",
+  "answer": "The two theories are dual through a T duality transformation along two directions on T²/Z², which transforms the heterotic string theory on T² into type I theory on T², and then S duality makes it equivalent to SO(32) heterotic string theory on T². This duality establishes a one-to-one correspondence between invariant charges of string junctions in type IIB theory and quantum numbers of perturbative states in heterotic string theory. The duality is further supported by the charge transformations in Table I, where objects carrying charges m′μ and nμ are mapped between the theories. Through this series of dualities, BPS states in heterotic string theory are related to those in type IIB theory.",
+  "error": null,
+  "seconds": 5.2,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:14-04:00",
+  "book_title": "String Junctions and Their Duals in Heterotic String Theory",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 164,
+  "hits": [
+   {
+    "chapter": 2,
+    "seq": 12,
+    "score": 0.6918
+   },
+   {
+    "chapter": 2,
+    "seq": 16,
+    "score": 0.6887
+   },
+   {
+    "chapter": 2,
+    "seq": 20,
+    "score": 0.6662
+   },
+   {
+    "chapter": 2,
+    "seq": 11,
+    "score": 0.6515
+   },
+   {
+    "chapter": 2,
+    "seq": 17,
+    "score": 0.6425
+   },
+   {
+    "chapter": 2,
+    "seq": 8,
+    "score": 0.6266
+   },
+   {
+    "chapter": 7,
+    "seq": 9,
+    "score": 0.6074
+   },
+   {
+    "chapter": 2,
+    "seq": 19,
+    "score": 0.6026
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.5877
+   },
+   {
+    "chapter": 3,
+    "seq": 1,
+    "score": 0.5724
+   },
+   {
+    "chapter": 7,
+    "seq": 8,
+    "score": 0.5719
+   },
+   {
+    "chapter": 7,
+    "seq": 7,
+    "score": 0.5699
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3418,
+  "prompt_tokens_est": 977,
+  "prompt_sha256": "b8c08d18c278e585fee34da943933756589d0b0b05830f0caa863d570fcb695b"
+ },
+ {
+  "id": "str-03",
+  "system": "baseline",
+  "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+  "chapter": 3,
+  "seq": 29,
+  "kind": "behind",
+  "question": "What's the BPS condition for the heterotic string here?",
+  "answer": "The BPS condition for a heterotic string is given in the passage as part of the spectrum of the heterotic string. It relates the string charges (P µ , Q µ) through equation (1. 2), which connects the quantum numbers of heterotic strings to the invariant charges of string junctions in type IIB theory. The BPS condition ensures that the string states satisfy a relation between their charges and masses, maintaining supersymmetry.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:19-04:00",
+  "book_title": "String Junctions and Their Duals in Heterotic String Theory",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 164,
+  "hits": [
+   {
+    "chapter": 3,
+    "seq": 25,
+    "score": 0.9767
+   },
+   {
+    "chapter": 3,
+    "seq": 0,
+    "score": 0.7459
+   },
+   {
+    "chapter": 2,
+    "seq": 17,
+    "score": 0.7418
+   },
+   {
+    "chapter": 3,
+    "seq": 1,
+    "score": 0.6648
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.6634
+   },
+   {
+    "chapter": 7,
+    "seq": 11,
+    "score": 0.6598
+   },
+   {
+    "chapter": 3,
+    "seq": 22,
+    "score": 0.6521
+   },
+   {
+    "chapter": 4,
+    "seq": 18,
+    "score": 0.6498
+   },
+   {
+    "chapter": 2,
+    "seq": 21,
+    "score": 0.64
+   },
+   {
+    "chapter": 4,
+    "seq": 50,
+    "score": 0.6303
+   },
+   {
+    "chapter": 1,
+    "seq": 1,
+    "score": 0.6272
+   },
+   {
+    "chapter": 5,
+    "seq": 1,
+    "score": 0.6264
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2678,
+  "prompt_tokens_est": 766,
+  "prompt_sha256": "1c536a7c65e17dd85cb3d1af4b16003a7c5d8c71046af160aff57e06c89ba44d"
+ },
+ {
+  "id": "str-04",
+  "system": "baseline",
+  "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+  "chapter": 3,
+  "seq": 44,
+  "kind": "ahead",
+  "question": "What are null junctions and why would you need them?",
+  "answer": "Null junctions are independent junctions that go around all 24 junctions and can be used to adjust the charges of junctions. They allow us to fix any two of the charges Q bi and Q ci to any values, making junctions proper by ensuring their invariant charges are integers. By adding null junctions, we can correct junctions that have half odd integer charges to become proper.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:23-04:00",
+  "book_title": "String Junctions and Their Duals in Heterotic String Theory",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 164,
+  "hits": [
+   {
+    "chapter": 4,
+    "seq": 52,
+    "score": 0.7703
+   },
+   {
+    "chapter": 4,
+    "seq": 56,
+    "score": 0.7535
+   },
+   {
+    "chapter": 4,
+    "seq": 55,
+    "score": 0.7332
+   },
+   {
+    "chapter": 4,
+    "seq": 50,
+    "score": 0.6983
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.6756
+   },
+   {
+    "chapter": 4,
+    "seq": 3,
+    "score": 0.6386
+   },
+   {
+    "chapter": 7,
+    "seq": 10,
+    "score": 0.6326
+   },
+   {
+    "chapter": 7,
+    "seq": 2,
+    "score": 0.6283
+   },
+   {
+    "chapter": 4,
+    "seq": 53,
+    "score": 0.6226
+   },
+   {
+    "chapter": 4,
+    "seq": 14,
+    "score": 0.6205
+   },
+   {
+    "chapter": 3,
+    "seq": 28,
+    "score": 0.6144
+   },
+   {
+    "chapter": 2,
+    "seq": 11,
+    "score": 0.6138
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2700,
+  "prompt_tokens_est": 772,
+  "prompt_sha256": "d5360e6378594009362952454306c15c228abf7e3aa53619e75ae867c9ce57e9"
+ },
+ {
+  "id": "str-05",
+  "system": "baseline",
+  "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+  "chapter": 4,
+  "seq": 26,
+  "kind": "mixed",
+  "question": "Why is it hard to get a complete correspondence between the heterotic quantum numbers and the junction charges?",
+  "answer": "It is hard to get a complete correspondence because information regarding the position is not contained in the heterotic quantum numbers. This lack of positional information makes it unclear how to define the winding number on the type IIB side using heterotic quantum numbers. The correspondence is established only for certain quantum numbers and charges, not for all aspects of the junctions. The position-dependent details are missing, limiting a full one-to-one match.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:28-04:00",
+  "book_title": "String Junctions and Their Duals in Heterotic String Theory",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 164,
+  "hits": [
+   {
+    "chapter": 4,
+    "seq": 22,
+    "score": 0.849
+   },
+   {
+    "chapter": 2,
+    "seq": 11,
+    "score": 0.7852
+   },
+   {
+    "chapter": 5,
+    "seq": 1,
+    "score": 0.7827
+   },
+   {
+    "chapter": 4,
+    "seq": 50,
+    "score": 0.7651
+   },
+   {
+    "chapter": 4,
+    "seq": 29,
+    "score": 0.741
+   },
+   {
+    "chapter": 4,
+    "seq": 25,
+    "score": 0.7309
+   },
+   {
+    "chapter": 4,
+    "seq": 33,
+    "score": 0.7068
+   },
+   {
+    "chapter": 0,
+    "seq": 0,
+    "score": 0.6882
+   },
+   {
+    "chapter": 2,
+    "seq": 21,
+    "score": 0.6825
+   },
+   {
+    "chapter": 4,
+    "seq": 13,
+    "score": 0.6786
+   },
+   {
+    "chapter": 1,
+    "seq": 1,
+    "score": 0.6755
+   },
+   {
+    "chapter": 4,
+    "seq": 37,
+    "score": 0.6746
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3182,
+  "prompt_tokens_est": 910,
+  "prompt_sha256": "bb11c9aec33dd6fcf656ffe482b658afe27787122ee56b3a1bc7764867cc6d64"
+ },
+ {
+  "id": "rl-01",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 26,
+  "seq": 15,
+  "kind": "behind",
+  "question": "What's the difference between greedy and epsilon-greedy action selection?",
+  "answer": "Greedy action selection always chooses the action with the highest current estimated value, exploiting knowledge to maximize immediate reward and never trying other actions. Epsilon-greedy action selection chooses the greedy action with probability one minus epsilon, and selects a random non-greedy action with probability epsilon, ensuring exploration of less certain actions. This allows epsilon-greedy methods to sample all actions infinitely over time, which helps ensure accurate convergence of action-value estimates.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:33-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 26,
+    "seq": 8,
+    "score": 0.7996
+   },
+   {
+    "chapter": 26,
+    "seq": 7,
+    "score": 0.785
+   },
+   {
+    "chapter": 32,
+    "seq": 1,
+    "score": 0.7731
+   },
+   {
+    "chapter": 27,
+    "seq": 1,
+    "score": 0.7586
+   },
+   {
+    "chapter": 26,
+    "seq": 10,
+    "score": 0.7566
+   },
+   {
+    "chapter": 217,
+    "seq": 4,
+    "score": 0.751
+   },
+   {
+    "chapter": 27,
+    "seq": 16,
+    "score": 0.7503
+   },
+   {
+    "chapter": 26,
+    "seq": 14,
+    "score": 0.746
+   },
+   {
+    "chapter": 26,
+    "seq": 12,
+    "score": 0.7432
+   },
+   {
+    "chapter": 69,
+    "seq": 11,
+    "score": 0.741
+   },
+   {
+    "chapter": 71,
+    "seq": 7,
+    "score": 0.7354
+   },
+   {
+    "chapter": 27,
+    "seq": 17,
+    "score": 0.7304
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3321,
+  "prompt_tokens_est": 949,
+  "prompt_sha256": "a938db22be4bfa9733f14fd2fd0a2b451e43c62bb946a52d669f50ec21b2f586"
+ },
+ {
+  "id": "rl-02",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 27,
+  "seq": 9,
+  "kind": "ahead",
+  "question": "So which one wins in the long run, greedy or epsilon-greedy?",
+  "answer": "In the long run, epsilon-greedy wins because it continues to explore, which improves its chances of finding the optimal action, especially when reward variance is high or uncertainty is present. The greedy method may find the optimal action quickly but risks missing better alternatives due to lack of exploration. With noisier rewards, epsilon-greedy performs better relative to the greedy method. The passage shows that epsilon-greedy eventually performs better because it balances exploration and exploitation more effectively.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:38-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 27,
+    "seq": 16,
+    "score": 0.7468
+   },
+   {
+    "chapter": 285,
+    "seq": 25,
+    "score": 0.7375
+   },
+   {
+    "chapter": 27,
+    "seq": 12,
+    "score": 0.7204
+   },
+   {
+    "chapter": 27,
+    "seq": 19,
+    "score": 0.7192
+   },
+   {
+    "chapter": 27,
+    "seq": 9,
+    "score": 0.7177
+   },
+   {
+    "chapter": 46,
+    "seq": 66,
+    "score": 0.7134
+   },
+   {
+    "chapter": 25,
+    "seq": 17,
+    "score": 0.7129
+   },
+   {
+    "chapter": 27,
+    "seq": 1,
+    "score": 0.7083
+   },
+   {
+    "chapter": 27,
+    "seq": 17,
+    "score": 0.7074
+   },
+   {
+    "chapter": 37,
+    "seq": 4,
+    "score": 0.6971
+   },
+   {
+    "chapter": 128,
+    "seq": 40,
+    "score": 0.6926
+   },
+   {
+    "chapter": 120,
+    "seq": 4,
+    "score": 0.6912
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2645,
+  "prompt_tokens_est": 756,
+  "prompt_sha256": "b3aad6ba031e7b8174175cfd6bef87f4ea3251e482173427f80579a0eeb3b34f"
+ },
+ {
+  "id": "rl-03",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 28,
+  "seq": 15,
+  "kind": "ahead",
+  "question": "What if the reward probabilities drift over time, does the sample average still work?",
+  "answer": "The sample-average methods are appropriate only for stationary bandit problems, where reward probabilities do not change over time. If reward probabilities drift over time, the sample-average methods become ill-suited because the estimate of the average reward will adapt slowly and may not keep up with the changing environment. The potential for long-term nonstationarity makes these methods unstable and inefficient in such cases.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:43-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 170,
+    "seq": 27,
+    "score": 0.7581
+   },
+   {
+    "chapter": 31,
+    "seq": 2,
+    "score": 0.7505
+   },
+   {
+    "chapter": 175,
+    "seq": 3,
+    "score": 0.7416
+   },
+   {
+    "chapter": 175,
+    "seq": 4,
+    "score": 0.7397
+   },
+   {
+    "chapter": 30,
+    "seq": 1,
+    "score": 0.7271
+   },
+   {
+    "chapter": 34,
+    "seq": 29,
+    "score": 0.7206
+   },
+   {
+    "chapter": 171,
+    "seq": 13,
+    "score": 0.7146
+   },
+   {
+    "chapter": 172,
+    "seq": 7,
+    "score": 0.7116
+   },
+   {
+    "chapter": 172,
+    "seq": 4,
+    "score": 0.7112
+   },
+   {
+    "chapter": 26,
+    "seq": 5,
+    "score": 0.7103
+   },
+   {
+    "chapter": 30,
+    "seq": 17,
+    "score": 0.7047
+   },
+   {
+    "chapter": 65,
+    "seq": 11,
+    "score": 0.7038
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3277,
+  "prompt_tokens_est": 937,
+  "prompt_sha256": "e97762b80116784bd55dad25e5695504cfdcdadd4e7acc9a34ad336e11f42bd1"
+ },
+ {
+  "id": "rl-04",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 30,
+  "seq": 18,
+  "kind": "behind",
+  "question": "Why use a constant step size instead of the sample average?",
+  "answer": "The sample average avoids the initial bias that constant step sizes introduce. While constant step sizes can be useful for nonstationary problems, they suffer from bias in the early stages of learning. The sample average, in contrast, provides an unbiased estimate of action values from the start. This makes it preferable when unbiased estimation is required, even though it may not adapt as quickly to changes in the environment.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:48-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 31,
+    "seq": 18,
+    "score": 0.837
+   },
+   {
+    "chapter": 175,
+    "seq": 5,
+    "score": 0.7781
+   },
+   {
+    "chapter": 30,
+    "seq": 16,
+    "score": 0.7678
+   },
+   {
+    "chapter": 153,
+    "seq": 7,
+    "score": 0.7525
+   },
+   {
+    "chapter": 31,
+    "seq": 20,
+    "score": 0.7516
+   },
+   {
+    "chapter": 84,
+    "seq": 4,
+    "score": 0.7485
+   },
+   {
+    "chapter": 107,
+    "seq": 29,
+    "score": 0.7421
+   },
+   {
+    "chapter": 153,
+    "seq": 17,
+    "score": 0.7332
+   },
+   {
+    "chapter": 220,
+    "seq": 2,
+    "score": 0.7276
+   },
+   {
+    "chapter": 153,
+    "seq": 2,
+    "score": 0.7271
+   },
+   {
+    "chapter": 30,
+    "seq": 21,
+    "score": 0.7233
+   },
+   {
+    "chapter": 149,
+    "seq": 32,
+    "score": 0.7233
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3114,
+  "prompt_tokens_est": 890,
+  "prompt_sha256": "75d8e2af9fc44608e94f262d8d8f466b2d18cda6a890c2bf0c168946804a9bd5"
+ },
+ {
+  "id": "rl-05",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 32,
+  "seq": 16,
+  "kind": "ahead",
+  "question": "Is there a way to do this without estimating action values at all?",
+  "answer": "No, there is no way to select actions without estimating action values, as the book states that action-value methods are used to improve policy selection and that state values alone require either a model or a separate policy for action selection. The text emphasizes that estimating action values is essential for making action selection decisions. Without such estimates, the policy cannot be improved or guided effectively.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:52-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 26,
+    "seq": 6,
+    "score": 0.7656
+   },
+   {
+    "chapter": 33,
+    "seq": 1,
+    "score": 0.7477
+   },
+   {
+    "chapter": 230,
+    "seq": 2,
+    "score": 0.7298
+   },
+   {
+    "chapter": 26,
+    "seq": 1,
+    "score": 0.692
+   },
+   {
+    "chapter": 215,
+    "seq": 2,
+    "score": 0.6853
+   },
+   {
+    "chapter": 28,
+    "seq": 1,
+    "score": 0.6833
+   },
+   {
+    "chapter": 25,
+    "seq": 11,
+    "score": 0.6733
+   },
+   {
+    "chapter": 68,
+    "seq": 1,
+    "score": 0.6708
+   },
+   {
+    "chapter": 80,
+    "seq": 10,
+    "score": 0.6691
+   },
+   {
+    "chapter": 204,
+    "seq": 2,
+    "score": 0.6689
+   },
+   {
+    "chapter": 68,
+    "seq": 11,
+    "score": 0.6651
+   },
+   {
+    "chapter": 134,
+    "seq": 22,
+    "score": 0.6648
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3188,
+  "prompt_tokens_est": 911,
+  "prompt_sha256": "bf71bbdc876664f1a6ac1ca19023fa6a06d48938cc79b555df87774f634b647d"
+ },
+ {
+  "id": "rl-06",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 33,
+  "seq": 11,
+  "kind": "mixed",
+  "question": "What's that R-bar baseline doing in the gradient bandit update?",
+  "answer": "The R-bar baseline is a term that adjusts the reward to remove its overall level, allowing the gradient bandit algorithm to focus on the differences between actions rather than the absolute reward values. It instantaneously adapts to shifts in the reward distribution, ensuring the algorithm's learning remains stable and efficient. This baseline reduces the variance of the update, speeding up learning without changing the expected value of the policy update. By subtracting the average reward, it makes the gradient update more sensitive to relative differences between actions.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:55:57-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 33,
+    "seq": 16,
+    "score": 0.7322
+   },
+   {
+    "chapter": 222,
+    "seq": 8,
+    "score": 0.716
+   },
+   {
+    "chapter": 33,
+    "seq": 13,
+    "score": 0.7044
+   },
+   {
+    "chapter": 33,
+    "seq": 14,
+    "score": 0.6937
+   },
+   {
+    "chapter": 34,
+    "seq": 0,
+    "score": 0.6933
+   },
+   {
+    "chapter": 37,
+    "seq": 13,
+    "score": 0.6923
+   },
+   {
+    "chapter": 33,
+    "seq": 0,
+    "score": 0.6895
+   },
+   {
+    "chapter": 222,
+    "seq": 5,
+    "score": 0.6894
+   },
+   {
+    "chapter": 190,
+    "seq": 12,
+    "score": 0.686
+   },
+   {
+    "chapter": 222,
+    "seq": 7,
+    "score": 0.6853
+   },
+   {
+    "chapter": 36,
+    "seq": 8,
+    "score": 0.685
+   },
+   {
+    "chapter": 34,
+    "seq": 26,
+    "score": 0.6751
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3512,
+  "prompt_tokens_est": 1004,
+  "prompt_sha256": "0b533e8c5b64f708b1a8ece24ef1fe8676b19b9fb46e44f88c0140cd2dbea6d9"
+ },
+ {
+  "id": "rl-07",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 85,
+  "seq": 22,
+  "kind": "behind",
+  "question": "What exactly is the TD error?",
+  "answer": "The TD error is the error in the estimate made at a given time step, based on the current state, action, and the next state and next reward. It is a random variable that depends on the next state and next reward, making it unavailable until one time step later. The TD error is used to update action probabilities to reach higher-valued states. It is defined as the difference between the actual next reward plus the value of the next state and the current estimate of the value of the current state.",
+  "error": null,
+  "seconds": 5.0,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:02-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 250,
+    "seq": 24,
+    "score": 0.8214
+   },
+   {
+    "chapter": 170,
+    "seq": 23,
+    "score": 0.8172
+   },
+   {
+    "chapter": 204,
+    "seq": 11,
+    "score": 0.8168
+   },
+   {
+    "chapter": 11,
+    "seq": 54,
+    "score": 0.8132
+   },
+   {
+    "chapter": 210,
+    "seq": 14,
+    "score": 0.8125
+   },
+   {
+    "chapter": 285,
+    "seq": 84,
+    "score": 0.8057
+   },
+   {
+    "chapter": 209,
+    "seq": 13,
+    "score": 0.8002
+   },
+   {
+    "chapter": 208,
+    "seq": 33,
+    "score": 0.7922
+   },
+   {
+    "chapter": 184,
+    "seq": 10,
+    "score": 0.7768
+   },
+   {
+    "chapter": 256,
+    "seq": 3,
+    "score": 0.7675
+   },
+   {
+    "chapter": 85,
+    "seq": 16,
+    "score": 0.7662
+   },
+   {
+    "chapter": 11,
+    "seq": 53,
+    "score": 0.7651
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 1880,
+  "prompt_tokens_est": 538,
+  "prompt_sha256": "a657a288348a3c4a98bc759232d6a420b2bea977794beb0198b07938e8baa806"
+ },
+ {
+  "id": "rl-08",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 85,
+  "seq": 22,
+  "kind": "ahead",
+  "question": "Is there an everyday example of how TD differs from Monte Carlo?",
+  "answer": "Yes, consider driving home after work. Monte Carlo would only update your estimate of the driving time once you reach your destination, waiting for the full episode to end. TD, however, updates after each step—like when you pass a landmark—using the immediate reward and the next expected outcome, making it faster and more responsive. This real-time updating is like how TD methods work in learning, updating as new experiences happen, not waiting for the end of a journey.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:07-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 85,
+    "seq": 43,
+    "score": 0.8355
+   },
+   {
+    "chapter": 85,
+    "seq": 44,
+    "score": 0.8209
+   },
+   {
+    "chapter": 86,
+    "seq": 2,
+    "score": 0.8165
+   },
+   {
+    "chapter": 199,
+    "seq": 28,
+    "score": 0.814
+   },
+   {
+    "chapter": 145,
+    "seq": 25,
+    "score": 0.8079
+   },
+   {
+    "chapter": 86,
+    "seq": 4,
+    "score": 0.807
+   },
+   {
+    "chapter": 199,
+    "seq": 30,
+    "score": 0.8037
+   },
+   {
+    "chapter": 88,
+    "seq": 36,
+    "score": 0.8005
+   },
+   {
+    "chapter": 84,
+    "seq": 5,
+    "score": 0.7992
+   },
+   {
+    "chapter": 83,
+    "seq": 2,
+    "score": 0.797
+   },
+   {
+    "chapter": 199,
+    "seq": 29,
+    "score": 0.7895
+   },
+   {
+    "chapter": 85,
+    "seq": 9,
+    "score": 0.7887
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2959,
+  "prompt_tokens_est": 846,
+  "prompt_sha256": "02efb7aa4229ea8ad19bcadecddfe1b5054137f005fd03abb542bd6d4422e2f4"
+ },
+ {
+  "id": "rl-09",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 86,
+  "seq": 17,
+  "kind": "ahead",
+  "question": "Can you give an example where TD learns faster than Monte Carlo?",
+  "answer": "In a scenario where an agent learns from raw experience without waiting for the end of an episode, TD learns faster because it updates its value estimate after each step, rather than only at the end of an episode as Monte Carlo methods do. This allows TD to make progress more quickly and with less waiting. For instance, in a simple environment where the agent receives immediate feedback after each action, TD updates the value function incrementally, leading to faster convergence. The book shows that TD(0) is faster than Monte Carlo methods in batch form because it computes a more accurate estimate using the next state's value.",
+  "error": null,
+  "seconds": 5.0,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:12-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 86,
+    "seq": 12,
+    "score": 0.8682
+   },
+   {
+    "chapter": 145,
+    "seq": 25,
+    "score": 0.8366
+   },
+   {
+    "chapter": 83,
+    "seq": 2,
+    "score": 0.8297
+   },
+   {
+    "chapter": 88,
+    "seq": 32,
+    "score": 0.8263
+   },
+   {
+    "chapter": 145,
+    "seq": 34,
+    "score": 0.8214
+   },
+   {
+    "chapter": 199,
+    "seq": 30,
+    "score": 0.8113
+   },
+   {
+    "chapter": 85,
+    "seq": 43,
+    "score": 0.8111
+   },
+   {
+    "chapter": 199,
+    "seq": 28,
+    "score": 0.7971
+   },
+   {
+    "chapter": 86,
+    "seq": 4,
+    "score": 0.7901
+   },
+   {
+    "chapter": 88,
+    "seq": 13,
+    "score": 0.7844
+   },
+   {
+    "chapter": 112,
+    "seq": 1,
+    "score": 0.7826
+   },
+   {
+    "chapter": 84,
+    "seq": 5,
+    "score": 0.7815
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3005,
+  "prompt_tokens_est": 859,
+  "prompt_sha256": "d407769f615358f9ca7ae06ce1b2145fe1dc3987c51ecea8dc36260b1030c8e3"
+ },
+ {
+  "id": "rl-10",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 88,
+  "seq": 32,
+  "kind": "behind",
+  "question": "Why does batch TD beat batch Monte Carlo if Monte Carlo minimizes the error on the training data?",
+  "answer": "Batch TD beats batch Monte Carlo because it computes the true certainty-equivalence estimate, which is optimal for the Markov process model, rather than just minimizing mean square error on the training data. While Monte Carlo methods achieve minimum error on the training set, TD methods are optimal in a broader sense for the underlying Markov process. This makes TD more efficient in convergence, as shown by the learning curves in Figure 6. 2 where TD consistently achieves lower root mean square error.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:17-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 88,
+    "seq": 27,
+    "score": 0.856
+   },
+   {
+    "chapter": 88,
+    "seq": 25,
+    "score": 0.8465
+   },
+   {
+    "chapter": 88,
+    "seq": 13,
+    "score": 0.8329
+   },
+   {
+    "chapter": 88,
+    "seq": 32,
+    "score": 0.7919
+   },
+   {
+    "chapter": 88,
+    "seq": 14,
+    "score": 0.7863
+   },
+   {
+    "chapter": 98,
+    "seq": 8,
+    "score": 0.7849
+   },
+   {
+    "chapter": 88,
+    "seq": 12,
+    "score": 0.7744
+   },
+   {
+    "chapter": 88,
+    "seq": 9,
+    "score": 0.7509
+   },
+   {
+    "chapter": 83,
+    "seq": 2,
+    "score": 0.7423
+   },
+   {
+    "chapter": 85,
+    "seq": 43,
+    "score": 0.7364
+   },
+   {
+    "chapter": 85,
+    "seq": 17,
+    "score": 0.735
+   },
+   {
+    "chapter": 212,
+    "seq": 7,
+    "score": 0.7344
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3991,
+  "prompt_tokens_est": 1141,
+  "prompt_sha256": "5e22d6d9e023a9d1df5204d9ee5f38f2fa294d2c1a31900b02b029944edf3f76"
+ },
+ {
+  "id": "rl-11",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 89,
+  "seq": 16,
+  "kind": "ahead",
+  "question": "How is Q-learning different from Sarsa?",
+  "answer": "Q-learning is an off-policy method, while Sarsa is an on-policy method. Q-learning learns the values of the optimal policy, whereas Sarsa learns the value of the current policy. Q-learning has better long-term performance in theory but performs worse in online practice than Sarsa on some tasks.",
+  "error": null,
+  "seconds": 4.8,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:22-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 93,
+    "seq": 8,
+    "score": 0.8724
+   },
+   {
+    "chapter": 97,
+    "seq": 8,
+    "score": 0.8664
+   },
+   {
+    "chapter": 98,
+    "seq": 15,
+    "score": 0.8453
+   },
+   {
+    "chapter": 92,
+    "seq": 12,
+    "score": 0.8322
+   },
+   {
+    "chapter": 92,
+    "seq": 24,
+    "score": 0.8262
+   },
+   {
+    "chapter": 93,
+    "seq": 16,
+    "score": 0.8257
+   },
+   {
+    "chapter": 93,
+    "seq": 45,
+    "score": 0.8201
+   },
+   {
+    "chapter": 93,
+    "seq": 10,
+    "score": 0.8166
+   },
+   {
+    "chapter": 98,
+    "seq": 9,
+    "score": 0.8151
+   },
+   {
+    "chapter": 92,
+    "seq": 6,
+    "score": 0.8066
+   },
+   {
+    "chapter": 93,
+    "seq": 15,
+    "score": 0.7916
+   },
+   {
+    "chapter": 92,
+    "seq": 20,
+    "score": 0.789
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3120,
+  "prompt_tokens_est": 892,
+  "prompt_sha256": "bd9b90b59afae9995e417c988e1a66e0cd3a3a4a5910174b16297fb6ccb636a1"
+ },
+ {
+  "id": "rl-12",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 93,
+  "seq": 14,
+  "kind": "mixed",
+  "question": "Why would Expected Sarsa be better than regular Sarsa?",
+  "answer": "Expected Sarsa eliminates the variance caused by random selection of actions, leading to more stable and accurate value updates. It generally performs better than Sarsa, especially in deterministic environments where it can safely use a learning rate of one without performance degradation. This results in consistent empirical advantages over Sarsa in both theory and practice.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:27-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 93,
+    "seq": 14,
+    "score": 0.8156
+   },
+   {
+    "chapter": 93,
+    "seq": 0,
+    "score": 0.7865
+   },
+   {
+    "chapter": 93,
+    "seq": 13,
+    "score": 0.7822
+   },
+   {
+    "chapter": 207,
+    "seq": 18,
+    "score": 0.779
+   },
+   {
+    "chapter": 92,
+    "seq": 33,
+    "score": 0.7656
+   },
+   {
+    "chapter": 204,
+    "seq": 0,
+    "score": 0.7363
+   },
+   {
+    "chapter": 93,
+    "seq": 8,
+    "score": 0.728
+   },
+   {
+    "chapter": 284,
+    "seq": 749,
+    "score": 0.7273
+   },
+   {
+    "chapter": 93,
+    "seq": 45,
+    "score": 0.7249
+   },
+   {
+    "chapter": 104,
+    "seq": 7,
+    "score": 0.7229
+   },
+   {
+    "chapter": 93,
+    "seq": 40,
+    "score": 0.7177
+   },
+   {
+    "chapter": 110,
+    "seq": 3,
+    "score": 0.7122
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2425,
+  "prompt_tokens_est": 693,
+  "prompt_sha256": "a3877654c625af9d901e632b2711c8323d7ac9f3ddee4dcbb3d469f5b7580f70"
+ },
+ {
+  "id": "rl-13",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 94,
+  "seq": 12,
+  "kind": "ahead",
+  "question": "Is there a way to avoid this maximization bias?",
+  "answer": "Yes, there is a way to avoid maximization bias. Double learning eliminates the harm caused by maximization bias in certain algorithms. For example, double learning seems to eliminate the harm caused by maximization bias in the small MDP shown in Figure 6. The book notes that double versions of Sarsa and Expected Sarsa also exist.",
+  "error": null,
+  "seconds": 4.7,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:31-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 285,
+    "seq": 75,
+    "score": 0.8511
+   },
+   {
+    "chapter": 94,
+    "seq": 13,
+    "score": 0.8214
+   },
+   {
+    "chapter": 94,
+    "seq": 14,
+    "score": 0.8208
+   },
+   {
+    "chapter": 94,
+    "seq": 5,
+    "score": 0.8094
+   },
+   {
+    "chapter": 94,
+    "seq": 0,
+    "score": 0.793
+   },
+   {
+    "chapter": 94,
+    "seq": 3,
+    "score": 0.7787
+   },
+   {
+    "chapter": 94,
+    "seq": 6,
+    "score": 0.7752
+   },
+   {
+    "chapter": 98,
+    "seq": 18,
+    "score": 0.7458
+   },
+   {
+    "chapter": 94,
+    "seq": 25,
+    "score": 0.7146
+   },
+   {
+    "chapter": 94,
+    "seq": 10,
+    "score": 0.7106
+   },
+   {
+    "chapter": 258,
+    "seq": 37,
+    "score": 0.6882
+   },
+   {
+    "chapter": 94,
+    "seq": 1,
+    "score": 0.6837
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 2768,
+  "prompt_tokens_est": 791,
+  "prompt_sha256": "f0b4b312195fb52b789b09483c5d09b8b7c69857c294cd16d5babaac2d481477"
+ },
+ {
+  "id": "rl-14",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 216,
+  "seq": 21,
+  "kind": "behind",
+  "question": "Why use a soft-max over action preferences instead of a soft-max over action values?",
+  "answer": "The soft-max over action preferences allows the policy to approach a deterministic policy, whereas a soft-max over action values does not. Only the relative preference between actions matters, and adding a constant to all action preferences has no effect on the resulting action probabilities. This makes soft-max over action preferences more flexible and effective for policy parameterization. Using soft-max over action values alone would not enable the policy to approach a deterministic policy.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:36-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 37,
+    "seq": 15,
+    "score": 0.8377
+   },
+   {
+    "chapter": 216,
+    "seq": 12,
+    "score": 0.8287
+   },
+   {
+    "chapter": 216,
+    "seq": 18,
+    "score": 0.8254
+   },
+   {
+    "chapter": 216,
+    "seq": 8,
+    "score": 0.8117
+   },
+   {
+    "chapter": 33,
+    "seq": 8,
+    "score": 0.8008
+   },
+   {
+    "chapter": 216,
+    "seq": 13,
+    "score": 0.7873
+   },
+   {
+    "chapter": 33,
+    "seq": 4,
+    "score": 0.7848
+   },
+   {
+    "chapter": 221,
+    "seq": 10,
+    "score": 0.7789
+   },
+   {
+    "chapter": 229,
+    "seq": 24,
+    "score": 0.7654
+   },
+   {
+    "chapter": 33,
+    "seq": 7,
+    "score": 0.7589
+   },
+   {
+    "chapter": 216,
+    "seq": 6,
+    "score": 0.7581
+   },
+   {
+    "chapter": 216,
+    "seq": 16,
+    "score": 0.7522
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3264,
+  "prompt_tokens_est": 933,
+  "prompt_sha256": "efdf44c3eb79109e48bebccf38594b6c25816e8d632c0f196a2f7eeb67e020d4"
+ },
+ {
+  "id": "rl-15",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 218,
+  "seq": 13,
+  "kind": "ahead",
+  "question": "So how do they get around needing the derivative of the state distribution?",
+  "answer": "They do not need the derivative of the state distribution because they reweight the states to match the on-policy distribution, effectively aligning the update distribution with the actual distribution of states visited under the policy. This reweighting allows the algorithm to minimize the value error in a way that reflects the true importance of each state. The on-policy distribution is used directly in the update process, avoiding the need to compute its derivative. Trajectory sampling is employed to efficiently obtain the necessary state distribution information.",
+  "error": null,
+  "seconds": 5.3,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:41-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 127,
+    "seq": 14,
+    "score": 0.6782
+   },
+   {
+    "chapter": 140,
+    "seq": 4,
+    "score": 0.6761
+   },
+   {
+    "chapter": 183,
+    "seq": 17,
+    "score": 0.6756
+   },
+   {
+    "chapter": 143,
+    "seq": 13,
+    "score": 0.6633
+   },
+   {
+    "chapter": 199,
+    "seq": 23,
+    "score": 0.6606
+   },
+   {
+    "chapter": 141,
+    "seq": 6,
+    "score": 0.659
+   },
+   {
+    "chapter": 141,
+    "seq": 8,
+    "score": 0.6583
+   },
+   {
+    "chapter": 127,
+    "seq": 11,
+    "score": 0.6551
+   },
+   {
+    "chapter": 219,
+    "seq": 6,
+    "score": 0.654
+   },
+   {
+    "chapter": 279,
+    "seq": 64,
+    "score": 0.6515
+   },
+   {
+    "chapter": 170,
+    "seq": 14,
+    "score": 0.6514
+   },
+   {
+    "chapter": 191,
+    "seq": 4,
+    "score": 0.6495
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3994,
+  "prompt_tokens_est": 1142,
+  "prompt_sha256": "2b8ced85d727ed6e17b5883e94339ed02c64676650923afe6f3c78616adc5646"
+ },
+ {
+  "id": "rl-16",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 220,
+  "seq": 24,
+  "kind": "behind",
+  "question": "Why is the REINFORCE update divided by the probability of the action?",
+  "answer": "The REINFORCE update is divided by the probability of the action to ensure the update is proportional to the action's likelihood under the current policy. This normalization makes the update direction consistent with the policy gradient theorem. Without dividing by the action probability, the update would not correctly reflect how changes in policy parameters affect performance. The division ensures the expected update aligns with the gradient of the expected return.",
+  "error": null,
+  "seconds": 5.0,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:46-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 220,
+    "seq": 21,
+    "score": 0.7782
+   },
+   {
+    "chapter": 222,
+    "seq": 7,
+    "score": 0.7738
+   },
+   {
+    "chapter": 220,
+    "seq": 17,
+    "score": 0.7614
+   },
+   {
+    "chapter": 221,
+    "seq": 2,
+    "score": 0.7475
+   },
+   {
+    "chapter": 220,
+    "seq": 9,
+    "score": 0.7427
+   },
+   {
+    "chapter": 221,
+    "seq": 8,
+    "score": 0.7417
+   },
+   {
+    "chapter": 222,
+    "seq": 13,
+    "score": 0.7366
+   },
+   {
+    "chapter": 230,
+    "seq": 9,
+    "score": 0.7338
+   },
+   {
+    "chapter": 229,
+    "seq": 25,
+    "score": 0.7328
+   },
+   {
+    "chapter": 222,
+    "seq": 5,
+    "score": 0.7288
+   },
+   {
+    "chapter": 85,
+    "seq": 14,
+    "score": 0.7272
+   },
+   {
+    "chapter": 250,
+    "seq": 18,
+    "score": 0.7265
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3203,
+  "prompt_tokens_est": 916,
+  "prompt_sha256": "7469ac5ae9f1f7afa762e72fc147400db60676ac14e81b301ef975253ff8fc71"
+ },
+ {
+  "id": "rl-17",
+  "system": "baseline",
+  "slug": "rl-book-full-endurance",
+  "chapter": 222,
+  "seq": 15,
+  "kind": "mixed",
+  "question": "What's the difference between REINFORCE with a baseline and an actor-critic method?",
+  "answer": "REINFORCE with a baseline adds a state-value function to reduce variance in policy updates without introducing bias. An actor-critic method goes beyond this by learning both a policy (actor) and a value function (critic) simultaneously. The critic evaluates the actor's actions using TD methods, providing conditioned reinforcement that helps the actor improve its policy. The difference lies in the eligibility traces used by each learning rule, with actor-critic methods incorporating a more structured and interactive learning process.",
+  "error": null,
+  "seconds": 4.9,
+  "attempt": 1,
+  "prior_errors": [],
+  "started": "2026-09-11T10:56:51-04:00",
+  "book_title": "RL Book Full (endurance)",
+  "model": "qwen3:4b-instruct",
+  "embed_model": "nomic-embed-text",
+  "num_ctx": 16384,
+  "temperature": 0.3,
+  "k": 12,
+  "neighbors": 0,
+  "index_rows": 9015,
+  "hits": [
+   {
+    "chapter": 231,
+    "seq": 13,
+    "score": 0.7914
+   },
+   {
+    "chapter": 237,
+    "seq": 23,
+    "score": 0.7808
+   },
+   {
+    "chapter": 224,
+    "seq": 11,
+    "score": 0.7666
+   },
+   {
+    "chapter": 231,
+    "seq": 12,
+    "score": 0.7648
+   },
+   {
+    "chapter": 215,
+    "seq": 10,
+    "score": 0.7467
+   },
+   {
+    "chapter": 230,
+    "seq": 9,
+    "score": 0.7389
+   },
+   {
+    "chapter": 255,
+    "seq": 1,
+    "score": 0.7376
+   },
+   {
+    "chapter": 256,
+    "seq": 7,
+    "score": 0.7373
+   },
+   {
+    "chapter": 224,
+    "seq": 7,
+    "score": 0.732
+   },
+   {
+    "chapter": 223,
+    "seq": 4,
+    "score": 0.7288
+   },
+   {
+    "chapter": 224,
+    "seq": 0,
+    "score": 0.7273
+   },
+   {
+    "chapter": 97,
+    "seq": 9,
+    "score": 0.7258
+   }
+  ],
+  "passages_retrieved": 12,
+  "passages_used": 12,
+  "prompt_chars": 3882,
+  "prompt_tokens_est": 1110,
+  "prompt_sha256": "e8f79a9f2e32e37c50002aed180d84bb5094a91f703e6b1250a5431f2990ea2e"
+ }
+]

@@ -1,0 +1,19 @@
+{
+ "endpoint": "https://yapbook.app/api/ask",
+ "origin_header": "https://yapbook.app",
+ "started": "2026-10-08T06:57:19+00:00",
+ "gap_seconds": 11.0,
+ "bodies_file": "bodies.json",
+ "deployment_ids": [
+  "sfo1::iad1::bbthn-1791442641748-8a5ce0162782",
+  "sfo1::iad1::fm8kj-1791442652730-f1833565bed4",
+  "sfo1::iad1::t49px-1791442663760-f03f566eee76"
+ ],
+ "statuses": {
+  "200": 60
+ },
+ "updated": "2026-10-08T07:08:11+00:00",
+ "answered": 60,
+ "errors": 0,
+ "finished": "2026-10-08T07:08:11+00:00"
+}

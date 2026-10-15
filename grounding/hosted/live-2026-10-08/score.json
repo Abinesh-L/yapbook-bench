@@ -1,0 +1,84 @@
+{
+  "headline": {
+    "yapbook": {
+      "spoiler_rate_ahead_mixed": {
+        "spoilers": 6,
+        "n": 72,
+        "pct": "8.3%"
+      },
+      "behind_accuracy": {
+        "correct": 45,
+        "partial": 3,
+        "wrong": 0,
+        "n": 48,
+        "pct_correct": "93.8%",
+        "pct_partial": "6.2%"
+      },
+      "position_honesty_ahead": {
+        "refused_appropriately": 36,
+        "n": 48,
+        "pct": "75.0%"
+      },
+      "refused_wrongly_behind_mixed": {
+        "refused_wrongly": 2,
+        "n": 72,
+        "pct": "2.8%"
+      }
+    },
+    "baseline": {
+      "spoiler_rate_ahead_mixed": {
+        "spoilers": 71,
+        "n": 72,
+        "pct": "98.6%"
+      },
+      "behind_accuracy": {
+        "correct": 45,
+        "partial": 3,
+        "wrong": 0,
+        "n": 48,
+        "pct_correct": "93.8%",
+        "pct_partial": "6.2%"
+      },
+      "position_honesty_ahead": {
+        "refused_appropriately": 0,
+        "n": 48,
+        "pct": "0.0%"
+      },
+      "refused_wrongly_behind_mixed": {
+        "refused_wrongly": 0,
+        "n": 72,
+        "pct": "0.0%"
+      }
+    }
+  },
+  "agreement": {
+    "pairs": 120,
+    "label_agreement": {
+      "same": 103,
+      "pct": "85.8%"
+    },
+    "spoiler_flag_agreement": {
+      "same": 119,
+      "pct": "99.2%"
+    },
+    "label_disagreements": [
+      "att-04/baseline: partial vs wrong",
+      "att-07/baseline: partial vs wrong",
+      "att-08/baseline: partial vs wrong",
+      "bn-02/baseline: partial vs wrong",
+      "bn-07/baseline: partial vs wrong",
+      "vae-02/baseline: partial vs wrong",
+      "react-02/yapbook: partial vs correct",
+      "react-02/baseline: partial vs correct",
+      "react-05/baseline: partial vs wrong",
+      "str-02/yapbook: refused_appropriately vs partial",
+      "rl-04/baseline: partial vs correct",
+      "rl-06/yapbook: partial vs wrong",
+      "rl-07/yapbook: partial vs correct",
+      "rl-07/baseline: partial vs correct",
+      "rl-09/yapbook: refused_appropriately vs partial",
+      "rl-14/yapbook: partial vs correct",
+      "rl-17/baseline: partial vs wrong"
+    ]
+  }
+}

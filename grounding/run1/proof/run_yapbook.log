@@ -1,0 +1,123 @@
+data dir: <scratch>\data
+brain: ollama/qwen3:4b-instruct num_ctx=16384 retrieval_enabled=True embed_model=nomic-embed-text
+[1/60] att-01 4.38s retr=False prompt=2532ch
+    A: The encoder has 6 layers. Each layer has two sub-layers: a multi-head self-attention mechanism and a simple, positionwise fully connected feed-forward network.
+[2/60] att-02 4.72s retr=False prompt=1914ch
+    A: They divide by the square root of dk to prevent the dot products from becoming too large, which helps the softmax function produce more stable and well-scaled weights. Without this scaling, the dot products could become 
+[3/60] att-03 4.49s retr=False prompt=2668ch
+    A: Multi-Head Attention is a mechanism that uses multiple separate attention heads to look at different parts of the input simultaneously. Each head focuses on different patterns in the data, allowing the model to capture a
+[4/60] att-04 4.56s retr=False prompt=3201ch
+    A: The decoder keeps from peeking at future output words by modifying its self-attention mechanism to prevent positions from attending to subsequent positions. This masking, combined with the output embeddings being offset 
+[5/60] att-05 4.7s retr=False prompt=3367ch
+    A: They went with sinusoids instead of learned position embeddings because the sinusoidal version may allow the model to extrapolate to sequence lengths longer than the ones encountered during training. This is because for 
+[6/60] att-06 4.47s retr=False prompt=1891ch
+    A: The model doesn't use recurrence to determine word order. Instead, it uses attention mechanisms to weigh the importance of different input tokens at each step, allowing it to focus on relevant parts of the sequence witho
+[7/60] att-07 4.58s retr=False prompt=3163ch
+    A: Yes, self-attention is cheaper in terms of computational complexity per layer because it uses a constant number of sequential operations, regardless of sequence length. A recurrent layer, in contrast, requires O(n) seque
+[8/60] att-08 4.4s retr=False prompt=1731ch
+    A: The transcript doesn't mention how long it took to train the model.
+[9/60] att-09 4.69s retr=False prompt=2363ch
+    A: They used the Adam optimizer with β₁ = 0. 9, β₂ = 0.98, and ϵ = 10⁻⁹. The learning rate started increasing linearly for the first 4000 steps and then decreased proportionally to the inverse square root of the step number
+[10/60] att-10 4.46s retr=False prompt=3439ch
+    A: The transcript just said they employ three types of regularization during training, but it didn't specify what those three kinds are.
+[11/60] att-11 4.38s retr=False prompt=2743ch
+    A: The transcript does not mention how they estimated the training cost in floating point operations.
+[12/60] att-12 5.31s retr=False prompt=12877ch
+    A: When they tried a single attention head, it was 0. 9 BLEU worse than the best setting, which means the translation quality dropped significantly.
+[13/60] bn-01 9.36s retr=False prompt=4335ch
+    A: They mean the change in the distributions of internal nodes' inputs as a deep network trains. This shift happens because the parameters of the network change over time, altering the input distribution to each layer. When
+[14/60] bn-02 4.72s retr=False prompt=5084ch
+    A: The fix is a normalization step that fixes the means and variances of layer inputs. This is done during training by normalizing the inputs to each layer using the batch statistics. Batch Normalization reduces the depende
+[15/60] bn-03 4.81s retr=False prompt=4404ch
+    A: Because if you normalize outside the gradient step, the parameters like bias b get updated during training, but the normalization uses the old values of b, leading to a mismatch. This causes the output to stay unchanged,
+[16/60] bn-04 4.79s retr=False prompt=6665ch
+    A: No, forcing every input to zero mean and unit variance doesn't limit what a layer can represent. The normalization preserves the relative scale and structure of activations by using statistics from the entire training da
+[17/60] bn-05 4.7s retr=False prompt=4359ch
+    A: Because joint whitening is costly and not everywhere differentiable, we normalize each dimension separately by setting its mean to zero and variance to one. This simplification avoids the computational burden of full whi
+[18/60] bn-06 4.91s retr=False prompt=10156ch
+    A: At test time, when there's no mini-batch to normalize over, we use the running averages of the mean and variance computed during training. These running averages replace the mini-batch statistics, so the normalized activ
+[19/60] bn-07 4.63s retr=False prompt=2700ch
+    A: Batch normalization lets you use a higher learning rate because it stabilizes the distribution of activations across layers. This prevents small parameter changes from amplifying into large, suboptimal changes in gradien
+[20/60] bn-08 4.31s retr=False prompt=2409ch
+    A: The transcript does not mention how much higher they actually pushed the learning rate.
+[21/60] bn-09 4.77s retr=False prompt=4976ch
+    A: When they used sigmoid instead of ReLU, Batch Normalization allowed the network to train successfully, achieving 69. 8% accuracy. Without Batch Normalization, the original Inception with sigmoid never reached better than
+[22/60] bn-10 4.67s retr=False prompt=3273ch
+    A: The ensemble improved upon the previous best result on ImageNet and exceeded the estimated accuracy of human raters. It achieved a top-5 validation error of 4. 9% and a test error of 4. 82%, which is better than the prio
+[23/60] vae-01 4.77s retr=False prompt=5657ch
+    A: They call the recognition model a probabilistic encoder because given a datapoint x, it produces a distribution over the possible values of the latent code z — the unobserved variables — from which x could have been gene
+[24/60] vae-02 4.6s retr=False prompt=3669ch
+    A: The chapter doesn't explain how to get around the high variance of that naive gradient estimator. It only states the problem and says it's impractical, but doesn't provide a solution.
+[25/60] vae-03 4.67s retr=False prompt=5019ch
+    A: Because only the reconstruction error needs to be estimated by sampling, and the KL-divergence term is computed analytically, so it's not subject to sampling noise. This removes a major source of variance in the estimato
+[26/60] vae-04 4.77s retr=False prompt=3891ch
+    A: You can do this reparameterization for distributions that have a differentiable inverse and can be expressed as a function of an auxiliary noise variable. The chapter specifies that such distributions must satisfy mild c
+[27/60] vae-05 4.4s retr=False prompt=5912ch
+    A: The transcript does not mention any datasets that were tested.
+[28/60] vae-06 5.14s retr=False prompt=2589ch
+    A: They use a neural network for the approximate posterior in the VAE example. Specifically, it's the probabilistic encoder q φ ( z | x ). This encoder approximates the posterior of the generative model p θ ( x , z ).
+[29/60] vae-07 4.77s retr=False prompt=4967ch
+    A: No, adding more latent variables did not cause overfitting. The text says superfluous latent variables did not result in overfitting, which is explained by the regularizing effect of the variational bound.
+[30/60] vae-08 4.6s retr=False prompt=4998ch
+    A: The chapter does not explain how the actual marginal likelihood was estimated. It only mentions that the variational lower bound was used and that the marginal likelihood was estimated, but no details are provided.
+[31/60] react-01 4.65s retr=False prompt=2778ch
+    A: They evaluate this on a diverse set of language and decision making tasks.
+[32/60] react-02 5.0s retr=False prompt=3778ch
+    A: The core idea of ReAct is to augment the agent's action space with language-based thoughts that reason over the current context without changing the environment, helping guide future actions through internal reasoning.
+[33/60] react-03 4.74s retr=False prompt=3777ch
+    A: The transcript does not mention which language model is being used.
+[34/60] react-04 5.11s retr=False prompt=3421ch
+    A: The model can search for an entity, which returns the first five sentences from its Wikipedia page or suggests top-5 similar entities. It can also lookup a string to get the next sentence in a page containing that string
+[35/60] react-05 4.97s retr=False prompt=4714ch
+    A: They combine ReAct with chain of thought by using CoT-SC followed by ReAct, as shown in the table where "CoT-SC → ReAct" achieves 34. 2 EM on HotpotQA and 64. 6 accuracy on Fever. This combination leverages the reasoning
+[36/60] react-06 4.62s retr=False prompt=5516ch
+    A: The main failure mode of chain of thought compared to ReAct is hallucination, with CoT having a 56% hallucination rate versus 0% in ReAct. This makes hallucination the dominant failure mode for CoT.
+[37/60] react-07 4.6s retr=False prompt=7153ch
+    A: On ALFWorld, the best ReAct trial achieved an average success rate of 71%, which significantly outperformed the best Act trial at 45% and the BUTLER trial at 37%.
+[38/60] react-08 4.7s retr=False prompt=5642ch
+    A: No, this isn't the same as inner monologue. The text describes ReAct prompts that include reasoning steps—like determining what to explore or when to buy—rather than just internal thoughts. Inner monologue refers to a st
+[39/60] str-01 4.64s retr=False prompt=3305ch
+    A: The A-branes are labeled [1, 0], the B-branes are labeled [1, -1], and the C-branes are labeled [1, 1]. Following references 1) and 2), these are called A-, B-, and C-branes, respectively.
+[40/60] str-02 4.91s retr=False prompt=4210ch
+    A: The two theories are dual through the correspondence between type IIB string theory on S² and heterotic string theory on T². The junction lattice of type IIB on S² has the same signature (+18, -2) as the Narain lattice o
+[41/60] str-03 4.98s retr=False prompt=14809ch
+    A: The BPS condition for the heterotic string here is Nsubosc plus a equals 0.
+[42/60] str-04 4.44s retr=False prompt=16874ch
+    A: The transcript does not mention "null junctions" or explain them. I cannot answer that based on what was just heard.
+[43/60] str-05 4.96s retr=False prompt=5762ch
+    A: It's hard because the position of the D-string loop can be moved freely, and the string length attached to it changes with position. But heterotic string quantum numbers don't include position information, so we can't de
+[44/60] rl-01 4.72s retr=False prompt=4872ch
+    A: Greedy action selection always picks the action with the highest estimated value, exploiting current knowledge to maximize immediate reward. Epsilon-greedy selects the greedy action most of the time, but with a small pro
+[45/60] rl-02 4.61s retr=False prompt=4127ch
+    A: The transcript doesn't say which one wins in the long run. It only describes that Figure 2. 2 compares the methods and shows the increase in expected reward with experience. Without seeing the graph or knowing the result
+[46/60] rl-03 4.53s retr=False prompt=5479ch
+    A: The chapter transcript does not address whether sample averages work when reward probabilities drift over time. So I cannot answer that based on what was just heard.
+[47/60] rl-04 4.8s retr=False prompt=5760ch
+    A: The listener just heard that constant step size doesn't guarantee convergence because the second condition isn't met. It means the estimates keep changing with new rewards and never fully settle. The sample average does 
+[48/60] rl-05 4.73s retr=False prompt=5807ch
+    A: No, there is no way to do this without estimating action values at all. The upper confidence bound method relies on estimating the action values to compute the uncertainty term and select actions. Without these estimates
+[49/60] rl-06 4.6s retr=False prompt=3675ch
+    A: The R-bar baseline subtracts the average reward from the actual reward to reduce the impact of constant bias. It helps make the gradient update more sensitive to differences in performance between actions. This allows th
+[50/60] rl-07 4.99s retr=False prompt=7444ch
+    A: The TD error is the difference between the estimated value of the current state and the better estimate made from the next state and the reward received. It is defined as δt = R{t+1} + γ V(S{t+1}) - V(St). This error ari
+[51/60] rl-08 4.65s retr=False prompt=7479ch
+    A: No, there isn't a direct everyday example of how TD differs from Monte Carlo, because both are technical concepts used in reinforcement learning—like learning how to play a game—rather than real-life situations. The diff
+[52/60] rl-09 4.59s retr=False prompt=4372ch
+    A: Yes, in practice, TD methods have usually been found to converge faster than constant-α Monte Carlo methods on stochastic tasks, as shown in Example 6. 2.
+[53/60] rl-10 4.72s retr=False prompt=8882ch
+    A: Because batch Monte Carlo minimizes error only on the training data, while batch TD(0) finds the certainty-equivalence estimate—what would be correct if the model were exactly known. This makes TD(0) better at predicting
+[54/60] rl-11 4.76s retr=False prompt=11300ch
+    A: I don't know how Q-learning is different from Sarsa because that information wasn't in the chapter transcript heard so far.
+[55/60] rl-12 4.84s retr=False prompt=3499ch
+    A: Expected Sarsa is better than regular Sarsa because it eliminates the variance caused by the random selection of the next action, At+1. It uses the expected value of the next state-action pair, taking into account the po
+[56/60] rl-13 4.77s retr=False prompt=3860ch
+    A: Yes, there is a way to avoid this maximization bias. One approach is to use double learning, where the action selection and value update are separated. In double learning, the policy is updated based on a second, separat
+[57/60] rl-14 4.88s retr=False prompt=5922ch
+    A: Using a soft-max over action preferences allows the policy to approach a deterministic policy, where optimal actions get infinitely higher preferences than suboptimal ones. In contrast, a soft-max over action values only
+[58/60] rl-15 4.86s retr=False prompt=4183ch
+    A: They don’t need the derivative of the state distribution because the policy gradient theorem directly computes the gradient of performance using only the action distribution and the value function, avoiding the need to t
+[59/60] rl-16 4.92s retr=False prompt=7771ch
+    A: The REINFORCE update is divided by the probability of the action to prevent actions that are frequently chosen from being overly favored, even if they don't yield high returns. This ensures that the policy update is base
+[60/60] rl-17 4.72s retr=False prompt=4278ch
+    A: The chapter doesn't explain the difference between REINFORCE with a baseline and an actor-critic method. It only describes REINFORCE with a baseline and mentions using a learned state-value function as the baseline. That
+finished 60 records in 289s; errors=0

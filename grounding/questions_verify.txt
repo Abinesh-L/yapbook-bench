@@ -1,0 +1,386 @@
+total=60 kinds={'behind': 24, 'ahead': 24, 'mixed': 12} problems=0
+per_book={"attention-is-all-you-need": {"behind": 4, "ahead": 5, "mixed": 3}, "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift": {"behind": 5, "ahead": 3, "mixed": 2}, "auto-encoding-variational-bayes": {"behind": 3, "ahead": 3, "mixed": 2}, "react-synergizing-reasoning-and-acting-in-language-models": {"behind": 4, "ahead": 3, "mixed": 1}, "string-junctions-and-their-duals-in-heterotic-string-theory": {"behind": 2, "ahead": 2, "mixed": 1}, "rl-book-full-endurance": {"behind": 6, "ahead": 8, "mixed": 3}}
+== att-01 [behind] attention-is-all-you-need ch6 seg4 (chapter has 7 segs; heard 42 segs total)
+  gold ch6:1 heard: 'Encoder: The encoder is composed of a stack of N = 6 identical layers. Each layer has two '
+== att-02 [ahead] attention-is-all-you-need ch9 seg3 (chapter has 9 segs; heard 54 segs total)
+  first unheard ch9:7: 'While for small values of d k the two mechanisms perform similarly, additive attention out'
+  kw 'small gradients': absent from heard text
+  kw 'grow large': absent from heard text
+  kw 'variance d k': absent from heard text
+  kw 'additive attention': absent from heard text
+== att-03 [ahead] attention-is-all-you-need ch4 seg4 (chapter has 9 segs; heard 28 segs total)
+  first unheard ch10:1: 'Instead of performing a single attention function with d model-dimensional keys, values an'
+  kw 'h = 8': absent from heard text
+  kw 'parallel attention layers': absent from heard text
+  kw 'linearly project': absent from heard text
+  kw 'representation subspaces': absent from heard text
+  kw 'concatenated': absent from heard text
+== att-04 [mixed] attention-is-all-you-need ch6 seg7 (chapter has 7 segs; heard 45 segs total)
+  gold ch6:5 heard: 'Similar to the encoder, we employ residual connections around each of the sub-layers, foll'
+  gold ch6:6 heard: 'This masking, combined with fact that the output embeddings are offset by one position, en'
+  first unheard ch11:6: 'We need to prevent leftward information flow in the decoder to preserve the auto-regressiv'
+  kw '-∞': absent from heard text
+  kw 'minus infinity': absent from heard text
+  kw 'masking out': absent from heard text
+  kw 'illegal connections': absent from heard text
+== att-05 [behind] attention-is-all-you-need ch14 seg9 (chapter has 9 segs; heard 95 segs total)
+  gold ch14:6 heard: 'The wavelengths form a geometric progression from 2 π to 10000 · 2 π . We chose this funct'
+  gold ch14:7 heard: 'We also experimented with using learned positional embeddings [9] instead, and found that '
+  gold ch14:8 heard: 'We chose the sinusoidal version because it may allow the model to extrapolate to sequence '
+== att-06 [ahead] attention-is-all-you-need ch13 seg3 (chapter has 5 segs; heard 84 segs total)
+  first unheard ch14:1: 'Since our model contains no recurrence and no convolution, in order for the model to make '
+  kw 'positional encoding': absent from heard text
+  kw 'sinusoid': absent from heard text
+  kw 'sine and cosine': absent from heard text
+  kw '10000': absent from heard text
+  kw 'geometric progression': absent from heard text
+== att-07 [mixed] attention-is-all-you-need ch15 seg8 (chapter has 15 segs; heard 103 segs total)
+  gold ch13:4 heard: 'Table: Table 1: Maximum path lengths, per-layer complexity and minimum number of sequentia'
+  gold ch15:7 heard: 'As noted in Table 1, a self-attention layer connects all positions with a constant number '
+  first unheard ch15:8: 'In terms of computational complexity, self-attention layers are faster than recurrent laye'
+  kw 'smaller than the representation dimensionality': absent from heard text
+  kw 'word-piece': absent from heard text
+  kw 'byte-pair': absent from heard text
+  kw 'separable convolution': absent from heard text
+== att-08 [mixed] attention-is-all-you-need ch17 seg2 (chapter has 4 segs; heard 114 segs total)
+  gold ch2:5 heard: 'On the WMT 2014 English-to-French translation task, our model establishes a new single-mod'
+  gold ch3:8 heard: 'The Transformer allows for significantly more parallelization and can reach a new state of'
+  first unheard ch18:1: 'We trained our models on one machine with 8 NVIDIA P100 GPUs. For our base models using th'
+  kw '100,000 steps': absent from heard text
+  kw '300,000': absent from heard text
+  kw '0.4 seconds': absent from heard text
+  kw 'one machine': absent from heard text
+== att-09 [behind] attention-is-all-you-need ch19 seg4 (chapter has 4 segs; heard 123 segs total)
+  gold ch19:1 heard: 'We used the Adam optimizer [20] with β 1 = 0 . 9 , β 2 = 0 . 98 and ϵ = 10 -9 . We varied '
+  gold ch19:2 heard: 'lrate equals d sub model to the minus 0.5 times the min of step sub minus num to the minus'
+  gold ch19:3 heard: 'This corresponds to increasing the learning rate linearly for the first warmup _ steps tra'
+== att-10 [ahead] attention-is-all-you-need ch20 seg3 (chapter has 6 segs; heard 126 segs total)
+  first unheard ch20:3: 'Residual Dropout We apply dropout [33] to the output of each sub-layer, before it is added'
+  kw 'dropout': absent from heard text
+  kw 'label smoothing': absent from heard text
+  kw 'P drop': absent from heard text
+== att-11 [ahead] attention-is-all-you-need ch22 seg5 (chapter has 10 segs; heard 135 segs total)
+  first unheard ch22:9: 'We estimate the number of floating point operations used to train a model by multiplying t'
+  kw 'sustained': absent from heard text
+  kw 'TFLOPS': absent from heard text
+  kw 'multiplying the training time': absent from heard text
+== att-12 [behind] attention-is-all-you-need ch23 seg9 (chapter has 9 segs; heard 149 segs total)
+  gold ch23:4 heard: 'In Table 3 rows (A), we vary the number of attention heads and the attention key and value'
+== bn-01 [behind] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch2 seg13 (chapter has 19 segs; heard 36 segs total)
+  gold ch2:12 heard: 'We refer to the change in the distributions of internal nodes of a deep network, in the co'
+  gold ch1:1 heard: 'Training Deep Neural Networks is complicated by the fact that the distribution of each lay'
+  gold ch1:2 heard: 'This slows down the training by requiring lower learning rates and careful parameter initi'
+  gold ch1:3 heard: 'We refer to this phenomenon as internal covariate shift , and address the problem by norma'
+  gold ch0:8 heard: 'When the input distribution to a learning system changes, it is said to experience covaria'
+  gold ch0:9 heard: 'However, the notion of covariate shift can be extended beyond the learning system as a who'
+== bn-02 [mixed] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch2 seg16 (chapter has 19 segs; heard 39 segs total)
+  gold ch1:3 heard: 'We refer to this phenomenon as internal covariate shift , and address the problem by norma'
+  gold ch1:4 heard: 'Batch Normalization allows us to use much higher learning rates and be less careful about '
+  gold ch2:13 heard: 'Eliminating it offers a promise of faster training. We propose a new mechanism, which we c'
+  gold ch2:14 heard: 'It accomplishes this via a normalization step that fixes the means and variances of layer '
+  gold ch2:15 heard: 'This allows us to use much higher learning rates without the risk of divergence. Furthermo'
+  first unheard ch4:2: 'The first is that instead of whitening the features in layer inputs and outputs jointly, w'
+  kw 'γ': absent from heard text
+  kw 'gamma': absent from heard text
+  kw 'each scalar feature': absent from heard text
+  kw 'numerical stability': absent from heard text
+  kw 'identity transform': absent from heard text
+== bn-03 [behind] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch3 seg13 (chapter has 23 segs; heard 55 segs total)
+  gold ch3:7 heard: 'However, if these modifications are interspersed with the optimization steps, then the gra'
+  gold ch3:8 heard: 'For example, consider a layer with the input u that adds the learned bias b , and normaliz'
+  gold ch3:9 heard: 'If a gradient descent step ignores the dependence of E [ x ] on b , then it will update b '
+  gold ch3:10 heard: 'Then u + ( b + ∆ b ) -E [ u + ( b + ∆ b )] = u + b -E [ u + b ] . Thus, the combination of'
+  gold ch3:11 heard: 'As the training continues, b will grow indefinitely while the loss remains fixed. This pro'
+  gold ch3:12 heard: 'We have observed this empirically in initial experiments, where the model blows up when th'
+== bn-04 [ahead] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch3 seg23 (chapter has 23 segs; heard 65 segs total)
+  first unheard ch4:5: 'Note that simply normalizing each input of a layer may change what the layer can represent'
+  kw 'γ': absent from heard text
+  kw 'gamma': absent from heard text
+  kw 'identity transform': absent from heard text
+  kw 'scale and shift': absent from heard text
+  kw 'linear regime': absent from heard text
+== bn-05 [behind] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch4 seg12 (chapter has 28 segs; heard 77 segs total)
+  gold ch4:1 heard: "Since the full whitening of each layer's inputs is costly and not everywhere differentiabl"
+  gold ch4:2 heard: 'The first is that instead of whitening the features in layer inputs and outputs jointly, w'
+  gold ch4:3 heard: 'x hat to the k equals x to the k minus the expectation of x to the k, all over the square '
+  gold ch4:4 heard: 'where the expectation and variance are computed over the training data set. As shown in (L'
+  gold ch4:11 heard: 'This way, the statistics used for normalization can fully participate in the gradient back'
+== bn-06 [ahead] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch4 seg28 (chapter has 28 segs; heard 93 segs total)
+  first unheard ch5:3: '(Duchi et al., 2011). The normalization of activations that depends on the mini-batch allo'
+  kw 'inference': absent from heard text
+  kw 'population': absent from heard text
+  kw 'moving average': absent from heard text
+  kw 'unbiased variance': absent from heard text
+  kw 'deterministically': absent from heard text
+== bn-07 [mixed] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch7 seg4 (chapter has 14 segs; heard 131 segs total)
+  gold ch7:1 heard: 'In traditional deep networks, too-high learning rate may result in the gradients that expl'
+  gold ch7:2 heard: 'Batch Normalization helps address these issues. By normalizing activations throughout the '
+  gold ch7:3 heard: 'Batch Normalization also makes training more resilient to the parameter scale. Normally, l'
+  first unheard ch7:4: 'However, with Batch Normalization, backpropagation through a layer is unaffected by the sc'
+  kw 'singular values': absent from heard text
+  kw 'layer Jacobian': absent from heard text
+  kw 'unaffected by the scale': absent from heard text
+  kw 'BN of a W': absent from heard text
+== bn-08 [ahead] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch8 seg3 (chapter has 3 segs; heard 144 segs total)
+  first unheard ch13:2: 'Inception: the network described at the beginning of Section 4.2, trained with the initial'
+  kw '0.0015': absent from heard text
+  kw '0.0075': absent from heard text
+  kw '0.045': absent from heard text
+  kw 'BN-x5': absent from heard text
+  kw 'machine infinity': absent from heard text
+== bn-09 [behind] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch13 seg15 (chapter has 15 segs; heard 192 segs total)
+  gold ch13:6 heard: 'BN-x5-Sigmoid: Like BN-x5, but with sigmoid nonlinearity g ( t ) = 1 1+exp( -x ) instead o'
+  gold ch13:12 heard: 'We also verified that the reduction in internal covariate shift allows deep networks with '
+  gold ch13:13 heard: 'Indeed, BN-x5-Sigmoid achieves the accuracy of 69.8%. Without Batch Normalization, Incepti'
+== bn-10 [behind] batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift ch14 seg8 (chapter has 8 segs; heard 200 segs total)
+  gold ch14:1 heard: 'The current reported best results on the ImageNet Large Scale Visual Recognition Competiti'
+  gold ch14:2 heard: 'The latter reports the top-5 error of 4.94%, as evaluated by the ILSVRC server. Here we re'
+  gold ch14:3 heard: 'This improves upon the previous best result, and exceeds the estimated accuracy of human r'
+  gold ch14:4 heard: 'For our ensemble, we used 6 networks. Each was based onBN-x30, modified via some of the fo'
+== vae-01 [behind] auto-encoding-variational-bayes ch4 seg20 (chapter has 20 segs; heard 41 segs total)
+  gold ch4:14 heard: 'For the purpose of solving the above problems, let us introduce a recognition model q φ ( '
+  gold ch4:17 heard: 'From a coding theory perspective, the unobserved variables z have an interpretation as a l'
+  gold ch4:18 heard: 'In this paper we will therefore also refer to the recognition model q φ ( z | x ) as a pro'
+  gold ch4:19 heard: 'In a similar vein we will refer to p θ ( x | z ) as a probabilistic decoder , since given '
+== vae-02 [mixed] auto-encoding-variational-bayes ch5 seg9 (chapter has 9 segs; heard 50 segs total)
+  gold ch1:3 heard: 'Our contributions are two-fold. First, we show that a reparameterization of the variationa'
+  gold ch2:3 heard: 'We show how a reparameterization of the variational lower bound yields a simple differenti'
+  first unheard ch6:2: 'Under certain mild conditions outlined in section 2.4 for a chosen approximate posterior q'
+  kw 'auxiliary': absent from heard text
+  kw 'noise variable': absent from heard text
+  kw 'deterministic variable': absent from heard text
+  kw 'µ + σ': absent from heard text
+  kw 'mu + sigma': absent from heard text
+== vae-03 [behind] auto-encoding-variational-bayes ch6 seg20 (chapter has 29 segs; heard 70 segs total)
+  gold ch6:17 heard: 'Often, the KL-divergence D KL ( q φ ( z | x ( i ) ) || p θ ( z )) of eq. (3) can be integr'
+  gold ch6:18 heard: 'The KL-divergence term can then be interpreted as regularizing φ , encouraging the approxi'
+  gold ch6:19 heard: 'This yields a second version of the SGVB estimator ˜ L B ( θ , φ ; x ( i ) ) ≃ L ( θ , φ ;'
+== vae-04 [ahead] auto-encoding-variational-bayes ch6 seg8 (chapter has 29 segs; heard 58 segs total)
+  first unheard ch7:8: 'For which q φ ( z | x ) can we choose such a differentiable transformation g φ ( . ) and a'
+  kw 'inverse CDF': absent from heard text
+  kw 'location-scale': absent from heard text
+  kw 'Gumbel': absent from heard text
+  kw 'Laplace': absent from heard text
+  kw 'Composition': absent from heard text
+== vae-05 [ahead] auto-encoding-variational-bayes ch9 seg19 (chapter has 19 segs; heard 126 segs total)
+  first unheard ch10:1: 'We trained generative models of images from the MNIST and Frey Face datasets 3 and compare'
+  kw 'MNIST': absent from heard text
+  kw 'Frey': absent from heard text
+  kw 'hidden units': absent from heard text
+  kw 'Adagrad global': absent from heard text
+== vae-06 [mixed] auto-encoding-variational-bayes ch8 seg4 (chapter has 14 segs; heard 97 segs total)
+  gold ch8:1 heard: "In this section we'll give an example where we use a neural network for the probabilistic "
+  gold ch8:2 heard: 'Let the prior over the latent variables be the centered isotropic multivariate Gaussian p '
+  gold ch8:3 heard: 'We let p θ ( x | z ) be a multivariate Gaussian (in case of real-valued data) or Bernoulli'
+  first unheard ch8:4: 'Note the true posterior p θ ( z | x ) is in this case intractable. While there is much fre'
+  kw 'diagonal covariance': absent from heard text
+  kw 'element-wise product': absent from heard text
+  kw '⊙': absent from heard text
+  kw 'approximately diagonal': absent from heard text
+== vae-07 [behind] auto-encoding-variational-bayes ch10 seg13 (chapter has 20 segs; heard 139 segs total)
+  gold ch10:4 heard: 'Figure: Figure 2: Comparison of our AEVB method to the wake-sleep algorithm, in terms of o'
+  gold ch10:12 heard: 'Figure 2 shows the results when comparing the lower bounds. Interestingly, superfluous lat'
+== vae-08 [ahead] auto-encoding-variational-bayes ch10 seg13 (chapter has 20 segs; heard 139 segs total)
+  first unheard ch10:13: 'Marginal likelihood For very low-dimensional latent space it is possible to estimate the m'
+  kw 'Hybrid Monte Carlo': absent from heard text
+  kw 'HMC': absent from heard text
+  kw 'density estimator': absent from heard text
+  kw 'leapfrog': absent from heard text
+  kw 'MCEM': absent from heard text
+== react-01 [ahead] react-synergizing-reasoning-and-acting-in-language-models ch1 seg4 (chapter has 6 segs; heard 8 segs total)
+  first unheard ch1:4: 'Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcome'
+  kw 'HotpotQA': absent from heard text
+  kw 'HotPotQA': absent from heard text
+  kw 'Fever': absent from heard text
+  kw 'ALFWorld': absent from heard text
+  kw 'WebShop': absent from heard text
+  kw '34%': absent from heard text
+== react-02 [behind] react-synergizing-reasoning-and-acting-in-language-models ch3 seg8 (chapter has 20 segs; heard 42 segs total)
+  gold ch3:4 heard: "The idea of ReAct is simple: we augment the agent's action space to ˆ A = A∪L , where L is"
+  gold ch3:5 heard: 'Instead, a thought ˆ a t aims to compose useful information by reasoning over the current '
+== react-03 [ahead] react-synergizing-reasoning-and-acting-in-language-models ch3 seg8 (chapter has 20 segs; heard 42 segs total)
+  first unheard ch3:8: 'In this paper, we mainly focus on the setup where a frozen large language model, PaLM-540B'
+  kw 'PaLM': absent from heard text
+  kw '540B': absent from heard text
+  kw 'GPT-3': absent from heard text
+== react-04 [behind] react-synergizing-reasoning-and-acting-in-language-models ch5 seg6 (chapter has 6 segs; heard 62 segs total)
+  gold ch5:3 heard: 'Action Space We design a simple Wikipedia web API with three types of actions to support i'
+  gold ch5:4 heard: '(3) finish [ answer ], which would finish the current task with answer . We note that this'
+== react-05 [mixed] react-synergizing-reasoning-and-acting-in-language-models ch6 seg8 (chapter has 15 segs; heard 70 segs total)
+  gold ch2:17 heard: 'The best approach overall is a combination of ReAct and CoT that allows for the use of bot'
+  gold ch6:7 heard: 'Combining Internal and External Knowledge As will be detail in Section 3.3, we observe tha'
+  first unheard ch6:8: 'We therefore propose to incorporate ReAct and CoT-SC , and let the model decide when to sw'
+  kw 'back off': absent from heard text
+  kw 'n/ 2': absent from heard text
+  kw 'n/2': absent from heard text
+  kw '7 and 5 steps': absent from heard text
+== react-06 [behind] react-synergizing-reasoning-and-acting-in-language-models ch7 seg12 (chapter has 25 segs; heard 89 segs total)
+  gold ch7:8 heard: 'A) Hallucination is a serious problem for CoT , resulting in much higher false positive ra'
+  gold ch7:9 heard: 'In contrast, the problem solving trajectory of ReAct is more grounded, fact-driven, and tr'
+  gold ch7:10 heard: "B) While interleaving reasoning, action and observation steps improves ReAct 's groundedne"
+== react-07 [behind] react-synergizing-reasoning-and-acting-in-language-models ch8 seg21 (chapter has 37 segs; heard 123 segs total)
+  gold ch8:20 heard: 'Results ReAct outperforms Act on both ALFWorld (Table 3) and Webshop (Table 4). On ALFWorl'
+== react-08 [ahead] react-synergizing-reasoning-and-acting-in-language-models ch8 seg17 (chapter has 37 segs; heard 119 segs total)
+  first unheard ch8:17: 'Table: Table 3: AlfWorld task-specific success rates (%). BUTLER and BUTLER g results are '
+  kw 'Inner Monologue': absent from heard text
+  kw 'ReAct-IM': absent from heard text
+  kw 'IM-style': absent from heard text
+  kw '71 vs. 53': absent from heard text
+  kw 'dense external feedback': absent from heard text
+== str-01 [behind] string-junctions-and-their-duals-in-heterotic-string-theory ch2 seg8 (chapter has 25 segs; heard 16 segs total)
+  gold ch2:6 heard: 'To construct A n , D n and E n gauge theories, we need three types of 7-branes with labels'
+  gold ch2:7 heard: 'Following 1) , 2) , we call them A-, B- and C-branes, respectively. The degrees of freedom'
+== str-02 [ahead] string-junctions-and-their-duals-in-heterotic-string-theory ch2 seg12 (chapter has 25 segs; heard 20 segs total)
+  first unheard ch2:12: 'These two theories are dual in the manner we now describe. On S 2 , we have 24 7branes. Al'
+  kw 'orientifold': absent from heard text
+  kw 'SO (32)': absent from heard text
+  kw 'SO(32)': absent from heard text
+  kw 'T dual': absent from heard text
+  kw 'S dual to': FOUND in heard text at ['ch002-00008']
+  kw 'type I theory': absent from heard text
+== str-03 [behind] string-junctions-and-their-duals-in-heterotic-string-theory ch3 seg29 (chapter has 44 segs; heard 62 segs total)
+  gold ch3:25 heard: 'The BPS condition for a heterotic string is'
+  gold ch3:26 heard: 'N sub o s c plus a equals 0'
+  gold ch3:27 heard: 'For BPS states, the norm of K should be smaller than 2:'
+  gold ch3:28 heard: 'K squared equals a tilde sub 0 squared plus a tilde sub 0 mu squared minus a sub 0 mu squa'
+== str-04 [ahead] string-junctions-and-their-duals-in-heterotic-string-theory ch3 seg44 (chapter has 44 segs; heard 77 segs total)
+  first unheard ch4:50: 'Junctions, which are dual to heterotic string states, should be proper; i.e., their invari'
+  kw 'null junction': absent from heard text
+  kw 'spinor root': absent from heard text
+  kw 'half odd': absent from heard text
+  kw 'proper': absent from heard text
+== str-05 [mixed] string-junctions-and-their-duals-in-heterotic-string-theory ch4 seg26 (chapter has 63 segs; heard 103 segs total)
+  gold ch4:22 heard: 'In this way, can we establish a complete correspondence between the quantum numbers of het'
+  gold ch4:23 heard: 'Probably, this is possible. However, it is difficult. The origin of the difficulty is the '
+  gold ch4:24 heard: 'The position of the D-string loop can be freely moved, and the length of the string attach'
+  gold ch4:25 heard: 'However, information regarding the position is not contained in the quantum numbers on the'
+  first unheard ch4:26: 'There is only one case in which such subtlety does not exist. The reason we need the strin'
+  kw 'flat background': absent from heard text
+  kw 'canceled by four': absent from heard text
+  kw 'monodromy around the cycle is 1': absent from heard text
+== rl-01 [behind] rl-book-full-endurance ch26 seg15 (chapter has 15 segs; heard 824 segs total)
+  gold ch26:7 heard: 'The simplest action selection rule is to select one of the actions with the highest estima'
+  gold ch26:8 heard: 'If there is more than one greedy action, then a selection is made among them in some arbit'
+  gold ch26:9 heard: 'A sub t is defined as the arg max over a of Q sub t of a'
+  gold ch26:10 heard: 'where argmax a denotes the action a for which the expression that follows is maximized (wi'
+  gold ch26:11 heard: 'A simple alternative is to behave greedily most of the time, but every once in a while, sa'
+  gold ch26:12 heard: 'We call methods using this near-greedy action selection rule " -greedy methods. An advanta'
+  gold ch26:13 heard: 'This of course implies that the probability of selecting the optimal action converges to g'
+== rl-02 [ahead] rl-book-full-endurance ch27 seg9 (chapter has 28 segs; heard 833 segs total)
+  first unheard ch27:9: 'The greedy method improved slightly faster than the other methods at the very beginning, b'
+  kw '1.54': absent from heard text
+  kw '91%': absent from heard text
+  kw 'one-third': absent from heard text
+  kw 'leveled o': absent from heard text
+== rl-03 [ahead] rl-book-full-endurance ch28 seg15 (chapter has 15 segs; heard 867 segs total)
+  first unheard ch30:3: 'One of the most popular ways of doing this is to use a constant step-size parameter. For e'
+  kw 'recency-weighted': absent from heard text
+  kw 'constant step-size parameter': absent from heard text
+  kw 'stochastic approximation theory': absent from heard text
+  kw 'weighted average of past rewards': absent from heard text
+== rl-04 [behind] rl-book-full-endurance ch30 seg18 (chapter has 26 segs; heard 887 segs total)
+  gold ch30:1 heard: 'The averaging methods discussed so far are appropriate for stationary bandit problems, tha'
+  gold ch30:2 heard: 'As noted earlier, we often encounter reinforcement learning problems that are e ↵ ectively'
+  gold ch30:3 heard: 'One of the most popular ways of doing this is to use a constant step-size parameter. For e'
+  gold ch30:10 heard: 'In fact, the weight decays exponentially according to the exponent on 1 \x00 ↵ . (If 1 \x00 ↵ = '
+  gold ch30:16 heard: 'Note that both convergence conditions are met for the sample-average case, ↵ n ( a ) = 1 n'
+  gold ch30:17 heard: 'In the latter case, the second condition is not met, indicating that the estimates never c'
+== rl-05 [ahead] rl-book-full-endurance ch32 seg16 (chapter has 16 segs; heard 936 segs total)
+  first unheard ch33:2: 'This is often a good approach, but it is not the only one possible. In this section we con'
+  kw 'numerical preference': absent from heard text
+  kw 'soft-max': absent from heard text
+  kw 'softmax': absent from heard text
+  kw 'Gibbs': absent from heard text
+  kw 'Boltzmann': absent from heard text
+  kw 'H t ( a )': absent from heard text
+== rl-06 [mixed] rl-book-full-endurance ch33 seg11 (chapter has 18 segs; heard 947 segs total)
+  gold ch33:10 heard: 'where ↵ > 0 is a step-size parameter, and ¯ R t 2 R is the average of the rewards up to bu'
+  first unheard ch33:11: '1 The ¯ R t term serves as a baseline with which the reward is compared. If the reward is '
+  kw 'baseline with which the reward is compared': absent from heard text
+  kw '+4': absent from heard text
+  kw 'variance of the update': absent from heard text
+  kw 'does not depend on the selected action': absent from heard text
+== rl-07 [behind] rl-book-full-endurance ch85 seg22 (chapter has 49 segs; heard 2252 segs total)
+  gold ch85:14 heard: 'Finally, note that the quantity in brackets in the TD(0) update is a sort of error, measur'
+  gold ch85:15 heard: 'delta sub t is defined as R sub t plus 1 plus gamma, times V of S sub t plus 1 minus V of '
+  gold ch85:16 heard: 'Notice that the TD error at each time is the error in the estimate made at that time . Bec'
+  gold ch85:17 heard: 'That is, \x00 t is the error in V ( S t ), available at time t +1. Also note that if the arra'
+  gold ch85:18 heard: 'M o n t e Carlomethods, then the Monte Carlo error can b e written a s a sum o f 1 D error'
+  gold ch85:19 heard: 'This identity is not exact if V is updated during the episode (as it is in TD(0)), but if '
+== rl-08 [ahead] rl-book-full-endurance ch85 seg22 (chapter has 49 segs; heard 2252 segs total)
+  first unheard ch85:22: 'Example 6.1: Driving Home Each day as you drive home from work, you try to predict how lon'
+  kw 'driving home': absent from heard text
+  kw 'Driving Home': absent from heard text
+  kw 'truck': absent from heard text
+  kw 'highway': absent from heard text
+  kw 'tra   c': absent from heard text
+== rl-09 [ahead] rl-book-full-endurance ch86 seg17 (chapter has 17 segs; heard 2296 segs total)
+  first unheard ch87:3: 'A Markov reward process , or MRP, is a Markov decision process without actions. We will of'
+  kw 'Markov reward process': absent from heard text
+  kw 'MRP': absent from heard text
+  kw '1 6 , 2 6': absent from heard text
+  kw 'initialized to the intermediate value': absent from heard text
+== rl-10 [behind] rl-book-full-endurance ch88 seg32 (chapter has 42 segs; heard 2354 segs total)
+  gold ch88:23 heard: 'One way of viewing this answer is that it is based on first modeling the Markov process, i'
+  gold ch88:24 heard: 'The other reasonable answer is simply to observe that we have seen A once and the return t'
+  gold ch88:25 heard: 'This is the answer that batch Monte Carlo methods give. Notice that it is also the answer '
+  gold ch88:26 heard: 'In fact, it gives zero error on the data. But still we expect the first answer to be bette'
+  gold ch88:27 heard: 'Example 6.4 illustrates a general di ↵ erence between the estimates found by batch TD(0) a'
+  gold ch88:28 heard: 'In general, the maximum-likelihood estimate of a parameter is the parameter value whose pr'
+  gold ch88:29 heard: 'In this case, the maximum-likelihood estimate is the model of the Markov process formed in'
+  gold ch88:30 heard: 'Given this model, we can compute the estimate of the value function that would be exactly '
+  gold ch88:31 heard: 'This is called the certainty-equivalence estimate because it is equivalent to assuming tha'
+== rl-11 [ahead] rl-book-full-endurance ch89 seg16 (chapter has 16 segs; heard 2380 segs total)
+  first unheard ch91:1: 'One of the early breakthroughs in reinforcement learning was the development of an o ↵ -po'
+  kw 'gamma, times the max over a of Q': absent from heard text
+  kw 'cliff': absent from heard text
+  kw 'independent of the policy being followed': absent from heard text
+  kw 'Watkins, 1989': absent from heard text
+== rl-12 [mixed] rl-book-full-endurance ch93 seg14 (chapter has 46 segs; heard 2454 segs total)
+  gold ch93:1 heard: 'Consider the learning algorithm that is just like Q-learning except that instead of the ma'
+  gold ch93:10 heard: 'but that otherwise follows the schema of Q-learning. Given the next state, S t +1 , this a'
+  gold ch93:13 heard: 'Expected Sarsa is more complex computationally than Sarsa but, in return, it eliminates th'
+  first unheard ch93:14: 'Given the same amount of experience we might expect it to perform slightly better than Sar'
+  kw 'subsumes': absent from heard text
+  kw 'dominate': absent from heard text
+  kw '=1 without': absent from heard text
+  kw 'exactly Q-learning': absent from heard text
+== rl-13 [ahead] rl-book-full-endurance ch94 seg12 (chapter has 26 segs; heard 2498 segs total)
+  first unheard ch94:12: 'Figure: Figure 6.5: Comparison of Q-learning and Double Q-learning on a simple episodic MD'
+  kw 'Double Q': absent from heard text
+  kw 'double learning': FOUND in heard text at ['ch008-00021', 'ch094-00000']
+  kw 'two independent estimates': absent from heard text
+  kw 'Q 2 ( a )': absent from heard text
+== rl-14 [behind] rl-book-full-endurance ch216 seg21 (chapter has 21 segs; heard 5610 segs total)
+  gold ch216:12 heard: 'One advantage of parameterizing policies according to the soft-max in action preferences i'
+  gold ch216:13 heard: 'Of course, one could select according to a soft-max distribution based on action values, b'
+  gold ch216:14 heard: 'Instead, the action-value estimates would converge to their corresponding true values, whi'
+  gold ch216:15 heard: 'If the soft-max distribution included a temperature parameter, then the temperature could '
+  gold ch216:16 heard: 'Action preferences are di ↵ erent because they do not approach specific values; instead th'
+  gold ch216:17 heard: 'If the optimal policy is deterministic, then the preferences of the optimal actions will b'
+  gold ch216:18 heard: 'A second advantage of parameterizing policies according to the soft-max in action preferen'
+  gold ch216:19 heard: 'In problems with significant function approximation, the best approximate policy may be st'
+  gold ch216:20 heard: 'Action-value methods have no natural way of finding stochastic optimal policies, whereas p'
+== rl-15 [ahead] rl-book-full-endurance ch218 seg13 (chapter has 13 segs; heard 5636 segs total)
+  first unheard ch219:6: 'on the state distribution is a function of the environment and is typically unknown. How c'
+  kw 'policy gradient theorem': FOUND in heard text at ['ch218-00000']
+  kw 'derivative of the state distribution': absent from heard text
+  kw 'average length of an episode': absent from heard text
+== rl-16 [behind] rl-book-full-endurance ch220 seg24 (chapter has 24 segs; heard 5672 segs total)
+  gold ch220:15 heard: 'This update has an intuitive appeal. Each increment is proportional to the product of a re'
+  gold ch220:16 heard: 'The vector is the direction in parameter space that most increases the probability of repe'
+  gold ch220:17 heard: 'The update increases the parameter vector in this direction proportional to the return, an'
+  gold ch220:18 heard: 'The former makes sense because it causes the parameter to move most in the directions that'
+  gold ch220:19 heard: 'The latter makes sense because otherwise actions that are selected frequently are at an ad'
+== rl-17 [mixed] rl-book-full-endurance ch222 seg15 (chapter has 15 segs; heard 5700 segs total)
+  gold ch215:10 heard: 'Methods that learn approximations to both policy and value functions are often called acto'
+  gold ch222:7 heard: 'Because the baseline could be uniformly zero, this update is a strict generalization of RE'
+  gold ch222:8 heard: 'For example, we saw in Section 2.8 that an analogous baseline can significantly reduce the'
+  gold ch222:9 heard: 'In the bandit algorithms the baseline was just a number (the average of the rewards seen s'
+  gold ch222:10 heard: 'In some states all actions have high values and we need a high baseline to di ↵ erentiate '
+  gold ch222:11 heard: 'One natural choice for the baseline is an estimate of the state value, ˆ v ( S t , w ), wh'
+  first unheard ch224:1: 'In REINFORCE with baseline, the learned state-value function estimates the value of the fi'
+  kw 'second state of the transition': absent from heard text
+  kw 'one-step actor-critic': absent from heard text
+  kw 'cannot be used to assess': absent from heard text
+  kw 'One-step Actor': absent from heard text

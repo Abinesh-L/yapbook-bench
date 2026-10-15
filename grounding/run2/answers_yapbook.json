@@ -1,0 +1,4382 @@
+[
+  {
+    "id": "att-01",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "behind",
+    "chapter": 6,
+    "seq": 4,
+    "question": "How many layers does the encoder have, and what are the two sub-layers in each one?",
+    "answer": "The encoder has N = 6 layers. Each layer has two sub-layers: a multi-head self-attention mechanism and a simple, positionwise fully connected feed-forward network.",
+    "seconds": 4.45,
+    "error": null,
+    "chapter_title": "3.1 Encoder and Decoder Stacks",
+    "chapter_segments": 7,
+    "heard_segments": 4,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 6,
+      "segment": 4
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 173,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7092353105545044,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 5,
+        "seq": 4,
+        "score": 0.7092
+      },
+      {
+        "chapter": 5,
+        "seq": 1,
+        "score": 0.6414
+      },
+      {
+        "chapter": 3,
+        "seq": 2,
+        "score": 0.6313
+      },
+      {
+        "chapter": 2,
+        "seq": 1,
+        "score": 0.6082
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 4,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 4060,
+    "prompt_tokens_est": 1160,
+    "prompt_sha256": "52858b7bb85ab09abb5a3278833dfe194ca907160242a9cae082b7b858b77848",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-02",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "ahead",
+    "chapter": 9,
+    "seq": 3,
+    "question": "Why do they divide by the square root of d k?",
+    "answer": "The book has not covered that yet. So far it does not say why they divide by the square root of d k.",
+    "seconds": 4.37,
+    "error": null,
+    "chapter_title": "3.2.1 Scaled Dot-Product Attention",
+    "chapter_segments": 9,
+    "heard_segments": 3,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 9,
+      "segment": 3
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 78,
+    "retrieval_block_present": false,
+    "retrieval_passages_in_prompt": 0,
+    "retrieval_gate": "skipped (below gate)",
+    "retrieval_best_score": 0.5012611746788025,
+    "retrieval_passages_returned": null,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 3,
+        "seq": 5,
+        "score": 0.5013
+      },
+      {
+        "chapter": 3,
+        "seq": 3,
+        "score": 0.5011
+      },
+      {
+        "chapter": 5,
+        "seq": 2,
+        "score": 0.4869
+      },
+      {
+        "chapter": 6,
+        "seq": 3,
+        "score": 0.4705
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 3,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 2639,
+    "prompt_tokens_est": 754,
+    "prompt_sha256": "7470831fae513033b8a159eb063b8c3d7929a4c17a069411b726b4464cfbff23",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-03",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "ahead",
+    "chapter": 4,
+    "seq": 4,
+    "question": "They just mentioned multi-head attention. What is that, actually?",
+    "answer": "The book has not covered that yet. So far it says that multi-head attention is described in section 3. 2, but it does not explain what multi-head attention is.",
+    "seconds": 4.44,
+    "error": null,
+    "chapter_title": "2 Background",
+    "chapter_segments": 9,
+    "heard_segments": 4,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 4,
+      "segment": 4
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 137,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.654611349105835,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 3,
+        "seq": 6,
+        "score": 0.6546
+      },
+      {
+        "chapter": 1,
+        "seq": 0,
+        "score": 0.613
+      },
+      {
+        "chapter": 2,
+        "seq": 2,
+        "score": 0.606
+      },
+      {
+        "chapter": 2,
+        "seq": 7,
+        "score": 0.5785
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 4,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 4976,
+    "prompt_tokens_est": 1422,
+    "prompt_sha256": "f04d7e9dda182bb7e21835d77f47c4fa160cfba6d9efb588f55f5593261bc927",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-04",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "mixed",
+    "chapter": 6,
+    "seq": 7,
+    "question": "How does the decoder keep from peeking at future output words?",
+    "answer": "The decoder keeps from peeking at future output words by modifying the self-attention sub-layer to prevent positions from attending to subsequent positions. This masking, combined with the fact that the output embeddings are offset by one position, ensures that the predictions for position i can depend only on the known outputs at positions less than i.",
+    "seconds": 4.7,
+    "error": null,
+    "chapter_title": "3.1 Encoder and Decoder Stacks",
+    "chapter_segments": 7,
+    "heard_segments": 7,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 6,
+      "segment": 7
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 365,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6309487223625183,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 5,
+        "seq": 2,
+        "score": 0.6309
+      },
+      {
+        "chapter": 2,
+        "seq": 2,
+        "score": 0.595
+      },
+      {
+        "chapter": 3,
+        "seq": 2,
+        "score": 0.5807
+      },
+      {
+        "chapter": 5,
+        "seq": 1,
+        "score": 0.5543
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 7,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 4867,
+    "prompt_tokens_est": 1391,
+    "prompt_sha256": "84ee4952a0e010da451a93b16aff4c983889e67e6bdb78bcf487dd38aa732c41",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-05",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "behind",
+    "chapter": 14,
+    "seq": 9,
+    "question": "Why did they go with sinusoids instead of learned position embeddings?",
+    "answer": "They went with sinusoids instead of learned position embeddings because the sinusoidal version may allow the model to extrapolate to sequence lengths longer than the ones encountered during training. The book also notes that both versions produced nearly identical results in experiments.",
+    "seconds": 4.55,
+    "error": null,
+    "chapter_title": "3.5 Positional Encoding",
+    "chapter_segments": 9,
+    "heard_segments": 9,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 14,
+      "segment": 9
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 298,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6062411069869995,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 4,
+        "seq": 3,
+        "score": 0.6062
+      },
+      {
+        "chapter": 4,
+        "seq": 2,
+        "score": 0.5965
+      },
+      {
+        "chapter": 12,
+        "seq": 3,
+        "score": 0.5886
+      },
+      {
+        "chapter": 6,
+        "seq": 6,
+        "score": 0.5828
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 9,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5005,
+    "prompt_tokens_est": 1430,
+    "prompt_sha256": "005be30c827b58cf5624d9637e6803743f050accdc0aec10c72b73486af20037",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-06",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "ahead",
+    "chapter": 13,
+    "seq": 3,
+    "question": "With no recurrence, how does the model know what order the words are in?",
+    "answer": "The book has not covered that yet. So far it does not say how the model knows what order the words are in with no recurrence.",
+    "seconds": 4.38,
+    "error": null,
+    "chapter_title": "3.4 Embeddings and Softmax",
+    "chapter_segments": 5,
+    "heard_segments": 3,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 13,
+      "segment": 3
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 103,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7193259000778198,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 3,
+        "seq": 3,
+        "score": 0.7193
+      },
+      {
+        "chapter": 5,
+        "seq": 2,
+        "score": 0.6799
+      },
+      {
+        "chapter": 4,
+        "seq": 6,
+        "score": 0.6705
+      },
+      {
+        "chapter": 11,
+        "seq": 3,
+        "score": 0.6518
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 3,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 3628,
+    "prompt_tokens_est": 1037,
+    "prompt_sha256": "0fa3641421ee0f10860f140264e49a5391d257f2ae34b398601cd12091838c2d",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-07",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "mixed",
+    "chapter": 15,
+    "seq": 8,
+    "question": "So is self-attention actually cheaper than a recurrent layer?",
+    "answer": "Self-attention is not necessarily cheaper than a recurrent layer in terms of total computational complexity. The transcript says self-attention uses a constant number of sequential operations, while a recurrent layer requires O(n) sequential operations. This means self-attention has a fixed cost per layer, independent of sequence length, whereas recurrent layers scale with the length of the sequence.",
+    "seconds": 4.9,
+    "error": null,
+    "chapter_title": "4 Why Self-Attention",
+    "chapter_segments": 15,
+    "heard_segments": 8,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 15,
+      "segment": 8
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 413,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6752049326896667,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 11,
+        "seq": 5,
+        "score": 0.6752
+      },
+      {
+        "chapter": 4,
+        "seq": 4,
+        "score": 0.6655
+      },
+      {
+        "chapter": 4,
+        "seq": 5,
+        "score": 0.6588
+      },
+      {
+        "chapter": 11,
+        "seq": 4,
+        "score": 0.6398
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 8,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 4784,
+    "prompt_tokens_est": 1367,
+    "prompt_sha256": "2afd61ae4f97a0dbfe9a41b418142c4b695c27095394b11e46678e1b27e25df8",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-08",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "mixed",
+    "chapter": 17,
+    "seq": 2,
+    "question": "How long did it take to train this thing?",
+    "answer": "The book has not covered that yet. So far it does not say how long it took to train this thing.",
+    "seconds": 4.65,
+    "error": null,
+    "chapter_title": "5.1 Training Data and Batching",
+    "chapter_segments": 4,
+    "heard_segments": 2,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 17,
+      "segment": 2
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 73,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6116580963134766,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 16,
+        "seq": 0,
+        "score": 0.6117
+      },
+      {
+        "chapter": 16,
+        "seq": 1,
+        "score": 0.5931
+      },
+      {
+        "chapter": 2,
+        "seq": 3,
+        "score": 0.565
+      },
+      {
+        "chapter": 3,
+        "seq": 8,
+        "score": 0.5483
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 2,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 2939,
+    "prompt_tokens_est": 840,
+    "prompt_sha256": "3701827640969157f86a8f8da4b4062dc6076fd5142aa3477d2fe53333fef4e6",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-09",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "behind",
+    "chapter": 19,
+    "seq": 4,
+    "question": "What optimizer and learning rate schedule did they use?",
+    "answer": "They used the Adam optimizer with β₁ = 0. 9, β₂ = 0.98, and ϵ = 10⁻⁹. The learning rate started increasing linearly for the first 4000 steps and then decreased proportionally to the inverse square root of the step number.",
+    "seconds": 4.93,
+    "error": null,
+    "chapter_title": "5.3 Optimizer",
+    "chapter_segments": 4,
+    "heard_segments": 4,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 19,
+      "segment": 4
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 230,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6382144689559937,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 18,
+        "seq": 1,
+        "score": 0.6382
+      },
+      {
+        "chapter": 16,
+        "seq": 1,
+        "score": 0.6117
+      },
+      {
+        "chapter": 18,
+        "seq": 2,
+        "score": 0.6062
+      },
+      {
+        "chapter": 2,
+        "seq": 5,
+        "score": 0.5952
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 4,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 3849,
+    "prompt_tokens_est": 1100,
+    "prompt_sha256": "afca88f6fdd2b2d41f36ae01f39b1f095c3d67db08bed4de0b897f54fc4a31e4",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-10",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "ahead",
+    "chapter": 20,
+    "seq": 3,
+    "question": "What are the three kinds of regularization they use?",
+    "answer": "The book has not covered that yet. So far it does not say what the three kinds of regularization are.",
+    "seconds": 4.57,
+    "error": null,
+    "chapter_title": "5.4 Regularization",
+    "chapter_segments": 6,
+    "heard_segments": 3,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 20,
+      "segment": 3
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 80,
+    "retrieval_block_present": false,
+    "retrieval_passages_in_prompt": 0,
+    "retrieval_gate": "skipped (below gate)",
+    "retrieval_best_score": 0.5863068103790283,
+    "retrieval_passages_returned": null,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 12,
+        "seq": 3,
+        "score": 0.5863
+      },
+      {
+        "chapter": 3,
+        "seq": 1,
+        "score": 0.5813
+      },
+      {
+        "chapter": 6,
+        "seq": 2,
+        "score": 0.5703
+      },
+      {
+        "chapter": 15,
+        "seq": 3,
+        "score": 0.5687
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 3,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 4164,
+    "prompt_tokens_est": 1190,
+    "prompt_sha256": "ca34bb8215acba1883df45644c1021d66603659d206f9867c6780ff2731af8cb",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-11",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "ahead",
+    "chapter": 22,
+    "seq": 5,
+    "question": "How did they estimate the training cost in floating point operations?",
+    "answer": "The book has not covered that yet. So far it does not say how they estimated the training cost in floating point operations.",
+    "seconds": 4.68,
+    "error": null,
+    "chapter_title": "6.1 Machine Translation",
+    "chapter_segments": 10,
+    "heard_segments": 5,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 22,
+      "segment": 5
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 103,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6418814659118652,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 18,
+        "seq": 1,
+        "score": 0.6419
+      },
+      {
+        "chapter": 19,
+        "seq": 3,
+        "score": 0.6403
+      },
+      {
+        "chapter": 18,
+        "seq": 2,
+        "score": 0.6288
+      },
+      {
+        "chapter": 17,
+        "seq": 3,
+        "score": 0.6
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 5,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 4338,
+    "prompt_tokens_est": 1240,
+    "prompt_sha256": "e97240e326ff606a45887d1e53ddc982d61a57b5cbf8127536c1a32179d61291",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "att-12",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "attention-is-all-you-need",
+    "kind": "behind",
+    "chapter": 23,
+    "seq": 9,
+    "question": "What happened when they tried a single attention head?",
+    "answer": "The book has not covered that yet. So far it does not say what happened when they tried a single attention head.",
+    "seconds": 4.81,
+    "error": null,
+    "chapter_title": "6.2 Model Variations",
+    "chapter_segments": 9,
+    "heard_segments": 9,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 23,
+      "segment": 9
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 91,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7015900611877441,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 10,
+        "seq": 3,
+        "score": 0.7016
+      },
+      {
+        "chapter": 10,
+        "seq": 0,
+        "score": 0.6902
+      },
+      {
+        "chapter": 10,
+        "seq": 7,
+        "score": 0.6842
+      },
+      {
+        "chapter": 15,
+        "seq": 14,
+        "score": 0.6804
+      }
+    ],
+    "retrieval_index_rows": 217,
+    "retrieval_excluded_rows": 9,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 14192,
+    "prompt_tokens_est": 4055,
+    "prompt_sha256": "5ba6321c6c3ec367fcd785d81a49200a121e18bb11f1b62c2d9f1098b9dabbf9",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-01",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "behind",
+    "chapter": 2,
+    "seq": 13,
+    "question": "What exactly do they mean by internal covariate shift?",
+    "answer": "They mean the change in the distributions of internal nodes of a deep network as training progresses. This change can cause the optimizer to get stuck in the saturated regime of nonlinearity, slowing down training.",
+    "seconds": 4.97,
+    "error": null,
+    "chapter_title": "1 Introduction",
+    "chapter_segments": 19,
+    "heard_segments": 13,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 2,
+      "segment": 13
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 224,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7846107482910156,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.7846
+      },
+      {
+        "chapter": 0,
+        "seq": 9,
+        "score": 0.7243
+      },
+      {
+        "chapter": 0,
+        "seq": 8,
+        "score": 0.7181
+      },
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.6061
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 13,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5831,
+    "prompt_tokens_est": 1666,
+    "prompt_sha256": "71c3f2b14bf6bfcd0d8aad3fb3fe38c774b90aa023191510ba9c48d156a89d7a",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-02",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "mixed",
+    "chapter": 2,
+    "seq": 16,
+    "question": "So what's their fix, how does batch normalization actually work?",
+    "answer": "Batch normalization works by normalizing the layer inputs to fix their means and variances. It does this through a normalization step that makes the inputs have stable distributions during training. This reduces the dependence of gradients on parameter scales, allowing higher learning rates without divergence.",
+    "seconds": 4.8,
+    "error": null,
+    "chapter_title": "1 Introduction",
+    "chapter_segments": 19,
+    "heard_segments": 16,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 2,
+      "segment": 16
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 321,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.8109912276268005,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 1,
+        "seq": 4,
+        "score": 0.811
+      },
+      {
+        "chapter": 1,
+        "seq": 5,
+        "score": 0.7902
+      },
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.7051
+      },
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.6884
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 16,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 6598,
+    "prompt_tokens_est": 1886,
+    "prompt_sha256": "205c14f05099bf92a850b5dc5a60caa5419b931a0e5d3bb7e8f9674843c6328e",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-03",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "behind",
+    "chapter": 3,
+    "seq": 13,
+    "question": "Why can't you just normalize the activations outside the gradient step?",
+    "answer": "Because if normalization is computed outside the gradient descent step, the model can blow up during training. As the training continues, the bias term b will grow indefinitely while the loss remains fixed. This problem gets worse if the normalization also scales the activations.",
+    "seconds": 4.98,
+    "error": null,
+    "chapter_title": "2 Towards Reducing Internal Covariate Shift",
+    "chapter_segments": 23,
+    "heard_segments": 13,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 3,
+      "segment": 13
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 290,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7420427799224854,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 14,
+        "score": 0.742
+      },
+      {
+        "chapter": 0,
+        "seq": 13,
+        "score": 0.6928
+      },
+      {
+        "chapter": 2,
+        "seq": 16,
+        "score": 0.681
+      },
+      {
+        "chapter": 1,
+        "seq": 4,
+        "score": 0.6765
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 13,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5840,
+    "prompt_tokens_est": 1669,
+    "prompt_sha256": "7412b432ce8e74f8c6a37ecc515b610b57886199b0dfa744f372fb952e892e71",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-04",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "ahead",
+    "chapter": 3,
+    "seq": 23,
+    "question": "Doesn't forcing every input to zero mean and unit variance limit what a layer can represent?",
+    "answer": "The book does not say that forcing every input to zero mean and unit variance limits what a layer can represent. It says that previous approaches discarding the absolute scale of activations change the representation ability of a network, but it wants to preserve information by normalizing activations relative to the entire training data's statistics.",
+    "seconds": 4.7,
+    "error": null,
+    "chapter_title": "2 Towards Reducing Internal Covariate Shift",
+    "chapter_segments": 23,
+    "heard_segments": 23,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 3,
+      "segment": 23
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 363,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7074323892593384,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 14,
+        "score": 0.7074
+      },
+      {
+        "chapter": 0,
+        "seq": 7,
+        "score": 0.647
+      },
+      {
+        "chapter": 2,
+        "seq": 7,
+        "score": 0.633
+      },
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.63
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 23,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 8339,
+    "prompt_tokens_est": 2383,
+    "prompt_sha256": "828b17f9df04a1cbc74123ee478cf6299f65abe42ae724288eac9d2f12849319",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-05",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "behind",
+    "chapter": 4,
+    "seq": 12,
+    "question": "Why normalize each dimension separately instead of whitening them jointly?",
+    "answer": "Because the joint whitening would require computing the covariance matrix and its inverse square root, which is expensive and not everywhere differentiable. Normalizing each dimension separately avoids this by computing per-dimension variances instead of joint covariances.",
+    "seconds": 4.64,
+    "error": null,
+    "chapter_title": "3 Normalization via Mini-Batch Statistics",
+    "chapter_segments": 28,
+    "heard_segments": 12,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 4,
+      "segment": 12
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 283,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6598844528198242,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 3,
+        "seq": 4,
+        "score": 0.6599
+      },
+      {
+        "chapter": 3,
+        "seq": 5,
+        "score": 0.6576
+      },
+      {
+        "chapter": 3,
+        "seq": 19,
+        "score": 0.6331
+      },
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.6328
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 12,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 6109,
+    "prompt_tokens_est": 1746,
+    "prompt_sha256": "d1e234de23e4829b65ca50f1f10ded44b30902254f5bb4d6b3835add258d7acf",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-06",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "ahead",
+    "chapter": 4,
+    "seq": 28,
+    "question": "What happens at test time when there's no mini-batch to normalize over?",
+    "answer": "At test time, when there's no mini-batch to normalize over, the batch normalization transform uses the running averages of the mean and variance that were computed during training. These running averages replace the mini-batch statistics to ensure consistent and stable normalization. This allows the network to make predictions without relying on mini-batches, maintaining performance and stability.",
+    "seconds": 4.79,
+    "error": null,
+    "chapter_title": "3 Normalization via Mini-Batch Statistics",
+    "chapter_segments": 28,
+    "heard_segments": 28,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 4,
+      "segment": 28
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 410,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6565225124359131,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 16,
+        "score": 0.6565
+      },
+      {
+        "chapter": 1,
+        "seq": 4,
+        "score": 0.6501
+      },
+      {
+        "chapter": 0,
+        "seq": 3,
+        "score": 0.6496
+      },
+      {
+        "chapter": 2,
+        "seq": 15,
+        "score": 0.6304
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 28,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 11619,
+    "prompt_tokens_est": 3320,
+    "prompt_sha256": "da916a5b39c172981d790e638430792eeef9cb555b7e3d9fee32acdab9f53b86",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-07",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "mixed",
+    "chapter": 7,
+    "seq": 4,
+    "question": "Why does batch norm let you use a higher learning rate?",
+    "answer": "Batch Normalization lets you use a higher learning rate because it prevents small changes to the parameters from amplifying into larger and suboptimal changes in activations in gradients. It also makes training more resilient to the parameter scale, so large learning rates don’t cause the model to explode.",
+    "seconds": 4.67,
+    "error": null,
+    "chapter_title": "3.3 Batch Normalization enables higher learning rates",
+    "chapter_segments": 14,
+    "heard_segments": 4,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 7,
+      "segment": 4
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 317,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7911638021469116,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 15,
+        "score": 0.7912
+      },
+      {
+        "chapter": 1,
+        "seq": 4,
+        "score": 0.7845
+      },
+      {
+        "chapter": 0,
+        "seq": 15,
+        "score": 0.725
+      },
+      {
+        "chapter": 1,
+        "seq": 5,
+        "score": 0.722
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 4,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 4461,
+    "prompt_tokens_est": 1275,
+    "prompt_sha256": "93d67fce8553fd83e7f8decf36336d007564f90064cfc4c91dfcfeb5547fa7d2",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-08",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "ahead",
+    "chapter": 8,
+    "seq": 3,
+    "question": "In the experiments, how much higher did they actually push the learning rate?",
+    "answer": "The book has not covered that yet. So far it does not say how much higher they actually pushed the learning rate.",
+    "seconds": 4.36,
+    "error": null,
+    "chapter_title": "3.4 Batch Normalization regularizes the model",
+    "chapter_segments": 3,
+    "heard_segments": 3,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 8,
+      "segment": 3
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 92,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6578232049942017,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 7,
+        "seq": 3,
+        "score": 0.6578
+      },
+      {
+        "chapter": 7,
+        "seq": 0,
+        "score": 0.6463
+      },
+      {
+        "chapter": 7,
+        "seq": 1,
+        "score": 0.6452
+      },
+      {
+        "chapter": 0,
+        "seq": 5,
+        "score": 0.6421
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 3,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 3852,
+    "prompt_tokens_est": 1101,
+    "prompt_sha256": "c6fdd113fa828fd13fb85cabae8ce37b31e1ab865172f8461accd71546a198e8",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-09",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "behind",
+    "chapter": 13,
+    "seq": 15,
+    "question": "What happened when they used sigmoid instead of ReLU?",
+    "answer": "When they used sigmoid instead of ReLU, Batch Normalization allowed deep networks to be trained, which was previously difficult. Without Batch Normalization, Inception with sigmoid never achieved better than 1/1000 accuracy.",
+    "seconds": 4.59,
+    "error": null,
+    "chapter_title": "4.2.2 Single-Network Classification",
+    "chapter_segments": 15,
+    "heard_segments": 15,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 13,
+      "segment": 15
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 234,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6202800869941711,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 11,
+        "seq": 3,
+        "score": 0.6203
+      },
+      {
+        "chapter": 4,
+        "seq": 5,
+        "score": 0.5703
+      },
+      {
+        "chapter": 6,
+        "seq": 3,
+        "score": 0.5632
+      },
+      {
+        "chapter": 10,
+        "seq": 8,
+        "score": 0.5594
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 15,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 6568,
+    "prompt_tokens_est": 1877,
+    "prompt_sha256": "c8cc18adf82a73ac241699698b4ed3d68385e8dd5ad6a5c9dd28836ce3fcacc3",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "bn-10",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift",
+    "kind": "behind",
+    "chapter": 14,
+    "seq": 8,
+    "question": "How did their ensemble compare to the previous best ImageNet result?",
+    "answer": "Their ensemble improved upon the previous best result on ImageNet classification and exceeded the estimated accuracy of human raters. The ensemble achieved a top-5 validation error of 4. 9% and a test error of 4. 82%, which was better than the prior best result.",
+    "seconds": 4.63,
+    "error": null,
+    "chapter_title": "4.2.3 Ensemble Classification",
+    "chapter_segments": 8,
+    "heard_segments": 8,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 14,
+      "segment": 8
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": true,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 270,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7739890813827515,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 1,
+        "seq": 6,
+        "score": 0.774
+      },
+      {
+        "chapter": 2,
+        "seq": 18,
+        "score": 0.7246
+      },
+      {
+        "chapter": 2,
+        "seq": 17,
+        "score": 0.6932
+      },
+      {
+        "chapter": 11,
+        "seq": 2,
+        "score": 0.666
+      }
+    ],
+    "retrieval_index_rows": 255,
+    "retrieval_excluded_rows": 8,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 4820,
+    "prompt_tokens_est": 1378,
+    "prompt_sha256": "d0a80a0ad15905f09efe147619caea36f20281e252d29ee5e8cb1d9880df3439",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "vae-01",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "auto-encoding-variational-bayes",
+    "kind": "behind",
+    "chapter": 4,
+    "seq": 20,
+    "question": "Why do they call the recognition model a probabilistic encoder?",
+    "answer": "They call the recognition model a probabilistic encoder because given a datapoint x, it produces a distribution over the possible values of the code z from which the datapoint x could have been generated. This aligns with coding theory, where z acts as a latent representation or code.",
+    "seconds": 4.72,
+    "error": null,
+    "chapter_title": "2.1 Problem scenario",
+    "chapter_segments": 20,
+    "heard_segments": 20,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 4,
+      "segment": 20
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 295,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7040901184082031,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 6,
+        "score": 0.7041
+      },
+      {
+        "chapter": 2,
+        "seq": 5,
+        "score": 0.6212
+      },
+      {
+        "chapter": 1,
+        "seq": 4,
+        "score": 0.5966
+      },
+      {
+        "chapter": 2,
+        "seq": 1,
+        "score": 0.5587
+      }
+    ],
+    "retrieval_index_rows": 251,
+    "retrieval_excluded_rows": 20,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 7635,
+    "prompt_tokens_est": 2182,
+    "prompt_sha256": "20265a1c4c4551fe52ea019c2556989ac38af7e65ac067714defe8034b458436",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "vae-02",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "auto-encoding-variational-bayes",
+    "kind": "mixed",
+    "chapter": 5,
+    "seq": 9,
+    "question": "So how do they get around the high variance of that naive gradient estimator?",
+    "answer": "They get around the high variance by using a reparameterization of the variational lower bound, which yields a stochastic gradient variational Bayes (SGVB) estimator. This estimator is a simple, differentiable, unbiased estimator that can be optimized using standard stochastic gradient ascent techniques.",
+    "seconds": 4.85,
+    "error": null,
+    "chapter_title": "2.2 The variational bound",
+    "chapter_segments": 9,
+    "heard_segments": 9,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 5,
+      "segment": 9
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 315,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6808697581291199,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 3,
+        "score": 0.6809
+      },
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.6731
+      },
+      {
+        "chapter": 1,
+        "seq": 2,
+        "score": 0.647
+      },
+      {
+        "chapter": 2,
+        "seq": 2,
+        "score": 0.6304
+      }
+    ],
+    "retrieval_index_rows": 251,
+    "retrieval_excluded_rows": 9,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5555,
+    "prompt_tokens_est": 1588,
+    "prompt_sha256": "0cf620f5fa8f46f4befc64ac9f147dd4ba7e12f2c4a49d94b5d196a72c1a5e4d",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "vae-03",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "auto-encoding-variational-bayes",
+    "kind": "behind",
+    "chapter": 6,
+    "seq": 20,
+    "question": "Why does the second version of the estimator have lower variance?",
+    "answer": "The second version of the estimator has lower variance because the KL-divergence term can be integrated analytically, so only the expected reconstruction error requires sampling. This reduces the overall variance compared to the generic estimator.",
+    "seconds": 4.75,
+    "error": null,
+    "chapter_title": "2.3 The SGVB estimator and AEVB algorithm",
+    "chapter_segments": 29,
+    "heard_segments": 20,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 6,
+      "segment": 20
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 257,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6419991254806519,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.642
+      },
+      {
+        "chapter": 5,
+        "seq": 8,
+        "score": 0.6232
+      },
+      {
+        "chapter": 2,
+        "seq": 3,
+        "score": 0.6162
+      },
+      {
+        "chapter": 5,
+        "seq": 3,
+        "score": 0.6139
+      }
+    ],
+    "retrieval_index_rows": 251,
+    "retrieval_excluded_rows": 20,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 7150,
+    "prompt_tokens_est": 2043,
+    "prompt_sha256": "70589790c38e9ec9471af1bae876e0be377fa5088c6f11cb250176702064aecd",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "vae-04",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "auto-encoding-variational-bayes",
+    "kind": "ahead",
+    "chapter": 6,
+    "seq": 8,
+    "question": "For which distributions can you actually do this reparameterization?",
+    "answer": "For continuous latent variables and/or parameters, the reparameterization technique can be applied. The book states that the SGVB estimator can be used for efficient approximate posterior inference in almost any model with continuous latent variables and/or parameters.",
+    "seconds": 4.67,
+    "error": null,
+    "chapter_title": "2.3 The SGVB estimator and AEVB algorithm",
+    "chapter_segments": 29,
+    "heard_segments": 8,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 6,
+      "segment": 8
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 279,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6729245781898499,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.6729
+      },
+      {
+        "chapter": 4,
+        "seq": 9,
+        "score": 0.6405
+      },
+      {
+        "chapter": 2,
+        "seq": 3,
+        "score": 0.6325
+      },
+      {
+        "chapter": 4,
+        "seq": 11,
+        "score": 0.6174
+      }
+    ],
+    "retrieval_index_rows": 251,
+    "retrieval_excluded_rows": 8,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5717,
+    "prompt_tokens_est": 1634,
+    "prompt_sha256": "6bf6db13b975955129a66bf99c465cdc92941f6de06e269e52a55db3faa2a1e1",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "vae-05",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "auto-encoding-variational-bayes",
+    "kind": "ahead",
+    "chapter": 9,
+    "seq": 19,
+    "question": "What datasets did they test this on?",
+    "answer": "The book has not covered that yet. So far it does not say anything about the datasets they tested this on.",
+    "seconds": 4.7,
+    "error": null,
+    "chapter_title": "4 Related work",
+    "chapter_segments": 19,
+    "heard_segments": 19,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 9,
+      "segment": 19
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 85,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.655247688293457,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 6,
+        "seq": 24,
+        "score": 0.6552
+      },
+      {
+        "chapter": 3,
+        "seq": 4,
+        "score": 0.6479
+      },
+      {
+        "chapter": 6,
+        "seq": 23,
+        "score": 0.6295
+      },
+      {
+        "chapter": 6,
+        "seq": 11,
+        "score": 0.614
+      }
+    ],
+    "retrieval_index_rows": 251,
+    "retrieval_excluded_rows": 19,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 7171,
+    "prompt_tokens_est": 2049,
+    "prompt_sha256": "cc00a21a2ec84604b09c8cce1b6819180ad5a73ba171c0316c7921173900e124",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "vae-06",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "auto-encoding-variational-bayes",
+    "kind": "mixed",
+    "chapter": 8,
+    "seq": 4,
+    "question": "What do they use for the approximate posterior in the VAE example?",
+    "answer": "They use q φ ( z | x ) as the approximate posterior in the VAE example. This is the approximation to the posterior of the generative model p θ ( x , z ).",
+    "seconds": 4.66,
+    "error": null,
+    "chapter_title": "3 Example: Variational Auto-Encoder",
+    "chapter_segments": 14,
+    "heard_segments": 4,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 8,
+      "segment": 4
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 163,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7456138730049133,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 4,
+        "seq": 12,
+        "score": 0.7456
+      },
+      {
+        "chapter": 4,
+        "seq": 15,
+        "score": 0.732
+      },
+      {
+        "chapter": 2,
+        "seq": 2,
+        "score": 0.7234
+      },
+      {
+        "chapter": 6,
+        "seq": 1,
+        "score": 0.7135
+      }
+    ],
+    "retrieval_index_rows": 251,
+    "retrieval_excluded_rows": 4,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 4437,
+    "prompt_tokens_est": 1268,
+    "prompt_sha256": "67c37dc68de92f5224bd1ce5cff72fd260b23b51af569a02fde94e2632c97db0",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "vae-07",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "auto-encoding-variational-bayes",
+    "kind": "behind",
+    "chapter": 10,
+    "seq": 13,
+    "question": "Did adding more latent variables make it overfit?",
+    "answer": "The book has not covered that yet. So far it says that adding more latent variables did not result in overfitting, and this is explained by the regularizing effect of the variational bound.",
+    "seconds": 4.5,
+    "error": null,
+    "chapter_title": "5 Experiments",
+    "chapter_segments": 20,
+    "heard_segments": 13,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 10,
+      "segment": 13
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 168,
+    "retrieval_block_present": false,
+    "retrieval_passages_in_prompt": 0,
+    "retrieval_gate": "skipped (below gate)",
+    "retrieval_best_score": 0.5833330154418945,
+    "retrieval_passages_returned": null,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 9,
+        "seq": 3,
+        "score": 0.5833
+      },
+      {
+        "chapter": 4,
+        "seq": 17,
+        "score": 0.5797
+      },
+      {
+        "chapter": 3,
+        "seq": 2,
+        "score": 0.579
+      },
+      {
+        "chapter": 4,
+        "seq": 12,
+        "score": 0.5775
+      }
+    ],
+    "retrieval_index_rows": 251,
+    "retrieval_excluded_rows": 13,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 5692,
+    "prompt_tokens_est": 1627,
+    "prompt_sha256": "ce5d1cdf21c7628be3a66135eec0250f3fd1566cb875f0e5675278649cb36b67",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "vae-08",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "auto-encoding-variational-bayes",
+    "kind": "ahead",
+    "chapter": 10,
+    "seq": 13,
+    "question": "How did they estimate the actual marginal likelihood rather than just the bound?",
+    "answer": "The book has not covered that yet. So far it does not say how they estimated the actual marginal likelihood, only that they estimated the variational lower bound. The transcript mentions the lower bound but provides no information about estimating the actual marginal likelihood.",
+    "seconds": 4.51,
+    "error": null,
+    "chapter_title": "5 Experiments",
+    "chapter_segments": 20,
+    "heard_segments": 13,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 10,
+      "segment": 13
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 258,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7598748207092285,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 5,
+        "seq": 1,
+        "score": 0.7599
+      },
+      {
+        "chapter": 6,
+        "seq": 21,
+        "score": 0.7302
+      },
+      {
+        "chapter": 5,
+        "seq": 3,
+        "score": 0.7293
+      },
+      {
+        "chapter": 4,
+        "seq": 13,
+        "score": 0.7184
+      }
+    ],
+    "retrieval_index_rows": 251,
+    "retrieval_excluded_rows": 13,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 6672,
+    "prompt_tokens_est": 1907,
+    "prompt_sha256": "eb80437651630ec2c21a292959bc4cca41de2b5b5f89d6240234ee7db8f4ba22",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "react-01",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+    "kind": "ahead",
+    "chapter": 1,
+    "seq": 4,
+    "question": "What tasks do they evaluate this on?",
+    "answer": "They evaluate this approach on a diverse set of language and decision making tasks.",
+    "seconds": 4.37,
+    "error": null,
+    "chapter_title": "ABSTRACT",
+    "chapter_segments": 6,
+    "heard_segments": 4,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 1,
+      "segment": 4
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 93,
+    "retrieval_block_present": false,
+    "retrieval_passages_in_prompt": 0,
+    "retrieval_gate": "skipped (below gate)",
+    "retrieval_best_score": 0.4891969561576843,
+    "retrieval_passages_returned": null,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.4892
+      },
+      {
+        "chapter": 0,
+        "seq": 2,
+        "score": 0.4655
+      },
+      {
+        "chapter": 0,
+        "seq": 3,
+        "score": 0.3874
+      },
+      {
+        "chapter": 0,
+        "seq": 1,
+        "score": 0.3853
+      }
+    ],
+    "retrieval_index_rows": 550,
+    "retrieval_excluded_rows": 4,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 3503,
+    "prompt_tokens_est": 1001,
+    "prompt_sha256": "0acfcb07f6fcdbfd9e5a996d0f5f1074b308c570304a70559002b5d77bde5a2c",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "react-02",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+    "kind": "behind",
+    "chapter": 3,
+    "seq": 8,
+    "question": "What's the core idea of ReAct in one sentence?",
+    "answer": "The core idea of ReAct is to augment the agent's action space with a language-based reasoning step that composes useful information by reasoning over the current context to support future reasoning or acting.",
+    "seconds": 4.5,
+    "error": null,
+    "chapter_title": "2 REACT : SYNERGIZING RE ASONING + ACT ING",
+    "chapter_segments": 20,
+    "heard_segments": 8,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 3,
+      "segment": 8
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 218,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.744360089302063,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 13,
+        "score": 0.7444
+      },
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.7391
+      },
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.7256
+      },
+      {
+        "chapter": 2,
+        "seq": 17,
+        "score": 0.7089
+      }
+    ],
+    "retrieval_index_rows": 550,
+    "retrieval_excluded_rows": 8,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5188,
+    "prompt_tokens_est": 1483,
+    "prompt_sha256": "8f0565dc8e7630804c38ed8315e0ed1153969835f0bf5c2e9d3d8a7f5e58699e",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "react-03",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+    "kind": "ahead",
+    "chapter": 3,
+    "seq": 8,
+    "question": "Which language model are they using for this?",
+    "answer": "The book has not covered that yet. So far it does not say which language model is being used.",
+    "seconds": 4.33,
+    "error": null,
+    "chapter_title": "2 REACT : SYNERGIZING RE ASONING + ACT ING",
+    "chapter_segments": 20,
+    "heard_segments": 8,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 3,
+      "segment": 8
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 72,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6936823129653931,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 10,
+        "score": 0.6937
+      },
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.6651
+      },
+      {
+        "chapter": 1,
+        "seq": 1,
+        "score": 0.664
+      },
+      {
+        "chapter": 2,
+        "seq": 9,
+        "score": 0.6638
+      }
+    ],
+    "retrieval_index_rows": 550,
+    "retrieval_excluded_rows": 8,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 5261,
+    "prompt_tokens_est": 1504,
+    "prompt_sha256": "ff81da88cb1d7a594744992a41e1d57303379b4153252b5cfb9b2b7cdc7dcab5",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "react-04",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+    "kind": "behind",
+    "chapter": 5,
+    "seq": 6,
+    "question": "What actions can the model take with the Wikipedia API?",
+    "answer": "The model can take three actions with the Wikipedia API: search [ entity ], which returns the first 5 sentences from the corresponding entity wiki page or suggests top-5 similar entities; lookup [ string ], which returns the next sentence in the page containing string; and finish [ answer ], which finishes the current task with an answer. The action space is designed to simulate how humans interact with Wikipedia and force models to retrieve information through explicit reasoning in language.",
+    "seconds": 4.83,
+    "error": null,
+    "chapter_title": "3.1 SETUP",
+    "chapter_segments": 6,
+    "heard_segments": 6,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 5,
+      "segment": 6
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 507,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6897447109222412,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 16,
+        "score": 0.6897
+      },
+      {
+        "chapter": 4,
+        "seq": 1,
+        "score": 0.6716
+      },
+      {
+        "chapter": 2,
+        "seq": 14,
+        "score": 0.6176
+      },
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.6172
+      }
+    ],
+    "retrieval_index_rows": 550,
+    "retrieval_excluded_rows": 6,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5204,
+    "prompt_tokens_est": 1487,
+    "prompt_sha256": "3ad34b383a2c0086be707376a1c97b78f0c19d0adc064d913e5020096ff99755",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "react-05",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+    "kind": "mixed",
+    "chapter": 6,
+    "seq": 8,
+    "question": "How do they combine ReAct with chain of thought?",
+    "answer": "The book has not covered that yet. So far it does not say how they combine ReAct with chain of thought. The chapter mentions CoT and ReAct separately, and notes that CoT is more accurate in formulating reasoning structure but can suffer from hallucinations, while ReAct is more factual and grounded. It does not describe any combination of the two.",
+    "seconds": 4.79,
+    "error": null,
+    "chapter_title": "3.2 METHODS",
+    "chapter_segments": 15,
+    "heard_segments": 8,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 6,
+      "segment": 8
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": true,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 326,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7502617835998535,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.7503
+      },
+      {
+        "chapter": 2,
+        "seq": 13,
+        "score": 0.7464
+      },
+      {
+        "chapter": 2,
+        "seq": 14,
+        "score": 0.735
+      },
+      {
+        "chapter": 2,
+        "seq": 7,
+        "score": 0.7228
+      }
+    ],
+    "retrieval_index_rows": 550,
+    "retrieval_excluded_rows": 8,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 6376,
+    "prompt_tokens_est": 1822,
+    "prompt_sha256": "a2759d2fd4fc5a07f1e08c46ae080d6af84f6dddfd9754301f842da2d2fea75c",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "react-06",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+    "kind": "behind",
+    "chapter": 7,
+    "seq": 12,
+    "question": "What's the main failure mode of chain of thought compared to ReAct?",
+    "answer": "Hallucination is a serious problem for CoT, resulting in much higher false positive rate than ReAct (14% vs. 6%) in success mode, and make up its major failure mode (56%).",
+    "seconds": 4.68,
+    "error": null,
+    "chapter_title": "3.3 RESULTS AND OBSERVATIONS",
+    "chapter_segments": 25,
+    "heard_segments": 12,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 7,
+      "segment": 12
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 181,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7267445921897888,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 6,
+        "seq": 7,
+        "score": 0.7267
+      },
+      {
+        "chapter": 3,
+        "seq": 17,
+        "score": 0.707
+      },
+      {
+        "chapter": 3,
+        "seq": 14,
+        "score": 0.6946
+      },
+      {
+        "chapter": 1,
+        "seq": 4,
+        "score": 0.6945
+      }
+    ],
+    "retrieval_index_rows": 550,
+    "retrieval_excluded_rows": 12,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 7375,
+    "prompt_tokens_est": 2108,
+    "prompt_sha256": "f7567832db9eea4eb005a1d93d86463b668885f6453a7fdbc6dcbb99f6e233e4",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "react-07",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+    "kind": "behind",
+    "chapter": 8,
+    "seq": 21,
+    "question": "How did ReAct do on ALFWorld versus the baselines?",
+    "answer": "On ALFWorld, the best ReAct trial achieves an average success rate of 71%, significantly outperforming the best Act (45%) and BUTLER (37%) trials.",
+    "seconds": 4.72,
+    "error": null,
+    "chapter_title": "4 DECISION MAKING TASKS",
+    "chapter_segments": 37,
+    "heard_segments": 21,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 8,
+      "segment": 21
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 156,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7115543484687805,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 15,
+        "score": 0.7116
+      },
+      {
+        "chapter": 7,
+        "seq": 5,
+        "score": 0.7111
+      },
+      {
+        "chapter": 1,
+        "seq": 5,
+        "score": 0.7094
+      },
+      {
+        "chapter": 3,
+        "seq": 15,
+        "score": 0.7069
+      }
+    ],
+    "retrieval_index_rows": 550,
+    "retrieval_excluded_rows": 21,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 8864,
+    "prompt_tokens_est": 2533,
+    "prompt_sha256": "2f0ca47ae9a076d492914a183bcd476e5efa1c3bc0b8ac731eaa564b5655bf2a",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "react-08",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "react-synergizing-reasoning-and-acting-in-language-models",
+    "kind": "ahead",
+    "chapter": 8,
+    "seq": 17,
+    "question": "Isn't this basically the same thing as Inner Monologue?",
+    "answer": "The book has not covered that yet. So far it does not say whether ReAct is the same as Inner Monologue. The transcript only describes the tasks and prompts used in ALFWorld and WebShop, and does not compare them to inner monologue or discuss that concept.",
+    "seconds": 4.49,
+    "error": null,
+    "chapter_title": "4 DECISION MAKING TASKS",
+    "chapter_segments": 37,
+    "heard_segments": 17,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 8,
+      "segment": 17
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 234,
+    "retrieval_block_present": false,
+    "retrieval_passages_in_prompt": 0,
+    "retrieval_gate": "skipped (below gate)",
+    "retrieval_best_score": 0.5835830569267273,
+    "retrieval_passages_returned": null,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 1,
+        "score": 0.5836
+      },
+      {
+        "chapter": 2,
+        "seq": 7,
+        "score": 0.5749
+      },
+      {
+        "chapter": 6,
+        "seq": 2,
+        "score": 0.5691
+      },
+      {
+        "chapter": 3,
+        "seq": 11,
+        "score": 0.5651
+      }
+    ],
+    "retrieval_index_rows": 550,
+    "retrieval_excluded_rows": 17,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 6367,
+    "prompt_tokens_est": 1820,
+    "prompt_sha256": "8af383fb2ace35a61d7c82857b66ef3ae15d89969422837b01dfcd85967683f6",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "str-01",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+    "kind": "behind",
+    "chapter": 2,
+    "seq": 8,
+    "question": "What are the A, B and C branes?",
+    "answer": "The A-, B-, and C-branes are three types of 7-branes with labels [1, 0], [1, -1], and [1, 1], respectively. Following references 1) and 2), they are called A-, B-, and C-branes, respectively.",
+    "seconds": 4.67,
+    "error": null,
+    "chapter_title": "§ 1. Introduction",
+    "chapter_segments": 25,
+    "heard_segments": 8,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 2,
+      "segment": 8
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 201,
+    "retrieval_block_present": false,
+    "retrieval_passages_in_prompt": 0,
+    "retrieval_gate": "skipped (below gate)",
+    "retrieval_best_score": 0.5307508111000061,
+    "retrieval_passages_returned": null,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 1,
+        "seq": 1,
+        "score": 0.5308
+      },
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.5033
+      },
+      {
+        "chapter": 1,
+        "seq": 0,
+        "score": 0.4927
+      },
+      {
+        "chapter": 1,
+        "seq": 3,
+        "score": 0.49
+      }
+    ],
+    "retrieval_index_rows": 164,
+    "retrieval_excluded_rows": 8,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 4030,
+    "prompt_tokens_est": 1152,
+    "prompt_sha256": "2603c10a38771a85ac3512a8b9245855bcee4224b74df3f836dbec4c1143f745",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "str-02",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+    "kind": "ahead",
+    "chapter": 2,
+    "seq": 12,
+    "question": "How exactly are the two theories dual to each other?",
+    "answer": "The book has not covered that yet. So far it does not say how exactly the two theories are dual to each other.",
+    "seconds": 4.42,
+    "error": null,
+    "chapter_title": "§ 1. Introduction",
+    "chapter_segments": 25,
+    "heard_segments": 12,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 2,
+      "segment": 12
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 89,
+    "retrieval_block_present": false,
+    "retrieval_passages_in_prompt": 0,
+    "retrieval_gate": "skipped (below gate)",
+    "retrieval_best_score": 0.5876750946044922,
+    "retrieval_passages_returned": null,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.5877
+      },
+      {
+        "chapter": 1,
+        "seq": 1,
+        "score": 0.568
+      },
+      {
+        "chapter": 0,
+        "seq": 2,
+        "score": 0.5278
+      },
+      {
+        "chapter": 0,
+        "seq": 1,
+        "score": 0.4608
+      }
+    ],
+    "retrieval_index_rows": 164,
+    "retrieval_excluded_rows": 12,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 4935,
+    "prompt_tokens_est": 1410,
+    "prompt_sha256": "71ca16961ae084dd2b1d9f7e1d5b4a39cdf9e56384baf1edc50cd5ab52d4cb1f",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "str-03",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+    "kind": "behind",
+    "chapter": 3,
+    "seq": 29,
+    "question": "What's the BPS condition for the heterotic string here?",
+    "answer": "For BPS states, the condition is Nosc + a = 0. This corresponds to the BPS condition for junctions J · J ≤ 2 given in reference 8.",
+    "seconds": 5.18,
+    "error": null,
+    "chapter_title": "§ 2. Spectrum of a Heterotic String",
+    "chapter_segments": 44,
+    "heard_segments": 29,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 3,
+      "segment": 29
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 141,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7418271899223328,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 17,
+        "score": 0.7418
+      },
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.6634
+      },
+      {
+        "chapter": 2,
+        "seq": 21,
+        "score": 0.64
+      },
+      {
+        "chapter": 1,
+        "seq": 1,
+        "score": 0.6272
+      }
+    ],
+    "retrieval_index_rows": 164,
+    "retrieval_excluded_rows": 29,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 16103,
+    "prompt_tokens_est": 4601,
+    "prompt_sha256": "f2de22ba2ce4e7ace7a802b67cc7497b50fcf92c473c3a9ab8837c66d75569e5",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "str-04",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+    "kind": "ahead",
+    "chapter": 3,
+    "seq": 44,
+    "question": "What are null junctions and why would you need them?",
+    "answer": "The book has not covered that yet. So far it says nothing about null junctions.",
+    "seconds": 4.65,
+    "error": null,
+    "chapter_title": "§ 2. Spectrum of a Heterotic String",
+    "chapter_segments": 44,
+    "heard_segments": 44,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 3,
+      "segment": 44
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 58,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.675602376461029,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.6756
+      },
+      {
+        "chapter": 2,
+        "seq": 11,
+        "score": 0.6138
+      },
+      {
+        "chapter": 2,
+        "seq": 7,
+        "score": 0.5946
+      },
+      {
+        "chapter": 2,
+        "seq": 10,
+        "score": 0.5714
+      }
+    ],
+    "retrieval_index_rows": 164,
+    "retrieval_excluded_rows": 44,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 18431,
+    "prompt_tokens_est": 5266,
+    "prompt_sha256": "9c5344d6099f9bc84a10d0362ffb05db750ca496a083c81295f9551fc9065425",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "str-05",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "string-junctions-and-their-duals-in-heterotic-string-theory",
+    "kind": "mixed",
+    "chapter": 4,
+    "seq": 26,
+    "question": "Why is it hard to get a complete correspondence between the heterotic quantum numbers and the junction charges?",
+    "answer": "Because the existence of configurations like Σ makes it difficult. The position of the D-string loop can be freely moved, and the length of the string attached to the loop depends on the position. Information regarding the position is not contained in the heterotic quantum numbers, so it is not clear how to define the winding number on the type IIB side using heterotic quantum numbers.",
+    "seconds": 5.19,
+    "error": null,
+    "chapter_title": "§ 3. Correspondence of states",
+    "chapter_segments": 63,
+    "heard_segments": 26,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 4,
+      "segment": 26
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 398,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.785199761390686,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 2,
+        "seq": 11,
+        "score": 0.7852
+      },
+      {
+        "chapter": 0,
+        "seq": 0,
+        "score": 0.6882
+      },
+      {
+        "chapter": 2,
+        "seq": 21,
+        "score": 0.6825
+      },
+      {
+        "chapter": 1,
+        "seq": 1,
+        "score": 0.6755
+      }
+    ],
+    "retrieval_index_rows": 164,
+    "retrieval_excluded_rows": 26,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 7166,
+    "prompt_tokens_est": 2048,
+    "prompt_sha256": "166e508730dc8e4fc7be43cf0631656c81456f91e5d5d805a5a347ef3c40e1f7",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-01",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "behind",
+    "chapter": 26,
+    "seq": 15,
+    "question": "What's the difference between greedy and epsilon-greedy action selection?",
+    "answer": "Greedy action selection always picks the action with the highest estimated value, exploiting current knowledge to maximize immediate reward. Epsilon-greedy action selection picks the greedy action most of the time but occasionally selects a random action, ensuring all actions are sampled over time.",
+    "seconds": 4.7,
+    "error": null,
+    "chapter_title": "2.2 Action-value Methods",
+    "chapter_segments": 15,
+    "heard_segments": 15,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 26,
+      "segment": 15
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 309,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7139161825180054,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 25,
+        "seq": 18,
+        "score": 0.7139
+      },
+      {
+        "chapter": 25,
+        "seq": 13,
+        "score": 0.7036
+      },
+      {
+        "chapter": 25,
+        "seq": 17,
+        "score": 0.699
+      },
+      {
+        "chapter": 25,
+        "seq": 20,
+        "score": 0.6379
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 15,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 6304,
+    "prompt_tokens_est": 1802,
+    "prompt_sha256": "6b228344cf49962a9ac6943c045ada8072d43697df93d1e519a05a6e5e831e58",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-02",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "ahead",
+    "chapter": 27,
+    "seq": 9,
+    "question": "So which one wins in the long run, greedy or epsilon-greedy?",
+    "answer": "The book has not covered that yet. So far it does not say which one wins in the long run between greedy and epsilon-greedy.",
+    "seconds": 4.52,
+    "error": null,
+    "chapter_title": "2.3 The 10-armed Testbed",
+    "chapter_segments": 28,
+    "heard_segments": 9,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 27,
+      "segment": 9
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 102,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7129206657409668,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 25,
+        "seq": 17,
+        "score": 0.7129
+      },
+      {
+        "chapter": 26,
+        "seq": 7,
+        "score": 0.6728
+      },
+      {
+        "chapter": 26,
+        "seq": 12,
+        "score": 0.671
+      },
+      {
+        "chapter": 18,
+        "seq": 23,
+        "score": 0.6691
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 9,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 5684,
+    "prompt_tokens_est": 1624,
+    "prompt_sha256": "286b591b2c434043186d23f7352b6f8b32107ab1d76ef35290318164d10c1e72",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-03",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "ahead",
+    "chapter": 28,
+    "seq": 15,
+    "question": "What if the reward probabilities drift over time, does the sample average still work?",
+    "answer": "The book has not covered that yet. So far it does not say anything about reward probabilities drifting over time or whether the sample average works in that case.",
+    "seconds": 4.54,
+    "error": null,
+    "chapter_title": "2.4 Incremental Implementation",
+    "chapter_segments": 15,
+    "heard_segments": 15,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 28,
+      "segment": 15
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 141,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7102968692779541,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 26,
+        "seq": 5,
+        "score": 0.7103
+      },
+      {
+        "chapter": 27,
+        "seq": 8,
+        "score": 0.6972
+      },
+      {
+        "chapter": 26,
+        "seq": 2,
+        "score": 0.6917
+      },
+      {
+        "chapter": 16,
+        "seq": 8,
+        "score": 0.6888
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 15,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 7184,
+    "prompt_tokens_est": 2053,
+    "prompt_sha256": "ce1e248e24aff23f4707bf076c4fc009974bf1dc55ec90a77a827594c5d4c529",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-04",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "behind",
+    "chapter": 30,
+    "seq": 18,
+    "question": "Why use a constant step size instead of the sample average?",
+    "answer": "The book does not explain why a constant step size is used instead of the sample average. It only states that the sample-average method converges to true values, while constant step size does not converge and continues to vary with recent rewards.",
+    "seconds": 4.69,
+    "error": null,
+    "chapter_title": "2.5 Tracking a Nonstationary Problem",
+    "chapter_segments": 26,
+    "heard_segments": 18,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 30,
+      "segment": 18
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 257,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6923690438270569,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 28,
+        "seq": 12,
+        "score": 0.6924
+      },
+      {
+        "chapter": 18,
+        "seq": 37,
+        "score": 0.6499
+      },
+      {
+        "chapter": 28,
+        "seq": 13,
+        "score": 0.6407
+      },
+      {
+        "chapter": 26,
+        "seq": 5,
+        "score": 0.6327
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 18,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 7384,
+    "prompt_tokens_est": 2110,
+    "prompt_sha256": "684f7e404625a27de78489a472d3cd1ff560482147b56dbd4269bd58875d5298",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-05",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "ahead",
+    "chapter": 32,
+    "seq": 16,
+    "question": "Is there a way to do this without estimating action values at all?",
+    "answer": "The book has not covered that yet. So far it does not say whether there is a way to do this without estimating action values at all.",
+    "seconds": 4.56,
+    "error": null,
+    "chapter_title": "2.7 Upper-Confidence-Bound Action Selection",
+    "chapter_segments": 16,
+    "heard_segments": 16,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 32,
+      "segment": 16
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 111,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7655627727508545,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 26,
+        "seq": 6,
+        "score": 0.7656
+      },
+      {
+        "chapter": 26,
+        "seq": 1,
+        "score": 0.692
+      },
+      {
+        "chapter": 28,
+        "seq": 1,
+        "score": 0.6833
+      },
+      {
+        "chapter": 25,
+        "seq": 11,
+        "score": 0.6733
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 16,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 7536,
+    "prompt_tokens_est": 2154,
+    "prompt_sha256": "de294006894828ca22836578b7bee6c3aa7c16f71cb592c3fff3de1119c51fd2",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-06",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "mixed",
+    "chapter": 33,
+    "seq": 11,
+    "question": "What's that R-bar baseline doing in the gradient bandit update?",
+    "answer": "The R-bar baseline is the average of the rewards up to but not including time t, and it is used in the gradient bandit update to help adjust the action preferences. It can be computed incrementally as described in Section 2. 4 or Section 2. 5.",
+    "seconds": 4.71,
+    "error": null,
+    "chapter_title": "2.8 Gradient Bandit Algorithms",
+    "chapter_segments": 18,
+    "heard_segments": 11,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 33,
+      "segment": 11
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 251,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 3,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6408541202545166,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 32,
+        "seq": 14,
+        "score": 0.6409
+      },
+      {
+        "chapter": 28,
+        "seq": 14,
+        "score": 0.6345
+      },
+      {
+        "chapter": 32,
+        "seq": 13,
+        "score": 0.6128
+      },
+      {
+        "chapter": 32,
+        "seq": 10,
+        "score": 0.6123
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 11,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5832,
+    "prompt_tokens_est": 1667,
+    "prompt_sha256": "4a1eb31bb0330fdeef3df70d450f8fe4e493c3af35638d21a109a86ff346dd9f",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-07",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "behind",
+    "chapter": 85,
+    "seq": 22,
+    "question": "What exactly is the TD error?",
+    "answer": "The TD error is the difference between the estimated value of the current state and the better estimate formed by the reward received plus the value of the next state. It is defined as δt = R{t+1} + γ V(S{t+1}) - V(St).",
+    "seconds": 5.02,
+    "error": null,
+    "chapter_title": "Tabular TD(0) for estimating v ⇡",
+    "chapter_segments": 49,
+    "heard_segments": 22,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 85,
+      "segment": 22
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 233,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.8131630420684814,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 11,
+        "seq": 54,
+        "score": 0.8132
+      },
+      {
+        "chapter": 11,
+        "seq": 53,
+        "score": 0.7651
+      },
+      {
+        "chapter": 84,
+        "seq": 9,
+        "score": 0.6893
+      },
+      {
+        "chapter": 83,
+        "seq": 2,
+        "score": 0.6752
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 22,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 8782,
+    "prompt_tokens_est": 2510,
+    "prompt_sha256": "16090e73a48d08c8aca64e6ac441ce4189f5dc9038862a5471cf84e386338cc5",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-08",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "ahead",
+    "chapter": 85,
+    "seq": 22,
+    "question": "Is there an everyday example of how TD differs from Monte Carlo?",
+    "answer": "The book has not covered that yet. So far it does not say anything about an everyday example of how TD differs from Monte Carlo.",
+    "seconds": 4.37,
+    "error": null,
+    "chapter_title": "Tabular TD(0) for estimating v ⇡",
+    "chapter_segments": 49,
+    "heard_segments": 22,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 85,
+      "segment": 22
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 107,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.799163818359375,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 84,
+        "seq": 5,
+        "score": 0.7992
+      },
+      {
+        "chapter": 83,
+        "seq": 2,
+        "score": 0.797
+      },
+      {
+        "chapter": 84,
+        "seq": 1,
+        "score": 0.766
+      },
+      {
+        "chapter": 83,
+        "seq": 5,
+        "score": 0.7587
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 22,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 9201,
+    "prompt_tokens_est": 2629,
+    "prompt_sha256": "dd125c737b0983ccda8d23ab4f1a24e71558cdc7a0f7a6e3ea06de485af20c0d",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-09",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "ahead",
+    "chapter": 86,
+    "seq": 17,
+    "question": "Can you give an example where TD learns faster than Monte Carlo?",
+    "answer": "In practice, TD methods have usually been found to converge faster than constant-α MC methods on stochastic tasks, as illustrated in Example 6. 2.",
+    "seconds": 4.61,
+    "error": null,
+    "chapter_title": "6.2 Advantages of TD Prediction Methods",
+    "chapter_segments": 17,
+    "heard_segments": 17,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 86,
+      "segment": 17
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 155,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.8296573758125305,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 83,
+        "seq": 2,
+        "score": 0.8297
+      },
+      {
+        "chapter": 85,
+        "seq": 43,
+        "score": 0.8111
+      },
+      {
+        "chapter": 84,
+        "seq": 5,
+        "score": 0.7815
+      },
+      {
+        "chapter": 84,
+        "seq": 1,
+        "score": 0.7754
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 17,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 5912,
+    "prompt_tokens_est": 1690,
+    "prompt_sha256": "eacafdb4db4819388ec53abd8e1cd3411464e684467575b359bf04fbd8b9bf00",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-10",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "behind",
+    "chapter": 88,
+    "seq": 32,
+    "question": "Why does batch TD beat batch Monte Carlo if Monte Carlo minimizes the error on the training data?",
+    "answer": "Batch TD(0) converges to the certainty-equivalence estimate, which is the value function that would be exactly correct if the model of the Markov process were known with certainty. Monte Carlo minimizes mean square error on the training data but does not account for the structure of the Markov process, so it is optimal only in a limited way. Batch TD is optimal in a way that better predicts future returns, making it more relevant for actual performance.",
+    "seconds": 5.04,
+    "error": null,
+    "chapter_title": "6.3 Optimality of TD(0)",
+    "chapter_segments": 42,
+    "heard_segments": 32,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 88,
+      "segment": 32
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 467,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7423475980758667,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 83,
+        "seq": 2,
+        "score": 0.7423
+      },
+      {
+        "chapter": 85,
+        "seq": 43,
+        "score": 0.7364
+      },
+      {
+        "chapter": 85,
+        "seq": 17,
+        "score": 0.735
+      },
+      {
+        "chapter": 84,
+        "seq": 5,
+        "score": 0.7293
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 32,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 10427,
+    "prompt_tokens_est": 2980,
+    "prompt_sha256": "7d447107f8a6affef15d002dc32332ba1de3f6e6bb1d7d0b62daf4a1eb45f809",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-11",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "ahead",
+    "chapter": 89,
+    "seq": 16,
+    "question": "How is Q-learning different from Sarsa?",
+    "answer": "The book has not covered that yet. So far it does not say how Q-learning is different from Sarsa.",
+    "seconds": 5.03,
+    "error": null,
+    "chapter_title": "6.4 Sarsa: On-policy TD Control",
+    "chapter_segments": 16,
+    "heard_segments": 16,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 89,
+      "segment": 16
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 76,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6667553186416626,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 49,
+        "seq": 28,
+        "score": 0.6668
+      },
+      {
+        "chapter": 11,
+        "seq": 48,
+        "score": 0.6417
+      },
+      {
+        "chapter": 46,
+        "seq": 27,
+        "score": 0.6417
+      },
+      {
+        "chapter": 11,
+        "seq": 84,
+        "score": 0.6417
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 16,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 12355,
+    "prompt_tokens_est": 3530,
+    "prompt_sha256": "b45056ae322c9e9ecbb71f3b08f5903d8fb58dc15b5ad0ef72526d5b6f27fca9",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-12",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "mixed",
+    "chapter": 93,
+    "seq": 14,
+    "question": "Why would Expected Sarsa be better than regular Sarsa?",
+    "answer": "Expected Sarsa is more complex computationally than Sarsa but, in return, it eliminates the variance due to the random selection of A t +1 . This makes it more stable and consistent in learning compared to regular Sarsa.",
+    "seconds": 4.73,
+    "error": null,
+    "chapter_title": "6.6 Expected Sarsa",
+    "chapter_segments": 46,
+    "heard_segments": 14,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 93,
+      "segment": 14
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 230,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7656018733978271,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 92,
+        "seq": 33,
+        "score": 0.7656
+      },
+      {
+        "chapter": 89,
+        "seq": 13,
+        "score": 0.663
+      },
+      {
+        "chapter": 92,
+        "seq": 11,
+        "score": 0.6515
+      },
+      {
+        "chapter": 90,
+        "seq": 5,
+        "score": 0.6391
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 14,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 4953,
+    "prompt_tokens_est": 1416,
+    "prompt_sha256": "1494af5941c76a70c96c195dcac7d9e5f80a0c6efce85b1a505f1a79309e5c82",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-13",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "ahead",
+    "chapter": 94,
+    "seq": 12,
+    "question": "Is there a way to avoid this maximization bias?",
+    "answer": "The book has not covered that yet. So far it does not say how to avoid maximization bias. The transcript only describes what maximization bias is and shows an example of it in action.",
+    "seconds": 4.51,
+    "error": null,
+    "chapter_title": "6.7 Maximization Bias and Double Learning",
+    "chapter_segments": 26,
+    "heard_segments": 12,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 94,
+      "segment": 12
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 162,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6793891191482544,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 31,
+        "seq": 3,
+        "score": 0.6794
+      },
+      {
+        "chapter": 54,
+        "seq": 31,
+        "score": 0.6789
+      },
+      {
+        "chapter": 32,
+        "seq": 2,
+        "score": 0.6653
+      },
+      {
+        "chapter": 54,
+        "seq": 22,
+        "score": 0.6601
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 12,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 5744,
+    "prompt_tokens_est": 1642,
+    "prompt_sha256": "4e415100632f230f2688c67692187668aaaf946384118a87b66949c8ca1ddf99",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-14",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "behind",
+    "chapter": 216,
+    "seq": 21,
+    "question": "Why use a soft-max over action preferences instead of a soft-max over action values?",
+    "answer": "Because the soft-max over action preferences enables the selection of actions with arbitrary probabilities, unlike a soft-max over action values, which only converges to specific probabilities and cannot approach a deterministic policy. Action-value methods have no natural way of finding stochastic optimal policies, whereas policy approximating methods can, as shown in Example 13. 1.",
+    "seconds": 4.8,
+    "error": null,
+    "chapter_title": "13.1 Policy Approximation and its Advantages",
+    "chapter_segments": 21,
+    "heard_segments": 21,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 216,
+      "segment": 21
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 395,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.8377104997634888,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 37,
+        "seq": 15,
+        "score": 0.8377
+      },
+      {
+        "chapter": 33,
+        "seq": 8,
+        "score": 0.8008
+      },
+      {
+        "chapter": 33,
+        "seq": 4,
+        "score": 0.7848
+      },
+      {
+        "chapter": 33,
+        "seq": 7,
+        "score": 0.7589
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 21,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 7545,
+    "prompt_tokens_est": 2156,
+    "prompt_sha256": "a6c34fa7b03cdb66676042f8a900bbec76ad0862fc09e016ff667a407e4e1cea",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-15",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "ahead",
+    "chapter": 218,
+    "seq": 13,
+    "question": "So how do they get around needing the derivative of the state distribution?",
+    "answer": "The book has not covered that yet. So far it does not say how they get around needing the derivative of the state distribution.",
+    "seconds": 4.73,
+    "error": null,
+    "chapter_title": "13.2 The Policy Gradient Theorem",
+    "chapter_segments": 13,
+    "heard_segments": 13,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 218,
+      "segment": 13
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 106,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 3,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.6782121658325195,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 127,
+        "seq": 14,
+        "score": 0.6782
+      },
+      {
+        "chapter": 140,
+        "seq": 4,
+        "score": 0.6761
+      },
+      {
+        "chapter": 183,
+        "seq": 17,
+        "score": 0.6756
+      },
+      {
+        "chapter": 143,
+        "seq": 13,
+        "score": 0.6633
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 13,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 6481,
+    "prompt_tokens_est": 1852,
+    "prompt_sha256": "5d352c1ac595b73587b7419e192802db3dbbb5c4de61268aa395b3ed8f06b010",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-16",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "behind",
+    "chapter": 220,
+    "seq": 24,
+    "question": "Why is the REINFORCE update divided by the probability of the action?",
+    "answer": "The update is divided by the probability of the action to ensure that actions selected frequently do not have an unfair advantage in the parameter updates. This prevents actions with high selection probability from dominating the learning process even if they do not yield the highest return.",
+    "seconds": 4.97,
+    "error": null,
+    "chapter_title": "13.3 REINFORCE: Monte Carlo Policy Gradient",
+    "chapter_segments": 24,
+    "heard_segments": 24,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 220,
+      "segment": 24
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "COVERED",
+    "not_covered_line_spoken": false,
+    "raw_chars": 302,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7272047400474548,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 85,
+        "seq": 14,
+        "score": 0.7272
+      },
+      {
+        "chapter": 204,
+        "seq": 21,
+        "score": 0.7233
+      },
+      {
+        "chapter": 108,
+        "seq": 8,
+        "score": 0.722
+      },
+      {
+        "chapter": 72,
+        "seq": 10,
+        "score": 0.7206
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 24,
+    "qa_log_matched": true,
+    "qa_log_covered": true,
+    "qa_log_complete": true,
+    "prompt_chars": 10004,
+    "prompt_tokens_est": 2859,
+    "prompt_sha256": "afa34d013b4b7e5a926016124069cbce3ebd027c7c2c6b7c16de4dd8418de8da",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  },
+  {
+    "id": "rl-17",
+    "system": "yapbook",
+    "run": 2,
+    "slug": "rl-book-full-endurance",
+    "kind": "mixed",
+    "chapter": 222,
+    "seq": 15,
+    "question": "What's the difference between REINFORCE with a baseline and an actor-critic method?",
+    "answer": "The book has not covered that yet. So far it does not say what the difference is between REINFORCE with a baseline and an actor-critic method.",
+    "seconds": 4.85,
+    "error": null,
+    "chapter_title": "13.4 REINFORCE with Baseline",
+    "chapter_segments": 15,
+    "heard_segments": 15,
+    "needs_retrieval": false,
+    "position_written": {
+      "chapter": 222,
+      "segment": 15
+    },
+    "prompt_calls": 1,
+    "generate_kwargs": {
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "temperature": 0.3
+    },
+    "stream_closed_early": false,
+    "coverage_tag": "NOT_COVERED",
+    "not_covered_line_spoken": true,
+    "raw_chars": 121,
+    "retrieval_block_present": true,
+    "retrieval_passages_in_prompt": 4,
+    "retrieval_gate": "included (similarity gate)",
+    "retrieval_best_score": 0.7467000484466553,
+    "retrieval_passages_returned": 4,
+    "retrieval_forced": false,
+    "retrieval_min_score": 0.6,
+    "retrieve_calls": 1,
+    "retrieval_hits": [
+      {
+        "chapter": 215,
+        "seq": 10,
+        "score": 0.7467
+      },
+      {
+        "chapter": 97,
+        "seq": 9,
+        "score": 0.7258
+      },
+      {
+        "chapter": 162,
+        "seq": 58,
+        "score": 0.7198
+      },
+      {
+        "chapter": 37,
+        "seq": 14,
+        "score": 0.7025
+      }
+    ],
+    "retrieval_index_rows": 9015,
+    "retrieval_excluded_rows": 15,
+    "qa_log_matched": true,
+    "qa_log_covered": false,
+    "qa_log_complete": true,
+    "prompt_chars": 5842,
+    "prompt_tokens_est": 1670,
+    "prompt_sha256": "c10ed17d7088c7eae99c3f890195377b2108dc02edd559fd419c30ad400b6450",
+    "model": "qwen3:4b-instruct",
+    "num_ctx": 16384,
+    "temperature": 0.3,
+    "log_warnings": []
+  }
+]

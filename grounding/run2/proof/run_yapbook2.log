@@ -1,0 +1,125 @@
+data dir: (a temporary folder)\groundbench\data
+brain: ollama/qwen3:4b-instruct num_ctx=16384 retrieval_enabled=True embed_model=nomic-embed-text RETRIEVAL_MIN_SCORE=0.6
+code under test: {'commit': '05ac302', 'branch': 'main', 'dirty': False}
+[1/60] att-01 4.45s tag=COVERED gate=included (similarity gate) best=0.7092353105545044 block=True n=4 prompt=4060ch
+    A: The encoder has N = 6 layers. Each layer has two sub-layers: a multi-head self-attention mechanism and a simple, positionwise fully connected feed-forward network.
+[2/60] att-02 4.37s tag=NOT_COVERED gate=skipped (below gate) best=0.5012611746788025 block=False n=0 prompt=2639ch
+    A: The book has not covered that yet. So far it does not say why they divide by the square root of d k.
+[3/60] att-03 4.44s tag=NOT_COVERED gate=included (similarity gate) best=0.654611349105835 block=True n=4 prompt=4976ch
+    A: The book has not covered that yet. So far it says that multi-head attention is described in section 3. 2, but it does not explain what multi-head attention is.
+[4/60] att-04 4.7s tag=COVERED gate=included (similarity gate) best=0.6309487223625183 block=True n=4 prompt=4867ch
+    A: The decoder keeps from peeking at future output words by modifying the self-attention sub-layer to prevent positions from attending to subsequent positions. This masking, combined with the fact that the output embeddings
+[5/60] att-05 4.55s tag=COVERED gate=included (similarity gate) best=0.6062411069869995 block=True n=4 prompt=5005ch
+    A: They went with sinusoids instead of learned position embeddings because the sinusoidal version may allow the model to extrapolate to sequence lengths longer than the ones encountered during training. The book also notes 
+[6/60] att-06 4.38s tag=NOT_COVERED gate=included (similarity gate) best=0.7193259000778198 block=True n=4 prompt=3628ch
+    A: The book has not covered that yet. So far it does not say how the model knows what order the words are in with no recurrence.
+[7/60] att-07 4.9s tag=COVERED gate=included (similarity gate) best=0.6752049326896667 block=True n=4 prompt=4784ch
+    A: Self-attention is not necessarily cheaper than a recurrent layer in terms of total computational complexity. The transcript says self-attention uses a constant number of sequential operations, while a recurrent layer req
+[8/60] att-08 4.65s tag=NOT_COVERED gate=included (similarity gate) best=0.6116580963134766 block=True n=4 prompt=2939ch
+    A: The book has not covered that yet. So far it does not say how long it took to train this thing.
+[9/60] att-09 4.93s tag=COVERED gate=included (similarity gate) best=0.6382144689559937 block=True n=4 prompt=3849ch
+    A: They used the Adam optimizer with β₁ = 0. 9, β₂ = 0.98, and ϵ = 10⁻⁹. The learning rate started increasing linearly for the first 4000 steps and then decreased proportionally to the inverse square root of the step number
+[10/60] att-10 4.57s tag=NOT_COVERED gate=skipped (below gate) best=0.5863068103790283 block=False n=0 prompt=4164ch
+    A: The book has not covered that yet. So far it does not say what the three kinds of regularization are.
+[11/60] att-11 4.68s tag=NOT_COVERED gate=included (similarity gate) best=0.6418814659118652 block=True n=4 prompt=4338ch
+    A: The book has not covered that yet. So far it does not say how they estimated the training cost in floating point operations.
+[12/60] att-12 4.81s tag=NOT_COVERED gate=included (similarity gate) best=0.7015900611877441 block=True n=4 prompt=14192ch
+    A: The book has not covered that yet. So far it does not say what happened when they tried a single attention head.
+[13/60] bn-01 4.97s tag=COVERED gate=included (similarity gate) best=0.7846107482910156 block=True n=4 prompt=5831ch
+    A: They mean the change in the distributions of internal nodes of a deep network as training progresses. This change can cause the optimizer to get stuck in the saturated regime of nonlinearity, slowing down training.
+[14/60] bn-02 4.8s tag=COVERED gate=included (similarity gate) best=0.8109912276268005 block=True n=4 prompt=6598ch
+    A: Batch normalization works by normalizing the layer inputs to fix their means and variances. It does this through a normalization step that makes the inputs have stable distributions during training. This reduces the depe
+[15/60] bn-03 4.98s tag=COVERED gate=included (similarity gate) best=0.7420427799224854 block=True n=4 prompt=5840ch
+    A: Because if normalization is computed outside the gradient descent step, the model can blow up during training. As the training continues, the bias term b will grow indefinitely while the loss remains fixed. This problem 
+[16/60] bn-04 4.7s tag=COVERED gate=included (similarity gate) best=0.7074323892593384 block=True n=4 prompt=8339ch
+    A: The book does not say that forcing every input to zero mean and unit variance limits what a layer can represent. It says that previous approaches discarding the absolute scale of activations change the representation abi
+[17/60] bn-05 4.64s tag=COVERED gate=included (similarity gate) best=0.6598844528198242 block=True n=4 prompt=6109ch
+    A: Because the joint whitening would require computing the covariance matrix and its inverse square root, which is expensive and not everywhere differentiable. Normalizing each dimension separately avoids this by computing 
+[18/60] bn-06 4.79s tag=COVERED gate=included (similarity gate) best=0.6565225124359131 block=True n=4 prompt=11619ch
+    A: At test time, when there's no mini-batch to normalize over, the batch normalization transform uses the running averages of the mean and variance that were computed during training. These running averages replace the mini
+[19/60] bn-07 4.67s tag=COVERED gate=included (similarity gate) best=0.7911638021469116 block=True n=4 prompt=4461ch
+    A: Batch Normalization lets you use a higher learning rate because it prevents small changes to the parameters from amplifying into larger and suboptimal changes in activations in gradients. It also makes training more resi
+[20/60] bn-08 4.36s tag=NOT_COVERED gate=included (similarity gate) best=0.6578232049942017 block=True n=4 prompt=3852ch
+    A: The book has not covered that yet. So far it does not say how much higher they actually pushed the learning rate.
+[21/60] bn-09 4.59s tag=COVERED gate=included (similarity gate) best=0.6202800869941711 block=True n=4 prompt=6568ch
+    A: When they used sigmoid instead of ReLU, Batch Normalization allowed deep networks to be trained, which was previously difficult. Without Batch Normalization, Inception with sigmoid never achieved better than 1/1000 accur
+[22/60] bn-10 4.63s tag=COVERED gate=included (similarity gate) best=0.7739890813827515 block=True n=4 prompt=4820ch
+    A: Their ensemble improved upon the previous best result on ImageNet classification and exceeded the estimated accuracy of human raters. The ensemble achieved a top-5 validation error of 4. 9% and a test error of 4. 82%, wh
+[23/60] vae-01 4.72s tag=COVERED gate=included (similarity gate) best=0.7040901184082031 block=True n=4 prompt=7635ch
+    A: They call the recognition model a probabilistic encoder because given a datapoint x, it produces a distribution over the possible values of the code z from which the datapoint x could have been generated. This aligns wit
+[24/60] vae-02 4.85s tag=COVERED gate=included (similarity gate) best=0.6808697581291199 block=True n=4 prompt=5555ch
+    A: They get around the high variance by using a reparameterization of the variational lower bound, which yields a stochastic gradient variational Bayes (SGVB) estimator. This estimator is a simple, differentiable, unbiased 
+[25/60] vae-03 4.75s tag=COVERED gate=included (similarity gate) best=0.6419991254806519 block=True n=4 prompt=7150ch
+    A: The second version of the estimator has lower variance because the KL-divergence term can be integrated analytically, so only the expected reconstruction error requires sampling. This reduces the overall variance compare
+[26/60] vae-04 4.67s tag=COVERED gate=included (similarity gate) best=0.6729245781898499 block=True n=4 prompt=5717ch
+    A: For continuous latent variables and/or parameters, the reparameterization technique can be applied. The book states that the SGVB estimator can be used for efficient approximate posterior inference in almost any model wi
+[27/60] vae-05 4.7s tag=NOT_COVERED gate=included (similarity gate) best=0.655247688293457 block=True n=4 prompt=7171ch
+    A: The book has not covered that yet. So far it does not say anything about the datasets they tested this on.
+[28/60] vae-06 4.66s tag=COVERED gate=included (similarity gate) best=0.7456138730049133 block=True n=4 prompt=4437ch
+    A: They use q φ ( z | x ) as the approximate posterior in the VAE example. This is the approximation to the posterior of the generative model p θ ( x , z ).
+[29/60] vae-07 4.5s tag=NOT_COVERED gate=skipped (below gate) best=0.5833330154418945 block=False n=0 prompt=5692ch
+    A: The book has not covered that yet. So far it says that adding more latent variables did not result in overfitting, and this is explained by the regularizing effect of the variational bound.
+[30/60] vae-08 4.51s tag=NOT_COVERED gate=included (similarity gate) best=0.7598748207092285 block=True n=4 prompt=6672ch
+    A: The book has not covered that yet. So far it does not say how they estimated the actual marginal likelihood, only that they estimated the variational lower bound. The transcript mentions the lower bound but provides no i
+[31/60] react-01 4.37s tag=COVERED gate=skipped (below gate) best=0.4891969561576843 block=False n=0 prompt=3503ch
+    A: They evaluate this approach on a diverse set of language and decision making tasks.
+[32/60] react-02 4.5s tag=COVERED gate=included (similarity gate) best=0.744360089302063 block=True n=4 prompt=5188ch
+    A: The core idea of ReAct is to augment the agent's action space with a language-based reasoning step that composes useful information by reasoning over the current context to support future reasoning or acting.
+[33/60] react-03 4.33s tag=NOT_COVERED gate=included (similarity gate) best=0.6936823129653931 block=True n=4 prompt=5261ch
+    A: The book has not covered that yet. So far it does not say which language model is being used.
+[34/60] react-04 4.83s tag=COVERED gate=included (similarity gate) best=0.6897447109222412 block=True n=4 prompt=5204ch
+    A: The model can take three actions with the Wikipedia API: search [ entity ], which returns the first 5 sentences from the corresponding entity wiki page or suggests top-5 similar entities; lookup [ string ], which returns
+[35/60] react-05 4.79s tag=NOT_COVERED gate=included (similarity gate) best=0.7502617835998535 block=True n=4 prompt=6376ch
+    A: The book has not covered that yet. So far it does not say how they combine ReAct with chain of thought. The chapter mentions CoT and ReAct separately, and notes that CoT is more accurate in formulating reasoning structur
+[36/60] react-06 4.68s tag=COVERED gate=included (similarity gate) best=0.7267445921897888 block=True n=4 prompt=7375ch
+    A: Hallucination is a serious problem for CoT, resulting in much higher false positive rate than ReAct (14% vs. 6%) in success mode, and make up its major failure mode (56%).
+[37/60] react-07 4.72s tag=COVERED gate=included (similarity gate) best=0.7115543484687805 block=True n=4 prompt=8864ch
+    A: On ALFWorld, the best ReAct trial achieves an average success rate of 71%, significantly outperforming the best Act (45%) and BUTLER (37%) trials.
+[38/60] react-08 4.49s tag=NOT_COVERED gate=skipped (below gate) best=0.5835830569267273 block=False n=0 prompt=6367ch
+    A: The book has not covered that yet. So far it does not say whether ReAct is the same as Inner Monologue. The transcript only describes the tasks and prompts used in ALFWorld and WebShop, and does not compare them to inner
+[39/60] str-01 4.67s tag=COVERED gate=skipped (below gate) best=0.5307508111000061 block=False n=0 prompt=4030ch
+    A: The A-, B-, and C-branes are three types of 7-branes with labels [1, 0], [1, -1], and [1, 1], respectively. Following references 1) and 2), they are called A-, B-, and C-branes, respectively.
+[40/60] str-02 4.42s tag=NOT_COVERED gate=skipped (below gate) best=0.5876750946044922 block=False n=0 prompt=4935ch
+    A: The book has not covered that yet. So far it does not say how exactly the two theories are dual to each other.
+[41/60] str-03 5.18s tag=COVERED gate=included (similarity gate) best=0.7418271899223328 block=True n=4 prompt=16103ch
+    A: For BPS states, the condition is Nosc + a = 0. This corresponds to the BPS condition for junctions J · J ≤ 2 given in reference 8.
+[42/60] str-04 4.65s tag=NOT_COVERED gate=included (similarity gate) best=0.675602376461029 block=True n=4 prompt=18431ch
+    A: The book has not covered that yet. So far it says nothing about null junctions.
+[43/60] str-05 5.19s tag=COVERED gate=included (similarity gate) best=0.785199761390686 block=True n=4 prompt=7166ch
+    A: Because the existence of configurations like Σ makes it difficult. The position of the D-string loop can be freely moved, and the length of the string attached to the loop depends on the position. Information regarding t
+[44/60] rl-01 4.7s tag=COVERED gate=included (similarity gate) best=0.7139161825180054 block=True n=4 prompt=6304ch
+    A: Greedy action selection always picks the action with the highest estimated value, exploiting current knowledge to maximize immediate reward. Epsilon-greedy action selection picks the greedy action most of the time but oc
+[45/60] rl-02 4.52s tag=NOT_COVERED gate=included (similarity gate) best=0.7129206657409668 block=True n=4 prompt=5684ch
+    A: The book has not covered that yet. So far it does not say which one wins in the long run between greedy and epsilon-greedy.
+[46/60] rl-03 4.54s tag=NOT_COVERED gate=included (similarity gate) best=0.7102968692779541 block=True n=4 prompt=7184ch
+    A: The book has not covered that yet. So far it does not say anything about reward probabilities drifting over time or whether the sample average works in that case.
+[47/60] rl-04 4.69s tag=COVERED gate=included (similarity gate) best=0.6923690438270569 block=True n=4 prompt=7384ch
+    A: The book does not explain why a constant step size is used instead of the sample average. It only states that the sample-average method converges to true values, while constant step size does not converge and continues t
+[48/60] rl-05 4.56s tag=NOT_COVERED gate=included (similarity gate) best=0.7655627727508545 block=True n=4 prompt=7536ch
+    A: The book has not covered that yet. So far it does not say whether there is a way to do this without estimating action values at all.
+[49/60] rl-06 4.71s tag=COVERED gate=included (similarity gate) best=0.6408541202545166 block=True n=3 prompt=5832ch
+    A: The R-bar baseline is the average of the rewards up to but not including time t, and it is used in the gradient bandit update to help adjust the action preferences. It can be computed incrementally as described in Sectio
+[50/60] rl-07 5.02s tag=COVERED gate=included (similarity gate) best=0.8131630420684814 block=True n=4 prompt=8782ch
+    A: The TD error is the difference between the estimated value of the current state and the better estimate formed by the reward received plus the value of the next state. It is defined as δt = R{t+1} + γ V(S{t+1}) - V(St).
+[51/60] rl-08 4.37s tag=NOT_COVERED gate=included (similarity gate) best=0.799163818359375 block=True n=4 prompt=9201ch
+    A: The book has not covered that yet. So far it does not say anything about an everyday example of how TD differs from Monte Carlo.
+[52/60] rl-09 4.61s tag=COVERED gate=included (similarity gate) best=0.8296573758125305 block=True n=4 prompt=5912ch
+    A: In practice, TD methods have usually been found to converge faster than constant-α MC methods on stochastic tasks, as illustrated in Example 6. 2.
+[53/60] rl-10 5.04s tag=COVERED gate=included (similarity gate) best=0.7423475980758667 block=True n=4 prompt=10427ch
+    A: Batch TD(0) converges to the certainty-equivalence estimate, which is the value function that would be exactly correct if the model of the Markov process were known with certainty. Monte Carlo minimizes mean square error
+[54/60] rl-11 5.03s tag=NOT_COVERED gate=included (similarity gate) best=0.6667553186416626 block=True n=4 prompt=12355ch
+    A: The book has not covered that yet. So far it does not say how Q-learning is different from Sarsa.
+[55/60] rl-12 4.73s tag=COVERED gate=included (similarity gate) best=0.7656018733978271 block=True n=4 prompt=4953ch
+    A: Expected Sarsa is more complex computationally than Sarsa but, in return, it eliminates the variance due to the random selection of A t +1 . This makes it more stable and consistent in learning compared to regular Sarsa.
+[56/60] rl-13 4.51s tag=NOT_COVERED gate=included (similarity gate) best=0.6793891191482544 block=True n=4 prompt=5744ch
+    A: The book has not covered that yet. So far it does not say how to avoid maximization bias. The transcript only describes what maximization bias is and shows an example of it in action.
+[57/60] rl-14 4.8s tag=COVERED gate=included (similarity gate) best=0.8377104997634888 block=True n=4 prompt=7545ch
+    A: Because the soft-max over action preferences enables the selection of actions with arbitrary probabilities, unlike a soft-max over action values, which only converges to specific probabilities and cannot approach a deter
+[58/60] rl-15 4.73s tag=NOT_COVERED gate=included (similarity gate) best=0.6782121658325195 block=True n=3 prompt=6481ch
+    A: The book has not covered that yet. So far it does not say how they get around needing the derivative of the state distribution.
+[59/60] rl-16 4.97s tag=COVERED gate=included (similarity gate) best=0.7272047400474548 block=True n=4 prompt=10004ch
+    A: The update is divided by the probability of the action to ensure that actions selected frequently do not have an unfair advantage in the parameter updates. This prevents actions with high selection probability from domin
+[60/60] rl-17 4.85s tag=NOT_COVERED gate=included (similarity gate) best=0.7467000484466553 block=True n=4 prompt=5842ch
+    A: The book has not covered that yet. So far it does not say what the difference is between REINFORCE with a baseline and an actor-critic method.
+finished 60 records in 282s; errors=0
+exit=0

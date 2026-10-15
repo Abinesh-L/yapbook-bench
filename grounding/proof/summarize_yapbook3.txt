@@ -1,0 +1,111 @@
+records=60  errors=0  run3_tagged=60
+missing ids: []
+
+== coverage tag by kind (parsed from raw stream with the shipped parser) ==
+  behind  {'COVERED': 22, 'NOT_COVERED': 2}
+  ahead   {'NOT_COVERED': 19, 'COVERED': 5}
+  mixed   {'COVERED': 9, 'NOT_COVERED': 3}
+  all     {'COVERED': 36, 'NOT_COVERED': 24}
+  not_covered_line_spoken: 24
+  qa_log 'covered' matches parsed tag: 60/60  mismatches=[]
+  qa_log entry matched question: 60/60
+
+== retrieval gate ==
+  gate decisions: {'included (similarity gate)': 53, 'skipped (below gate)': 7}
+  block present in prompt: 53/60
+  force-path regex (needs_retrieval) true: 0
+  passages in prompt: {4: 51, 0: 7, 3: 2}
+  retrieve() calls per question: {1: 60}
+  best score: min=0.489 median=0.698 max=0.838 (n=60)
+  attention-is-all-you-need                block 10/12
+  batch-normalization-accelerating-deep-ne block 10/10
+  auto-encoding-variational-bayes          block 7/8
+  react-synergizing-reasoning-and-acting-i block 6/8
+  string-junctions-and-their-duals-in-hete block 3/5
+  rl-book-full-endurance                   block 17/17
+  block includes a passage from another chapter: 53
+  SPOILER-GATE CHECK hits past playhead (must be 0): 0 []
+
+== warnings ==
+  0 warnings
+
+== wall seconds (informational only; loaded machine) ==
+  min=4.31 median=4.74 max=5.90 total=286
+  stream closed early (sentence cap hit): 1
+  qa_log complete=False: 0
+
+== vs RUN 2 (05ac302, pre-calibration coverage-tag wording) ==
+  prompt chars run2 -> run3: median 5841 -> 7068
+  identical prompt sha to run2: 0 (system prompt changed by the calibration, so expect 0)
+  run2 block present: 53/60
+  identical answer text to run2: 2/60
+  coverage-tag flips run2 -> run3: 4
+    vae-03    behind COVERED -> NOT_COVERED
+    vae-04    ahead  COVERED -> NOT_COVERED
+    vae-07    behind NOT_COVERED -> COVERED
+    rl-15     ahead  NOT_COVERED -> COVERED
+  run2 behind  {'COVERED': 22, 'NOT_COVERED': 2}
+  run2 ahead   {'NOT_COVERED': 19, 'COVERED': 5}
+  run2 mixed   {'COVERED': 9, 'NOT_COVERED': 3}
+
+== per-question line ==
+  att-01    behind tag=COVERED     gate=included (similarity gate) best=0.7092353105545044 n=4   4.48s  The encoder has N = 6 layers. Each layer has two sub-layers: a multi-head self-attention m
+  att-02    ahead  tag=NOT_COVERED gate=skipped (below gate)       best=0.5012611746788025 n=0   4.31s  The book has not covered that yet. The book does not say why they divide by the square roo
+  att-03    ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.654611349105835 n=4   4.52s  The book has not covered that yet. The book mentions multi-head attention as a feature use
+  att-04    mixed  tag=COVERED     gate=included (similarity gate) best=0.6309487223625183 n=4   4.56s  The decoder keeps from peeking at future output words through masking. This masking, combi
+  att-05    behind tag=COVERED     gate=included (similarity gate) best=0.6062411069869995 n=4   4.63s  They went with sinusoids instead of learned position embeddings because the sinusoidal ver
+  att-06    ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.7193259000778198 n=4   4.58s  The book has not covered that yet. The book has not mentioned how the model determines wor
+  att-07    mixed  tag=COVERED     gate=included (similarity gate) best=0.6752049326896667 n=4   4.74s  The book says a self-attention layer connects all positions with a constant number of sequ
+  att-08    mixed  tag=NOT_COVERED gate=included (similarity gate) best=0.6116580963134766 n=4   4.53s  The book has not covered that yet. The book does not say how long it took to train this mo
+  att-09    behind tag=COVERED     gate=included (similarity gate) best=0.6382144689559937 n=4   4.69s  They used the Adam optimizer with β₁ = 0. 9, β₂ = 0.98, and ϵ = 10⁻⁹. The learning rate sc
+  att-10    ahead  tag=NOT_COVERED gate=skipped (below gate)       best=0.5863068103790283 n=0   4.50s  The book has not covered that yet. The book mentions that three types of regularization ar
+  att-11    ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.6418814659118652 n=4   4.43s  The book has not covered that yet. The book does not mention how they estimated the traini
+  att-12    behind tag=NOT_COVERED gate=included (similarity gate) best=0.7015900611877441 n=4   4.75s  The book has not covered that yet. The book mentions that single-head attention inhibits t
+  bn-01     behind tag=COVERED     gate=included (similarity gate) best=0.7846107482910156 n=4   4.64s  They mean the change in the distributions of internal nodes of a deep network as it trains
+  bn-02     mixed  tag=COVERED     gate=included (similarity gate) best=0.8109912276268005 n=4   4.57s  Batch normalization works by normalizing the layer inputs to fix their means and variances
+  bn-03     behind tag=COVERED     gate=included (similarity gate) best=0.7420427799224854 n=4   4.64s  Because if normalization is done outside the gradient step, the gradient descent update to
+  bn-04     ahead  tag=COVERED     gate=included (similarity gate) best=0.7074323892593384 n=4   4.68s  The book says that previous approaches discarding the absolute scale of activations change
+  bn-05     behind tag=COVERED     gate=included (similarity gate) best=0.6598844528198242 n=4   4.63s  Because the joint whitening would require computing joint covariances, and with mini-batch
+  bn-06     ahead  tag=COVERED     gate=included (similarity gate) best=0.6565225124359131 n=4   4.77s  At test time, when there's no mini-batch to normalize over, the normalized activations are
+  bn-07     mixed  tag=COVERED     gate=included (similarity gate) best=0.7911638021469116 n=4   4.64s  Batch Normalization helps by preventing small changes to parameters from amplifying into l
+  bn-08     ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.6578232049942017 n=4   4.68s  The book has not covered that yet. The book does not mention how much higher the learning 
+  bn-09     behind tag=COVERED     gate=included (similarity gate) best=0.6202800869941711 n=4   5.22s  When they used sigmoid instead of ReLU, Batch Normalization allowed the network to achieve
+  bn-10     behind tag=COVERED     gate=included (similarity gate) best=0.7739890813827515 n=4   4.73s  It improves upon the previous best result and exceeds the estimated accuracy of human rate
+  vae-01    behind tag=COVERED     gate=included (similarity gate) best=0.7040901184082031 n=4   4.88s  They call the recognition model a probabilistic encoder because given a datapoint x, it pr
+  vae-02    mixed  tag=COVERED     gate=included (similarity gate) best=0.6808697581291199 n=4   5.16s  They get around the high variance by using a reparameterization of the variational lower b
+  vae-03    behind tag=NOT_COVERED gate=included (similarity gate) best=0.6419991254806519 n=4   4.47s  The book has not covered that yet.
+  vae-04    ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.6729245781898499 n=4   4.92s  The book has not covered that yet. The book does not specify which distributions allow rep
+  vae-05    ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.655247688293457 n=4   4.78s  The book has not covered that yet. The book does not mention any datasets that were tested
+  vae-06    mixed  tag=COVERED     gate=included (similarity gate) best=0.7456138730049133 n=4   4.92s  They use q φ ( z | x ) for the approximate posterior in the VAE example. This is the appro
+  vae-07    behind tag=COVERED     gate=skipped (below gate)       best=0.5833330154418945 n=0   4.86s  No, adding more latent variables did not result in overfitting. The text says superfluous 
+  vae-08    ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.7598748207092285 n=4   4.68s  The book has not covered that yet. The book does not say how they estimated the actual mar
+  react-01  ahead  tag=COVERED     gate=skipped (below gate)       best=0.4891969561576843 n=0   4.65s  They evaluate it on a diverse set of language and decision making tasks. The book does not
+  react-02  behind tag=COVERED     gate=included (similarity gate) best=0.744360089302063 n=4   4.85s  The core idea of ReAct is to augment the agent's action space with a language space to all
+  react-03  ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.6936823129653931 n=4   4.61s  The book has not covered that yet.
+  react-04  behind tag=COVERED     gate=included (similarity gate) best=0.6897447109222412 n=4   5.25s  The model can search for an entity, lookup a string to get the next sentence in a page, or
+  react-05  mixed  tag=NOT_COVERED gate=included (similarity gate) best=0.7502617835998535 n=4   5.02s  The book has not covered that yet. The book does not say how they combine ReAct with chain
+  react-06  behind tag=COVERED     gate=included (similarity gate) best=0.7267445921897888 n=4   4.92s  The main failure mode of chain of thought compared to ReAct is hallucination, as the book 
+  react-07  behind tag=COVERED     gate=included (similarity gate) best=0.7115543484687805 n=4   5.08s  On ALFWorld, the best ReAct trial achieves an average success rate of 71%, significantly o
+  react-08  ahead  tag=NOT_COVERED gate=skipped (below gate)       best=0.5835830569267273 n=0   4.50s  The book has not covered that yet. The book does not mention or compare ReAct to an "inner
+  str-01    behind tag=COVERED     gate=skipped (below gate)       best=0.5307508111000061 n=0   4.75s  The A-, B-, and C-branes are called that following 1) and 2), respectively. They correspon
+  str-02    ahead  tag=NOT_COVERED gate=skipped (below gate)       best=0.5876750946044922 n=0   4.65s  The book has not covered that yet. The book does not say how the two theories are dual to 
+  str-03    behind tag=COVERED     gate=included (similarity gate) best=0.7418271899223328 n=4   5.90s  The BPS condition for the heterotic string here is Nsubosc plus a equals 0. This correspon
+  str-04    ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.675602376461029 n=4   4.58s  The book has not covered that yet. The book has not mentioned null junctions or their purp
+  str-05    mixed  tag=COVERED     gate=included (similarity gate) best=0.785199761390686 n=4   4.85s  It is hard because configurations like Σ exist, and the position of the D-string loop can 
+  rl-01     behind tag=COVERED     gate=included (similarity gate) best=0.7139161825180054 n=4   4.85s  The greedy action selection always picks the action with the highest estimated value. Epsi
+  rl-02     ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.7129206657409668 n=4   4.84s  The book has not covered that yet. The book does not say which method wins in the long run
+  rl-03     ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.7102968692779541 n=4   4.84s  The book has not covered that yet. The book has not discussed whether sample averages work
+  rl-04     behind tag=COVERED     gate=included (similarity gate) best=0.6923690438270569 n=4   5.03s  The book says a constant step-size parameter is used to give more weight to recent rewards
+  rl-05     ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.7655627727508545 n=4   4.67s  The book has not covered that yet. The book does not discuss any method that avoids estima
+  rl-06     mixed  tag=COVERED     gate=included (similarity gate) best=0.6408541202545166 n=3   4.72s  The book says that \bar{R}t is the average of the rewards up to but not including time t, 
+  rl-07     behind tag=COVERED     gate=included (similarity gate) best=0.8131630420684814 n=4   4.98s  The TD error is the difference between the estimated value of St and the better estimate R
+  rl-08     ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.799163818359375 n=4   4.52s  The book has not covered that yet. The book does not provide any everyday examples of how 
+  rl-09     ahead  tag=COVERED     gate=included (similarity gate) best=0.8296573758125305 n=4   4.59s  In practice, TD methods have usually been found to converge faster than constant-α MC meth
+  rl-10     behind tag=COVERED     gate=included (similarity gate) best=0.7423475980758667 n=4   4.96s  Batch Monte Carlo minimizes mean square error on the training data, but batch TD(0) conver
+  rl-11     ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.6667553186416626 n=4   5.16s  The book has not covered that yet. The book does not say how Q-learning is different from 
+  rl-12     mixed  tag=COVERED     gate=included (similarity gate) best=0.7656018733978271 n=4   4.79s  Expected Sarsa eliminates the variance due to the random selection of A t +1. It uses the 
+  rl-13     ahead  tag=NOT_COVERED gate=included (similarity gate) best=0.6793891191482544 n=4   4.81s  The book has not covered that yet. The book does not say anything about avoiding maximizat
+  rl-14     behind tag=COVERED     gate=included (similarity gate) best=0.8377104997634888 n=4   4.99s  Because a soft-max over action values would only allow the policy to converge to specific 
+  rl-15     ahead  tag=COVERED     gate=included (similarity gate) best=0.6782121658325195 n=3   4.71s  The book does not say how they get around needing the derivative of the state distribution
+  rl-16     behind tag=COVERED     gate=included (similarity gate) best=0.7272047400474548 n=4   4.88s  The update is divided by the probability of the action so that actions selected frequently
+  rl-17     mixed  tag=NOT_COVERED gate=included (similarity gate) best=0.7467000484466553 n=4   4.76s  The book has not covered that yet. The book has not explained the difference between REINF
