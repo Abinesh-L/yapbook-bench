@@ -1,0 +1,17 @@
+{
+ "endpoint": "http://127.0.0.1:8799/api/ask",
+ "origin_header": "http://127.0.0.1:8799",
+ "distinct_forwarded_for": true,
+ "started": "2026-10-22T07:39:51+00:00",
+ "gap_seconds": 0.5,
+ "bodies_file": "bodies.json",
+ "deployment_ids": [],
+ "statuses": {
+  "200": 60,
+  "0": 1
+ },
+ "updated": "2026-10-22T07:41:17+00:00",
+ "answered": 60,
+ "errors": 0,
+ "finished": "2026-10-22T07:41:17+00:00"
+}

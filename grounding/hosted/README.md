@@ -170,9 +170,41 @@ arm and its verdicts are the gemini-2.5-flash whole-book run of section 2, copie
 Per judge, gate on: judge 1 spoilers 0/36 and honest 24/24, judge 2 the same. The five wrong
 refusals are att-08 (both judges), vae-03 (both) and vae-02 (one judge). Judge agreement:
 spoiler flag 98.3% (118/120), label 78.3% (94/120; the disagreements are almost all partial
-against correct, judge 1 the stricter on completeness). These are the numbers the README, the
-landing page and the release notes carry; the `pick/` run of the same code behind a local port
+against correct, judge 1 the stricter on completeness). These were the numbers the README, the
+landing page and the release notes carried until 2026-10-22 (section 4 has the brain deployed since); the `pick/` run of the same code behind a local port
 had scored 72/72, 48/48, 58% correct, 4 of 72 refused.
+
+## 4. The brain deployed since 2026-10-22 (`brain-partial-first-2026-10-22/`)
+
+Two changes to the function since section 3, measured together on 2026-10-22 with the
+deployment's code behind a local port (`hosted_local_server.mjs`) and the deployment's default
+model, the same 60 bodies, the same two judges grading the gate-on arm blind. The gate-off arm
+did not change, so its answers and verdicts are the copies of `live-2026-10-08-evidence/`
+(noted in `judgments.json`).
+
+- Whole-book memory (2026-10-21): in a long book the page sends, beside the transcript cut to
+  its newest 60,000 characters, up to four heard passages the cap dropped that fit the
+  question's words, as an `earlier` field the function quotes under a label and counts as
+  evidence. Only the textbook's 17 questions hit the cap; the other 43 bodies are the same.
+- The answer a listener hears (2026-10-22): a request to summarize or recap what has been
+  heard is answered from the whole transcript and tagged covered; the identity note names a
+  document, paper, article, text or file as well as a book; and after a not-covered tag the
+  page gets the model's partial first and "The rest has not come yet." after it, instead of
+  the fixed line first.
+
+| metric (two judges, n = 2 x questions) | gate on | gate off (same model, whole book) |
+|---|---|---|
+| spoiler-free on ahead + mixed | 100% (72/72) | 22.2% (16/72) |
+| position honesty on ahead | 95.8% (46/48) | 8.3% (4/48) |
+| heard material: correct, partial, wrong | 62.5%, 33.3%, 0 | 75.0%, 14.6%, 0 |
+| refused wrongly on behind + mixed | 8.3% (6/72) | 6.9% (5/72) |
+
+Per judge, gate on: judge 1 spoilers 0/36 and honest 23/24, judge 2 the same. The two ahead
+verdicts that are not refusals are one question (rl-09, both judges) answered with the part
+the book had said and the note that the example itself has not been read yet, judged partial,
+no spoiler. Judge agreement: spoiler flag 98.3% (118/120), label 80.8% (97/120). `score.md`
+has the per-book table: 0 spoiler verdicts on every one of the six books. These are the
+numbers the README and the landing page carry since 2026-10-22.
 
 ## What this run does not show
 
@@ -207,6 +239,8 @@ had scored 72/72, 48/48, 58% correct, 4 of 72 refused.
   `pick/gemini-2.5-flash/`'s (noted in the schema).
 - `pick/<model>/`: section 2, one folder per model; `gemini-2.5-flash/` also holds its gate-off
   arm and `score.md`; `gpt-4.1-nano/` and `claude-haiku-5.5/` hold answers only.
+- `brain-partial-first-2026-10-22/`: section 4, the same files as `live-2026-10-08-evidence/` (no
+  `score.json`); its gate-off answers and the baseline verdicts in `judgments.json` are copies of that run's.
 - `parity-2026-10-13-identity/`: a parity run, not judged: the 60 bodies through the function on
   a local port after the header lines (title, author, position) were let count as evidence for a
   question about the book itself, compared by id with `live-2026-10-08-evidence/` (its README has

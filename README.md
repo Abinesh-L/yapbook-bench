@@ -51,7 +51,7 @@ Every "chat with your PDF" tool sees the whole document, so it will explain chap
 <table align="center">
   <tr>
     <td width="25%" align="center"><h3>100%</h3><sub>spoiler-free on questions whose answer lies ahead<br>72 of 72 verdicts · 22% without the gate</sub></td>
-    <td width="25%" align="center"><h3>100%</h3><sub>"the book has not covered that yet" when that was the honest answer<br>48 of 48 · 8% without the gate</sub></td>
+    <td width="25%" align="center"><h3>96%</h3><sub>"the book has not covered that yet" when that was the honest answer<br>46 of 48, the other 2 partial without a spoiler · 8% without the gate</sub></td>
     <td width="25%" align="center"><h3>0</h3><sub>wrong answers on material already heard<br>0 of 48 with the gate, 0 of 48 without</sub></td>
     <td width="25%" align="center"><h3>98%</h3><sub>agreement between the two judges on the spoiler flag<br>118 of 120 pairs, both named in the records</sub></td>
   </tr>
@@ -60,10 +60,12 @@ Every "chat with your PDF" tool sees the whole document, so it will explain chap
 | two judges per question, so n = 2 x questions | gate on (the live site) | gate off (same model, whole book) |
 |---|---|---|
 | spoiler-free answers to questions whose answer lies ahead of the listener (36 questions, n = 72) | **100% (72 of 72)** | 22.2% (16 of 72) |
-| "the book has not covered that yet", when that was the honest answer (24 questions, n = 48) | **100% (48 of 48)** | 8.3% (4 of 48) |
+| "the book has not covered that yet", when that was the honest answer (24 questions, n = 48) | **95.8% (46 of 48)** | 8.3% (4 of 48) |
 | wrong answers on material the listener had already heard (24 questions, n = 48) | **none (0 of 48)** | none (0 of 48) |
 
-Each judge on its own gave the gated arm 0 spoiler verdicts in 36 and 24 of 24 position-honest verdicts, so the headline does not rest on either judge alone. The effect is not confined to the textbook: with the gate there were 0 spoiler verdicts on every one of the six books; without it, spoilers on all six (14 of 16 verdicts on the attention paper, 6 of 10 on batch normalization, 6 of 8 on ReAct, 19 of 22 on the textbook, 2 of 6 on string junctions, 9 of 10 on variational Bayes). All 60 requests to the live site were answered on the first try, median 1.5 s.
+Each judge on its own gave the gated arm 0 spoiler verdicts in 36 and 23 of 24 position-honest verdicts (the one that is not a refusal is the same question for both, answered with only the part already read, without a spoiler), so the headline does not rest on either judge alone. The effect is not confined to the textbook: with the gate there were 0 spoiler verdicts on every one of the six books; without it, spoilers on all six (14 of 16 verdicts on the attention paper, 6 of 10 on batch normalization, 6 of 8 on ReAct, 19 of 22 on the textbook, 2 of 6 on string junctions, 9 of 10 on variational Bayes). All 60 requests to the live site were answered on the first try, median 1.5 s.
+
+**Two runs stand behind this table.** The numbers are the run of 2026-10-22 on the brain deployed since then (its code behind a local port, the same model; section 4 of the hosted write-up): it gives the part already read before saying the rest has not come, and it remembers a long book beyond the transcript's window. The first run, 2026-10-08 against the live site, scored 100% (72 of 72) and 100% (48 of 48); the two verdicts that moved are answers with only the part already read, without a spoiler.
 
 What the gate costs is below, in its own section. Every number on this page comes from the files in this repository, and the tables are recomputed with one command (see [Check it yourself](#check-it-yourself)). The full account of the run is [`grounding/hosted/README.md`](grounding/hosted/README.md).
 
@@ -154,6 +156,8 @@ All three measurements happened on the same night, with the same 60 bodies and t
 | 2. the fix, measured behind a local port before deploying it | 100% (72 of 72) | 100% (48 of 48) |
 | 3. the live site after the deploy, the headline run | 100% (72 of 72) | 100% (48 of 48) |
 
+A fourth run, 2026-10-22, on the brain deployed since then: 100% (72 of 72) and 95.8% (46 of 48); it is section 4 of the hosted write-up and the source of the table above.
+
 The six spoiler verdicts of the first run were three textbook questions, both judges each. In each the transcript had only set the question up and the model completed it from memory of a famous book, tagged the reply as covered and opened with "the book says". The fix is a quotation check: the model must quote the transcript's own words that contain its answer, and the function verifies the quotation against the passages it sent before passing the answer on. Five hosted models were then compared on the new prompt; the one that never spoiled and always said "not yet" became the default, and the live site was measured again.
 
 <details>
@@ -232,7 +236,7 @@ Recompute the headline from the committed verdicts. The output is the committed 
 python -I grounding/tools/score.py --markdown --bench grounding/hosted/live-2026-10-08-evidence
 ```
 
-Point `--bench` at `grounding/hosted/live-2026-10-08` for the run as first deployed, at one of the `grounding/hosted/pick/` folders for the pre-deploy runs, and at `grounding`, `grounding/run2` or `grounding/run1` for the installed version's three runs.
+Point `--bench` at `grounding/hosted/brain-partial-first-2026-10-22` for the brain deployed since 2026-10-22 (the table above), at `grounding/hosted/live-2026-10-08` for the run as first deployed, at one of the `grounding/hosted/pick/` folders for the pre-deploy runs, and at `grounding`, `grounding/run2` or `grounding/run1` for the installed version's three runs.
 
 <details>
 <summary><b>Re-judge with your own judges, or run your own reader through the same 60 questions</b></summary>

@@ -1,0 +1,62 @@
+{
+ "model": "google/gemini-2.5-flash",
+ "temperature": 0.3,
+ "max_tokens": 400,
+ "system_prompt_sha256": "702ef5fc3cf0ca70d3b8afd1fe93cce4c285018f9dad1b2e8ef8640ddb99aef2",
+ "books": {
+  "attention-is-all-you-need": {
+   "title": "Attention Is All You Need",
+   "author": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser and Illia Polosukhin",
+   "chapters": 28,
+   "segments": 219,
+   "chars": 38078
+  },
+  "batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift": {
+   "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+   "author": "Sergey Ioffe and Christian Szegedy",
+   "chapters": 19,
+   "segments": 257,
+   "chars": 45892
+  },
+  "auto-encoding-variational-bayes": {
+   "title": "Auto-Encoding Variational Bayes",
+   "author": "Diederik P Kingma and Max Welling",
+   "chapters": 23,
+   "segments": 255,
+   "chars": 48288
+  },
+  "react-synergizing-reasoning-and-acting-in-language-models": {
+   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+   "author": "Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan and Yuan Cao",
+   "chapters": 47,
+   "segments": 497,
+   "chars": 68609
+  },
+  "string-junctions-and-their-duals-in-heterotic-string-theory": {
+   "title": "String Junctions and Their Duals in Heterotic String Theory",
+   "author": "Yosuke Imamura",
+   "chapters": 8,
+   "segments": 164,
+   "chars": 24457
+  },
+  "rl-book-full-endurance": {
+   "title": "RL Book Full (endurance)",
+   "author": "Richard S. Sutton and Andrew G. Barto",
+   "chapters": 286,
+   "segments": 9015,
+   "chars": 1717232
+  }
+ },
+ "started": "2026-10-08T07:49:13+00:00",
+ "prompt_tokens": 7173010,
+ "completion_tokens": 3387,
+ "price_per_million": {
+  "prompt": 0.3,
+  "completion": 2.5
+ },
+ "updated": "2026-10-08T07:52:45+00:00",
+ "answered": 60,
+ "errors": 0,
+ "cost_estimate_usd": 2.16,
+ "finished": "2026-10-08T07:52:45+00:00"
+}
